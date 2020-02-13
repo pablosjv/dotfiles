@@ -1,0 +1,66 @@
+######## Taps ########
+tap "getantibody/tap"
+tap "go-delve/delve"
+tap "golangci/tap"
+tap "goreleaser/tap"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+
+######## Packages ########
+# The fastest shell plugin manager
+brew "getantibody/tap/antibody"
+brew "bash"
+brew "jq"
+brew "autojump"
+brew "telnet"
+brew "direnv"
+brew "git-lfs"
+brew "mongodb-community@3.6"
+brew "kubernetes-cli"
+# The Kubernetes package manager
+brew "helm"
+# Kubernetes in docker
+brew "kind"
+# Kubernetes context information in your promt
+brew "kube-ps1"
+brew "kubectx"
+# Node.js
+brew "node"
+brew "python"
+brew "pipenv"
+brew "cookiecutter"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+brew "liquibase"
+brew "terraform"
+brew "terragrunt"
+brew "postgresql"
+brew "jenv"
+brew "gradle"
+brew "maven"
+brew "sbt"
+brew "scala"
+# Password generator
+brew "pwgen"
+brew "dnsmasq"
+brew "openvpn"
+brew "graphviz"
+
+
+######## Casks ########
+cask "1password"
+cask "1password-cli"
+cask "adoptopenjdk"
+cask "adoptopenjdk8"
+cask "dbeaver-community"
+cask "postman"
+cask "robo-3t"
+cask "tunnelblick"
+cask "virtualbox"
+cask "whatsapp"
+cask "telegram"
+cask "slack"
