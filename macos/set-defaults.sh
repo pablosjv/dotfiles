@@ -83,6 +83,9 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 echo "  › Disable auto-correct"
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+echo "  › Disable automatic capitalization as it’s annoying when typing code or emails"
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
 # echo "  › Set up trackpad & mouse speed to a reasonable number"
 # defaults write -g com.apple.trackpad.scaling 2
 # defaults write -g com.apple.mouse.scaling 2.5
