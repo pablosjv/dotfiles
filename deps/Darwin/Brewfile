@@ -13,13 +13,21 @@ tap "homebrew/services"
 ######## Packages ########
 # The fastest shell plugin manager
 brew "getantibody/tap/antibody"
+# Latest version of bash
 brew "bash"
+# Lightweight json parser
 brew "jq"
+# Easy jump between project directories
 brew "autojump"
+# Network connectivity tool
 brew "telnet"
+# Autoload environment variables
 brew "direnv"
+# Git Large File Storage
 brew "git-lfs"
+# MongoDB client
 brew "mongodb-community@3.6"
+# Kubectl
 brew "kubernetes-cli"
 # The Kubernetes package manager
 brew "helm"
@@ -28,39 +36,65 @@ brew "kind"
 # Kubernetes context information in your promt
 brew "kube-ps1"
 brew "kubectx"
-# Node.js
+# Open-source, cross-platform, JavaScript runtime environment
 brew "node"
+# Great multi paradigm and multi propouse interpreted programming language
 brew "python"
+# Manage Python virtual environments, dependencies and code distribution
 brew "pipenv"
+# Project quickstarted
 brew "cookiecutter"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Version control of the database
 brew "liquibase"
+# Multicloud infrastructure as code
 brew "terraform"
+# Terraformwrapper tool that provides extra tools for working with multiple Terraform modules
 brew "terragrunt"
+# The world's most advanced open source database
 brew "postgresql"
-brew "jenv"
-brew "gradle"
-brew "maven"
-brew "sbt"
+# Object-oriented and functional JVM programming language
 brew "scala"
+# Scala build tool
+brew "sbt"
+# Manage JDK versions with ease
+brew "jenv"
+# Gradle build and automation tool
+brew "gradle"
+# JVM proyect manager
+brew "maven"
 # Password generator
 brew "pwgen"
+# Local DNS like a pro
 brew "dnsmasq"
+# VPN client
 brew "openvpn"
 brew "graphviz"
 
 
 ######## Casks ########
+# The best terminal emulators
+cask "iterm2"
+# Password manager
 cask "1password"
 cask "1password-cli"
+# Latest OpenJDK version and OpenJDK 8
 cask "adoptopenjdk"
 cask "adoptopenjdk8"
+# Open source database manager
 cask "dbeaver-community"
-cask "postman"
+# MongoDB database manager
 cask "robo-3t"
+# The Collaboration Platform for API Development
+cask "postman"
+# GUI OpenVPN client
 cask "tunnelblick"
+# Opensource virtualizaton system
 cask "virtualbox"
-cask "whatsapp"
+# Fast and secure message platform
 cask "telegram"
+# Messaging for teams
 cask "slack"
+# This shit that everyone uses
+cask "whatsapp"
