@@ -99,7 +99,7 @@ setup_gitconfig
 install_dotfiles
 
 info "installing dependencies"
-if ./bin/dot_update; then
+if ./bin/dot-update; then
 	success "dependencies installed"
 else
 	fail "error installing dependencies"

@@ -59,7 +59,7 @@ There are a few special files in the hierarchy:
   but still keep those autoloaded files in your home directory. These get
   symlinked in when you run `script/bootstrap`.
 - **topic/install.sh**: Any file with this name and with exec permission, will
-ran at `bootstrap` and `dot_update` phase, and are expected to install plugins,
+ran at `bootstrap` and `dot-update` phase, and are expected to install plugins,
 and stuff like that.
 
 ### ZSH plugins
