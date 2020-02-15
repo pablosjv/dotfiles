@@ -3,7 +3,7 @@
 [![Build Status][tb]][tp]
 [![Powered by Antibody][ab]][ap]
 
-> Config files for ZSH, Java, Scala, Go, Editors, Terminals and more.
+> Config files for ZSH, Java, Scala, Go, Editors, Terminals and more. Heavely inspired by [caarlos0](https://github.com/caarlos0/dotfiles/tree/f78500042af8a6db4edfa6aef129f1a5bfa6b201)
 
 <!-- TODO: Change Screenshots -->
 ![screenshot 1][scrn1]
@@ -12,7 +12,7 @@
 
 [ap]: https://github.com/getantibody/antibody
 [ab]: https://img.shields.io/badge/powered%20by-antibody-blue.svg?style=flat-square
-[tb]: https://img.shields.io/travis/caarlos0/dotfiles/master.svg?style=flat-square
+[tb]: https://img.shields.io/travis/pablosjv/dotfiles/master.svg?style=flat-square
 [tp]: https://travis-ci.org/pablosjv/dotfiles
 [scrn1]: /docs/screenshot1.png
 [scrn2]: /docs/screenshot2.png
@@ -34,7 +34,7 @@ First, make sure you have all those things installed:
 Then, run these steps:
 
 ```console
-$ git clone https://github.com/caarlos0/dotfiles.git ~/.dotfiles
+$ git clone https://github.com/pablosjv/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
 $ ./script/bootstrap
 $ zsh # or just close and open your terminal again.
@@ -51,7 +51,7 @@ For macOS, I recommend:
 For both Linux and macOS:
 
 - [`diff-so-fancy`](https://github.com/so-fancy/diff-so-fancy):
-better git difs (you'll need to run `dot_update` to apply it);
+better git difs (you'll need to run `dot-update` to apply it);
 - [`fzf`](https://github.com/junegunn/fzf):
 fuzzy finder, used in `,t` on vim, for example;
 - [`kubectx`](https://github.com/ahmetb/kubectx) for better kubernetes context
