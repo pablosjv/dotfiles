@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# FIXME: Make it work in linux
+[ "$(uname -s)" != "Darwin" ] && exit 0
 # Enable jenv plugins
 jenv enable-plugin export
 jenv enable-plugin springboot
