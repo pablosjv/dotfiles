@@ -36,7 +36,7 @@ Then, run these steps:
 ```console
 $ git clone https://github.com/pablosjv/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
-$ ./script/bootstrap
+$ ./scripts/bootstrap
 $ zsh # or just close and open your terminal again.
 ```
 

@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Run all dotfiles installers.
+set -e
+
+cd "$(dirname "$0")"/..
+
+# find the installers and run them iteratively
+git ls-tree --name-only -r HEAD | grep configure.sh | while read -r configurator; do
+	echo "› ${configurator}..."
+	sh -c "$configurator"
+done
