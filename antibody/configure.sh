@@ -1,8 +1,8 @@
 #!/bin/sh
-if command -v brew >/dev/null 2>&1; then
-	brew tap | grep -q 'getantibody/tap' || brew tap getantibody/tap
-	brew install antibody
+if [ "$(uname -s)" != "Darwin" ]; then
+	echo "› Antibody should have been installed from hombrew"
 else
+    # Set this condition in case we are testing this from a container
 	if command -v sudo >/dev/null; then
 		alias sh="sudo sh"
 	fi
