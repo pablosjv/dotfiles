@@ -40,7 +40,7 @@ Everything's built around topic areas. If you're adding a new area to your
 forked dotfiles — say, "Erlang" — you can simply add a `erlang` directory and
 put files in there. Anything with an extension of `.zsh` will get automatically
 included into your shell. Anything with an extension of `.symlink` will get
-symlinked without extension into `$HOME` when you run `script/bootstrap`.
+symlinked without extension into `$HOME` when you run `scripts/bootstrap`.
 
 ### Naming conventions
 
@@ -57,7 +57,7 @@ There are a few special files in the hierarchy:
 - **topic/\*.symlink**: Any files ending in `*.symlink` get symlinked into
   your `$HOME`. This is so you can keep all of those versioned in your dotfiles
   but still keep those autoloaded files in your home directory. These get
-  symlinked in when you run `script/bootstrap`.
+  symlinked in when you run `scripts/bootstrap`.
 - **topic/install.sh**: Any file with this name and with exec permission, will
 ran at `bootstrap` and `dot-update` phase, and are expected to install plugins,
 and stuff like that.

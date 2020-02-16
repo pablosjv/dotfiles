@@ -32,7 +32,7 @@ fail() {
 }
 
 setup_gitconfig() {
-	info 'setup gitconfig'
+	info 'Setup gitconfig'
 	# if there is no user.email, we'll assume it's a new machine/setup and ask it
 	if [ -z "$(git config --global --get user.email)" ]; then
 		user ' - What is your github author name?'
@@ -54,7 +54,7 @@ setup_gitconfig() {
 		git config --global user.email "$user_email"
 	else
 		# otherwise this gitconfig was already made by the dotfiles
-		info "already managed by dotfiles"
+		info "Already managed by dotfiles"
 	fi
 	# include the gitconfig.local file
 	git config --global include.path ~/.gitconfig.local
@@ -79,7 +79,7 @@ link_file() {
 }
 
 install_dotfiles() {
-	info 'installing dotfiles'
+	info 'Installing dotfiles'
 	find -H "$DOTFILES_ROOT" -maxdepth 3 -name '*.symlink' -not -path '*.git*' |
 		while read -r src; do
 			dst="$HOME/.$(basename "${src%.*}")"
@@ -98,11 +98,11 @@ find_zsh() {
 setup_gitconfig
 install_dotfiles
 
-info "installing dependencies"
+info "Installing dependencies and packages"
 if ./bin/dot-update; then
-	success "dependencies installed"
+	success "All dependencies installed"
 else
-	fail "error installing dependencies"
+	fail "Error installing dependencies"
 fi
 
 zsh="$(find_zsh)"
