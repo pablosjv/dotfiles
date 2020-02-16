@@ -27,11 +27,11 @@ echo "› submodules update"
 git submodule update --init --recursive --remote --merge --quiet
 
 # Run all installs
-echo "› $DOTFILES/scripts/install"
+echo "› Installing with $DOTFILES/scripts/install"
 "$DOTFILES/scripts/install"
 
 # Run all configurations
-echo "› $DOTFILES/scripts/configure"
+echo "› Configuring with $DOTFILES/scripts/configure"
 "$DOTFILES/scripts/configure"
 
 if command -v antibody >/dev/null 2>&1; then
