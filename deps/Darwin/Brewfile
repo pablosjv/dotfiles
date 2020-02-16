@@ -31,10 +31,9 @@ brew "mongodb-community@3.6"
 brew "kubernetes-cli"
 # The Kubernetes package manager
 brew "helm"
-# Kubernetes in docker
+# Kubernetes cluster in docker
 brew "kind"
-# Kubernetes context information in your promt
-brew "kube-ps1"
+# Kubernetes context change helper
 brew "kubectx"
 # Open-source, cross-platform, JavaScript runtime environment
 brew "node"
@@ -70,6 +69,10 @@ brew "pwgen"
 brew "dnsmasq"
 # VPN client
 brew "openvpn"
+# AWS cli
+brew "awscli"
+# Autoformat shell scripts
+brew "shfmt"
 brew "graphviz"
 
 

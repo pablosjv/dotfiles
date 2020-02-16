@@ -36,12 +36,13 @@ echo "› System:"
 # defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 echo "  › Set lock screen message"
-if [[ $- == *i* ]] then
+if [[ $- == *i* ]]; then
 	echo "		› Enter your phone number: "
 	read phone
 	message="This Laptop belongs to Pablo San José. Phone: ${phone}"
 else
 	message="This Laptop belongs to Pablo San José"
+fi
 defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "${message}"
 
 echo "  › Use AirDrop over every interface"

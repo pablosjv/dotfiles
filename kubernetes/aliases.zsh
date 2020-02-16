@@ -15,6 +15,6 @@ alias kimg="kubectl get deployment --output=jsonpath='{.spec.template.spec.conta
 alias kvs="kubectl view-secret"
 
 kenc() {
-	# shellcheck disable=SC2039
-	echo -n "$@" | base64
+    # shellcheck disable=SC2039
+    echo -n "$@" | base64
 }
