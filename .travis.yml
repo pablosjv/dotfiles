@@ -5,7 +5,7 @@ os:
 install: |
   if [ "$TRAVIS_OS_NAME" == "linux" ]; then
     sudo apt-get update >/dev/null
-    sudo apt-get install -y zsh git make
+    sudo apt-get install -y zsh git make curl
   else
     brew update >/dev/null
     brew install zsh
