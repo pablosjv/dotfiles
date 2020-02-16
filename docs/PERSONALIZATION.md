@@ -9,8 +9,7 @@ file.
 
 ## For git
 
-You can just change the default `~/.gitconfig` file, since it includes the
-dotfiles managed one.
+You can just change the default `~/.gitconfig` file, since it includes the dotfiles managed one.
 
 ## For psql
 
@@ -22,8 +21,7 @@ You can edit the `~/.ssh/config.local` file.
 
 ## iTunes
 
-Most people I know don't use iTunes, so it is disabled by default.
-If you don't want that to happen, run:
+Most people I know don't use iTunes, so it is disabled by default. If you don't want that to happen, run:
 
 ```console
 $ echo 'KEEP_ITUNES=1' >> ~/.localrc

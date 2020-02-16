@@ -3,7 +3,7 @@
 [![Build Status][tb]][tp]
 [![Powered by Antibody][ab]][ap]
 
-> Config files for ZSH, Java, Scala, Go, Editors, Terminals and more. Heavely inspired by [caarlos0](https://github.com/caarlos0/dotfiles/tree/f78500042af8a6db4edfa6aef129f1a5bfa6b201)
+> Config files for ZSH, Java, Scala, Go, Editors, Terminals and more. Heavely inspired by [caarlos0](https://github.com/caarlos0/dotfiles)
 
 <!-- TODO: Change Screenshots -->
 ![screenshot 1][scrn1]
@@ -36,26 +36,12 @@ Then, run these steps:
 ```console
 $ git clone https://github.com/pablosjv/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
+$ ./scripts/dependencies
 $ ./scripts/bootstrap
 $ zsh # or just close and open your terminal again.
 ```
 
 > All changed files will be backed up with a `.backup` suffix.
-
-### Recommended Software
-
-For macOS, I recommend:
-
-- iTerm: a better terminal emulator;
-
-For both Linux and macOS:
-
-- [`diff-so-fancy`](https://github.com/so-fancy/diff-so-fancy):
-better git difs (you'll need to run `dot-update` to apply it);
-- [`fzf`](https://github.com/junegunn/fzf):
-fuzzy finder, used in `,t` on vim, for example;
-- [`kubectx`](https://github.com/ahmetb/kubectx) for better kubernetes context
-  and namespace switch;
 
 ### macOS defaults
 
@@ -69,8 +55,7 @@ And logging out and in again/restart.
 
 ### Themes and fonts being used
 
-Theme is **[Dracula](https://draculatheme.com)** and the font is
-**Source Code Pro Light**.
+Theme is **[Norde Wave](https://github.com/DimitrisNL/nord-wave)**
 
 ## Further help:
 
