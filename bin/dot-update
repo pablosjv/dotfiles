@@ -15,16 +15,12 @@ PATH="$(command -p getconf PATH):/usr/local/bin"
 [ -f ~/.localrc ] && . ~/.localrc
 
 # ssh would not work under cron, add a https one
-echo "› setting up update channel"
+echo "› Setting up update channel"
 git remote add updates https://github.com/pablosjv/dotfiles.git 2>/dev/null
 
 # Update repo
 echo "› git update"
 git pull --rebase --stat updates "$(git rev-parse --abbrev-ref HEAD)"
-
-# Update submodules
-echo "› submodules update"
-git submodule update --init --recursive --remote --merge --quiet
 
 # Run all installs
 echo "› Installing with $DOTFILES/scripts/install"

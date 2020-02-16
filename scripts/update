@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Run all dotfiles updaters.
+set -e
+
+cd "$(dirname "$0")"/..
+
+# Find the updaters and run them iteratively
+git ls-tree --name-only -r HEAD | grep update.sh | while read -r updater; do
+	echo "› ${updater}..."
+	sh -c "$updater"
+done
