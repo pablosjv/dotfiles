@@ -1,3 +1,11 @@
-// Place your key bindings in this file to overwrite the defaults
+// Place your key bindings in this file to override the defaults
 [
+    {
+        "key": "alt+tab",
+        "command": "workbench.action.terminal.focusNext"
+    },
+    {
+        "key": "shift+alt+tab",
+        "command": "workbench.action.terminal.focusPrevious"
+    }
 ]
