@@ -31,4 +31,4 @@ test -s ~/.zcompdump || {
 }
 
 # Check if a random plugin is working (meaning that the bundles were loaded)
-ports ls
+# ports lss
