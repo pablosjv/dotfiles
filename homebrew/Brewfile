@@ -74,11 +74,14 @@ brew "awscli"
 # Autoformat shell scripts
 brew "shfmt"
 brew "graphviz"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
 
 
 ######## Casks ########
 # The best terminal emulators
 cask "iterm2"
+cask "docker"
 # Password manager
 cask "1password"
 cask "1password-cli"
