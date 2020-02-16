@@ -1,21 +1,21 @@
 #!/bin/zsh
 set -e
 
-# link to ~ and cd to it
+# Link to ~ and cd to it
 cd ..
 cp -rf dotfiles ~/.dotfiles
 cd ~/.dotfiles
 
-# setup git credentials
+# Setup git credentials
 echo "setup git fake user/email"
 git config --global user.name "dotfiles demo"
 git config --global user.email "dotfiles@demo.com"
 
-# bootstrap the mighty
+# Bootstrap the mighty
 echo "boostraping..."
 ./script/bootstrap
 
-# load zshrc and check if antibody is working
+# Load zshrc and check if antibody is working
 echo "sourcing ~/.zshrc"
 # shellcheck disable=SC1090
 source ~/.zshrc || true
@@ -30,5 +30,5 @@ test -s ~/.zcompdump || {
 	exit 1
 }
 
-# check if a random plugin is working (meaning that the bundles were loaded)
+# Check if a random plugin is working (meaning that the bundles were loaded)
 ports ls
