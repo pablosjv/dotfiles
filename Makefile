@@ -6,6 +6,8 @@ fmt:
 test:
 	./script/test
 
+deps:
+	./script/dependencies
 
 ci:
 	./script/test
