@@ -40,4 +40,4 @@ if command -v antibody >/dev/null 2>&1; then
 fi
 
 echo "› registering last update"
-git config --global dotfiles.lastupdate "$(date +%Y%m%d%H%M)"
+git config --global dotfiles.lastupdate "$(date +%Y-%m-%d-%H:%M)"
