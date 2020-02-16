@@ -3,6 +3,6 @@ zsh-users/zsh-autosuggestions
 mafredri/zsh-async
 
 # These should be last
-sindresorhus/pure
+# sindresorhus/pure
 romkatv/powerlevel10k
 zdharma/fast-syntax-highlighting
