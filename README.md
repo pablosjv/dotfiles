@@ -5,7 +5,6 @@
 
 > Config files for ZSH, Java, Scala, Go, Editors, Terminals and more. Heavely inspired by [caarlos0](https://github.com/caarlos0/dotfiles)
 
-<!-- TODO: Change Screenshots -->
 ![screenshot 1][scrn1]
 
 ![screenshot 2][scrn2]
