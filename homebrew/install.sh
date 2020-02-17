@@ -8,6 +8,3 @@ fi
 
 echo "› Installing Hombrew packages from Brewfile"
 brew bundle -v --file="$HOME/.dotfiles/homebrew/Brewfile"
-
-echo "› Update Brewfile"
-brew bundle dump --force --describe --file="$HOME/.dotfiles/homebrew/Brewfile"
