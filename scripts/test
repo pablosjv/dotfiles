@@ -30,5 +30,8 @@ test -s ~/.zcompdump || {
 	exit 1
 }
 
+echo "running refresh..."
+./scripts/update
+
 # Check if a random plugin is working (meaning that the bundles were loaded)
 # ports lss
