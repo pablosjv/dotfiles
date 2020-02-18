@@ -10,6 +10,6 @@ jenv enable-plugin sbt
 jenv enable-plugin scala
 
 for dir in /Library/Java/JavaVirtualMachines/*/; do
-    java_version=${dir%*/} # remove the trailing "/"
-    jenv add ${java_version}/Contents/Home
+	java_version=${dir%*/} # remove the trailing "/"
+	jenv add ${java_version}/Contents/Home
 done
