@@ -3,6 +3,7 @@ tap "getantibody/tap"
 tap "go-delve/delve"
 tap "golangci/tap"
 tap "goreleaser/tap"
+tap "mongodb/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -73,10 +74,10 @@ brew "openvpn"
 brew "awscli"
 # Autoformat shell scripts
 brew "shfmt"
-brew "graphviz"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
-
+brew "the_silver_searcher"
+brew "tree"
 
 ######## Casks ########
 # The best terminal emulators
@@ -104,3 +105,5 @@ cask "telegram"
 cask "slack"
 # This shit that everyone uses
 cask "whatsapp"
+
+cask "gitkraken"
