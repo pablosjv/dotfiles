@@ -105,5 +105,8 @@ cask "telegram"
 cask "slack"
 # This shit that everyone uses
 cask "whatsapp"
-
+cask "authy"
 cask "gitkraken"
+cask "notion"
+cask "visual-studio-code"
+cask "google-chrome"

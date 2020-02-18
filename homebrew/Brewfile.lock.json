@@ -20,16 +20,16 @@
         "revision": "677f39d62a8aefdcbc091f193af1f7ddbee0052d"
       },
       "homebrew/cask": {
-        "revision": "33cd60235d885d32480738061f9f4fa3b6d3ee6f"
+        "revision": "373c1c63364d55c89df74e65dfa3914c2c38917e"
       },
       "homebrew/cask-fonts": {
-        "revision": "d420cfd5ae101699cdb654397ee2ff9eda531965"
+        "revision": "55230b81bc317fcc1d1784b222160d7174d76f8d"
       },
       "homebrew/cask-versions": {
-        "revision": "7a55b70755f322aec377dc31eb3c5aa57c2a99a4"
+        "revision": "067e412184f4e9eff5ae939d8a0a7a7cfaffc6fe"
       },
       "homebrew/core": {
-        "revision": "efb20842cd7f2a7f91506763edec41f60fd171a2"
+        "revision": "93ac3eae768eae1afb48e7f252543287ade83873"
       },
       "homebrew/services": {
         "revision": "9ddb42a9add6845053d098ffc4c568b55b70776e"
@@ -653,7 +653,7 @@
         }
       },
       "1password": {
-        "version": "7.4.2",
+        "version": "7.4.1",
         "options": {
           "full_name": "1password"
         }
@@ -689,7 +689,7 @@
         }
       },
       "postman": {
-        "version": "7.18.0",
+        "version": "7.14.0",
         "options": {
           "full_name": "postman"
         }
@@ -729,6 +729,30 @@
         "options": {
           "full_name": "gitkraken"
         }
+      },
+      "authy": {
+        "version": "1.8.0",
+        "options": {
+          "full_name": "authy"
+        }
+      },
+      "notion": {
+        "version": "2.0.7",
+        "options": {
+          "full_name": "notion"
+        }
+      },
+      "visual-studio-code": {
+        "version": "1.42.1",
+        "options": {
+          "full_name": "visual-studio-code"
+        }
+      },
+      "google-chrome": {
+        "version": "80.0.3987.106",
+        "options": {
+          "full_name": "google-chrome"
+        }
       }
     }
   },
@@ -737,8 +761,8 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.6",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "efb20842cd7f2a7f91506763edec41f60fd171a2",
-        "CLT": "11.3.1.0.1.1576735732",
+        "Homebrew/homebrew-core": "93ac3eae768eae1afb48e7f252543287ade83873",
+        "CLT": "11.0.33.17",
         "Xcode": "11.3.1",
         "macOS": "10.15.3"
       }
