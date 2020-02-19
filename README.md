@@ -3,7 +3,7 @@
 [![Build Status][tb]][tp]
 [![Powered by Antibody][ab]][ap]
 
-> Config files for ZSH, Java, Scala, Go, Editors, Terminals and more. Heavely inspired by [caarlos0](https://github.com/caarlos0/dotfiles)
+> Config files for ZSH, Java, Scala, Go, Editors, Terminals and more. Heavely inspired by [caarlos0](https://github.com/caarlos0/dotfiles).
 
 ![screenshot 1][scrn1]
 

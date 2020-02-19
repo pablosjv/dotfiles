@@ -53,13 +53,15 @@ There are a few special files in the hierarchy:
 
 ### ZSH plugins
 
-This project uses the [pure][pure] prompt (which is awesome!) and some other [zsh plugins](/antibody/bundles.sh). All of them managed by [Antibody][antibody], a faster and simpler Antigen-like program written in Go.
+This project uses the [Powerlevel10k][p10k] prompt (which is incredible!) with a lean theme, transient prompt and some other [zsh plugins](/antibody/bundles.sh). All of them managed by [Antibody][antibody], a faster and simpler Antigen-like program written in Go.
 
-[pure]: https://github.com/sindresorhus/pure
+The combination of Antibody and the Powerlevel10k instant prompt feature, makes this configuration the fastest shell startup you've ever had.
+
+[p10k]: https://github.com/romkatv/powerlevel10k
 [antibody]: https://github.com/caarlos0/antibody
 
 ### Compatibility
 
-I try to keep it working in both Linux (Ubuntu) and OS X, mostly because I use OS X at home and Linux at work.
+The setup should be compatible between Linux and OSX, but I mainly use MacOS so is not battle tested in Linux. Also there is no packages instalation for linux, only with hombrew.
 
 The CI also is also ran on Linux and OSX.
