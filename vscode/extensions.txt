@@ -3,6 +3,7 @@ dnlytras.nord-wave
 DotJoshJohnson.xml
 eamodio.gitlens
 EditorConfig.EditorConfig
+foxundermoon.shell-format
 HookyQR.beautify
 humao.rest-client
 James-Yu.latex-workshop
@@ -13,8 +14,8 @@ ms-python.python
 ms-vscode.Go
 mtxr.sqltools
 patbenatar.advanced-new-file
-pnp.polacode
 PKief.material-icon-theme
+pnp.polacode
 quicktype.quicktype
 redhat.vscode-yaml
 rust-lang.rust
@@ -22,5 +23,4 @@ scala-lang.scala
 scalameta.metals
 Shan.code-settings-sync
 shanoor.vscode-nginx
-timonwong.shellcheck
 wmaurer.change-case
