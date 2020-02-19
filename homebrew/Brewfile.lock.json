@@ -11,25 +11,25 @@
         "revision": "892effe028764d593d870dffe348780ca9a85a2b"
       },
       "goreleaser/tap": {
-        "revision": "e07904b8a00f7784ffb85b43e6d78acc679a0b0f"
+        "revision": "6e37632bd9a59636539405ff644c95eaf12faa25"
       },
       "mongodb/brew": {
         "revision": "57adadbee35687d38097d3206e9dd09f03031225"
       },
       "homebrew/bundle": {
-        "revision": "677f39d62a8aefdcbc091f193af1f7ddbee0052d"
+        "revision": "c51e14809eab037c492f1bad5cc73ba6320f3e7e"
       },
       "homebrew/cask": {
-        "revision": "373c1c63364d55c89df74e65dfa3914c2c38917e"
+        "revision": "85f7c72072726f98d3c01c72ccbfd9a85555fb4b"
       },
       "homebrew/cask-fonts": {
         "revision": "55230b81bc317fcc1d1784b222160d7174d76f8d"
       },
       "homebrew/cask-versions": {
-        "revision": "067e412184f4e9eff5ae939d8a0a7a7cfaffc6fe"
+        "revision": "1f87d2bd71e00c64b28198edbf40d386ac79a437"
       },
       "homebrew/core": {
-        "revision": "93ac3eae768eae1afb48e7f252543287ade83873"
+        "revision": "66039eb4fc1b1ffc046fc65bae07a4313a6906ac"
       },
       "homebrew/services": {
         "revision": "9ddb42a9add6845053d098ffc4c568b55b70776e"
@@ -381,22 +381,22 @@
         }
       },
       "terragrunt": {
-        "version": "0.21.13",
+        "version": "0.22.3",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/terragrunt-0.21.13.catalina.bottle.tar.gz",
-              "sha256": "a8f7a02e03edb18bcb1f910062113054a922b100f6dcc257ba5e42f08fb26b5c"
+              "url": "https://homebrew.bintray.com/bottles/terragrunt-0.22.3.catalina.bottle.tar.gz",
+              "sha256": "630d0878af1060fe85baa39f71c168eb06c3ffe71c958da4320a244d140f7ae7"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/terragrunt-0.21.13.mojave.bottle.tar.gz",
-              "sha256": "9fe04435b08029b5b3a898f6572d7f1f14184319aca4b319957daa0fccf27f95"
+              "url": "https://homebrew.bintray.com/bottles/terragrunt-0.22.3.mojave.bottle.tar.gz",
+              "sha256": "a85795850f172afc79e3a586144746dee237c25f805b36179a8f1a2c76095c64"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/terragrunt-0.21.13.high_sierra.bottle.tar.gz",
-              "sha256": "b50f49645927a3e0fa1c4280bbda0bef5e0dee3ada1741794fae1c9a745ea86c"
+              "url": "https://homebrew.bintray.com/bottles/terragrunt-0.22.3.high_sierra.bottle.tar.gz",
+              "sha256": "b7e0df381fd0dfe0a4c60960e2b166189c49c817b750026d1a97b86d10ef34c6"
             }
           }
         }
@@ -653,7 +653,7 @@
         }
       },
       "1password": {
-        "version": "7.4.1",
+        "version": "7.4.2",
         "options": {
           "full_name": "1password"
         }
@@ -689,7 +689,7 @@
         }
       },
       "postman": {
-        "version": "7.14.0",
+        "version": "7.18.0",
         "options": {
           "full_name": "postman"
         }
@@ -749,7 +749,7 @@
         }
       },
       "google-chrome": {
-        "version": "80.0.3987.106",
+        "version": "80.0.3987.116",
         "options": {
           "full_name": "google-chrome"
         }
@@ -761,8 +761,8 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.6",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "93ac3eae768eae1afb48e7f252543287ade83873",
-        "CLT": "11.0.33.17",
+        "Homebrew/homebrew-core": "66039eb4fc1b1ffc046fc65bae07a4313a6906ac",
+        "CLT": "11.3.1.0.1.1576735732",
         "Xcode": "11.3.1",
         "macOS": "10.15.3"
       }

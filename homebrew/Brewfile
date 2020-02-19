@@ -1,112 +1,96 @@
-######## Taps ########
 tap "getantibody/tap"
 tap "go-delve/delve"
 tap "golangci/tap"
 tap "goreleaser/tap"
-tap "mongodb/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-
-######## Packages ########
-# The fastest shell plugin manager
-brew "getantibody/tap/antibody"
-# Latest version of bash
-brew "bash"
-# Lightweight json parser
-brew "jq"
-# Easy jump between project directories
+tap "mongodb/brew"
+cask "adoptopenjdk"
+# Shell extension to jump to frequently used directories
 brew "autojump"
-# Network connectivity tool
-brew "telnet"
-# Autoload environment variables
-brew "direnv"
-# Git Large File Storage
-brew "git-lfs"
-# MongoDB client
-brew "mongodb-community@3.6"
-# Kubectl
-brew "kubernetes-cli"
-# The Kubernetes package manager
-brew "helm"
-# Kubernetes cluster in docker
-brew "kind"
-# Kubernetes context change helper
-brew "kubectx"
-# Open-source, cross-platform, JavaScript runtime environment
-brew "node"
-# Great multi paradigm and multi propouse interpreted programming language
-brew "python"
-# Manage Python virtual environments, dependencies and code distribution
-brew "pipenv"
-# Project quickstarted
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Utility that creates projects from templates
 brew "cookiecutter"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# Lightweight DNS forwarder and DHCP server
+brew "dnsmasq"
+# Git extension for versioning large files
+brew "git-lfs"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Version control of the database
-brew "liquibase"
-# Multicloud infrastructure as code
-brew "terraform"
-# Terraformwrapper tool that provides extra tools for working with multiple Terraform modules
-brew "terragrunt"
-# The world's most advanced open source database
-brew "postgresql"
-# Object-oriented and functional JVM programming language
-brew "scala"
-# Scala build tool
-brew "sbt"
-# Manage JDK versions with ease
-brew "jenv"
-# Gradle build and automation tool
+# Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
-# JVM proyect manager
+# The Kubernetes package manager
+brew "helm"
+# Manage your Java environment
+brew "jenv"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Run local Kubernetes cluster in Docker
+brew "kind"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# Tool that can switch between kubectl contexts easily and create aliases
+brew "kubectx"
+# Library for database change tracking
+brew "liquibase"
+# Java-based project management
 brew "maven"
+# Platform built on V8 to build network applications
+brew "node"
+# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
+brew "openvpn"
+# Python dependency management tool
+brew "pipenv"
+# Object-relational database system
+brew "postgresql"
 # Password generator
 brew "pwgen"
-# Local DNS like a pro
-brew "dnsmasq"
-# VPN client
-brew "openvpn"
-# AWS cli
-brew "awscli"
-# Autoformat shell scripts
+# Build tool for Scala projects
+brew "sbt"
+# JVM-based programming language
+brew "scala"
+# Autoformat shell script source code
 brew "shfmt"
+# User interface to the TELNET protocol (built from macOS Sierra sources)
+brew "telnet"
+# Tool to build, change, and version infrastructure
+brew "terraform"
+# Thin wrapper for Terraform e.g. for locking state
+brew "terragrunt"
+# Code-search similar to ack
+brew "the_silver_searcher"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
-brew "the_silver_searcher"
-brew "tree"
-
-######## Casks ########
-# The best terminal emulators
-cask "iterm2"
-cask "docker"
-# Password manager
+# The fastest shell plugin manager
+brew "getantibody/tap/antibody"
+# High-performance, schema-free, document-oriented database
+brew "mongodb/brew/mongodb-community@3.6"
 cask "1password"
 cask "1password-cli"
-# Latest OpenJDK version and OpenJDK 8
-cask "adoptopenjdk"
 cask "adoptopenjdk8"
-# Open source database manager
-cask "dbeaver-community"
-# MongoDB database manager
-cask "robo-3t"
-# The Collaboration Platform for API Development
-cask "postman"
-# GUI OpenVPN client
-cask "tunnelblick"
-# Opensource virtualizaton system
-cask "virtualbox"
-# Fast and secure message platform
-cask "telegram"
-# Messaging for teams
-cask "slack"
-# This shit that everyone uses
-cask "whatsapp"
 cask "authy"
+cask "dbeaver-community"
+cask "docker"
 cask "gitkraken"
-cask "notion"
-cask "visual-studio-code"
 cask "google-chrome"
+cask "iterm2"
+cask "notion"
+cask "postman"
+cask "robo-3t"
+cask "slack"
+cask "telegram"
+cask "tunnelblick"
+cask "virtualbox"
+cask "visual-studio-code"
+cask "whatsapp"
