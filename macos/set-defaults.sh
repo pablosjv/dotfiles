@@ -64,7 +64,7 @@ echo "  › Require password immediately after sleep or screen saver begins"
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-echo "  › Show scrollbars  only on scroll"
+echo "  › Show scrollbars only on scroll"
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
@@ -100,11 +100,11 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 echo "  › Set dark interface style"
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 
-echo "  › Set graphite appearance"
-defaults write NSGlobalDomain AppleAquaColorVariant -int 6
+# echo "  › Set graphite appearance"
+# defaults write NSGlobalDomain AppleAquaColorVariant -int 6
 
-echo "  › Set graphite highlight color"
-defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745"
+# echo "  › Set graphite highlight color"
+# defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745"
 
 echo "  › Show battery percent"
 defaults write com.apple.menuextra.battery ShowPercent -bool true
@@ -145,8 +145,8 @@ defaults write com.apple.finder ShowPathbar -bool true
 echo "  › Disable the warning before emptying the Trash"
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-echo "  › Save to disk by default, instead of iCloud"
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+# echo "  › Save to disk by default, instead of iCloud"
+# defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 echo "  › Display full POSIX path as Finder window title"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
@@ -262,7 +262,7 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 echo "  › Disable automatic spell checking"
 defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
 
-echo "  ›  Disable send and reply animations in Mail.app"
+echo "  › Disable send and reply animations in Mail.app"
 defaults write com.apple.mail DisableReplyAnimations -bool true
 defaults write com.apple.mail DisableSendAnimations -bool true
 
