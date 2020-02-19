@@ -637,7 +637,8 @@
             }
           }
         }
-      }
+      },
+      "mongodb/brew/mongodb-community@3.6": null
     },
     "cask": {
       "iterm2": {
