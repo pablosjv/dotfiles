@@ -23,4 +23,5 @@ scala-lang.scala
 scalameta.metals
 Shan.code-settings-sync
 shanoor.vscode-nginx
+timonwong.shellcheck
 wmaurer.change-case
