@@ -110,5 +110,6 @@
         "!Select",
         "!Split",
         "!Join"
-    ]
+    ],
+    "python.linting.flake8CategorySeverity.E": "Hint"
 }
