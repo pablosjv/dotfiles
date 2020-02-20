@@ -111,5 +111,6 @@
         "!Split",
         "!Join"
     ],
-    "python.linting.flake8CategorySeverity.E": "Hint"
+    "python.linting.flake8CategorySeverity.E": "Hint",
+    "python.formatting.provider": "none"
 }
