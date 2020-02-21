@@ -81,7 +81,7 @@
     "terraform.telemetry.enabled": false,
     "todohighlight.isEnable": true,
     "window.newWindowDimensions": "maximized",
-    "window.restoreWindows": "none",
+    "window.restoreWindows": "one",
     "window.title": "${activeEditorMedium}${separator}${rootName}",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": true,
