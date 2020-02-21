@@ -110,5 +110,8 @@
         "!Join"
     ],
     "python.linting.flake8CategorySeverity.E": "Hint",
-    "python.formatting.provider": "none"
+    "python.formatting.provider": "none",
+    "[json]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    }
 }
