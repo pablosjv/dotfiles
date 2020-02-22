@@ -12,7 +12,7 @@
 [ap]: https://github.com/getantibody/antibody
 [ab]: https://img.shields.io/badge/powered%20by-antibody-blue.svg?style=flat-square
 [tb]: https://img.shields.io/travis/pablosjv/dotfiles/master.svg?style=flat-square
-[tp]: https://travis-ci.org/pablosjv/dotfiles
+[tp]: https://travis-ci.com/pablosjv/dotfiles
 [scrn1]: /docs/screenshot1.png
 [scrn2]: /docs/screenshot2.png
 
