@@ -12,6 +12,7 @@
 	commend = commit --amend --no-edit
 	fpr = fetch-pr
 	lt = log --tags --decorate --simplify-by-decoration --oneline
+    ignore = !sh -c \"wget --no-check-certificate -q https://www.gitignore.io/api/$1 -O .gitignore\"
 [color]
 	diff = auto
 	status = auto
