@@ -1,5 +1,3 @@
-[difftool "diffmerge"]
-	cmd = diffmerge $LOCAL $REMOTE
 [alias]
 	co = checkout
 	count = shortlog -sn
@@ -20,11 +18,20 @@
 	ui = true
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = code --wait
 	compression = -1
 	autocrlf = input
 	whitespace = trailing-space,space-before-tab
 	precomposeunicode = true
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
 [apply]
 	whitespace = nowarn
 [help]
