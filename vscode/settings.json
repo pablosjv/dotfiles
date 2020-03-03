@@ -1,10 +1,18 @@
 {
+    "[json]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
     "breadcrumbs.enabled": true,
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
     },
     "editor.cursorBlinking": "phase",
     "editor.fontFamily": "Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
     "editor.rulers": [
@@ -21,18 +29,18 @@
     "extensions.autoUpdate": true,
     "extensions.ignoreRecommendations": false,
     "files.associations": {
-        "**/defaults/**/*": "ansible",
-        "**/tasks/**/*.yml": "ansible",
-        "**/handler/*.yml": "ansible",
         "**/*_vars/**/*.yml": "ansible",
-        "**/roles/**/*.yml": "ansible",
-        "**/playbooks/**/*.yml": "ansible",
         "**/*ansible*/**/*.yml": "ansible",
-        "**/vars/**/*.yml": "ansible",
+        "**/defaults/**/*": "ansible",
+        "**/handler/*.yml": "ansible",
         "**/inventory/*/*": "ansible",
-        "*.yml": "yaml",
+        "**/playbooks/**/*.yml": "ansible",
+        "**/roles/**/*.yml": "ansible",
+        "**/tasks/**/*.yml": "ansible",
+        "**/vars/**/*.yml": "ansible",
         "*.j2": "properties",
-        "*.tmpl": "gotemplate"
+        "*.tmpl": "gotemplate",
+        "*.yml": "yaml"
     },
     "files.autoSave": "onFocusChange",
     "files.insertFinalNewline": true,
@@ -62,11 +70,19 @@
     "latex-workshop.docker.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
     "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home",
+    "python.dataScience.askForKernelRestart": false,
+    "python.formatting.provider": "none",
+    "python.linting.flake8CategorySeverity.E": "Hint",
+    "python.linting.pylintEnabled": false,
+    "python.sortImports.args": [
+        "-w 120"
+    ],
+    "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "search.exclude": {
-        "**/node_modules": true,
         "**/bower_components": true,
-        "/vendor": true,
-        "/.venv": true
+        "**/node_modules": true,
+        "/.venv": true,
+        "/vendor": true
     },
     "search.showLineNumbers": true,
     "search.smartCase": true,
@@ -90,7 +106,6 @@
     "workbench.editor.showIcons": true,
     "workbench.fontAliasing": "auto",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "newUntitledFile",
     "yaml.customTags": [
         "!And",
         "!If",
@@ -108,10 +123,5 @@
         "!Select",
         "!Split",
         "!Join"
-    ],
-    "python.linting.flake8CategorySeverity.E": "Hint",
-    "python.formatting.provider": "none",
-    "[json]": {
-        "editor.defaultFormatter": "HookyQR.beautify"
-    }
+    ]
 }
