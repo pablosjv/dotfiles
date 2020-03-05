@@ -123,5 +123,7 @@
         "!Select",
         "!Split",
         "!Join"
-    ]
+    ],
+    "python.dataScience.jupyterLaunchTimeout": 6000,
+    "autoDocstring.docstringFormat": "sphinx"
 }
