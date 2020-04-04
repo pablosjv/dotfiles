@@ -70,7 +70,6 @@
     "latex-workshop.docker.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
     "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home",
-    "python.dataScience.askForKernelRestart": false,
     "python.linting.flake8CategorySeverity.E": "Hint",
     "python.linting.pylintEnabled": false,
     "python.sortImports.args": [
@@ -125,5 +124,6 @@
     ],
     "python.dataScience.jupyterLaunchTimeout": 6000,
     "autoDocstring.docstringFormat": "google",
-    "python.analysis.logLevel": "Warning"
+    "python.analysis.logLevel": "Warning",
+    "python.dataScience.disableJupyterAutoStart": true
 }
