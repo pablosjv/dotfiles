@@ -5,6 +5,10 @@
     "[jsonc]": {
         "editor.defaultFormatter": "HookyQR.beautify"
     },
+    "[latex]": {
+        "editor.wordWrap": "on"
+    },
+    "autoDocstring.docstringFormat": "google",
     "breadcrumbs.enabled": true,
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
@@ -38,6 +42,7 @@
         "**/roles/**/*.yml": "ansible",
         "**/tasks/**/*.yml": "ansible",
         "**/vars/**/*.yml": "ansible",
+        "*.hql": "sql",
         "*.j2": "properties",
         "*.tmpl": "gotemplate",
         "*.yml": "yaml"
@@ -59,17 +64,19 @@
     },
     "go.formatTool": "goimports",
     "go.languageServerExperimentalFeatures": {
-        "format": true,
-        "autoComplete": true
+        "autoComplete": true,
+        "format": true
     },
     "go.testTimeout": "3m",
     "go.useCodeSnippetsOnFunctionSuggest": true,
     "go.useLanguageServer": false,
     "hdinsight.disableOpenSurveyLink": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "latex-workshop.docker.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
     "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home",
+    "python.analysis.logLevel": "Warning",
+    "python.dataScience.disableJupyterAutoStart": true,
+    "python.dataScience.jupyterLaunchTimeout": 6000,
     "python.linting.flake8CategorySeverity.E": "Hint",
     "python.linting.pylintEnabled": false,
     "python.sortImports.args": [
@@ -122,6 +129,12 @@
         "!Split",
         "!Join"
     ],
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.docker.enabled": true,
+    "sql-formatter.uppercase": true,
+    "[sql]": {
+        "editor.defaultFormatter": "mtxr.sqltools"
+    },
     "python.dataScience.jupyterLaunchTimeout": 6000,
     "autoDocstring.docstringFormat": "google",
     "python.analysis.logLevel": "Warning",
