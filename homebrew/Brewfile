@@ -43,10 +43,6 @@ brew "kind"
 brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
-# Library for database change tracking
-brew "liquibase"
-# Java-based project management
-brew "maven"
 # Platform built on V8 to build network applications
 brew "node"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
@@ -63,6 +59,8 @@ brew "python"
 brew "sbt"
 # JVM-based programming language
 brew "scala"
+# Build applications with serverless architectures
+brew "serverless"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Autoformat shell script source code
@@ -81,20 +79,22 @@ brew "tree"
 brew "watch"
 # Internet file retriever
 brew "wget"
+# Process YAML documents from the CLI
+brew "yq"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community@3.6"
 cask "1password"
 cask "1password-cli"
-cask "adoptopenjdk"
 cask "adoptopenjdk8"
 cask "authy"
+cask "brave-browser"
+cask "datagrip"
 cask "dbeaver-community"
 cask "docker"
 cask "gitkraken"
 cask "google-chrome"
 cask "google-cloud-sdk"
 cask "iterm2"
-cask "java"
 cask "java11"
 cask "notion"
 cask "postman"
