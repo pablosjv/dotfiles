@@ -44,14 +44,13 @@ done
 compinit -C
 
 
+# Load again compinit
+compinit -i
+
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}; do
   source "$file"
 done
-
-# Load again compinit
-compinit -i
-
 
 unset config_files updated_at
 
