@@ -9,7 +9,7 @@ if command -v code >/dev/null; then
 
 	ln -sf "$DOTFILES/vscode/settings.json" "$VSCODE_HOME/User/settings.json"
 	ln -sf "$DOTFILES/vscode/keybindings.json" "$VSCODE_HOME/User/keybindings.json"
-	ln -sf "$DOTFILES/vscode/snippets" "$VSCODE_HOME/User/snippets"
+	ln -sf "$DOTFILES/vscode/snippets" "$VSCODE_HOME/User/"
 
 	while read -r module; do
 		code --install-extension "$module" || true
