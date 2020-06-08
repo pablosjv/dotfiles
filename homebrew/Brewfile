@@ -9,10 +9,13 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "mongodb/brew"
+tap "robscott/tap"
 # The fastest shell plugin manager
 brew "antibody"
 # Shell extension to jump to frequently used directories
 brew "autojump"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -45,14 +48,10 @@ brew "kubectx"
 brew "node"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
-# Python dependency management tool
-brew "pipenv"
 # Object-relational database system
 brew "postgresql"
 # Password generator
 brew "pwgen"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Build tool for Scala projects
 brew "sbt"
 # JVM-based programming language
@@ -63,6 +62,8 @@ brew "serverless"
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
+# Tail multiple Kubernetes pods & their containers
+brew "stern"
 # User interface to the TELNET protocol
 brew "telnet"
 # Tool to build, change, and version infrastructure
@@ -81,6 +82,8 @@ brew "wget"
 brew "yq"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community@3.6"
+# kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster
+brew "robscott/tap/kube-capacity"
 cask "1password"
 cask "1password-cli"
 cask "adoptopenjdk8"
