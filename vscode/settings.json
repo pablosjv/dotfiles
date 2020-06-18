@@ -42,9 +42,10 @@
         "**/roles/**/*.yml": "ansible",
         "**/tasks/**/*.yml": "ansible",
         "**/vars/**/*.yml": "ansible",
-        "*.hql": "sql",
-        "*.j2": "properties",
         "*.tmpl": "gotemplate",
+        "*.j2": "jinja",
+        "*.hql": "sql",
+        "*.hcl": "terraform",
         "*.yml": "yaml"
     },
     "files.autoSave": "onFocusChange",
