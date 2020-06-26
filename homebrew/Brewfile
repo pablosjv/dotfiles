@@ -47,7 +47,7 @@ brew "node"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # Python dependency management tool
-brew "pipenv"
+# brew "pipenv"
 # Object-relational database system
 brew "postgresql"
 # Password generator
