@@ -19,3 +19,7 @@ function dit() {
 }
 
 alias docker-it="docker run -it --rm"
+
+function docker-watch {
+    watch 'docker ps --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}"'
+}
