@@ -3,9 +3,13 @@ export PATH="$HOME/.krew/bin:$PATH"
 
 export KUBEHOME=~/.kube
 
-KUBECONFIG=
+unset KUBECONFIG
 
 setopt +o nomatch
 for filename in ${KUBEHOME}/config/*.yml; do
-    KUBECONFIG=${KUBECONFIG}:${filename}
+    if [[ -z "${KUBECONFIG}" ]]; then
+        export KUBECONFIG=${filename}
+    else
+        export KUBECONFIG=${filename}:${KUBECONFIG}
+    fi
 done
