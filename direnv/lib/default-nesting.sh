@@ -1,3 +1,3 @@
 #!/bin/sh
 
-source_up
+# source_up
