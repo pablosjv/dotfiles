@@ -44,17 +44,12 @@ for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}; do
 done
 
 autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+24); do
+# Use cached completions if it is less than 24 hours
+for _ in ~/.zcompdump(N.mh+24); do
   compinit
+  break
 done
 compinit -C
-
-for file in ${(M)config_files:#*/completion.zsh}; do
-  source "$file"
-done
-
-# Load again compinit
-compinit -i
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}; do
