@@ -1,9 +1,11 @@
 #!/bin/zsh
+# shellcheck shell=bash
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  # shellcheck disable=SC1090
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
@@ -26,14 +28,17 @@ config_files=($DOTFILES/*/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}; do
+  # shellcheck disable=SC1090
   source "$file"
 done
 
 # load antibody plugins
+# shellcheck disable=SC1090
 source ~/.zsh_plugins.sh
 
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}; do
+  # shellcheck disable=SC1090
   source "$file"
 done
 
@@ -52,6 +57,7 @@ compinit -i
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}; do
+  # shellcheck disable=SC1090
   source "$file"
 done
 
@@ -65,4 +71,5 @@ unset config_files updated_at
 # zprof
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# shellcheck disable=SC1090
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
