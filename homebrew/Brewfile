@@ -30,6 +30,8 @@ brew "dnsmasq", restart_service: true
 brew "git-lfs"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Smarter Dockerfile linter to validate best practices
+brew "hadolint"
 # The Kubernetes package manager
 brew "helm"
 # Manage your Java environment
@@ -46,8 +48,8 @@ brew "kubectx"
 brew "node"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
-# Python dependency management tool
-# brew "pipenv"
+# CLI for Postgres with auto-completion and syntax highlighting
+brew "pgcli"
 # Object-relational database system
 brew "postgresql"
 # Password generator
@@ -92,13 +94,13 @@ cask "adoptopenjdk8"
 cask "authy"
 cask "brave-browser"
 cask "datagrip"
-cask "dbeaver-community"
 cask "docker"
 cask "gitkraken"
 cask "google-chrome"
 cask "google-cloud-sdk"
 cask "iterm2"
 cask "java11"
+cask "min"
 cask "notion"
 cask "postman"
 cask "robo-3t"
