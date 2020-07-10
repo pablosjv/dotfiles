@@ -33,7 +33,7 @@ The installation of all the topics will come first and then the configuration. T
 
 `VEDITOR` stands for "visual editor", and is set to `code` be default. `EDITOR` is set to `vim`.
 
-`PROJECTS` is default to `~/Code`. The shortcut to that folder in the shell is `c`.
+`PROJECTS` is default to `~/projects`. The shortcut to that folder in the shell is `c`.
 
 You can change that by adding your custom overrides in `~/.localrc`.
 
