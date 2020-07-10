@@ -5,7 +5,7 @@
 source "${DOTFILES}/jenv/path.zsh"
 
 # Enable jenv plugins
-jenv enable-plugin export
+# jenv enable-plugin export
 jenv enable-plugin springboot
 jenv enable-plugin gradle
 jenv enable-plugin sbt
