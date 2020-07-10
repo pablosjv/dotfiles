@@ -4,8 +4,9 @@ DotJoshJohnson.xml
 dzgmelody.vscode-changelog-snippets
 eamodio.gitlens
 EditorConfig.EditorConfig
+exiasr.hadolint
 foxundermoon.shell-format
-golang.Go
+golang.go
 GrapeCity.gc-excelviewer
 hashicorp.terraform
 HookyQR.beautify
@@ -34,4 +35,5 @@ shanoor.vscode-nginx
 timonwong.shellcheck
 wholroyd.jinja
 wmaurer.change-case
+yzhang.markdown-all-in-one
 zhuangtongfa.material-theme
