@@ -1,4 +1,6 @@
+adpyke.vscode-sql-formatter
 be5invis.toml
+DavidAnson.vscode-markdownlint
 dnlytras.nord-wave
 DotJoshJohnson.xml
 dzgmelody.vscode-changelog-snippets
@@ -11,8 +13,10 @@ GrapeCity.gc-excelviewer
 hashicorp.terraform
 HookyQR.beautify
 humao.rest-client
+Hyzeta.vscode-theme-github-light
 Ikuyadeu.r
 James-Yu.latex-workshop
+josephtbradley.hive-sql
 lextudio.restructuredtext
 lightbend.vscode-sbt-scala
 ms-azuretools.vscode-docker
@@ -32,6 +36,7 @@ redhat.vscode-yaml
 scala-lang.scala
 scalameta.metals
 shanoor.vscode-nginx
+streetsidesoftware.avro
 timonwong.shellcheck
 wholroyd.jinja
 wmaurer.change-case

@@ -30,6 +30,8 @@ brew "dnsmasq", restart_service: true
 brew "git-lfs"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Open-source build automation tool based on the Groovy and Kotlin DSL
+brew "gradle"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # The Kubernetes package manager
@@ -44,6 +46,10 @@ brew "kind"
 brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
+# Library for database change tracking
+brew "liquibase"
+# Java-based project management
+brew "maven"
 # Platform built on V8 to build network applications
 brew "node"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
@@ -102,6 +108,7 @@ cask "iterm2"
 cask "java11"
 cask "min"
 cask "notion"
+cask "numi"
 cask "postman"
 cask "robo-3t"
 cask "skype"
