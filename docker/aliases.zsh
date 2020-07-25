@@ -9,7 +9,7 @@ function docker-clean() {
     echo "Old Containers\t=> $(docker container prune -f --filter until=120h)"
     echo "Old Networks\t=> $(docker network prune -f)"
     echo "Dangling images\t=> $(docker image prune -f)"
-    docker rmi -f $(docker images -f "dangling=true" -q) 2> /dev/null
+    docker rmi -f $(docker images -f "dangling=true" -q) 2>/dev/null
     echo "Unused volumes\t=> $(docker volume prune -f)"
 }
 
@@ -20,6 +20,6 @@ function dit() {
 
 alias docker-it="docker run -it --rm"
 
-function docker-watch {
+function docker-watch() {
     watch 'docker ps --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}"'
 }
