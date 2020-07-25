@@ -6,7 +6,7 @@ export KUBEHOME=~/.kube
 unset KUBECONFIG
 
 setopt +o nomatch
-for filename in ${KUBEHOME}/config/*.yml; do
+for filename in ${KUBEHOME}/configs/*.yml; do
     if [[ -z "${KUBECONFIG}" ]]; then
         export KUBECONFIG=${filename}
     else

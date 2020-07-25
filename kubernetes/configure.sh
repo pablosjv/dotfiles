@@ -2,4 +2,4 @@
 
 export KUBEHOME=~/.kube
 
-mkdir -p ${KUBEHOME}/config/
+mkdir -p ${KUBEHOME}/configs/
