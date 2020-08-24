@@ -8,6 +8,7 @@ eamodio.gitlens
 EditorConfig.EditorConfig
 exiasr.hadolint
 foxundermoon.shell-format
+GitHub.github-vscode-theme
 golang.go
 GrapeCity.gc-excelviewer
 hashicorp.terraform
