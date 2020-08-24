@@ -8,7 +8,6 @@
     "[latex]": {
         "editor.wordWrap": "on"
     },
-    "autoDocstring.docstringFormat": "google",
     "breadcrumbs.enabled": true,
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
@@ -75,15 +74,10 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "latex-workshop.view.pdf.viewer": "tab",
     "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home",
-    "python.analysis.logLevel": "Warning",
-    "python.dataScience.disableJupyterAutoStart": true,
-    "python.dataScience.jupyterLaunchTimeout": 6000,
-    "python.linting.flake8CategorySeverity.E": "Hint",
     "python.linting.pylintEnabled": false,
     "python.sortImports.args": [
         "-w 120"
     ],
-    "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "search.exclude": {
         "**/bower_components": true,
         "**/node_modules": true,
@@ -253,8 +247,27 @@
             }
         }]
     },
+    "terraform.languageServer": {
+        "external": true,
+        "args": [
+            "serve"
+        ]
+    },
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
-    }
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "python.testing.pytestEnabled": true,
+    "python.testing.autoTestDiscoverOnSaveEnabled": false,
+    "markdownlint.config": {
+    },
+    "markdownlint.ignore": [
+        "MD024",
+        "MD007"
+    ],
+    "python.dataScience.askForKernelRestart": false,
+    "python.linting.flake8Enabled": true
 
 }
