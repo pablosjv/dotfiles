@@ -28,6 +28,8 @@ brew "direnv"
 brew "dnsmasq", restart_service: true
 # Git extension for versioning large files
 brew "git-lfs"
+# Alternative to top/htop
+brew "glances"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
@@ -36,6 +38,8 @@ brew "gradle"
 brew "hadolint"
 # The Kubernetes package manager
 brew "helm"
+# The Kubernetes package manager
+brew "helm@2"
 # Manage your Java environment
 brew "jenv"
 # Lightweight and flexible command-line JSON processor
@@ -116,6 +120,5 @@ cask "slack"
 cask "spotify"
 cask "telegram"
 cask "tunnelblick"
-cask "virtualbox"
 cask "visual-studio-code"
 cask "whatsapp"
