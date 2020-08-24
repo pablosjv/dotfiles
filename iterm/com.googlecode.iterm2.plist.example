@@ -2542,14 +2542,8 @@
 	<true/>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Documents/iterm_settings</string>
-	<key>NSNavLastUserSetHideExtensionButtonState</key>
-	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{799, 448}</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
-	<string>{841, 448}</string>
-	<key>NSNavPanelExpandedStateForSaveMode</key>
-	<true/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -2570,7 +2564,7 @@
 	dWxs0g0ODxJaTlMub2JqZWN0c1YkY2xhc3OiEBGAAoAKgA3TFA0OFRkdV05TLmtleXOj
 	FhcYgAOABIAFoxobHIAGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuUTAjQGjA
 	AAAAAAAI0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiJylYTlNP
-	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0BzsZ2yLQ5W0iUmNzhe
+	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0B0oZ2yLQ5W0iUmNzhe
 	TlNNdXRhYmxlQXJyYXmjNzkpV05TQXJyYXkACAARABoAJAApADIANwBJAEwAUgBUAGMA
 	aQBuAHkAgACDAIUAhwCJAJAAmACcAJ4AoACiAKYAqACqAKwArgC5AL8AxgDIANEA0gDX
 	AOIA6wD4APsBBAELAQ8BEQETARUBGQEbAR0BHwEhASMBLAExAUABRAAAAAAAAAIBAAAA
@@ -2591,24 +2585,14 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>597 297 649 186 0 0 1440 877 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>320 339 799 448 0 0 1440 900 </string>
-	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>412 527 616 174 0 0 1440 877 </string>
+	<string>320 321 799 448 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 364 620 392 0 0 1440 878 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>198 1082 606 469 -226 900 1920 1057 </string>
-	<key>NSWindow Frame SharedPreferences</key>
-	<string>155 415 928 394 0 0 1440 877 </string>
+	<string>410 363 620 392 0 0 1920 1057 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1057 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 27 1398 850 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>14 1291 586 476 -226 900 1920 1057 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3203,7 +3187,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MesloLGMDZForPowerline-Regular 12</string>
+			<string>Menlo-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -4777,48 +4761,36 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.6</string>
-		<string>3.3.8</string>
-		<string>3.3.5</string>
 		<string>3.3.7</string>
-		<string>3.2.9</string>
-		<string>3.3.2</string>
-		<string>3.3.4</string>
+		<string>3.3.8</string>
+		<string>3.3.9</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{417, 787}</string>
+		<string>{417, 804}</string>
 	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{183, 675}</string>
+		<string>{436, 711}</string>
 	</dict>
-	<key>NoSyncHaveRequestedFullDiskAccess</key>
-	<true/>
-	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
-	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>147479D1-05BE-4892-A152-BEF29A398264</string>
+	<string>CBB5D314-BE21-479E-B90E-73AEE3AE242A</string>
 	<key>NoSyncLastTipTime</key>
-	<real>590331385.86548805</real>
+	<real>611920256.16063499</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>42</integer>
+	<integer>31</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
-	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux</key>
-	<true/>
-	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux_selection</key>
-	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>588324436.41777599</real>
+	<real>600676341.32808006</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
@@ -5312,6 +5284,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentSession.terminalWindowName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentSession.commandLine</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -5344,6 +5324,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentSession.terminalIconName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentSession.presentationName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -5353,6 +5341,14 @@
 				<true/>
 				<key>name</key>
 				<string>iterm2.localhostName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.jobPid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -5438,11 +5434,11 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
-				<string>currentSession.path</string>
+				<string>iterm2</string>
 				<key>nonterminalContext</key>
-				<integer>0</integer>
+				<integer>4</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -5462,11 +5458,11 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
+				<true/>
 				<key>name</key>
-				<string>iterm2</string>
+				<string>currentSession.path</string>
 				<key>nonterminalContext</key>
-				<integer>4</integer>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -5486,19 +5482,19 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
 			</dict>
 		</array>
 		<key>4</key>
@@ -5529,100 +5525,88 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSaveDocumentAsPathSet_saveDocumentAs:</key>
-	<true/>
-	<key>NoSyncSavePanelSavedSettings_SaveProfile</key>
-	<dict>
-		<key>Initial Directory</key>
-		<string>/Users/pablosjv/Documents/iterm_settings</string>
-	</dict>
-	<key>NoSyncSuppressBroadcastInputWarning</key>
-	<true/>
-	<key>NoSyncSuppressBroadcastInputWarning_selection</key>
-	<integer>0</integer>
-	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>554927596.98298395</real>
+	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
+	<real>600189406.085747</real>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
-		<string>000</string>
-		<string>0000</string>
-		<string>0001</string>
-		<string>0002</string>
-		<string>0003</string>
-		<string>0004</string>
-		<string>0005</string>
-		<string>0006</string>
-		<string>0007</string>
-		<string>0008</string>
-		<string>0009</string>
-		<string>0010</string>
-		<string>0011</string>
-		<string>0012</string>
-		<string>0013</string>
-		<string>0014</string>
-		<string>0015</string>
-		<string>0016</string>
-		<string>0017</string>
-		<string>0018</string>
-		<string>0019</string>
-		<string>0020</string>
-		<string>0021</string>
-		<string>0022</string>
-		<string>0023</string>
-		<string>0024</string>
-		<string>0025</string>
-		<string>0026</string>
-		<string>0027</string>
-		<string>0028</string>
-		<string>0029</string>
 		<string>0030</string>
-		<string>0031</string>
-		<string>0032</string>
-		<string>0033</string>
-		<string>0034</string>
-		<string>0035</string>
-		<string>0036</string>
-		<string>0037</string>
-		<string>0038</string>
-		<string>0039</string>
-		<string>0040</string>
-		<string>0041</string>
-		<string>0042</string>
-		<string>0043</string>
-		<string>0044</string>
-		<string>0045</string>
-		<string>0046</string>
-		<string>0047</string>
-		<string>0048</string>
-		<string>0049</string>
-		<string>0050</string>
-		<string>0051</string>
-		<string>0052</string>
-		<string>0053</string>
-		<string>0054</string>
-		<string>0055</string>
-		<string>0056</string>
-		<string>0057</string>
-		<string>0058</string>
+		<string>0023</string>
+		<string>0016</string>
+		<string>0009</string>
 		<string>0059</string>
-		<string>0060</string>
-		<string>0061</string>
-		<string>0062</string>
-		<string>0063</string>
-		<string>0064</string>
-		<string>0065</string>
 		<string>0066</string>
-		<string>0067</string>
-		<string>0068</string>
-		<string>0069</string>
-		<string>0070</string>
-		<string>0071</string>
-		<string>0072</string>
 		<string>0073</string>
+		<string>0002</string>
+		<string>0045</string>
+		<string>0038</string>
+		<string>0052</string>
+		<string>0017</string>
+		<string>0031</string>
+		<string>0024</string>
+		<string>0067</string>
 		<string>0074</string>
-		<string>0075</string>
+		<string>0010</string>
+		<string>0046</string>
+		<string>0003</string>
+		<string>0039</string>
+		<string>0053</string>
+		<string>0060</string>
+		<string>0025</string>
+		<string>0018</string>
+		<string>0032</string>
+		<string>0068</string>
+		<string>0011</string>
+		<string>0047</string>
+		<string>0004</string>
+		<string>0054</string>
+		<string>0061</string>
+		<string>0033</string>
+		<string>0026</string>
+		<string>0019</string>
+		<string>0040</string>
+		<string>0069</string>
 		<string>0076</string>
+		<string>0012</string>
+		<string>0048</string>
+		<string>0005</string>
+		<string>0055</string>
+		<string>0062</string>
+		<string>0041</string>
+		<string>0034</string>
+		<string>0027</string>
 		<string>0077</string>
+		<string>0013</string>
+		<string>0049</string>
+		<string>0006</string>
+		<string>0020</string>
+		<string>0056</string>
+		<string>0063</string>
+		<string>0070</string>
+		<string>0042</string>
+		<string>0035</string>
+		<string>0028</string>
+		<string>0021</string>
+		<string>0014</string>
+		<string>0007</string>
+		<string>0057</string>
+		<string>0064</string>
+		<string>0071</string>
+		<string>0000</string>
+		<string>0029</string>
+		<string>0050</string>
+		<string>0043</string>
+		<string>0036</string>
+		<string>0022</string>
+		<string>0015</string>
+		<string>0008</string>
+		<string>0058</string>
+		<string>0065</string>
+		<string>0072</string>
+		<string>0001</string>
+		<string>0037</string>
+		<string>000</string>
+		<string>0044</string>
+		<string>0051</string>
 		<string>0078</string>
 	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -5663,7 +5647,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/pablosjv/.iterm</string>
+	<string>/Users/pablosanjose/.dotfiles/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -5675,11 +5659,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final_new.xml?shard=39</string>
+	<string>https://iterm2.com/appcasts/final_new.xml?shard=87</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-12T19:27:25Z</date>
+	<date>2020-07-13T06:14:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -5713,6 +5697,8 @@
 		<string>Command History</string>
 		<string>Captured Output</string>
 	</array>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1588685568</real>
 	<key>URLHandlersByGuid</key>
 	<dict>
 		<key>ssh</key>
@@ -5743,7 +5729,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>2</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
