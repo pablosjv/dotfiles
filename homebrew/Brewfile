@@ -10,7 +10,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "mongodb/brew"
 tap "robscott/tap"
-# The fastest shell plugin manager
+# Shell plugin manager
 brew "antibody"
 # Shell extension to jump to frequently used directories
 brew "autojump"
@@ -38,9 +38,9 @@ brew "go"
 brew "gradle"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
-# The Kubernetes package manager
+# Kubernetes package manager
 brew "helm"
-# The Kubernetes package manager
+# Kubernetes package manager
 brew "helm@2"
 # Manage your Java environment
 brew "jenv"
@@ -58,6 +58,8 @@ brew "liquibase"
 brew "maven"
 # Platform built on V8 to build network applications
 brew "node"
+# Development kit for the Java programming language
+brew "openjdk@11"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # CLI for Postgres with auto-completion and syntax highlighting
@@ -88,6 +90,8 @@ brew "terragrunt"
 brew "tflint"
 # Code-search similar to ack
 brew "the_silver_searcher"
+# Terminal multiplexer
+brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Executes a program periodically, showing output fullscreen
@@ -104,12 +108,14 @@ cask "1password"
 cask "1password-cli"
 cask "adoptopenjdk"
 cask "adoptopenjdk8"
+cask "aerial"
 cask "authy"
 cask "brave-browser"
 cask "chromium"
 cask "datagrip"
 cask "docker"
 cask "gitkraken"
+cask "google-chrome"
 cask "google-cloud-sdk"
 cask "iterm2"
 cask "java11"

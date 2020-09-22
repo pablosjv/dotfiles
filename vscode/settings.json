@@ -128,9 +128,8 @@
     "latex-workshop.docker.enabled": true,
     "sql-formatter.uppercase": true,
     "[sql]": {
-        "editor.defaultFormatter": "mtxr.sqltools"
+        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
     },
-    "python.dataScience.jupyterLaunchTimeout": 6000,
     "autoDocstring.docstringFormat": "google",
     "python.analysis.logLevel": "Warning",
     "python.dataScience.disableJupyterAutoStart": true,
@@ -270,18 +269,10 @@
     "gitlens.advanced.telemetry.enabled": false,
     "rest-client.enableTelemetry": false,
     "python.dataScience.alwaysTrustNotebooks": true,
-    "todohighlight.exclude": [
-        "**/node_modules/**",
-        "**/bower_components/**",
-        "**/dist/**",
-        "**/build/**",
-        "**/.vscode/**",
-        "**/.github/**",
-        "**/_output/**",
+    "todo-tree.filtering.excludeGlobs": [
         "**/_build/**",
-        "**/htmlcov/**",
-        "**/*.min.*",
-        "**/*.map",
-        "**/.next/**"
-    ]
+        "**/htmlcov/**"
+    ],
+    "todo-tree.general.statusBar": "total",
+    "todo-tree.highlights.enabled": false
 }
