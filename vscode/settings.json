@@ -262,14 +262,26 @@
     "python.testing.pytestEnabled": true,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "markdownlint.config": {
+        "MD024": false,
+        "MD007": false
     },
-    "markdownlint.ignore": [
-        "MD024",
-        "MD007"
-    ],
     "python.dataScience.askForKernelRestart": false,
     "python.linting.flake8Enabled": true,
     "gitlens.advanced.telemetry.enabled": false,
-    "rest-client.enableTelemetry": false
-
+    "rest-client.enableTelemetry": false,
+    "python.dataScience.alwaysTrustNotebooks": true,
+    "todohighlight.exclude": [
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/.vscode/**",
+        "**/.github/**",
+        "**/_output/**",
+        "**/_build/**",
+        "**/htmlcov/**",
+        "**/*.min.*",
+        "**/*.map",
+        "**/.next/**"
+    ]
 }
