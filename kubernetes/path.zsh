@@ -3,7 +3,7 @@ export PATH="$HOME/.krew/bin:$PATH"
 
 export KUBEHOME=~/.kube
 
-function kubeconfig {
+function kubeconfig() {
     unset KUBECONFIG
     setopt +o nomatch
     for filename in ${KUBEHOME}/configs/*.yml; do
