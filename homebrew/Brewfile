@@ -12,10 +12,12 @@ tap "mongodb/brew"
 tap "robscott/tap"
 # Shell plugin manager
 brew "antibody"
-# Shell extension to jump to frequently used directories
-brew "autojump"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "asdf"
+# Shell extension to jump to frequently used directories
+brew "autojump"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -42,8 +44,6 @@ brew "hadolint"
 brew "helm"
 # Kubernetes package manager
 brew "helm@2"
-# Manage your Java environment
-brew "jenv"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Run local Kubernetes cluster in Docker
@@ -58,12 +58,12 @@ brew "liquibase"
 brew "maven"
 # Platform built on V8 to build network applications
 brew "node"
-# Development kit for the Java programming language
-brew "openjdk@11"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
+# Python dependency management tool
+brew "pipenv"
 # Object-relational database system
 brew "postgresql"
 # Password generator
@@ -106,8 +106,6 @@ brew "mongodb/brew/mongodb-community@3.6"
 brew "robscott/tap/kube-capacity"
 cask "1password"
 cask "1password-cli"
-cask "adoptopenjdk"
-cask "adoptopenjdk8"
 cask "aerial"
 cask "authy"
 cask "brave-browser"
