@@ -274,5 +274,10 @@
         "**/htmlcov/**"
     ],
     "todo-tree.general.statusBar": "total",
-    "todo-tree.highlights.enabled": false
+    "todo-tree.highlights.enabled": false,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "todo-tree.tree.showScanModeButton": false,
+    "workbench.editor.showTabs": true
 }
