@@ -9,7 +9,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "mongodb/brew"
-tap "robscott/tap"
+# tap "robscott/tap"
 # Shell plugin manager
 brew "antibody"
 # Cryptography and SSL/TLS Toolkit
@@ -103,7 +103,7 @@ brew "yq"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community@3.6"
 # kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster
-brew "robscott/tap/kube-capacity"
+# brew "robscott/tap/kube-capacity"
 cask "1password"
 cask "1password-cli"
 cask "aerial"
