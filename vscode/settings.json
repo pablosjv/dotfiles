@@ -278,6 +278,7 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
-    "todo-tree.tree.showScanModeButton": false,
-    "workbench.editor.showTabs": true
+    "python.linting.flake8Args": [
+        "--ignore=W503"
+    ]
 }
