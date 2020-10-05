@@ -8,7 +8,8 @@ install: |
     sudo apt-get install -y zsh git make curl
   else
     brew update >/dev/null
-    brew install zsh git
+    brew install zsh
+    brew upgrade git
   fi
 script: make ci
 notifications:
