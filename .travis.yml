@@ -9,7 +9,7 @@ install: |
   else
     brew update >/dev/null
     brew install zsh
-    brew upgrade git
+    brew doctor
   fi
 script: make ci
 notifications:
