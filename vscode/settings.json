@@ -261,6 +261,7 @@
     "python.testing.pytestEnabled": true,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "markdownlint.config": {
+        "MD033": false,
         "MD024": false,
         "MD007": false
     },
