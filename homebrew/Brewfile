@@ -22,6 +22,8 @@ brew "autojump"
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Increase version numbers with SemVer terms
+brew "bumpversion"
 # Utility that creates projects from templates
 brew "cookiecutter"
 # Load/unload environment variables based on $PWD
@@ -40,8 +42,6 @@ brew "gradle"
 brew "hadolint"
 # Kubernetes package manager
 brew "helm"
-# Kubernetes package manager
-brew "helm@2"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Run local Kubernetes cluster in Docker
@@ -50,6 +50,8 @@ brew "kind"
 brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
+# Postgres C API library
+brew "libpq"
 # Library for database change tracking
 brew "liquibase"
 # Java-based project management
@@ -66,6 +68,8 @@ brew "pipenv"
 brew "postgresql"
 # Password generator
 brew "pwgen"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Build tool for Scala projects
 brew "sbt"
 # JVM-based programming language
@@ -90,6 +94,8 @@ brew "tflint"
 brew "the_silver_searcher"
 # Terminal multiplexer
 brew "tmux"
+# Command-line client for Travis CI
+brew "travis"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Executes a program periodically, showing output fullscreen
@@ -107,7 +113,6 @@ cask "1password-cli"
 cask "aerial"
 cask "authy"
 cask "brave-browser"
-cask "chromium"
 cask "datagrip"
 cask "docker"
 cask "gitkraken"
