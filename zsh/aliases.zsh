@@ -8,8 +8,11 @@ alias e-dot='e ${DOTFILES}'
 alias zsh-profile='(time zsh -i -c exit) 2>&1 >/dev/null | (head -10 ; tail -1)'
 
 myip () {
+    WIFI=$(ipconfig getifaddr en0)
+    ETHERNET=$(ipconfig getifaddr en1)
+    THUNDERBOLT=$(ipconfig getifaddr en2)
     echo "Public ip      = $(curl -s https://checkip.amazonaws.com/)"
-    echo "Wifi ip        = $(ipconfig getifaddr en0)"
-    echo "Ethernet ip    = $(ipconfig getifaddr en1)"
-    echo "Thunderbolt ip = $(ipconfig getifaddr en2)"
+    echo "Wifi ip        = ${WIFI:-No Connected}"
+    echo "Ethernet ip    = ${ETHERNET:-No Connected}"
+    echo "Thunderbolt ip = ${THUNDERBOLT:-No Connected}"
 }
