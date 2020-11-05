@@ -281,5 +281,12 @@
     },
     "python.linting.flake8Args": [
         "--ignore=W503"
-    ]
+    ],
+    "[python]": {
+        "editor.semanticHighlighting.enabled": false
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Pylance",
+    "python.analysis.completeFunctionParens": true
 }
