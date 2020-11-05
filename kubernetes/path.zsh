@@ -13,6 +13,8 @@ function kubeconfig() {
             export KUBECONFIG=${filename}:${KUBECONFIG}
         fi
     done
+    # NOTE: Automatically generated config for docker kubernetes
+    KUBECONFIG=${KUBECONFIG}:${KUBEHOME}/config
 }
 
 kubeconfig
