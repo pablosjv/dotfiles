@@ -14,7 +14,7 @@ function docker-clean() {
 }
 
 function dit() {
-    local cmd="${2:-bash}"
+    local cmd="${2:-sh}"
     docker run -it --rm $1 $cmd
 }
 
