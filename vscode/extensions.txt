@@ -1,3 +1,4 @@
+42Crunch.vscode-openapi
 adpyke.vscode-sql-formatter
 be5invis.toml
 DavidAnson.vscode-markdownlint
@@ -26,6 +27,7 @@ mermade.openapi-lint
 ms-azuretools.vscode-docker
 ms-python.python
 ms-python.vscode-pylance
+ms-toolsai.jupyter
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit

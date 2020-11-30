@@ -3,7 +3,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[jsonc]": {
-        "editor.defaultFormatter": "HookyQR.beautify"
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[latex]": {
         "editor.wordWrap": "on"
@@ -70,7 +70,6 @@
     "go.testTimeout": "3m",
     "go.useCodeSnippetsOnFunctionSuggest": true,
     "go.useLanguageServer": false,
-    "hdinsight.disableOpenSurveyLink": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "latex-workshop.view.pdf.viewer": "tab",
     "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home",
@@ -87,15 +86,11 @@
     "search.showLineNumbers": true,
     "search.smartCase": true,
     "search.useGlobalIgnoreFiles": true,
-    "sync.gist": "d59eff8638859f4bf69c5f723017fc00",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.cursorBlinking": true,
-    "terraform.indexing.enabled": false,
-    "terraform.languageServer.enabled": true,
     "terraform.telemetry.enabled": false,
-    "todohighlight.isEnable": true,
     "window.newWindowDimensions": "maximized",
     "window.restoreWindows": "one",
     "window.title": "${activeEditorMedium}${separator}${rootName}",
@@ -132,7 +127,6 @@
     },
     "autoDocstring.docstringFormat": "google",
     "python.analysis.logLevel": "Warning",
-    "python.dataScience.disableJupyterAutoStart": true,
     "editor.tokenColorCustomizations": {
         "textMateRules": [{
             "scope": [
@@ -265,11 +259,9 @@
         "MD024": false,
         "MD007": false
     },
-    "python.dataScience.askForKernelRestart": false,
     "python.linting.flake8Enabled": true,
     "gitlens.advanced.telemetry.enabled": false,
     "rest-client.enableTelemetry": false,
-    "python.dataScience.alwaysTrustNotebooks": true,
     "todo-tree.filtering.excludeGlobs": [
         "**/_build/**",
         "**/htmlcov/**"
@@ -288,5 +280,15 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Pylance",
-    "python.analysis.completeFunctionParens": true
+    "python.analysis.completeFunctionParens": true,
+    "jupyter.disableJupyterAutoStart": true,
+    "jupyter.askForKernelRestart": false,
+    "jupyter.alwaysTrustNotebooks": true,
+    "java.configuration.runtimes": [{
+        "name": "JavaSE-11",
+        "path": "/Users/pablosanjose/.asdf/installs/java/openjdk-11",
+        "default": true
+    }
+],
+"java.home": "/Users/pablosanjose/.asdf/installs/java/openjdk-11"
 }
