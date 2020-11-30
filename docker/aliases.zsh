@@ -1,4 +1,5 @@
 #!/bin/sh
+
 function docker-prune() {
     # Remove all docker data not used by a running container
     docker system prune --volumes -fa
@@ -18,7 +19,7 @@ function dit() {
     docker run -it --rm $1 $cmd
 }
 
-alias docker-it="docker run -it --rm"
+alias docker-it="docker run -it --rm -v ${PWD}:/project --workdir /project"
 
 function docker-watch() {
     watch 'docker ps --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}"'
