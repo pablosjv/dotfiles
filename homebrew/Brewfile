@@ -27,8 +27,6 @@ brew "autojump"
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# Increase version numbers with SemVer terms
-brew "bumpversion"
 # Utility that creates projects from templates
 brew "cookiecutter"
 # Load/unload environment variables based on $PWD
@@ -79,8 +77,6 @@ brew "pipenv"
 brew "postgresql"
 # Password generator
 brew "pwgen"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Persistent key-value database, with built-in net interface
 brew "redis"
 # Perl-powered file rename script with many helpful built-ins
@@ -119,8 +115,6 @@ brew "tree"
 brew "watch"
 # Internet file retriever
 brew "wget"
-# Process YAML documents from the CLI
-brew "yq"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community@3.6"
 # kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster
@@ -137,10 +131,11 @@ cask "brave-browser"
 cask "datagrip"
 # App to build and share containerized applications and microservices
 cask "docker"
-# GNU Fortran packages
-cask "gfortran"
 # Web browser
 cask "firefox"
+cask "font-inconsolata"
+# GNU Fortran packages
+cask "gfortran"
 # Git client focusing on productivity
 cask "gitkraken"
 # Web browser
