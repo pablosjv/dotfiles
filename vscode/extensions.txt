@@ -14,6 +14,7 @@ gardener.vscode-gardener-tools
 GitHub.github-vscode-theme
 golang.go
 Gruntfuggly.todo-tree
+hangxingliu.vscode-nginx-conf-hint
 hashicorp.terraform
 humao.rest-client
 Hyzeta.vscode-theme-github-light
@@ -47,6 +48,7 @@ njpwerner.autodocstring
 PKief.material-icon-theme
 pnp.polacode
 quicktype.quicktype
+raynigon.nginx-formatter
 redhat.java
 redhat.vscode-yaml
 richardwillis.vscode-gradle
