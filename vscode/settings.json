@@ -58,10 +58,6 @@
         "type": "gutter"
     },
     "go.formatTool": "goimports",
-    "go.languageServerExperimentalFeatures": {
-        "autoComplete": true,
-        "format": true
-    },
     "go.testTimeout": "3m",
     "go.useCodeSnippetsOnFunctionSuggest": true,
     "go.useLanguageServer": false,
@@ -89,7 +85,6 @@
     "window.newWindowDimensions": "maximized",
     "window.restoreWindows": "one",
     "window.title": "${activeEditorMedium}${separator}${rootName}",
-    "window.zoomLevel": 0,
     "workbench.activityBar.visible": true,
     "workbench.colorTheme": "One Dark Pro",
     "workbench.editor.highlightModifiedTabs": true,
@@ -281,11 +276,24 @@
     "jupyter.disableJupyterAutoStart": true,
     "jupyter.askForKernelRestart": false,
     "jupyter.alwaysTrustNotebooks": true,
-    "java.configuration.runtimes": [{
-        "name": "JavaSE-11",
-        "path": "/Users/pablosanjose/.asdf/installs/java/openjdk-11",
-        "default": true
-    }
-],
-"java.home": "/Users/pablosanjose/.asdf/installs/java/openjdk-11"
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-11",
+            "path": "/Users/pablosanjose/.asdf/installs/java/openjdk-11",
+            "default": true
+        }
+    ],
+    "java.completion.enabled": true,
+    "java.home": "~/.asdf/installs/java/openjdk-11",
+    "workbench.editorAssociations": [],
+    "plantuml.server": "http://localhost:8080",
+    "plantuml.render": "PlantUMLServer",
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "sonarlint.ls.javaHome": "~/.asdf/installs/java/openjdk-11"
 }
