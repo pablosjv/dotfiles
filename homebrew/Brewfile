@@ -19,8 +19,6 @@ brew "antibody"
 brew "openssl@1.1"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
-# Tool Command Language
-brew "tcl-tk"
 # Shell extension to jump to frequently used directories
 brew "autojump"
 # Official Amazon AWS command-line interface
@@ -34,7 +32,7 @@ brew "direnv"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq", restart_service: true
 # GNU compiler collection
-brew "gcc", link: false
+brew "gcc"
 # Git extension for versioning large files
 brew "git-lfs"
 # Alternative to top/htop
@@ -95,6 +93,8 @@ brew "shfmt"
 brew "spark"
 # Tail multiple Kubernetes pods & their containers
 brew "stern"
+# Generate clients, server stubs, and docs from an OpenAPI spec
+brew "swagger-codegen"
 # User interface to the TELNET protocol
 brew "telnet"
 # Tool to build, change, and version infrastructure
@@ -115,6 +115,8 @@ brew "tree"
 brew "watch"
 # Internet file retriever
 brew "wget"
+# Process YAML documents from the CLI
+brew "yq"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community@3.6"
 # kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster
@@ -134,8 +136,6 @@ cask "docker"
 # Web browser
 cask "firefox"
 cask "font-inconsolata"
-# GNU Fortran packages
-cask "gfortran"
 # Git client focusing on productivity
 cask "gitkraken"
 # Web browser
