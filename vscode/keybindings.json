@@ -1,4 +1,3 @@
-// Place your key bindings in this file to override the defaults
 [
     {
         "key": "alt+tab",
@@ -10,12 +9,12 @@
     },
     {
         "key": "ctrl+shift+enter",
-        "command": "python.datascience.execSelectionInteractive",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+        "command": "jupyter.execSelectionInteractive",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
     },
     {
         "key": "shift+enter",
-        "command": "-python.datascience.execSelectionInteractive",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+        "command": "-jupyter.execSelectionInteractive",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
     }
 ]
