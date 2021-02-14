@@ -10,6 +10,8 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "mongodb/brew"
 tap "robscott/tap"
+# CLI tool for working with Architecture Decision Records
+brew "adr-tools"
 # Shell plugin manager
 brew "antibody"
 # Cryptography and SSL/TLS Toolkit
@@ -38,10 +40,14 @@ brew "glances"
 brew "go"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Kubernetes package manager
 brew "helm"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Run local Kubernetes cluster in Docker
@@ -72,6 +78,8 @@ brew "pwgen"
 brew "python@3.8"
 # Persistent key-value database, with built-in net interface
 brew "redis"
+# Perl-powered file rename script with many helpful built-ins
+brew "rename"
 # Build tool for Scala projects
 brew "sbt"
 # JVM-based programming language
@@ -112,25 +120,48 @@ brew "yq"
 brew "mongodb/brew/mongodb-community@3.6"
 # kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster
 brew "robscott/tap/kube-capacity"
+# Password manager that keeps all passwords secure behind one password
 cask "1password"
+# Command-line helper for the 1Password password manager
 cask "1password-cli"
-cask "aerial"
+# Two-factor authentication software
 cask "authy"
+# Web browser focusing on privacy
 cask "brave-browser"
+# Databases & SQL IDE
 cask "datagrip"
+# App to build and share containerized applications and microservices
 cask "docker"
+# Web browser
+cask "firefox"
+# Git client focusing on productivity
 cask "gitkraken"
+# Web browser
 cask "google-chrome"
+# Set of tools to manage resources and applications hosted on Google Cloud
 cask "google-cloud-sdk"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Minimal browser that protects privacy
 cask "min"
+# App to write, plan, collaborate, and get organized
 cask "notion"
+# Calculator and converter application
 cask "numi"
+# Collaboration platform for API development
 cask "postman"
+# Archive manager for data compression and backups
+cask "rar"
+# Video chat, voice call and instant messaging application
 cask "skype"
+# Team communication and collaboration software
 cask "slack"
+# Music streaming service
 cask "spotify"
+# Messaging app with a focus on speed and security
 cask "telegram"
 cask "tunnelblick"
+# Open-source code editor
 cask "visual-studio-code"
+# Desktop client for WhatsApp
 cask "whatsapp"
