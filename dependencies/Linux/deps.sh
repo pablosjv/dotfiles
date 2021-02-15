@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if command -v sudo >/dev/null; then
-	alias apt-get="sudo apt-get"
+    alias apt-get="sudo apt-get"
 fi
 
 apt-get update >/dev/null
