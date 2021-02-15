@@ -22,7 +22,7 @@ cd "$DOTFILES" || exit 1
 
 case "$1" in
 update)
-    dot-update
+    dotfiles-update
     ;;
 refresh)
     "${DOTFILES}/scripts/update"
