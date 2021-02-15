@@ -7,7 +7,7 @@ alias dot-log='less -R ${DOTFILES}/dot-update.log'
 alias e-dot='e ${DOTFILES}'
 alias zsh-profile='(time zsh -i -c exit) 2>&1 >/dev/null | (head -10 ; tail -1)'
 
-myip () {
+myip() {
     WIFI=$(ipconfig getifaddr en0)
     ETHERNET=$(ipconfig getifaddr en1)
     THUNDERBOLT=$(ipconfig getifaddr en2)
