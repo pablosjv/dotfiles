@@ -47,6 +47,8 @@ brew "graphviz"
 brew "hadolint"
 # Kubernetes package manager
 brew "helm"
+# Configurable static site generator
+brew "hugo"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
@@ -97,6 +99,8 @@ brew "stern"
 brew "swagger-codegen"
 # User interface to the TELNET protocol
 brew "telnet"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
 # Tool to build, change, and version infrastructure
 brew "terraform"
 # Thin wrapper for Terraform e.g. for locking state
@@ -105,6 +109,8 @@ brew "terragrunt"
 brew "tflint"
 # Code-search similar to ack
 brew "the_silver_searcher"
+# Programmatically correct mistyped console commands
+brew "thefuck"
 # Terminal multiplexer
 brew "tmux"
 # Command-line client for Travis CI

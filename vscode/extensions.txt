@@ -18,12 +18,15 @@ Gruntfuggly.todo-tree
 hangxingliu.vscode-nginx-conf-hint
 hashicorp.terraform
 humao.rest-client
+Hyzeta.vscode-theme-github-light
 Ikuyadeu.r
 James-Yu.latex-workshop
 janisdd.vscode-edit-csv
 jebbs.plantuml
 josephtbradley.hive-sql
+lextudio.restructuredtext
 lightbend.vscode-sbt-scala
+matt-meyers.vscode-dbml
 mermade.openapi-lint
 ms-azuretools.vscode-docker
 ms-kubernetes-tools.kind-vscode
