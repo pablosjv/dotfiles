@@ -16,3 +16,9 @@ myip() {
     echo "Ethernet ip    = ${ETHERNET:-No Connected}"
     echo "Thunderbolt ip = ${THUNDERBOLT:-No Connected}"
 }
+
+fixcompletions() {
+    autoload -Uz compinit
+    compinit
+    compinit -C
+}
