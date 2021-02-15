@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v code >/dev/null; then
     if [ "$(uname -s)" = "Darwin" ]; then
@@ -17,8 +17,7 @@ if command -v code >/dev/null; then
     printf "    [ "
     while read -r module; do
         # TODO: hide output and use progress bar
-        code --install-extension "$module" &
-        >/dev/null
+        code --install-extension "$module" >/dev/null 2>&1
         printf "#"
     done <"$DOTFILES/vscode/extensions.txt"
     printf " ] \n"
