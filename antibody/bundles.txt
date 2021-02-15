@@ -1,10 +1,10 @@
 # alphabetic order
 jgogstad/passwordless-history
-marzocchi/zsh-notify
 MichaelAquilina/zsh-autoswitch-virtualenv
 MichaelAquilina/zsh-you-should-use
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
+# marzocchi/zsh-notify # NOTE: note suported for editors :(
 
 # these should be last
 romkatv/powerlevel10k
