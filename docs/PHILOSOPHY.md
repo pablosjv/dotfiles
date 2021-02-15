@@ -47,8 +47,8 @@ There are a few special files in the hierarchy:
 - **topic/path.zsh**: Any file named `path.zsh` is loaded first and is expected to setup `$PATH` or similar.
 - **topic/completion.zsh**: Any file named `completion.zsh` is loaded last and is expected to setup autocomplete.
 - **topic/\*.symlink**: Any files ending in `*.symlink` get symlinked into your `$HOME`. This is so you can keep all of those versioned in your dotfiles but still keep those autoloaded files in your home directory. These get symlinked in when you run `scripts/bootstrap`.
-- **topic/install.sh**: Any file with this name and with exec permission, will ran at `bootstrap` and `dot-update` phase, and are expected to install plugins, and stuff like that.
-- **topic/configure.sh**: Any file with this name and with exec permission, will ran at `bootstrap` and `dot-update` phase, and are expected to configure plugins, and packages and other stuff.
+- **topic/install.sh**: Any file with this name and with exec permission, will ran at `bootstrap` and `dotfiles-update` phase, and are expected to install plugins, and stuff like that.
+- **topic/configure.sh**: Any file with this name and with exec permission, will ran at `bootstrap` and `dotfiles-update` phase, and are expected to configure plugins, and packages and other stuff.
 - **topic/update.sh**: Any file with this name and with exec permission, will ran using `.dotfiles/scripts/update`. This is to update the dotfile configuration with the local changes. An alias `dot-refresh` is added to run this commands whenever you find appropiate.
 
 ### ZSH plugins

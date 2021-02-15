@@ -98,8 +98,8 @@ find_zsh() {
 autoupdate_setup() {
     info 'Setting up the autoupdate script in crontab'
     (
-        crontab -l | grep -v "dot-update"
-        echo "0 */2 * * * $HOME/.dotfiles/bin/dot-update > $HOME/.dotfiles/dot-update.log 2>&1"
+        crontab -l | grep -v "dotfiles-update"
+        echo "0 */2 * * * $HOME/.dotfiles/bin/dotfiles-update > $HOME/.dotfiles/dotfiles-update.log 2>&1"
     ) | crontab -
 }
 
@@ -107,7 +107,7 @@ setup_gitconfig
 install_dotfiles
 
 info "Installing dependencies and packages"
-if ./bin/dot-update; then
+if ./bin/dotfiles-update; then
     success "All dependencies installed"
 else
     fail "Error installing dependencies"
