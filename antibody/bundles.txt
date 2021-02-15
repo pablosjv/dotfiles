@@ -1,9 +1,12 @@
+# alphabetic order
+jgogstad/passwordless-history
+marzocchi/zsh-notify
+MichaelAquilina/zsh-autoswitch-virtualenv
+MichaelAquilina/zsh-you-should-use
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
-mafredri/zsh-async
-sinetoami/antibody-completion
 
-# These should be last
+# these should be last
 romkatv/powerlevel10k
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
