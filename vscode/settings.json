@@ -197,7 +197,7 @@
     "go.formatTool": "goimports",
     "go.testTimeout": "3m",
     "go.useCodeSnippetsOnFunctionSuggest": true,
-    "go.useLanguageServer": false,
+    "go.useLanguageServer": true,
     "java.completion.enabled": true,
     "java.configuration.runtimes": [
         {
