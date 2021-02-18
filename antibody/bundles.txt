@@ -1,5 +1,6 @@
 # alphabetic order
 jgogstad/passwordless-history
+laggardkernel/zsh-thefuck
 MichaelAquilina/zsh-autoswitch-virtualenv
 MichaelAquilina/zsh-you-should-use
 zsh-users/zsh-completions
