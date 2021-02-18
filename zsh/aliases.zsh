@@ -14,8 +14,10 @@ myip() {
     echo "Thunderbolt ip = ${THUNDERBOLT:-No Connected}"
 }
 
-fixcompletions() {
+fix-completions() {
     autoload -Uz compinit
     compinit
     compinit -C
 }
+
+alias fix-pipenv='pipenv --rm && PYTHONPATH="" pipenv install --dev'
