@@ -47,6 +47,8 @@ brew "graphviz"
 brew "hadolint"
 # Kubernetes package manager
 brew "helm"
+# Improved top (interactive process viewer)
+brew "htop"
 # Configurable static site generator
 brew "hugo"
 # Tools and libraries to manipulate images in many formats
