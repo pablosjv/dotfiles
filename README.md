@@ -2,8 +2,9 @@
 
 [![Build Status][tb]][tp]
 [![Powered by Antibody][ab]][ap]
+![GitHub last commit](https://img.shields.io/github/last-commit/pablosjv/pablosanjose.com?logo=hey)
 
-> Config files for ZSH, Java, Scala, Go, Editors, Terminals and more. Heavely inspired by [caarlos0](https://github.com/caarlos0/dotfiles).
+> Config files for ZSH, Python, Scala, Go, Editors, Terminals and more. Heavely inspired by [caarlos0](https://github.com/caarlos0/dotfiles).
 
 ![screenshot 1][scrn1]
 
