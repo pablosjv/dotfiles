@@ -1,57 +1,72 @@
 [alias]
-	co = checkout
-	count = shortlog -sn
-	g = grep --break --heading --line-number
-	gi = grep --break --heading --line-number -i
-	changed = show --pretty=\"format:\" --name-only
-	fm = fetch-merge
-	pr = open-pr
-	please = push --force-with-lease
-	commend = commit --amend --no-edit
-	fpr = fetch-pr
-	lt = log --tags --decorate --simplify-by-decoration --oneline
-    ignore = !sh -c \"wget --no-check-certificate -q https://www.gitignore.io/api/$1 -O .gitignore\"
+co = checkout
+count = shortlog -sn
+g = grep --break --heading --line-number
+gi = grep --break --heading --line-number -i
+changed = show --pretty=\"format:\" --name-only
+fm = fetch-merge
+pr = open-pr
+please = push --force-with-lease
+commend = commit --amend --no-edit
+fpr = fetch-pr
+lt = log --tags --decorate --simplify-by-decoration --oneline
+ignore = !sh -c \"wget --no-check-certificate -q https://www.gitignore.io/api/$1 -O .gitignore\"
+
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	ui = true
+diff = auto
+status = auto
+branch = auto
+ui = true
+
 [core]
-	excludesfile = ~/.gitignore
-	editor = code --wait
-	compression = -1
-	autocrlf = input
-	whitespace = trailing-space,space-before-tab
-	precomposeunicode = true
+excludesfile = ~/.gitignore
+editor = code --wait
+compression = -1
+autocrlf = input
+whitespace = trailing-space,space-before-tab
+precomposeunicode = true
+
 [commit]
-	gpgSign = false
+gpgSign = false
+
 [tag]
-	forceSignAnnotated = false
+forceSignAnnotated = false
+
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+clean = git-lfs clean -- %f
+
 [apply]
-	whitespace = nowarn
+whitespace = nowarn
+
 [help]
-	autocorrect = 1
+autocorrect = 1
+
 [merge]
-	tool = diffmerge
+tool = diffmerge
+
 [mergetool "diffmerge"]
-	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-	trustExitCode = true
-	keepBackup = false
+cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+keepBackup = false
+trustExitCode = true
+
 [diff]
-	tool = diffmerge
+tool = diffmerge
+
 [difftool]
-	prompt = false
+prompt = false
+
 [grep]
-	extendRegexp = true
-	lineNumber = true
+extendRegexp = true
+lineNumber = true
+
 [push]
-	default = simple
+default = simple
+
 [submodule]
-	fetchJobs = 4
+fetchJobs = 4
+
 [log]
-	showSignature = false
+showSignature = false
