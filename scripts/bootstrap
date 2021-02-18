@@ -120,7 +120,8 @@ test -z "$TRAVIS_JOB_ID" &&
     chsh -s "$zsh" &&
     success "set $("$zsh" --version) at $zsh as default shell"
 
-autoupdate_setup
+# FIXME: need to find a way to autoupdate and autorefresh (commit and push?)
+# autoupdate_setup
 
 echo ''
 echo '  All installed!'
