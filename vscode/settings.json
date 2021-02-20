@@ -294,5 +294,8 @@
         "!Select",
         "!Split",
         "!Join"
+    ],
+    "shellcheck.customArgs": [
+        "-x"
     ]
 }
