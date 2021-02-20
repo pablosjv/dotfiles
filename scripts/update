@@ -3,7 +3,8 @@
 # Run all dotfiles updaters.
 set -e
 
-DOTFILES_ROOT=$(realpath "$(dirname "$0")/..")
+cd "$(dirname "$0")/.." || exit
+DOTFILES_ROOT=$(pwd -P)
 # shellcheck source=tools
 . "$DOTFILES_ROOT/scripts/tools"
 
