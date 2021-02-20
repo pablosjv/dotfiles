@@ -1,8 +1,8 @@
 # Pablo's dotfiles
 
-[![Build Status][tb]][tp]
+![GitHub last commit](https://img.shields.io/github/last-commit/pablosjv/pablosanjose.com?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/pablosjv/dotfiles/CI?style=flat-square)
 [![Powered by Antibody][ab]][ap]
-![GitHub last commit](https://img.shields.io/github/last-commit/pablosjv/pablosanjose.com?logo=hey)
 
 > Config files for ZSH, Python, Scala, Go, Editors, Terminals and more. Heavely inspired by [caarlos0](https://github.com/caarlos0/dotfiles).
 
@@ -12,8 +12,6 @@
 
 [ap]: https://github.com/getantibody/antibody
 [ab]: https://img.shields.io/badge/powered%20by-antibody-blue.svg?style=flat-square
-[tb]: https://img.shields.io/travis/pablosjv/dotfiles/master.svg?style=flat-square
-[tp]: https://travis-ci.com/pablosjv/dotfiles
 [scrn1]: /docs/screenshot1.png
 [scrn2]: /docs/screenshot2.png
 
