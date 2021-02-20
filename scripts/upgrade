@@ -7,31 +7,38 @@
 export DOTFILES="$HOME/.dotfiles"
 cd "$DOTFILES" || exit 1
 
+# shellcheck source=tools
+. "$DOTFILES/scripts/tools"
+
 # fixes PATH (we could be running from the crontab)
 PATH="$(command -p getconf PATH):/usr/local/bin"
 
-echo "› Updating dotfiles. Today is $(date)"
+info "Upgrading dotfiles. Today is $(date)"
 
 # ssh would not work under cron, add a https one
-echo "› Setting up update channel"
+info "Setting up update channel"
 git remote add updates https://github.com/pablosjv/dotfiles.git 2>/dev/null
 
 # Update repo
-echo "› git update"
+info "git update"
 git pull --rebase --stat updates "$(git rev-parse --abbrev-ref HEAD)"
 
+# Linking files again
+info "Linking with $DOTFILES/scripts/link"
+"$DOTFILES/scripts/link"
+
 # Run all installs
-echo "› Installing with $DOTFILES/scripts/install"
+info "Installing with $DOTFILES/scripts/install"
 "$DOTFILES/scripts/install"
 
 # Run all configurations
-echo "› Configuring with $DOTFILES/scripts/configure"
+info "Configuring with $DOTFILES/scripts/configure"
 "$DOTFILES/scripts/configure"
 
 if command -v antibody >/dev/null 2>&1; then
-    echo "› antibody update"
+    info "antibody update"
     antibody update
 fi
 
-echo "› registering last update"
+info "registering last update"
 git config --global dotfiles.lastupdate "$(date +%Y-%m-%d-%H:%M)"

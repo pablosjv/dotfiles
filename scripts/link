@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# link dotfiles from repo to home
+
+DOTFILES_ROOT=$(realpath "$(dirname "$0")/..")
+# shellcheck source=tools
+. "$DOTFILES_ROOT/scripts/tools"
+
+link_dotfiles() {
+    info 'Linking dotfiles'
+    find -H "$DOTFILES_ROOT" -maxdepth 3 -name '*.symlink' -not -path '*.git*' |
+        while read -r src; do
+            dst="$HOME/.$(basename "${src%.*}")"
+            link_file "$src" "$dst"
+        done
+}
+
+link_dotfiles

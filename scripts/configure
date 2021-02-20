@@ -3,10 +3,13 @@
 # Run all dotfiles configurators.
 set -e
 
-cd "$(dirname "$0")"/..
+DOTFILES_ROOT=$(realpath "$(dirname "$0")/..")
+# shellcheck source=tools
+. "$DOTFILES_ROOT/scripts/tools"
 
-# Find the installers and run them iteratively
+info "Find the installers and run them iteratively"
 git ls-tree --name-only -r HEAD | grep configure.sh | while read -r configurator; do
-	echo "› ${configurator}..."
-	sh -c "$configurator"
+    info "Run ${configurator}..."
+    sh -c "$configurator"
+    success "${configurator}"
 done

@@ -10,8 +10,9 @@ Manages different dotfiles stuff
 
 Commands:
     help     show this help text
-    update   get the latest version for the configuration and packages (wrapper for dot-update).
-    refresh  reflect the configuration changes in the repository
+    upgrade  get the latest version for the configuration and packages
+    link     symlink the dotfiles again
+    update   reflect the configuration changes in the repository
     log      show the last update log
     edit     open dotfiles in editor
     date     get latest update date
@@ -21,11 +22,14 @@ export DOTFILES="$HOME/.dotfiles"
 cd "$DOTFILES" || exit 1
 
 case "$1" in
-update)
-    dotfiles-update
+upgrade)
+    "${DOTFILES}/scripts/upgrade"
     ;;
-refresh)
-    "${DOTFILES}/scripts/update"
+link)
+    "${DOTFILES}/scripts/link"
+    ;;
+update)
+    "${DOTFILES}/scripts/refresh"
     ;;
 log)
     if ls "${DOTFILES}/dotfiles-update.log" >/dev/null 2>&1; then

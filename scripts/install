@@ -3,10 +3,14 @@
 # Run all dotfiles installers.
 set -e
 
-cd "$(dirname "$0")"/..
+DOTFILES_ROOT=$(realpath "$(dirname "$0")/..")
+# shellcheck source=tools
+. "$DOTFILES_ROOT/scripts/tools"
+cd "$DOTFILES_ROOT"
 
-# Find the installers and run them iteratively
+info "Find the installers and run them iteratively"
 git ls-tree --name-only -r HEAD | grep install.sh | while read -r installer; do
-	echo "› ${installer}..."
-	sh -c "$installer"
+    info "Run ${installer}..."
+    sh -c "$installer"
+    success "${installer}"
 done

@@ -1,4 +1,4 @@
 #!/bin/sh
 
 OS="$(uname -s)"
-sh ./dependencies/${OS}/deps.sh
+sh "./dependencies/${OS}/deps.sh"
