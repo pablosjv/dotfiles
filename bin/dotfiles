@@ -29,7 +29,7 @@ link)
     "${DOTFILES}/scripts/link"
     ;;
 update)
-    "${DOTFILES}/scripts/refresh"
+    "${DOTFILES}/scripts/update"
     ;;
 log)
     if ls "${DOTFILES}/dotfiles-update.log" >/dev/null 2>&1; then
