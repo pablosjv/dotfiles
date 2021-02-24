@@ -19,6 +19,8 @@ brew "antibody"
 brew "openssl@1.1"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Shell extension to jump to frequently used directories
 brew "autojump"
 # Official Amazon AWS command-line interface
@@ -57,6 +59,8 @@ brew "imagemagick"
 brew "jq"
 # Run local Kubernetes cluster in Docker
 brew "kind"
+# Network authentication protocol
+brew "krb5"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases

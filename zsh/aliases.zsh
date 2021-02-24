@@ -19,5 +19,3 @@ fix-completions() {
     compinit
     compinit -C
 }
-
-alias fix-pipenv='pipenv --rm && PYTHONPATH="" pipenv install --dev'

@@ -1,5 +1,6 @@
 42Crunch.vscode-openapi
 adpyke.vscode-sql-formatter
+ahmadalli.vscode-nginx-conf
 arcticicestudio.nord-visual-studio-code
 be5invis.toml
 cssho.vscode-svgviewer

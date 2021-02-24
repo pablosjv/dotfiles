@@ -17,7 +17,7 @@
     "autoDocstring.docstringFormat": "google",
     "breadcrumbs.enabled": true,
     "editor.codeActionsOnSave": {
-        "source.organizeImports": false
+        "source.organizeImports": true
     },
     "editor.cursorBlinking": "phase",
     "editor.fontFamily": "'Inconsolata', Menlo, Monaco, 'Courier New', monospace",
@@ -246,6 +246,9 @@
     "search.showLineNumbers": true,
     "search.smartCase": true,
     "search.useGlobalIgnoreFiles": true,
+    "shellcheck.customArgs": [
+        "-x"
+    ],
     "sonarlint.ls.javaHome": "~/.asdf/installs/java/openjdk-11",
     "sql-formatter.uppercase": true,
     "telemetry.enableCrashReporter": false,
@@ -294,8 +297,5 @@
         "!Select",
         "!Split",
         "!Join"
-    ],
-    "shellcheck.customArgs": [
-        "-x"
     ]
 }
