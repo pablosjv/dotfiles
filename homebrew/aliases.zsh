@@ -16,6 +16,7 @@ brew-cleanup() {
     tput sgr0
     (cd "$(brew --repo)" && git prune && git gc)
     command brew cleanup
+    brew bundle cleanup --global --force
     rm -rf "$(brew --cache)"
 }
 

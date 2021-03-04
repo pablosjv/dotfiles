@@ -183,9 +183,6 @@
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "gitlens.advanced.telemetry.enabled": false,
-    "go.alternateTools": {
-        "go-langserver": "gopls"
-    },
     "go.autocompleteUnimportedPackages": true,
     "go.buildFlags": [
         "-v"
@@ -277,7 +274,12 @@
     "workbench.colorTheme": "Nord",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.showIcons": true,
-    "workbench.editorAssociations": [],
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter-notebook",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
     "workbench.fontAliasing": "auto",
     "workbench.iconTheme": "material-icon-theme",
     "yaml.customTags": [
@@ -297,5 +299,10 @@
         "!Select",
         "!Split",
         "!Join"
-    ]
+    ],
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    }
 }

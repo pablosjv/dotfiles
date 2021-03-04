@@ -6,5 +6,7 @@ if ! command -v brew >/dev/null 2>&1; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-echo "› Installing Hombrew packages from Brewfile"
-brew bundle -v --file="$HOME/.dotfiles/homebrew/Brewfile"
+if ! brew bundle check --global --verbose 2>&1; then
+    echo "› Installing Hombrew packages from Brewfile"
+    brew bundle install --global --verbose --no-upgrade
+fi
