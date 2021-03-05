@@ -15,12 +15,13 @@ function docker-clean() {
 }
 
 function dit() {
+    local image="${1:-alpine}"
     local cmd="${2:-sh}"
-    docker run -it --rm $1 $cmd
+    docker run -it --rm -v ${PWD}:/project --workdir /project $image $cmd
 }
-
-alias docker-it="docker run -it --rm -v ${PWD}:/project --workdir /project"
 
 function docker-watch() {
     watch 'docker ps --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}"'
 }
+
+alias doco='docker-compose'
