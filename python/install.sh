@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-if asdf; then
-    # Install virtualenv in default asdf python
-    "$(asdf where python)/bin/python" -m pip install --user --upgrade pip virtualenv
+if asdf >/dev/null 2>&1; then
     asdf reshim python
 fi
