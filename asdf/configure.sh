@@ -15,7 +15,6 @@ asdf install java adoptopenjdk-11.0.9+11
 
 # Add python versions
 asdf install python 3.7.9
-asdf install python 3.8.0
 asdf install python 3.9.0
 
 # Dasel tool https://github.com/TomWright/dasel
