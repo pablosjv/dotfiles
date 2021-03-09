@@ -7,4 +7,4 @@
 # NOTE: install default packages for development
 export AUTOSWITCH_DEFAULT_REQUIREMENTS="$HOME/.requirements.txt"
 # NOTE: Use asdf python version for that directory
-export AUTOSWITCH_DEFAULT_PYTHON="/Users/pablosjv/.asdf/shims/python"
+export AUTOSWITCH_DEFAULT_PYTHON="${HOME}/.asdf/shims/python"
