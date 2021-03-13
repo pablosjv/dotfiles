@@ -21,7 +21,7 @@ git remote add updates https://github.com/pablosjv/dotfiles.git 2>/dev/null
 
 # Update repo
 info "git update"
-git pull --rebase --stat updates "$(git rev-parse --abbrev-ref HEAD)"
+git pull
 
 # Linking files again
 info "Linking with $DOTFILES/scripts/link"
