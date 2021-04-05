@@ -1,9 +1,13 @@
 #!/bin/sh
 
-brew-bump() {
+log() {
     tput bold
-    echo "--> Bumping homebrew..."
+    echo ${1}
     tput sgr0
+}
+
+brew-bump() {
+    log "--> Bumping homebrew..."
     command brew update
     brew outdated | xargs brew fetch
     command brew upgrade
@@ -11,19 +15,15 @@ brew-bump() {
 }
 
 brew-cleanup() {
-    tput bold
-    echo "--> Cleanup homebrew..."
-    tput sgr0
+    log "--> Cleanup homebrew..."
     (cd "$(brew --repo)" && git prune && git gc)
     command brew cleanup
-    brew bundle cleanup --global --force
+    brew bundle cleanup --global --force --zap
     rm -rf "$(brew --cache)"
 }
 
 brew-repair() {
-    tput bold
-    echo "--> Try to repair homebrew..."
-    tput sgr0
+    log "--> Try to repair homebrew..."
     (cd "$(brew --repo)" && git fetch && git reset --hard origin/master)
     brew update
 }

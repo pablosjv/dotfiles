@@ -8,5 +8,9 @@ fi
 
 if ! brew bundle check --global --verbose 2>&1; then
     echo "› Installing Hombrew packages from Brewfile"
-    brew bundle install --global --verbose --no-upgrade
+    brew bundle install \
+        --verbose \
+        --global \
+        --cleanup \
+        --no-upgrade
 fi

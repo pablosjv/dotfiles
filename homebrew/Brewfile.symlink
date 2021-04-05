@@ -15,10 +15,14 @@ tap "robscott/tap"
 brew "adr-tools"
 # Shell plugin manager
 brew "antibody"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
+# Library for command-line editing
+brew "readline"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
+# Command-line interface for SQLite
+brew "sqlite"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Shell extension to jump to frequently used directories
@@ -27,12 +31,16 @@ brew "autojump"
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Tool Command Language
+brew "tcl-tk"
+# Vector graphics library with cross-device output support
+brew "cairo"
 # Utility that creates projects from templates
 brew "cookiecutter"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Lightweight DNS forwarder and DHCP server
-brew "dnsmasq", restart_service: true
+brew "dnsmasq"
 # GNU compiler collection
 brew "gcc"
 # Git extension for versioning large files
@@ -53,6 +61,8 @@ brew "helm"
 brew "htop"
 # Configurable static site generator
 brew "hugo"
+# Command-line benchmarking tool
+brew "hyperfine"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
@@ -145,7 +155,7 @@ cask "datagrip"
 cask "docker"
 # Web browser
 cask "firefox"
-cask "font-inconsolata"
+cask "font-meslo-lg-nerd-font"
 # Git client focusing on productivity
 cask "gitkraken"
 # Web browser
@@ -176,6 +186,7 @@ cask "spotify"
 cask "steam"
 # Messaging app with a focus on speed and security
 cask "telegram"
+# Free and open-source OpenVPN client
 cask "tunnelblick"
 # Open-source code editor
 cask "visual-studio-code"

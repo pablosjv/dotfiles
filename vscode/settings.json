@@ -20,9 +20,9 @@
         "source.organizeImports": true
     },
     "editor.cursorBlinking": "phase",
-    "editor.fontFamily": "'Inconsolata', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'MesloLGLDZ Nerd Font Mono'",
     "editor.fontLigatures": false,
-    "editor.fontSize": 14,
+    "editor.fontSize": 12,
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "editor.minimap.enabled": false,
@@ -182,7 +182,11 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    "gitlens.advanced.telemetry.enabled": false,
+    "files.watcherExclude": {
+        "**/.ammonite": true,
+        "**/.bloop": true,
+        "**/.metals": true
+    },
     "go.autocompleteUnimportedPackages": true,
     "go.buildFlags": [
         "-v"
@@ -250,16 +254,17 @@
     "sql-formatter.uppercase": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
+    "terminal.external.linuxExec": "iterm",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "MesloLGLDZ Nerd Font Mono",
+    "terminal.integrated.fontSize": 12,
     "terraform.languageServer": {
         "args": [
             "serve"
         ],
         "external": true
     },
-    "terraform.telemetry.enabled": false,
     "todo-tree.filtering.excludeGlobs": [
         "**/_build/**",
         "**/htmlcov/**"
@@ -276,8 +281,8 @@
     "workbench.editor.showIcons": true,
     "workbench.editorAssociations": [
         {
-            "viewType": "jupyter-notebook",
-            "filenamePattern": "*.ipynb"
+            "filenamePattern": "*.ipynb",
+            "viewType": "jupyter-notebook"
         }
     ],
     "workbench.fontAliasing": "auto",
@@ -299,10 +304,5 @@
         "!Select",
         "!Split",
         "!Join"
-    ],
-    "files.watcherExclude": {
-        "**/.bloop": true,
-        "**/.metals": true,
-        "**/.ammonite": true
-    }
+    ]
 }

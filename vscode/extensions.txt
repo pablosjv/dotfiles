@@ -46,6 +46,7 @@ ms-vsliveshare.vsliveshare-audio
 ms-vsliveshare.vsliveshare-pack
 mtxr.sqltools
 naco-siren.gradle-language
+nhoizey.gremlins
 njpwerner.autodocstring
 PKief.material-icon-theme
 pnp.polacode

@@ -2,4 +2,9 @@
 
 [ "$(uname -s)" != "Darwin" ] && exit 0
 echo "› Update Brewfile"
-brew bundle dump --force --describe --no-restart --verbose --global
+brew bundle dump \
+    --verbose \
+    --force \
+    --describe \
+    --no-restart \
+    --global
