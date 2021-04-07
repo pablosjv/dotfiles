@@ -1,5 +1,10 @@
 #!/bin/sh
 
+cd "$(dirname "$0")/.." || exit
+DOTFILES_ROOT=$(pwd -P)
+# shellcheck source=tools
+. "$DOTFILES_ROOT/scripts/tools"
+
 # Fix permissions error
 chmod +x /usr/local/opt/asdf/asdf.sh
 
@@ -20,3 +25,7 @@ asdf install python 3.9.0
 # Dasel tool https://github.com/TomWright/dasel
 asdf install dasel 1.12.2
 asdf global dasel 1.12.2
+
+# Symlink java to a global path
+mkdir -p /usr/local/lib/jvm
+link_file /Users/pablosanjose/.asdf/installs/java /usr/local/lib/jvm/java

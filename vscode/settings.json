@@ -204,10 +204,10 @@
         {
             "default": true,
             "name": "JavaSE-11",
-            "path": "~/.asdf/installs/java/openjdk-11"
+            "path": "/usr/local/lib/jvm/java/openjdk-11"
         }
     ],
-    "java.home": "~/.asdf/installs/java/openjdk-11",
+    "java.home": "/usr/local/lib/jvm/java/openjdk-11",
     "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "jupyter.alwaysTrustNotebooks": true,
@@ -221,9 +221,8 @@
         "MD024": false,
         "MD033": false
     },
-    "metals.javaHome": "~/.asdf/installs/java/adoptopenjdk-8.0.272+10",
+    "metals.javaHome": "/usr/local/lib/jvm/java/openjdk-11",
     "plantuml.render": "PlantUMLServer",
-    "plantuml.server": "http://localhost:8080",
     "python.analysis.completeFunctionParens": true,
     "python.analysis.logLevel": "Warning",
     "python.languageServer": "Pylance",
@@ -250,7 +249,7 @@
     "shellcheck.customArgs": [
         "-x"
     ],
-    "sonarlint.ls.javaHome": "~/.asdf/installs/java/openjdk-11",
+    "sonarlint.ls.javaHome": "/usr/local/lib/jvm/java/openjdk-11",
     "sql-formatter.uppercase": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
