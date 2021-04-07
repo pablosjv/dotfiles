@@ -10,7 +10,9 @@ brew-bump() {
     log "--> Bumping homebrew..."
     command brew update
     brew outdated | xargs brew fetch
+    brew bundle install --verbose --global
     command brew upgrade
+    command brew upgrade --cask --greedy
     brew cleanup
 }
 
