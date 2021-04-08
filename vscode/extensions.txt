@@ -1,5 +1,4 @@
 42Crunch.vscode-openapi
-adpyke.vscode-sql-formatter
 ahmadalli.vscode-nginx-conf
 be5invis.toml
 cssho.vscode-svgviewer
@@ -22,19 +21,12 @@ jebbs.plantuml
 josephtbradley.hive-sql
 lextudio.restructuredtext
 lightbend.vscode-sbt-scala
-matt-meyers.vscode-dbml
 mermade.openapi-lint
 ms-azuretools.vscode-docker
-ms-kubernetes-tools.kind-vscode
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
-ms-vscode-remote.remote-containers
-ms-vscode-remote.remote-ssh
-ms-vscode-remote.remote-ssh-edit
-ms-vscode-remote.remote-wsl
-ms-vscode-remote.vscode-remote-extensionpack
 ms-vscode.azure-account
 ms-vsliveshare.vsliveshare
 ms-vsliveshare.vsliveshare-audio
@@ -55,7 +47,6 @@ scalameta.metals
 shanoor.vscode-nginx
 SonarSource.sonarlint-vscode
 streetsidesoftware.avro
-tht13.html-preview-vscode
 timonwong.shellcheck
 VisualStudioExptTeam.vscodeintellicode
 vscjava.vscode-java-debug
