@@ -10,6 +10,8 @@
 	<false/>
 	<key>AllowClipboardAccess</key>
 	<false/>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AutoHideTmuxClientSession</key>
