@@ -28,4 +28,4 @@ asdf global dasel 1.12.2
 
 # Symlink java to a global path
 mkdir -p /usr/local/lib/jvm
-link_file /Users/pablosanjose/.asdf/installs/java /usr/local/lib/jvm/java
+link_file "${HOME}/.asdf/installs/java" /usr/local/lib/jvm/java
