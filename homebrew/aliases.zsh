@@ -7,17 +7,18 @@ log() {
 }
 
 brew-bump() {
-    log "--> Bumping homebrew..."
+    log "-> Bumping homebrew..."
     command brew update
     brew outdated | xargs brew fetch
     brew bundle install --verbose --global
     command brew upgrade
-    command brew upgrade --cask --greedy
+    log "--> Upgrade casks (you can pass --greedy to force update)..."
+    command brew upgrade --cask $1
     brew cleanup
 }
 
 brew-cleanup() {
-    log "--> Cleanup homebrew..."
+    log "-> Cleanup homebrew..."
     (cd "$(brew --repo)" && git prune && git gc)
     command brew cleanup
     brew bundle cleanup --global --force --zap
@@ -25,7 +26,7 @@ brew-cleanup() {
 }
 
 brew-repair() {
-    log "--> Try to repair homebrew..."
+    log "-> Try to repair homebrew..."
     (cd "$(brew --repo)" && git fetch && git reset --hard origin/master)
     brew update
 }
