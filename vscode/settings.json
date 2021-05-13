@@ -23,7 +23,6 @@
     "editor.fontFamily": "'MesloLGLDZ Nerd Font Mono'",
     "editor.fontLigatures": false,
     "editor.fontSize": 12,
-    "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
@@ -54,6 +53,7 @@
         "*.hcl": "terraform",
         "*.hql": "sql",
         "*.j2": "jinja",
+        "*.jsonl": "json",
         "*.tmpl": "gotemplate",
         "*.yml": "yaml"
     },
@@ -119,6 +119,7 @@
     ],
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
+    "python.showStartPage": false,
     "python.sortImports.args": [
         "-w 120"
     ],
@@ -157,7 +158,17 @@
         "**/htmlcov/**"
     ],
     "todo-tree.general.statusBar": "total",
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
     "todo-tree.highlights.enabled": false,
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.newWindowDimensions": "maximized",
     "window.restoreWindows": "one",

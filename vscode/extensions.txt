@@ -1,6 +1,7 @@
 42Crunch.vscode-openapi
 ahmadalli.vscode-nginx-conf
 be5invis.toml
+chaliy.handlebars-preview
 cssho.vscode-svgviewer
 DavidAnson.vscode-markdownlint
 DotJoshJohnson.xml
@@ -19,7 +20,6 @@ James-Yu.latex-workshop
 janisdd.vscode-edit-csv
 jebbs.plantuml
 josephtbradley.hive-sql
-lextudio.restructuredtext
 lightbend.vscode-sbt-scala
 mermade.openapi-lint
 ms-azuretools.vscode-docker
