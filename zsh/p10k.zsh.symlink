@@ -47,6 +47,7 @@
     azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
     gcloud                  # google cloud cli account and project (https://cloud.google.com/)
     google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
+    direnv                  # direnv status (https://direnv.net/)
     # =========================[ Line #2 ]=========================
     newline                 # \n
     prompt_char             # prompt symbol
@@ -75,7 +76,7 @@
     # dotnet_version          # .NET version (https://dotnet.microsoft.com)
     # php_version             # php version (https://www.php.net/)
     # laravel_version         # laravel php framework version (https://laravel.com/)
-    # rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
+    # rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
     # rvm                     # ruby version from rvm (https://rvm.io)
     # fvm                     # flutter version management (https://github.com/leoafarias/fvm)
     # luaenv                  # lua version from luaenv (https://github.com/cehoffman/luaenv)
@@ -102,11 +103,10 @@
     # ram                     # free RAM
     # swap                    # used swap
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
+    # time                    # current time
     # timewarrior             # timewarrior tracking status (https://timewarrior.net/)
     # =========================[ Line #2 ]=========================
     newline                 # \n
-    direnv                  # direnv status (https://direnv.net/)
-    time                    # current time
     # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
