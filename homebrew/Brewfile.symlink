@@ -77,6 +77,8 @@ brew "liquibase"
 brew "maven"
 # Platform built on V8 to build network applications
 brew "node"
+# Manage multiple Node.js versions
+brew "nvm"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # CLI for Postgres with auto-completion and syntax highlighting
@@ -129,6 +131,8 @@ brew "tree"
 brew "watch"
 # Internet file retriever
 brew "wget"
+# JavaScript package manager
+brew "yarn"
 # Process YAML documents from the CLI
 brew "yq"
 # High-performance, schema-free, document-oriented database
@@ -139,6 +143,8 @@ brew "robscott/tap/kube-capacity"
 cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
+# Video calls designed for energy, ideas and action
+cask "around"
 # Two-factor authentication software
 cask "authy"
 # Web browser focusing on privacy
