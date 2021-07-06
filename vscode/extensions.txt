@@ -10,6 +10,7 @@ eamodio.gitlens
 EditorConfig.EditorConfig
 exiasr.hadolint
 foxundermoon.shell-format
+GitHub.remotehub
 golang.go
 Gruntfuggly.todo-tree
 hangxingliu.vscode-nginx-conf-hint
@@ -40,6 +41,7 @@ pnp.polacode
 quicktype.quicktype
 raynigon.nginx-formatter
 redhat.java
+redhat.vscode-commons
 redhat.vscode-yaml
 richardwillis.vscode-gradle
 scala-lang.scala

@@ -82,6 +82,7 @@
     },
     "go.formatTool": "goimports",
     "go.testTimeout": "3m",
+    "go.toolsManagement.autoUpdate": true,
     "go.useCodeSnippetsOnFunctionSuggest": true,
     "go.useLanguageServer": true,
     "java.completion.enabled": true,
@@ -107,6 +108,10 @@
         "MD033": false
     },
     "metals.javaHome": "/usr/local/lib/jvm/java/openjdk-11",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
     "oneDarkPro.bold": true,
     "oneDarkPro.editorTheme": "oneDarkProFlat",
     "oneDarkPro.italic": false,
@@ -125,6 +130,7 @@
     ],
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "python.testing.pytestEnabled": true,
+    "redhat.telemetry.enabled": false,
     "rest-client.enableTelemetry": false,
     "search.exclude": {
         "**/bower_components": true,
@@ -177,12 +183,9 @@
     "workbench.colorTheme": "One Dark Pro",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.showIcons": true,
-    "workbench.editorAssociations": [
-        {
-            "filenamePattern": "*.ipynb",
-            "viewType": "jupyter-notebook"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "workbench.fontAliasing": "auto",
     "workbench.iconTheme": "material-icon-theme",
     "yaml.customTags": [
