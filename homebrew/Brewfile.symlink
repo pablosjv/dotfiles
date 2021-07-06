@@ -143,8 +143,6 @@ brew "robscott/tap/kube-capacity"
 cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
-# Video calls designed for energy, ideas and action
-cask "around"
 # Two-factor authentication software
 cask "authy"
 # Web browser focusing on privacy
