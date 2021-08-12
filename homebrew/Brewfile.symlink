@@ -103,6 +103,8 @@ brew "serverless"
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
+# Compression/decompression library aiming for high speed
+brew "snappy"
 # Sparklines for the shell
 brew "spark"
 # Tail multiple Kubernetes pods & their containers
