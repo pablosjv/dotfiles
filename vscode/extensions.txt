@@ -11,6 +11,7 @@ EditorConfig.EditorConfig
 exiasr.hadolint
 foxundermoon.shell-format
 GitHub.remotehub
+GitLab.gitlab-workflow
 golang.go
 Gruntfuggly.todo-tree
 hangxingliu.vscode-nginx-conf-hint
