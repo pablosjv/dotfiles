@@ -15,6 +15,9 @@
         "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
     },
     "autoDocstring.docstringFormat": "google",
+    "aws.onDefaultRegionMissing": "add",
+    "aws.profile": "profile:mgmt",
+    "aws.telemetry": false,
     "breadcrumbs.enabled": true,
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
@@ -96,6 +99,7 @@
     "java.home": "/usr/local/lib/jvm/java/openjdk-11",
     "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "json.schemas": [],
     "jupyter.alwaysTrustNotebooks": true,
     "jupyter.askForKernelRestart": false,
     "jupyter.disableJupyterAutoStart": true,
@@ -180,7 +184,7 @@
     "window.restoreWindows": "one",
     "window.title": "${activeEditorMedium}${separator}${rootName}",
     "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "One Dark Pro Darker",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.showIcons": true,
     "workbench.editorAssociations": {
@@ -204,6 +208,17 @@
         "!ImportValue",
         "!Select",
         "!Split",
-        "!Join"
+        "!Join",
+        "!And sequence",
+        "!If sequence",
+        "!Not sequence",
+        "!Equals sequence",
+        "!Or sequence",
+        "!FindInMap sequence",
+        "!Join sequence",
+        "!Sub sequence",
+        "!ImportValue sequence",
+        "!Select sequence",
+        "!Split sequence"
     ]
 }

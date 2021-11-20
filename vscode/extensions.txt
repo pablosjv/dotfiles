@@ -1,5 +1,6 @@
 42Crunch.vscode-openapi
 ahmadalli.vscode-nginx-conf
+amazonwebservices.aws-toolkit-vscode
 be5invis.toml
 chaliy.handlebars-preview
 cssho.vscode-svgviewer
@@ -10,6 +11,7 @@ eamodio.gitlens
 EditorConfig.EditorConfig
 exiasr.hadolint
 foxundermoon.shell-format
+GitHub.github-vscode-theme
 GitHub.remotehub
 GitLab.gitlab-workflow
 golang.go
@@ -29,6 +31,8 @@ ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
 ms-vscode.azure-account
 ms-vsliveshare.vsliveshare
 ms-vsliveshare.vsliveshare-audio
@@ -44,7 +48,6 @@ raynigon.nginx-formatter
 redhat.java
 redhat.vscode-commons
 redhat.vscode-yaml
-richardwillis.vscode-gradle
 scala-lang.scala
 scalameta.metals
 shanoor.vscode-nginx
@@ -52,6 +55,7 @@ SonarSource.sonarlint-vscode
 streetsidesoftware.avro
 timonwong.shellcheck
 VisualStudioExptTeam.vscodeintellicode
+vscjava.vscode-gradle
 vscjava.vscode-java-debug
 vscjava.vscode-java-dependency
 vscjava.vscode-java-pack

@@ -9,3 +9,9 @@ if command -v docker >/dev/null 2>&1; then
     curl -sL https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker \
         -o "$HOME/.docker/completions/_docker"
 fi
+if command -v colima >/dev/null 2>&1; then
+    # NOTE: this overwrites if there is nerdctl installed
+    colima nerdctl install -f
+    mkdir -p "$HOME/.colima/completions"
+    colima completion zsh > "$HOME/.docker/completions/_colima"
+fi

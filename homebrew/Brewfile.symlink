@@ -19,14 +19,18 @@ brew "antibody"
 brew "openssl@1.1"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Shell extension to jump to frequently used directories
 brew "autojump"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Core application library for C
+brew "glib"
+# Container runtimes on MacOS with minimal setup
+brew "colima"
 # Utility that creates projects from templates
 brew "cookiecutter"
 # Load/unload environment variables based on $PWD
@@ -61,8 +65,6 @@ brew "hyperfine"
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Run local Kubernetes cluster in Docker
-brew "kind"
 # Network authentication protocol
 brew "krb5"
 # Kubernetes command-line interface
@@ -75,10 +77,14 @@ brew "libpq"
 brew "liquibase"
 # Java-based project management
 brew "maven"
+# Port scanning utility for large networks
+brew "nmap"
 # Platform built on V8 to build network applications
 brew "node"
 # Manage multiple Node.js versions
 brew "nvm"
+# Optimized BLAS library
+brew "openblas"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # CLI for Postgres with auto-completion and syntax highlighting
@@ -138,7 +144,7 @@ brew "yarn"
 # Process YAML documents from the CLI
 brew "yq"
 # High-performance, schema-free, document-oriented database
-brew "mongodb/brew/mongodb-community@4.2"
+brew "mongodb/brew/mongodb-community@4.2", link: true
 # kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster
 brew "robscott/tap/kube-capacity"
 # Password manager that keeps all passwords secure behind one password
@@ -147,8 +153,6 @@ cask "1password"
 cask "1password-cli"
 # Two-factor authentication software
 cask "authy"
-# Web browser focusing on privacy
-cask "brave-browser"
 # Databases & SQL IDE
 cask "datagrip"
 # App to build and share containerized applications and microservices
@@ -162,6 +166,8 @@ cask "gitkraken"
 cask "google-chrome"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "google-cloud-sdk"
+# Client for the Google Drive storage service
+cask "google-drive"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Software for Logitech devices
@@ -176,6 +182,8 @@ cask "numi"
 cask "postman"
 # Archive manager for data compression and backups
 cask "rar"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Video chat, voice call and instant messaging application
 cask "skype"
 # Team communication and collaboration software
@@ -186,8 +194,6 @@ cask "spotify"
 cask "steam"
 # Messaging app with a focus on speed and security
 cask "telegram"
-# Free and open-source OpenVPN client
-cask "tunnelblick"
 # Open-source code editor
 cask "visual-studio-code"
 # Desktop client for WhatsApp

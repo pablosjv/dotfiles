@@ -25,3 +25,44 @@ function docker-watch() {
 }
 
 alias doco='docker-compose'
+
+corun() {
+    case "$1" in
+    start)
+        colima start \
+            --cpu ${COLIMA_CPU} \
+            --memory ${COLIMA_MEMORY} \
+            --disk ${COLIMA_DISK} \
+            --mount $HOME/projects:w \
+            --mount $HOME/.docker:w
+        ;;
+    status)
+        colima status
+        ;;
+    stop)
+        colima stop
+        ;;
+    delete)
+        colima delete
+        ;;
+    help)
+        echo "Container runtime helper script. Currently using colima under the hood."
+        echo ""
+        echo "Usage:
+corun [command]
+
+Available Commands:
+start     start the runtime image.
+stop      stop the runtime image.
+status    show the status of the runtime image.
+delete    delete and teardown runtime image. It's like a fresh start.
+help      Help about any command.
+"
+        ;;
+    *)
+        echo "\033[0;31mUnrecognized subcommad\033[0m"
+        echo ""
+        corun help
+        ;;
+    esac
+}
