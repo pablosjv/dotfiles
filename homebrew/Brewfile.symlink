@@ -1,7 +1,3 @@
-tap "getantibody/tap"
-tap "go-delve/delve"
-tap "golangci/tap"
-tap "goreleaser/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
@@ -13,8 +9,6 @@ tap "mongodb/brew"
 tap "robscott/tap"
 # CLI tool for working with Architecture Decision Records
 brew "adr-tools"
-# Shell plugin manager
-brew "antibody"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
@@ -27,8 +21,6 @@ brew "python@3.9"
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# Core application library for C
-brew "glib"
 # Container runtimes on MacOS with minimal setup
 brew "colima"
 # Utility that creates projects from templates
@@ -39,8 +31,6 @@ brew "direnv"
 brew "dnsmasq"
 # Find files with SQL-like queries
 brew "fselect"
-# GNU compiler collection
-brew "gcc"
 # Git extension for versioning large files
 brew "git-lfs"
 # Alternative to top/htop
@@ -49,8 +39,6 @@ brew "glances"
 brew "go"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
-# Graph visualization software from AT&T and Bell Labs
-brew "graphviz"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Kubernetes package manager
@@ -65,26 +53,16 @@ brew "hyperfine"
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Network authentication protocol
-brew "krb5"
 # Kubernetes command-line interface
-brew "kubernetes-cli"
+brew "kubernetes-cli", link: false
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
-# Postgres C API library
-brew "libpq"
-# Library for database change tracking
-brew "liquibase"
 # Java-based project management
 brew "maven"
 # Port scanning utility for large networks
 brew "nmap"
 # Platform built on V8 to build network applications
 brew "node"
-# Manage multiple Node.js versions
-brew "nvm"
-# Optimized BLAS library
-brew "openblas"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # CLI for Postgres with auto-completion and syntax highlighting
@@ -95,8 +73,6 @@ brew "pipenv"
 brew "postgresql"
 # Password generator
 brew "pwgen"
-# Persistent key-value database, with built-in net interface
-brew "redis"
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
 # Build tool for Scala projects
@@ -109,10 +85,8 @@ brew "serverless"
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
-# Compression/decompression library aiming for high speed
-brew "snappy"
-# Sparklines for the shell
-brew "spark"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Tail multiple Kubernetes pods & their containers
 brew "stern"
 # Generate clients, server stubs, and docs from an OpenAPI spec
@@ -135,6 +109,8 @@ brew "tmux"
 brew "travis"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Command-line interface for Vercel
+brew "vercel-cli"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Internet file retriever
@@ -157,8 +133,6 @@ cask "authy"
 cask "datagrip"
 # App to build and share containerized applications and microservices
 cask "docker"
-# Web browser
-cask "firefox"
 cask "font-meslo-lg-nerd-font"
 # Git client focusing on productivity
 cask "gitkraken"
@@ -176,22 +150,16 @@ cask "logitech-options"
 cask "min"
 # App to write, plan, collaborate, and get organized
 cask "notion"
-# Calculator and converter application
-cask "numi"
 # Collaboration platform for API development
 cask "postman"
 # Archive manager for data compression and backups
 cask "rar"
 # Control your tools with a few keystrokes
 cask "raycast"
-# Video chat, voice call and instant messaging application
-cask "skype"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
 cask "spotify"
-# Video game digital distribution service
-cask "steam"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # Open-source code editor

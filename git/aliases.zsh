@@ -31,3 +31,5 @@ fi
 gi() {
     curl -s "https://www.gitignore.io/api/$*"
 }
+
+alias gk="gitkraken"
