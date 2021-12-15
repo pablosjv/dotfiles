@@ -2,7 +2,7 @@
 # shellcheck shell=bash
 
 # uncomment this and the last line for zprof info
-zmodload zsh/zprof
+# zmodload zsh/zprof
 
 # Start configuration added by Zim install {{{
 #
@@ -209,4 +209,4 @@ unset config_files updated_at
 # eval "$(starship init zsh)"
 
 # Uncomment for profiling
-zprof
+# zprof
