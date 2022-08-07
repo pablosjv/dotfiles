@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+hyperfine --warmup 5 "${SHELL} -i -c 'exit 0'"
