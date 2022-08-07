@@ -19,28 +19,35 @@
     "Today": {
         "prefix": "today",
         "body": [
-            "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE"
+            "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}"
+        ],
+        "description": "Today date."
+    },
+    "Todayz": {
+        "prefix": "todayz,tz",
+        "body": [
+            "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T00:00:00Z"
         ],
         "description": "Today date."
     },
     "Timestamp": {
         "prefix": "time",
         "body": [
-            "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND"
+            "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"
         ],
         "description": "Timestamp in ISO format"
     },
     "Timestampz": {
         "prefix": "time,tt",
         "body": [
-            "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATET$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECONDZ"
+            "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}Z"
         ],
         "description": "Timestampz in ISO format"
     },
     "Time": {
         "prefix": "time",
         "body": [
-            "$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND"
+            "${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"
         ],
         "description": "Current time"
     }
