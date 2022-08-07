@@ -13,18 +13,20 @@ brew "adr-tools"
 brew "openssl@1.1"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Shell extension to jump to frequently used directories
 brew "autojump"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# Container runtimes on MacOS with minimal setup
-brew "colima"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # Utility that creates projects from templates
 brew "cookiecutter"
+# Top-like interface for container metrics
+brew "ctop"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Lightweight DNS forwarder and DHCP server
@@ -35,6 +37,10 @@ brew "fselect"
 brew "git-lfs"
 # Alternative to top/htop
 brew "glances"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Core application library for C
+brew "glib"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
@@ -49,6 +55,8 @@ brew "htop"
 brew "hugo"
 # Command-line benchmarking tool
 brew "hyperfine"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
@@ -69,6 +77,8 @@ brew "openvpn"
 brew "pgcli"
 # Python dependency management tool
 brew "pipenv"
+# Python package management tool
+brew "poetry"
 # Object-relational database system
 brew "postgresql"
 # Password generator
@@ -85,8 +95,6 @@ brew "serverless"
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
-# Cross-shell prompt for astronauts
-brew "starship"
 # Tail multiple Kubernetes pods & their containers
 brew "stern"
 # Generate clients, server stubs, and docs from an OpenAPI spec
@@ -146,8 +154,6 @@ cask "google-drive"
 cask "iterm2"
 # Software for Logitech devices
 cask "logitech-options"
-# Minimal browser that protects privacy
-cask "min"
 # App to write, plan, collaborate, and get organized
 cask "notion"
 # Collaboration platform for API development
@@ -156,6 +162,8 @@ cask "postman"
 cask "rar"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Strongdm client
+cask "sdm"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
