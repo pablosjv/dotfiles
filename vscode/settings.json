@@ -8,17 +8,21 @@
     "[latex]": {
         "editor.wordWrap": "on"
     },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
     "[python]": {
         "editor.semanticHighlighting.enabled": false
     },
     "[sql]": {
-        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+        "editor.defaultFormatter": "mtxr.sqltools"
     },
     "autoDocstring.docstringFormat": "google",
     "aws.onDefaultRegionMissing": "add",
     "aws.profile": "profile:mgmt",
     "aws.telemetry": false,
     "breadcrumbs.enabled": true,
+    "editor.acceptSuggestionOnEnter": "on",
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
     },
@@ -34,6 +38,9 @@
         120
     ],
     "editor.smoothScrolling": true,
+    "editor.snippetSuggestions": "top",
+    "editor.suggest.preview": true,
+    "editor.suggest.showMethods": true,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "on",
     "editor.tabSize": 4,
@@ -75,6 +82,7 @@
         "**/.bloop": true,
         "**/.metals": true
     },
+    "git.confirmSync": false,
     "go.autocompleteUnimportedPackages": true,
     "go.buildFlags": [
         "-v"
@@ -88,6 +96,7 @@
     "go.toolsManagement.autoUpdate": true,
     "go.useCodeSnippetsOnFunctionSuggest": true,
     "go.useLanguageServer": true,
+    "html.format.wrapLineLength": 0,
     "java.completion.enabled": true,
     "java.configuration.runtimes": [
         {
@@ -116,12 +125,15 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
+    "notebook.lineNumbers": "on",
+    "notebook.output.textLineLimit": 500,
     "oneDarkPro.bold": true,
     "oneDarkPro.editorTheme": "oneDarkProFlat",
     "oneDarkPro.italic": false,
     "plantuml.render": "PlantUMLServer",
     "python.analysis.completeFunctionParens": true,
     "python.analysis.logLevel": "Warning",
+    "python.formatting.provider": "black",
     "python.languageServer": "Pylance",
     "python.linting.flake8Args": [
         "--ignore=W503"
