@@ -17,7 +17,22 @@ function docker-clean() {
 function dit() {
     local image="${1:-alpine}"
     local cmd="${2:-sh}"
-    docker run -it --rm -v ${PWD}:/project --workdir /project $image $cmd
+    docker run -it --rm \
+        -v ${PWD}:/project \
+        --env-file=.env \
+        --workdir /project \
+        $image $cmd
+}
+
+function dit-aws() {
+    local image="${1:-alpine}"
+    local cmd="${2:-sh}"
+    docker run -it --rm -v ${PWD}:/project \
+        --env-file=.env \
+        -v ${HOME}/.aws/credentials:/root/.aws/credentials:ro \
+        -v ${HOME}/.aws/config:/root/.aws/config:ro \
+        --workdir /project \
+        $image $cmd
 }
 
 function docker-watch() {

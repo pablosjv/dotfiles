@@ -1437,7 +1437,7 @@
 					<key>auto-rainbow style</key>
 					<integer>0</integer>
 					<key>font</key>
-					<string>Inconsolata-Regular 12</string>
+					<string>Menlo-Regular 11</string>
 					<key>remove empty components</key>
 					<false/>
 				</dict>

@@ -2,6 +2,7 @@
 
 alias reload='exec "$SHELL" -l'
 alias zsh-profile='(time zsh -i -c exit) 2>&1 >/dev/null | (head -10 ; tail -1)'
+alias ls-ports='lsof -i -P | grep --color=never LISTEN'
 
 myip() {
     WIFI=$(ipconfig getifaddr en0)

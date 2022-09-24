@@ -37,8 +37,6 @@ brew "fselect"
 brew "git-lfs"
 # Alternative to top/htop
 brew "glances"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Core application library for C
 brew "glib"
 # Open source programming language to build simple/reliable/efficient software
@@ -55,6 +53,8 @@ brew "htop"
 brew "hugo"
 # Command-line benchmarking tool
 brew "hyperfine"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
 # Tools and libraries to manipulate images in many formats
@@ -80,7 +80,7 @@ brew "pipenv"
 # Python package management tool
 brew "poetry"
 # Object-relational database system
-brew "postgresql"
+brew "postgresql@14"
 # Password generator
 brew "pwgen"
 # Perl-powered file rename script with many helpful built-ins
@@ -128,7 +128,7 @@ brew "yarn"
 # Process YAML documents from the CLI
 brew "yq"
 # High-performance, schema-free, document-oriented database
-brew "mongodb/brew/mongodb-community@4.2", link: true
+brew "mongodb/brew/mongodb-community@4.2"
 # kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster
 brew "robscott/tap/kube-capacity"
 # Password manager that keeps all passwords secure behind one password
@@ -137,10 +137,13 @@ cask "1password"
 cask "1password-cli"
 # Two-factor authentication software
 cask "authy"
+# Cross platform SQL editor and database management app
+cask "beekeeper-studio"
 # Databases & SQL IDE
 cask "datagrip"
 # App to build and share containerized applications and microservices
 cask "docker"
+# Developer targeted fonts with a high number of glyphs
 cask "font-meslo-lg-nerd-font"
 # Git client focusing on productivity
 cask "gitkraken"

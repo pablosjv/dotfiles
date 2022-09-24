@@ -17,8 +17,10 @@
     "[sql]": {
         "editor.defaultFormatter": "mtxr.sqltools"
     },
+    "[toml]": {
+        "editor.defaultFormatter": "be5invis.toml"
+    },
     "autoDocstring.docstringFormat": "google",
-    "aws.onDefaultRegionMissing": "add",
     "aws.profile": "profile:mgmt",
     "aws.telemetry": false,
     "breadcrumbs.enabled": true,
@@ -65,7 +67,8 @@
         "*.j2": "jinja",
         "*.jsonl": "json",
         "*.tmpl": "gotemplate",
-        "*.yml": "yaml"
+        "*.yml": "yaml",
+        ".coveragerc": "toml"
     },
     "files.autoSave": "onFocusChange",
     "files.exclude": {
@@ -83,6 +86,7 @@
         "**/.metals": true
     },
     "git.confirmSync": false,
+    "gitlens.views.branches.branches.layout": "list",
     "go.autocompleteUnimportedPackages": true,
     "go.buildFlags": [
         "-v"
@@ -97,6 +101,12 @@
     "go.useCodeSnippetsOnFunctionSuggest": true,
     "go.useLanguageServer": true,
     "html.format.wrapLineLength": 0,
+    "isort.args": [
+        "-w",
+        "120",
+        "--profile",
+        "black"
+    ],
     "java.completion.enabled": true,
     "java.configuration.runtimes": [
         {
@@ -105,11 +115,10 @@
             "path": "/usr/local/lib/jvm/java/openjdk-11"
         }
     ],
-    "java.home": "/usr/local/lib/jvm/java/openjdk-11",
+    "java.jdt.ls.java.home": "/usr/local/lib/jvm/java/openjdk-11",
     "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "json.schemas": [],
-    "jupyter.alwaysTrustNotebooks": true,
     "jupyter.askForKernelRestart": false,
     "jupyter.disableJupyterAutoStart": true,
     "latex-workshop.docker.enabled": true,
@@ -121,6 +130,7 @@
         "MD033": false
     },
     "metals.javaHome": "/usr/local/lib/jvm/java/openjdk-11",
+    "mypy.runUsingActiveInterpreter": true,
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -128,7 +138,7 @@
     "notebook.lineNumbers": "on",
     "notebook.output.textLineLimit": 500,
     "oneDarkPro.bold": true,
-    "oneDarkPro.editorTheme": "oneDarkProFlat",
+    "oneDarkPro.editorTheme": "One Dark Pro Flat",
     "oneDarkPro.italic": false,
     "plantuml.render": "PlantUMLServer",
     "python.analysis.completeFunctionParens": true,
@@ -140,10 +150,6 @@
     ],
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
-    "python.showStartPage": false,
-    "python.sortImports.args": [
-        "-w 120"
-    ],
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "python.testing.pytestEnabled": true,
     "redhat.telemetry.enabled": false,
@@ -162,13 +168,38 @@
     ],
     "sonarlint.ls.javaHome": "/usr/local/lib/jvm/java/openjdk-11",
     "sql-formatter.uppercase": true,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "terminal.external.linuxExec": "iterm",
-    "terminal.external.osxExec": "iTerm.app",
+    "sqltools.format": {
+        "reservedWordCase": "upper"
+    },
+    "sqltools.useNodeRuntime": true,
+    "telemetry.telemetryLevel": "off",
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.fontFamily": "MesloLGLDZ Nerd Font Mono",
+    "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.fontSize": 12,
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "args": [
+                "-l"
+            ],
+            "icon": "terminal-bash",
+            "path": "bash"
+        },
+        "fish": {
+            "args": [
+                "-l"
+            ],
+            "path": "fish"
+        },
+        "pwsh": null,
+        "tmux": null,
+        "zsh": {
+            "args": [
+                "-l",
+                "-i"
+            ],
+            "path": "zsh"
+        }
+    },
     "terraform.languageServer": {
         "args": [
             "serve"
