@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-[ "$(uname -s)" != "Darwin" ] && exit 0
+# [ "$(uname -s)" != "Darwin" ] && exit 0
 
 # sed "s;/Users/Pablo;$HOME;g" \
 #     "$DOTFILES"/iterm/com.googlecode.iterm2.plist.example >"$DOTFILES"/iterm/com.googlecode.iterm2.plist
