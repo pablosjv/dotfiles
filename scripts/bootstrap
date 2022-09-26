@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 #
 # bootstrap installs things.
 
@@ -52,14 +52,6 @@ find_zsh() {
     fi
 }
 
-autoupdate_setup() {
-    info 'Setting up the autoupdate script in crontab'
-    (
-        crontab -l | grep -v "dotfiles-update"
-        echo "0 */2 * * * $HOME/.dotfiles/bin/dotfiles-update > $HOME/.dotfiles/dotfiles-update.log 2>&1"
-    ) | crontab -
-}
-
 setup_gitconfig
 
 info "Installing dotfiles"
@@ -69,15 +61,6 @@ else
     fail "Error installing dotfiles"
 fi
 
-# zsh="$(find_zsh)"
-# test -z "$TRAVIS_JOB_ID" &&
-#     test "$(expr "$SHELL" : '.*/\(.*\)')" != "zsh" &&
-#     command -v chsh >/dev/null 2>&1 &&
-#     chsh -s "$zsh" &&
-#     success "set $("$zsh" --version) at $zsh as default shell"
-
-# FIXME: need to find a way to autoupdate and autorefresh (commit and push?)
-# autoupdate_setup
 
 echo ''
 success '  Dotfiles configured!'

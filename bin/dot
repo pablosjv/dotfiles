@@ -1,0 +1,54 @@
+#!/usr/bin/env sh
+#
+# dot
+#
+# Manages different dotfiles stuff
+
+usage="$(basename "$0") [COMMAND]
+
+Manages different dotfiles stuff
+
+Commands:
+    help    show this help text
+    apply   install the latest version for the configuration and packages
+    update  reflect the configuration changes in the repository
+    log     show the last update log
+    edit    open dotfiles in editor
+    date    get latest update date
+"
+
+export DOTFILES="$HOME/.dotfiles"
+cd "$DOTFILES" || exit 1
+
+case "$1" in
+apply)
+    "${DOTFILES}/scripts/apply"
+    ;;
+update)
+    "${DOTFILES}/scripts/update"
+    ;;
+log)
+    if ls "${DOTFILES}/dotfiles-update.log" >/dev/null 2>&1; then
+        less -R "${DOTFILES}/dotfiles-update.log"
+    else
+        echo "No update yet run"
+    fi
+    ;;
+edit)
+    e "${DOTFILES}"
+    ;;
+date)
+    last_date=$(git config --global dotfiles.lastupdate)
+    echo "Last update was: ${last_date}"
+    ;;
+help)
+    echo "$usage"
+    ;;
+*)
+    tput setaf 1
+    echo "Command no recognized! Here is some help:"
+    tput sgr0
+    echo ""
+    echo "$usage"
+    ;;
+esac

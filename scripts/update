@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 #
 # Run all dotfiles updaters.
 set -e
@@ -12,7 +12,7 @@ info "Updating dotfiles. The las version will be dumped in the repo"
 cd "$DOTFILES_ROOT"
 
 info "Find the updaters and run them iteratively"
-git ls-tree --name-only -r HEAD | grep update.sh | while read -r updater; do
+for updater in "${DOTFILES_ROOT}"/**/update.sh; do
     info "Run ${updater}..."
     sh -c "$updater"
     success "${updater}"

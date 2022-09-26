@@ -1,0 +1,77 @@
+- defaults:
+    link:
+      relink: true
+    clean:
+      force: true
+
+- clean:
+    ~/:
+    ~/Library/Application Support/Code/User/:
+      recursive: true
+    ~/.config:
+      recursive: true
+
+- link:
+    ~/:
+      glob: true
+      path: etc/.*
+
+    ~/.local/bin/:
+      glob: true
+      path: bin/*
+
+    ~/.zshrc: shell/zsh/.zshrc
+    ~/.zshenv: shell/zsh/.zshenv
+    ~/.p10k.zsh: shell/zsh/themes/p10k.zsh
+    ~/.zimrc: shell/zsh/.zim/.zimrc
+
+    ~/.gitignore: git/.gitignore
+    ~/.gitconfig.local: git/.gitconfig.local
+    ~/.config/pip/pip.conf: langs/python/pip.conf
+
+    ~/.Brewfile: os/mac/brew/Brewfile
+
+    ~/.vimrc: editors/vim/.vimrc
+
+    ~/.config/direnv/lib: tools/direnv/lib
+
+    /usr/local/lib/jvm/java: ~/.asdf/installs/java
+
+    ~/Library/Application Support/Code/User/:
+      create: true
+      glob: true
+      path: editors/vscode/*.json
+      relink: true
+      exclude: [configure.sh, extensions.txt, update.sh]
+      if: '[ `uname` = Darwin ]'
+    ~/Library/Application Support/Code/User/snippets:
+      create: true
+      path: editors/vscode/snippets
+      relink: true
+      if: '[ `uname` = Darwin ]'
+
+    ~/.config/Code/User/:
+      create: true
+      glob: true
+      path: editors/vscode/*.json
+      relink: true
+      exclude: [configure.sh, extensions.txt, update.sh]
+      if: '[ `uname` != Darwin ]'
+    ~/.config/Code/User/snippets:
+      create: true
+      path: editors/vscode/snippets
+      relink: true
+      if: '[ `uname` != Darwin ]'
+
+- create:
+    - ~/.vim/undo-history
+    - ~/.nvm
+    - ~/.config
+    - ~/.config/pip
+    - ~/.config/direnv
+    - ~/.kube
+    - ~/.kube/configs
+    - /usr/local/lib/jvm
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]

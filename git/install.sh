@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # Don't ask ssh password all the time
 if [ "$(uname -s)" = "Darwin" ]; then
