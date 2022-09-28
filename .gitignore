@@ -1,3 +1,11 @@
-*~
+# Log files
 *.log
+
+# Brewfile lock can be different in multiple systems
 Brewfile.lock.json
+
+# Build source scripts
+shell/source/*
+
+# Always use gitkeep
+!.gitkeep
