@@ -120,15 +120,7 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
-
-# shortcut to this dotfiles path is $DOTFILES
-export DOTFILES="$HOME/.dotfiles"
 source "$DOTFILES/shell/init.sh"
-
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-# shellcheck disable=SC1090
-[ -f ~/.localrc ] && . ~/.localrc
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # shellcheck disable=SC1090

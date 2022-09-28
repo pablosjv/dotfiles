@@ -1,5 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-# This is a useful file to have the same aliases/functions in bash and zsh
-# shellcheck source=/dev/null
-for f in "${DOTFILES}"/**/{exports.sh,functions.sh,aliases.sh}; do source "$f"; done
+. "$DOTFILES/shell/source/.aliases.sh"
+. "$DOTFILES/shell/source/.exports.sh"
+. "$DOTFILES/shell/source/.functions.sh"
+
+# use .localrc for SUPER SECRET CRAP that you don't
+# want in your public, versioned repo.
+# shellcheck disable=SC1090
+[ -f ~/.localrc ] && . ~/.localrc
