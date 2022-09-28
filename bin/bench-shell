@@ -2,9 +2,8 @@
 
 hyperfine --warmup 5 "${SHELL} -i -c 'exit 0'"
 
-echo ""
 echo "ZSH INFO:"
-echo "  🍎 macOS ZSH 📂 /bin/zsh            - $(/bin/zsh --version)"
+echo "  🍎 macOS ZSH 📂 /bin/zsh     - $(/bin/zsh --version)"
 
 echo ""
 echo "✨ Currently using $(command -v zsh) ✨"
