@@ -20,6 +20,8 @@
       glob: true
       path: bin/*
 
+    ~/.local/bin/dotbot: dotbot/bin/dotbot
+
     ~/.zshrc: shell/zsh/.zshrc
     ~/.zshenv: shell/zsh/.zshenv
     ~/.p10k.zsh: shell/zsh/themes/p10k.zsh
@@ -42,7 +44,6 @@
       glob: true
       path: editors/vscode/*.json
       relink: true
-      exclude: [configure.sh, extensions.txt, update.sh]
       if: '[ `uname` = Darwin ]'
     ~/Library/Application Support/Code/User/snippets:
       create: true
@@ -55,7 +56,6 @@
       glob: true
       path: editors/vscode/*.json
       relink: true
-      exclude: [configure.sh, extensions.txt, update.sh]
       if: '[ `uname` != Darwin ]'
     ~/.config/Code/User/snippets:
       create: true
@@ -74,4 +74,21 @@
     - /usr/local/lib/jvm
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    - command: git submodule update --init --recursive
+      description: Installing submodules
+    - command: chmod +x ./scripts/*
+      description: Making ./scripts executable
+    - command: chmod +x ./bin/*
+      description: Making ./bin executable
+    - command: ./scripts/install
+      description: Running installers
+      stdin: true
+      stdout: true
+    - command: ./scripts/configure
+      description: Running configurators
+      stdin: true
+      stdout: true
+    - command: git config --global dotfiles.lastupdate "$(date +%Y-%m-%d-%H:%M)"
+      description: Register last update
+      stdin: true
+      stdout: true
