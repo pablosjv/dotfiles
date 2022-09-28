@@ -55,7 +55,7 @@ find_zsh() {
 setup_gitconfig
 
 info "Installing dotfiles"
-if ./scripts/upgrade; then
+if ./scripts/apply; then
     success "All installed"
 else
     fail "Error installing dotfiles"

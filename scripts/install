@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+#
+# Run all dotfiles installers.
+set -e
+
+cd "$(dirname "$0")/.." || exit
+DOTFILES_ROOT=$(pwd -P)
+# shellcheck source=tools
+. "$DOTFILES_ROOT/scripts/tools"
+cd "$DOTFILES_ROOT"
+
+info "Find the installers and run them iteratively"
+for installer in "${DOTFILES_ROOT}"/**/install.sh; do
+    info "Run ${installer}..."
+    sh -c "$installer"
+    success "${installer}"
+done

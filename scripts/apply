@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 #
-# Run all dotfiles installers.
+# Apply dotfile configuration and installation.
 set -e
 
 cd "$(dirname "$0")/.." || exit
@@ -20,22 +20,12 @@ git pull --quiet >/dev/null 2>&1 || true
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${DOTBOT_DIR}/bin/dotbot" -v -d "${DOTFILES_ROOT}" -c "${CONFIG}" "${@}"
+info "Running dotbot"
+"${DOTBOT_DIR}/bin/dotbot" \
+    --exit-on-failure \
+    --base-directory "${DOTFILES_ROOT}" \
+    --config-file "${CONFIG}" \
+    "${@}"
 
-info "Find the installers and run them iteratively"
-for installer in "${DOTFILES_ROOT}"/**/install.sh; do
-    info "Run ${installer}..."
-    sh -c "$installer"
-    success "${installer}"
-done
-
-info "Find the configurators and run them iteratively"
-for configurator in "${DOTFILES_ROOT}"/**/configure.sh; do
-    info "Run ${configurator}..."
-    sh -c "$configurator"
-    success "${configurator}"
-done
-
-info "Registering last update"
-
-git config --global dotfiles.lastupdate "$(date +%Y-%m-%d-%H:%M)"
+# info "Registering last update"
+# git config --global dotfiles.lastupdate "$(date +%Y-%m-%d-%H:%M)"

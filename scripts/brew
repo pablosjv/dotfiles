@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+#
+# dot
+#
+# brew wrapper
+
+log-info() {
+    # shellcheck disable=SC2059
+    printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+brew-bump() {
+    log-info "Bumping homebrew... $1"
+    command brew update
+    brew outdated | xargs brew fetch
+    brew bundle install --verbose --global
+    command brew upgrade
+    log-info "Upgrade casks (you can pass --greedy to force update)..."
+    command brew upgrade --cask "$1"
+    brew cleanup
+}
+
+brew-cleanup() {
+    log-info "Cleanup homebrew..."
+    (cd "$(brew --repo)" && git prune && git gc)
+    command brew cleanup
+    brew bundle cleanup --global --force --zap
+    rm -rf "$(brew --cache)"
+}
+
+brew-repair() {
+    log-info "Try to repair homebrew..."
+    (cd "$(brew --repo)" && git fetch && git reset --hard origin/master)
+    brew update
+}
+
+case "$1" in
+cleanup)
+    brew-cleanup
+    ;;
+bump)
+    brew-bump "$2"
+    ;;
+repair)
+    brew-repair
+    ;;
+*)
+    command brew "$@"
+    ;;
+esac
