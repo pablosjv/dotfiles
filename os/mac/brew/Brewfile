@@ -23,6 +23,8 @@ brew "awscli"
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Core application library for C
+brew "glib"
 # Utility that creates projects from templates
 brew "cookiecutter"
 # Top-like interface for container metrics
@@ -37,8 +39,6 @@ brew "fselect"
 brew "git-lfs"
 # Alternative to top/htop
 brew "glances"
-# Core application library for C
-brew "glib"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
@@ -127,16 +127,10 @@ brew "wget"
 brew "yarn"
 # Process YAML documents from the CLI
 brew "yq"
-# High-performance, schema-free, document-oriented database
-brew "mongodb/brew/mongodb-community@4.2"
 # kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster
 brew "robscott/tap/kube-capacity"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
-# Command-line helper for the 1Password password manager
-cask "1password-cli"
-# Two-factor authentication software
-cask "authy"
 # Cross platform SQL editor and database management app
 cask "beekeeper-studio"
 # Databases & SQL IDE
