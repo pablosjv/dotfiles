@@ -7,11 +7,7 @@ docker-prune() {
 
 docker-clean() {
     # Clean docker trash generated more than five days ago
-    echo -e "Old Containers\t=> $(docker container prune -f --filter until=120h)"
-    echo -e "Old Networks\t=> $(docker network prune -f)"
-    echo -e "Dangling images\t=> $(docker image prune -f)"
-    docker rmi -f '$(docker images -f "dangling=true" -q)' 2>/dev/null
-    echo -e "Unused volumes\t=> $(docker volume prune -f)"
+    docker system prune --volumes -f --filter until=120h
 }
 
 dit() {
