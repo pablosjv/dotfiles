@@ -149,6 +149,8 @@ cask "google-cloud-sdk"
 cask "google-drive"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# GPU-based terminal emulator
+cask "kitty"
 # Software for Logitech devices
 cask "logitech-options"
 # App to write, plan, collaborate, and get organized

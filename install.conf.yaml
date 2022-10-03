@@ -29,13 +29,14 @@
 
     ~/.gitignore: git/.gitignore
     ~/.gitconfig.local: git/.gitconfig.local
-    ~/.config/pip/pip.conf: langs/python/pip.conf
 
     ~/.Brewfile: os/mac/brew/Brewfile
 
     ~/.vimrc: editors/vim/.vimrc
 
     ~/.config/direnv/lib: tools/direnv/lib
+    ~/.config/pip/pip.conf: langs/python/pip.conf
+    ~/.config/kitty/kitty.conf: tools/kitty/kitty.conf
 
     /usr/local/lib/jvm/java: ~/.asdf/installs/java
 
@@ -69,6 +70,7 @@
     - ~/.config
     - ~/.config/pip
     - ~/.config/direnv
+    - ~/.config/kitty
     - ~/.kube
     - ~/.kube/configs
     - /usr/local/lib/jvm
