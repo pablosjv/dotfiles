@@ -37,6 +37,7 @@
     ~/.config/direnv/lib: tools/direnv/lib
     ~/.config/pip/pip.conf: langs/python/pip.conf
     ~/.config/kitty/kitty.conf: tools/kitty/kitty.conf
+    ~/.config/lsd/config.yaml: tools/lsd/config.yaml
 
     /usr/local/lib/jvm/java: ~/.asdf/installs/java
 
@@ -71,6 +72,7 @@
     - ~/.config/pip
     - ~/.config/direnv
     - ~/.config/kitty
+    - ~/.config/lsd
     - ~/.kube
     - ~/.kube/configs
     - /usr/local/lib/jvm

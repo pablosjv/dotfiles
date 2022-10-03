@@ -65,6 +65,8 @@ brew "jq"
 brew "kubernetes-cli", link: false
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
+# Clone of ls with colorful output, file type icons, and more
+brew "lsd"
 # Java-based project management
 brew "maven"
 # Port scanning utility for large networks
