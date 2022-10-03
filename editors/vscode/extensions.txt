@@ -2,6 +2,7 @@
 ahmadalli.vscode-nginx-conf
 alexcvzz.vscode-sqlite
 amazonwebservices.aws-toolkit-vscode
+AykutSarac.jsoncrack-vscode
 be5invis.toml
 chaliy.handlebars-preview
 cssho.vscode-svgviewer
