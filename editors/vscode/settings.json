@@ -29,7 +29,7 @@
         "source.organizeImports": true
     },
     "editor.cursorBlinking": "phase",
-    "editor.fontFamily": "'MesloLGLDZ Nerd Font Mono'",
+    "editor.fontFamily": "MesloLGLDZ Nerd Font Mono",
     "editor.fontLigatures": false,
     "editor.fontSize": 12,
     "editor.formatOnType": true,
