@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 #
 # Run all dotfiles configurators.
 set -e
@@ -7,10 +7,11 @@ cd "$(dirname "$0")/.." || exit
 DOTFILES_ROOT=$(pwd -P)
 # shellcheck source=tools
 . "$DOTFILES_ROOT/scripts/tools"
+cd "$DOTFILES_ROOT"
 
 info "Find the installers and run them iteratively"
-git ls-tree --name-only -r HEAD | grep configure.sh | while read -r configurator; do
-    info "Run ${configurator}..."
-    sh -c "$configurator"
-    success "${configurator}"
+for installer in "${DOTFILES_ROOT}"/**/configure.sh; do
+    info "Run ${installer}..."
+    sh -c "$installer"
+    success "${installer}"
 done

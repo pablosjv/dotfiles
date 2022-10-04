@@ -1,0 +1,31 @@
+#!/usr/bin/env zsh
+#
+# Apply dotfile configuration and installation.
+set -e
+
+cd "$(dirname "$0")/.." || exit
+DOTFILES_ROOT=$(pwd -P)
+# shellcheck source=tools
+. "$DOTFILES_ROOT/scripts/tools"
+cd "$DOTFILES_ROOT"
+
+CONFIG="$DOTFILES_ROOT/install.conf.yaml"
+DOTBOT_DIR="$DOTFILES_ROOT/dotbot"
+
+info "Upgrading dotfiles. Today is $(date)"
+
+info "git update"
+git pull --quiet >/dev/null 2>&1 || true
+
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+info "Running dotbot"
+"${DOTBOT_DIR}/bin/dotbot" \
+    --exit-on-failure \
+    --base-directory "${DOTFILES_ROOT}" \
+    --config-file "${CONFIG}" \
+    "${@}"
+
+# info "Registering last update"
+# git config --global dotfiles.lastupdate "$(date +%Y-%m-%d-%H:%M)"

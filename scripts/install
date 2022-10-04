@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 #
 # Run all dotfiles installers.
 set -e
@@ -10,7 +10,7 @@ DOTFILES_ROOT=$(pwd -P)
 cd "$DOTFILES_ROOT"
 
 info "Find the installers and run them iteratively"
-git ls-tree --name-only -r HEAD | grep install.sh | while read -r installer; do
+for installer in "${DOTFILES_ROOT}"/**/install.sh; do
     info "Run ${installer}..."
     sh -c "$installer"
     success "${installer}"

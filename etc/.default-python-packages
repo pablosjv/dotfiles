@@ -1,0 +1,6 @@
+virtualenv
+jupyter
+black
+flake8
+ipython
+mypy
