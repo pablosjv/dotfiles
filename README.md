@@ -1,19 +1,6 @@
-# Pablo's dotfiles
+# Pablo's dotfiles ![GitHub last commit](https://img.shields.io/github/last-commit/pablosjv/pablosanjose.com?style=flat-square)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/pablosjv/pablosanjose.com?style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/pablosjv/dotfiles/CI?style=flat-square)
-[![Powered by Antibody][ab]][ap]
-
-> Config files for ZSH, Python, Scala, Go, Editors, Terminals and more. Heavely inspired by [caarlos0](https://github.com/caarlos0/dotfiles).
-
-![screenshot 1][scrn1]
-
-![screenshot 2][scrn2]
-
-[ap]: https://github.com/getantibody/antibody
-[ab]: https://img.shields.io/badge/powered%20by-antibody-blue.svg?style=flat-square
-[scrn1]: /docs/screenshot1.png
-[scrn2]: /docs/screenshot2.png
+> Config files for ZSH, Python, Editors, Terminals and more. Powered by dotbot.
 
 ## Installation
 
@@ -32,37 +19,48 @@ First, make sure you have all those things installed:
 Then, run these steps:
 
 ```console
-git clone https://github.com/pablosjv/dotfiles.git ~/.dotfiles
+git clone --recurse-submodules https://github.com/pablosjv/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./scripts/dependencies
-./scripts/bootstrap
-zsh # or just close and open your terminal again.
+./scripts/apply
 ```
 
-> All changed files will be backed up with a `.backup` suffix.
+From that moment the `dot` command will be available in your path, which simplify the dotfiles operation
+
+```console
+❯ dot help
+dot [COMMAND]
+
+Manages different dotfiles stuff
+
+Commands:
+    help       show this help text
+    apply      install the latest version for the configuration and packages
+    update     reflect the configuration changes in the repository
+    edit       open dotfiles in editor
+    date       get latest update date
+    install    run just the installers
+    configure  run just the configurators
+    brew       interact with homebrew with extended commands
+```
+
+The `dot apply` is a wrapper for dotbot, so you can provide command line arguments to the tool, for example:
+
+```console
+dot apply --only link
+```
 
 ### macOS defaults
 
 You use it by running:
 
 ```console
-$DOTFILES/macos/set-defaults.sh
+$DOTFILES/os/mac/set-defaults.sh
 ```
 
 And logging out and in again/restart.
 
-### Themes and fonts being used
-
-Theme is **[Norde Wave](https://github.com/DimitrisNL/nord-wave)**
-
-## Further help:
+## Further help
 
 - [Personalize your configs](/docs/PERSONALIZATION.md)
 - [Understand how it works](/docs/PHILOSOPHY.md)
 - [License](/LICENSE.md)
-
-## Contributing
-
-Feel free to contribute. Pull requests will be automatically
-checked/linted with [Shellcheck](https://github.com/koalaman/shellcheck)
-and [shfmt](https://github.com/mvdan/sh).

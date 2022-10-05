@@ -58,6 +58,7 @@ shanoor.vscode-nginx
 SonarSource.sonarlint-vscode
 tamasfe.even-better-toml
 timonwong.shellcheck
+VisualStudioExptTeam.intellicode-api-usage-examples
 VisualStudioExptTeam.vscodeintellicode
 vscjava.vscode-java-debug
 vscjava.vscode-java-dependency

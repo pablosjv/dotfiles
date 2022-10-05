@@ -121,6 +121,10 @@
     "json.schemas": [],
     "jupyter.askForKernelRestart": false,
     "jupyter.disableJupyterAutoStart": true,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
     "latex-workshop.docker.enabled": true,
     "latex-workshop.intellisense.package.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",

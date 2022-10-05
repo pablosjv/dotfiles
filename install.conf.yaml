@@ -20,6 +20,12 @@
       glob: true
       path: bin/*
 
+    # /usr/local/lib/gnubin:
+    #   glob: true
+    #   path: /usr/local/opt/**/libexec/gnubin/*
+    #   exclude:
+    #     - /usr/local/opt/coreutils/libexec/gnubin/*
+
     ~/.local/bin/dotbot: dotbot/bin/dotbot
 
     ~/.zshrc: shell/zsh/.zshrc
@@ -76,6 +82,7 @@
     - ~/.kube
     - ~/.kube/configs
     - /usr/local/lib/jvm
+    - /usr/local/lib/gnubin
 
 - shell:
     - command: git submodule update --init --recursive

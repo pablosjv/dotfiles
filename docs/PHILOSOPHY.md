@@ -4,21 +4,13 @@
 
 ## Why?
 
-Configuring a new system is tedious. Keeping sync of the configuration between systems is also a pain in the ass.
+Configuring a new system is tedious. Keeping sync of the configuration between systems is also a pain in the ass. I came accros the [dotfiles](https://dotfiles.github.io) website when trying to find solutions to this problem.
 
-I came accros the [dotfiles](https://dotfiles.github.io) website when trying to find solutions to this problem. Navigating between different dotfiles repos I found the [caarlos0](https://github.com/caarlos0/dotfiles). I fell in love with the organization and automation of this repo, so I decided to make a fork on my own. I not make a github fork because I want to evolve this project completely sepparate from the original one, but you will see the original project reference across the documentation.
+Navigating between different dotfiles repos I found the [caarlos0](https://github.com/caarlos0/dotfiles). I fell in love with the organization and automation of this repo, so I decided to make a fork on my own. I did not make a github fork because I want to evolve this project completely separate from the original one, but you will see the original project reference across the documentation. Here you can find a very [good post on the subject](http://carlosbecker.com/posts/dotfiles-are-meant-to-be-forked).
 
-Here you can find a very [good post on the subject](http://carlosbecker.com/posts/dotfiles-are-meant-to-be-forked).
+That was my first iteration. Nowadays the repo has evolved a lot and uses [dotbot](https://github.com/anishathalye/dotbot) to do a lot of the heavy lifting. Still, a lot of ideas are the same from the original project.
 
 ## Decisions
-
-### Topical
-
-Everything's built around topic areas. If you're adding a new area to your
-forked dotfiles — say, "Erlang" — you can simply add a `erlang` directory and
-put files in there. Anything with an extension of `.zsh` will get automatically
-included into your shell. Anything with an extension of `.symlink` will get
-symlinked without extension into `$HOME` when you run `scripts/bootstrap`.
 
 ### Mangae configuration and installation
 
@@ -37,31 +29,22 @@ The installation of all the topics will come first and then the configuration. T
 
 You can change that by adding your custom overrides in `~/.localrc`.
 
-
 ### Naming conventions
 
 There are a few special files in the hierarchy:
 
-- **bin/**: Anything in `bin/` will get added to your `$PATH` and be made available everywhere.
-- **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your environment.
-- **topic/path.zsh**: Any file named `path.zsh` is loaded first and is expected to setup `$PATH` or similar.
-- **topic/completion.zsh**: Any file named `completion.zsh` is loaded last and is expected to setup autocomplete.
-- **topic/\*.symlink**: Any files ending in `*.symlink` get symlinked into your `$HOME`. This is so you can keep all of those versioned in your dotfiles but still keep those autoloaded files in your home directory. These get symlinked in when you run `scripts/bootstrap`.
-- **topic/install.sh**: Any file with this name and with exec permission, will ran at `bootstrap` and `dotfiles-update` phase, and are expected to install plugins, and stuff like that.
-- **topic/configure.sh**: Any file with this name and with exec permission, will ran at `bootstrap` and `dotfiles-update` phase, and are expected to configure plugins, and packages and other stuff.
-- **topic/update.sh**: Any file with this name and with exec permission, will ran using `.dotfiles/scripts/update`. This is to update the dotfile configuration with the local changes. An alias `dot-refresh` is added to run this commands whenever you find appropiate.
+* **bin/**: Anything in `bin/` will get added to your `$PATH` and be made available everywhere.
+* **topic/exports.sh**: the file will be sourced to load environment variables or modifying the `$PATH`.
+* **topic/install.sh**: Any file with this name and with exec permission, will ran at `bootstrap` and `dotfiles-update` phase, and are expected to install plugins, and stuff like that.
+* **topic/configure.sh**: Any file with this name and with exec permission, will ran at `bootstrap` and `dotfiles-update` phase, and are expected to configure plugins, and packages and other stuff.
+* **topic/update.sh**: Any file with this name and with exec permission, will ran using `.dotfiles/scripts/update`. This is to update the dotfile configuration with the local changes. An alias `dot-refresh` is added to run this commands whenever you find appropiate.
 
 ### ZSH plugins
 
-This project uses the [Powerlevel10k][p10k] prompt (which is incredible!) with a lean theme, transient prompt and some other [zsh plugins](/antibody/bundles.sh). All of them managed by [Antibody][antibody], a faster and simpler Antigen-like program written in Go.
+The project uses [zimfw](https://github.com/zimfw/zimfw) for plugin managements. The prompt is from [Powerlevel10k](https://github.com/romkatv/powerlevel10k) with a lean theme, transient prompt and some other stuff. You can check all the [zsh plugins here](../shell/zsh/.zim/.zimrc).
 
 The combination of Antibody and the Powerlevel10k instant prompt feature, makes this configuration the fastest shell startup you've ever had.
-
-[p10k]: https://github.com/romkatv/powerlevel10k
-[antibody]: https://github.com/caarlos0/antibody
 
 ### Compatibility
 
 The setup should be compatible between Linux and OSX, but I mainly use MacOS so is not battle tested in Linux. Also there is no packages instalation for linux, only with hombrew.
-
-The CI also is also ran on Linux and OSX.

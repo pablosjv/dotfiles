@@ -33,8 +33,12 @@ brew "ctop"
 brew "direnv"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Find files with SQL-like queries
 brew "fselect"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
 # Git extension for versioning large files
 brew "git-lfs"
 # Alternative to top/htop
@@ -67,6 +71,8 @@ brew "kubernetes-cli", link: false
 brew "kubectx"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# Utility for directing compilation
+brew "make"
 # Java-based project management
 brew "maven"
 # Port scanning utility for large networks

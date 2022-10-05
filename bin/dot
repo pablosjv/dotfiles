@@ -12,7 +12,6 @@ Commands:
     help       show this help text
     apply      install the latest version for the configuration and packages
     update     reflect the configuration changes in the repository
-    log        show the last update log
     edit       open dotfiles in editor
     date       get latest update date
     install    run just the installers
@@ -35,13 +34,6 @@ install)
     ;;
 configure)
     "${DOTFILES}/scripts/configure"
-    ;;
-log)
-    if ls "${DOTFILES}/dotfiles-update.log" >/dev/null 2>&1; then
-        less -R "${DOTFILES}/dotfiles-update.log"
-    else
-        echo "No update yet run"
-    fi
     ;;
 edit)
     e "${DOTFILES}"
