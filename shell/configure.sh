@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 
 SHELL_INIT_PATH=$(dirname -- "$0")
+mkdir -p $SHELL_INIT_PATH/source/
+
 SHELL_ALIASES_PATH=$SHELL_INIT_PATH/source/.aliases.sh
 SHELL_EXPORTS_PATH=$SHELL_INIT_PATH/source/.exports.sh
 SHELL_FUNCTIONS_PATH=$SHELL_INIT_PATH/source/.functions.sh

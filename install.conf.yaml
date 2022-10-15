@@ -11,6 +11,20 @@
     ~/.config:
       recursive: true
 
+- create:
+    - ~/.vim/undo-history
+    - ~/.nvm
+    - ~/.config
+    - ~/.config/pip
+    - ~/.config/direnv
+    - ~/.config/kitty
+    - ~/.config/lsd
+    - ~/.kube
+    - ~/.kube/configs
+    - ~/.local/bin/
+    - /usr/local/lib/jvm
+    - /usr/local/lib/gnubin
+    -
 - link:
     ~/:
       glob: true
@@ -70,19 +84,6 @@
       path: editors/vscode/snippets
       relink: true
       if: '[ `uname` != Darwin ]'
-
-- create:
-    - ~/.vim/undo-history
-    - ~/.nvm
-    - ~/.config
-    - ~/.config/pip
-    - ~/.config/direnv
-    - ~/.config/kitty
-    - ~/.config/lsd
-    - ~/.kube
-    - ~/.kube/configs
-    - /usr/local/lib/jvm
-    - /usr/local/lib/gnubin
 
 - shell:
     - command: git submodule update --init --recursive
