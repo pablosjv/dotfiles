@@ -133,7 +133,7 @@ brew "watch"
 brew "wget"
 # JavaScript package manager
 brew "yarn"
-# Process YAML documents from the CLI
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster
 brew "robscott/tap/kube-capacity"
@@ -143,6 +143,8 @@ cask "1password"
 cask "beekeeper-studio"
 # Databases & SQL IDE
 cask "datagrip"
+# Voice and text chat software
+cask "discord"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Developer targeted fonts with a high number of glyphs
