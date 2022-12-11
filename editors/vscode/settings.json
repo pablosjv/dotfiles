@@ -25,9 +25,6 @@
     "aws.telemetry": false,
     "breadcrumbs.enabled": true,
     "editor.acceptSuggestionOnEnter": "on",
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": true
-    },
     "editor.cursorBlinking": "phase",
     "editor.fontFamily": "MesloLGLDZ Nerd Font Mono",
     "editor.fontLigatures": false,
@@ -87,6 +84,7 @@
     },
     "git.confirmSync": false,
     "gitlens.views.branches.branches.layout": "list",
+    "gitlens.views.commitDetails.files.layout": "tree",
     "go.autocompleteUnimportedPackages": true,
     "go.buildFlags": [
         "-v"
@@ -171,11 +169,11 @@
         "-x"
     ],
     "sonarlint.ls.javaHome": "/usr/local/lib/jvm/java/openjdk-11",
-    "sql-formatter.uppercase": true,
     "sqltools.format": {
         "reservedWordCase": "upper"
     },
-    "sqltools.useNodeRuntime": true,
+    "sqltools.highlightQuery": false,
+    "sqltools.showStatusbar": false,
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.defaultProfile.osx": "zsh",
