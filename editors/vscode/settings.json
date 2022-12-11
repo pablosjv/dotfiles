@@ -21,7 +21,6 @@
         "editor.defaultFormatter": "be5invis.toml"
     },
     "autoDocstring.docstringFormat": "google",
-    "aws.profile": "profile:mgmt",
     "aws.telemetry": false,
     "breadcrumbs.enabled": true,
     "editor.acceptSuggestionOnEnter": "on",
