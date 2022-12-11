@@ -19,12 +19,13 @@
     - ~/.config/direnv
     - ~/.config/kitty
     - ~/.config/lsd
+    - ~/.config/iterm2
     - ~/.kube
     - ~/.kube/configs
     - ~/.local/bin/
     - /usr/local/lib/jvm
     - /usr/local/lib/gnubin
-    -
+
 - link:
     ~/:
       glob: true
@@ -57,6 +58,7 @@
     ~/.config/direnv/lib: tools/direnv/lib
     ~/.config/pip/pip.conf: langs/python/pip.conf
     ~/.config/kitty/kitty.conf: tools/kitty/kitty.conf
+    ~/.config/iterm2/com.googlecode.iterm2.plist: tools/iterm2/com.googlecode.iterm2.plist
     ~/.config/lsd/config.yaml: tools/lsd/config.yaml
 
     /usr/local/lib/jvm/java: ~/.asdf/installs/java
@@ -98,6 +100,10 @@
       stdout: true
     - command: ./scripts/configure
       description: Running configurators
+      stdin: true
+      stdout: true
+    - command: defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.config/iterm2"
+      description: Set iterm2 custom preferences folder
       stdin: true
       stdout: true
     - command: git config --global dotfiles.lastupdate "$(date +%Y-%m-%d-%H:%M)"
