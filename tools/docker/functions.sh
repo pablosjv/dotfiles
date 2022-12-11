@@ -7,7 +7,7 @@ docker-prune() {
 
 docker-clean() {
     # Clean docker trash generated more than five days ago
-    docker system prune --volumes -f --filter until=120h
+    docker system prune -f --filter until=120h
 }
 
 dit() {
