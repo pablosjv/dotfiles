@@ -35,12 +35,6 @@
       glob: true
       path: bin/*
 
-    # /usr/local/lib/gnubin:
-    #   glob: true
-    #   path: /usr/local/opt/**/libexec/gnubin/*
-    #   exclude:
-    #     - /usr/local/opt/coreutils/libexec/gnubin/*
-
     ~/.local/bin/dotbot: dotbot/bin/dotbot
 
     ~/.zshrc: shell/zsh/.zshrc
@@ -58,7 +52,6 @@
     ~/.config/direnv/lib: tools/direnv/lib
     ~/.config/pip/pip.conf: langs/python/pip.conf
     ~/.config/kitty/kitty.conf: tools/kitty/kitty.conf
-    ~/.config/iterm2/com.googlecode.iterm2.plist: tools/iterm2/com.googlecode.iterm2.plist
     ~/.config/lsd/config.yaml: tools/lsd/config.yaml
 
     /usr/local/lib/jvm/java: ~/.asdf/installs/java
@@ -102,7 +95,9 @@
       description: Running configurators
       stdin: true
       stdout: true
-    - command: defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.config/iterm2"
+    - command: |
+        defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/tools/iterm2" \
+        && defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
       description: Set iterm2 custom preferences folder
       stdin: true
       stdout: true

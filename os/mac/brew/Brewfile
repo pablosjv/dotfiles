@@ -7,14 +7,8 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "mongodb/brew"
 tap "robscott/tap"
-# CLI tool for working with Architecture Decision Records
-brew "adr-tools"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # Shell extension to jump to frequently used directories
 brew "autojump"
 # Official Amazon AWS command-line interface
@@ -43,10 +37,6 @@ brew "ghostscript"
 brew "git-lfs"
 # Alternative to top/htop
 brew "glances"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
-# Open-source build automation tool based on the Groovy and Kotlin DSL
-brew "gradle"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Kubernetes package manager
@@ -57,8 +47,6 @@ brew "htop"
 brew "hugo"
 # Command-line benchmarking tool
 brew "hyperfine"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
 # Tools and libraries to manipulate images in many formats
@@ -73,30 +61,16 @@ brew "kubectx"
 brew "lsd"
 # Utility for directing compilation
 brew "make"
-# Java-based project management
-brew "maven"
 # Port scanning utility for large networks
 brew "nmap"
-# Platform built on V8 to build network applications
-brew "node"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
-# Python dependency management tool
-brew "pipenv"
-# Python package management tool
-brew "poetry"
-# Object-relational database system
-brew "postgresql@14"
 # Password generator
 brew "pwgen"
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
-# Build tool for Scala projects
-brew "sbt"
-# JVM-based programming language
-brew "scala"
 # Build applications with serverless architectures
 brew "serverless"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -131,8 +105,6 @@ brew "vercel-cli"
 brew "watch"
 # Internet file retriever
 brew "wget"
-# JavaScript package manager
-brew "yarn"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster

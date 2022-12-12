@@ -5,17 +5,25 @@ chmod +x "$(brew --prefix asdf)/asdf.sh"
 
 # Add used plugins
 asdf plugin add python
+asdf plugin add poetry
+asdf plugin-add golang
 asdf plugin add java
-asdf plugin add dasel https://github.com/asdf-community/asdf-dasel.git
+asdf plugin-add scala
+asdf plugin-add sbt
+asdf plugin-add maven
+asdf plugin-add gradle
+asdf plugin-add nodejs
+asdf plugin-add yarn
+# Dasel tool https://github.com/TomWright/dasel
+asdf plugin add dasel
 
-# Add java versions
-asdf install java openjdk-11
+# Install all packages in ./etc/tools-versions
+asdf install
 
-# Add python versions
+# Add legacy scala versions
+asdf install scala 2.13.10
+
+# Add legacy python versions
 asdf install python 3.7.9
 asdf install python 3.8.10
 asdf install python 3.10.1
-
-# Dasel tool https://github.com/TomWright/dasel
-asdf install dasel 1.12.2
-asdf global dasel 1.12.2
