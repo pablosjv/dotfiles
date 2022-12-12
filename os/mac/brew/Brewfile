@@ -11,8 +11,6 @@ tap "robscott/tap"
 brew "asdf"
 # Shell extension to jump to frequently used directories
 brew "autojump"
-# Official Amazon AWS command-line interface
-brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -47,10 +45,6 @@ brew "htop"
 brew "hugo"
 # Command-line benchmarking tool
 brew "hyperfine"
-# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
-brew "libheif"
-# Tools and libraries to manipulate images in many formats
-brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Kubernetes command-line interface

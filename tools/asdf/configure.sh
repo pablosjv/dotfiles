@@ -14,6 +14,7 @@ asdf plugin-add maven
 asdf plugin-add gradle
 asdf plugin-add nodejs
 asdf plugin-add yarn
+asdf plugin-add awscli
 # Dasel tool https://github.com/TomWright/dasel
 asdf plugin add dasel
 
@@ -26,4 +27,3 @@ asdf install scala 2.13.10
 # Add legacy python versions
 asdf install python 3.7.9
 asdf install python 3.8.10
-asdf install python 3.10.1

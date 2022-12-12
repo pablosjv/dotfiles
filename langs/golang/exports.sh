@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH="$PROJECTS/go"
+# export GOROOT=/usr/local/opt/go/libexec
+# export GOPATH="$PROJECTS/go"
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
