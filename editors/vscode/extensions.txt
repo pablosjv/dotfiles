@@ -1,6 +1,7 @@
 42Crunch.vscode-openapi
 amazonwebservices.aws-toolkit-vscode
 be5invis.toml
+Catppuccin.catppuccin-vsc
 chaliy.handlebars-preview
 cssho.vscode-svgviewer
 DavidAnson.vscode-markdownlint
@@ -13,6 +14,7 @@ Flixs.vs-code-http-server-and-html-preview
 foxundermoon.shell-format
 franneck94.vscode-python-config
 franneck94.vscode-python-dev-extension-pack
+GitHub.copilot
 GitHub.github-vscode-theme
 GitHub.remotehub
 GitLab.gitlab-workflow

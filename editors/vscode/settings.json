@@ -29,6 +29,7 @@
     "editor.fontLigatures": false,
     "editor.fontSize": 12,
     "editor.formatOnType": true,
+    "editor.inlineSuggest.enabled": true,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
@@ -82,6 +83,12 @@
         "**/.metals": true
     },
     "git.confirmSync": false,
+    "github.copilot.enable": {
+        "*": true,
+        "markdown": true,
+        "plaintext": true,
+        "yaml": false
+    },
     "gitlens.views.branches.branches.layout": "list",
     "gitlens.views.commitDetails.files.layout": "tree",
     "go.autocompleteUnimportedPackages": true,
@@ -222,7 +229,7 @@
     "window.restoreWindows": "one",
     "window.title": "${activeEditorMedium}${separator}${rootName}",
     "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.colorTheme": "Catppuccin Macchiato",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.showIcons": true,
     "workbench.editorAssociations": {
