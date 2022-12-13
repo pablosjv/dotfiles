@@ -53,6 +53,7 @@
     ~/.config/pip/pip.conf: langs/python/pip.conf
     ~/.config/kitty/kitty.conf: tools/kitty/kitty.conf
     ~/.config/lsd/config.yaml: tools/lsd/config.yaml
+    ~/.config/bat/config: tools/bat/config
 
     /usr/local/lib/jvm/java: ~/.asdf/installs/java
 
@@ -93,12 +94,6 @@
       stdout: true
     - command: ./scripts/configure
       description: Running configurators
-      stdin: true
-      stdout: true
-    - command: |
-        defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/tools/iterm2" \
-        && defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-      description: Set iterm2 custom preferences folder
       stdin: true
       stdout: true
     - command: git config --global dotfiles.lastupdate "$(date +%Y-%m-%d-%H:%M)"
