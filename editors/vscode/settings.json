@@ -89,8 +89,21 @@
         "plaintext": true,
         "yaml": false
     },
-    "gitlens.views.branches.branches.layout": "list",
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.codeLens.scopes": [
+        "document",
+        "containers"
+    ],
+    "gitlens.hovers.annotations.over": "annotation",
+    "gitlens.hovers.currentLine.changes": false,
+    "gitlens.hovers.currentLine.enabled": false,
     "gitlens.views.commitDetails.files.layout": "tree",
+    "gitlens.views.repositories.showBranches": false,
+    "gitlens.views.repositories.showCommits": false,
+    "gitlens.views.repositories.showContributors": false,
+    "gitlens.views.repositories.showRemotes": false,
+    "gitlens.views.repositories.showTags": false,
     "go.autocompleteUnimportedPackages": true,
     "go.buildFlags": [
         "-v"
@@ -228,7 +241,6 @@
     "window.newWindowDimensions": "maximized",
     "window.restoreWindows": "one",
     "window.title": "${activeEditorMedium}${separator}${rootName}",
-    "workbench.activityBar.visible": true,
     "workbench.colorTheme": "Catppuccin Macchiato",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.showIcons": true,
