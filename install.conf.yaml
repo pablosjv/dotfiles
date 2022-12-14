@@ -54,6 +54,7 @@
     ~/.config/kitty/kitty.conf: tools/kitty/kitty.conf
     ~/.config/lsd/config.yaml: tools/lsd/config.yaml
     ~/.config/bat/config: tools/bat/config
+    ~/.config/gitui/theme.ron: tools/gitui/theme.ron
 
     /usr/local/lib/jvm/java: ~/.asdf/installs/java
 
