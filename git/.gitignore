@@ -5,10 +5,8 @@
 *.swp
 *.orig
 *.rbc
-.idea
 *.iml
 .classpath
 .project
 .settings
-.vscode/
 dump.rdb
