@@ -3,8 +3,6 @@
 # Apply dotfile configuration and installation.
 set -e
 
-info "$(python --version)"
-
 cd "$(dirname "$0")/.." || exit
 DOTFILES_ROOT=$(pwd -P)
 # shellcheck source=tools
@@ -15,6 +13,7 @@ CONFIG="$DOTFILES_ROOT/install.conf.yaml"
 DOTBOT_DIR="$DOTFILES_ROOT/dotbot"
 
 info "Upgrading dotfiles. Today is $(date)"
+info "$(python --version)"
 
 info "git update"
 git pull --quiet >/dev/null 2>&1 || true
