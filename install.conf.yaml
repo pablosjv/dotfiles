@@ -20,6 +20,8 @@
     - ~/.config/kitty
     - ~/.config/lsd
     - ~/.config/iterm2
+    - ~/.config/gitui
+    - ~/.config/bat
     - ~/.kube
     - ~/.kube/configs
     - ~/.local/bin/
