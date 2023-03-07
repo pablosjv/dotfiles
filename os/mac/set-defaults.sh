@@ -85,6 +85,14 @@ echo "  › Set up trackpad & mouse speed to a reasonable number"
 defaults write -g com.apple.trackpad.scaling 2
 defaults write -g com.apple.mouse.scaling 2.5
 
+echo "  › Set up trackpad three finger drag"
+defaults write com.apple.AppleMultitouchTrackpad DragLock -bool false
+defaults write com.apple.AppleMultitouchTrackpad Dragging -bool false
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+
+echo "  › Disable trap to click"
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool false
+
 echo "  › Avoid the creation of .DS_Store files on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
@@ -124,7 +132,10 @@ echo "  › Always open everything in Finder's Column view"
 # Nlsv ▸ List View
 # clmv ▸ Column View
 # icnv ▸ Icon View
-defaults write com.apple.Finder FXPreferredViewStyle clmv
+defaults write com.apple.finder FXPreferredViewStyle clmv
+
+echo "  › Set the Finder default window to the home folder"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 echo "  › Set the Finder prefs for showing a few different volumes on the Desktop"
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
