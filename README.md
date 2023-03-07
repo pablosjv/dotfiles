@@ -27,8 +27,8 @@ cd ~/.dotfiles
 From that moment the `dot` command will be available in your path, which simplify the dotfiles operation
 
 ```console
-❯ dot help
-dot [COMMAND]
+❯ dotfiles help
+dotfiles [COMMAND]
 
 Manages different dotfiles stuff
 
@@ -43,10 +43,10 @@ Commands:
     brew       interact with homebrew with extended commands
 ```
 
-The `dot apply` is a wrapper for dotbot, so you can provide command line arguments to the tool, for example:
+The `dotfiles apply` is a wrapper for dotbot, so you can provide command line arguments to the tool, for example:
 
 ```console
-dot apply --only link
+dotfiles apply --only link
 ```
 
 ### macOS defaults
