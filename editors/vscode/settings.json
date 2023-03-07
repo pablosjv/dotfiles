@@ -82,6 +82,7 @@
         "**/.bloop": true,
         "**/.metals": true
     },
+    "git.autofetch": true,
     "git.confirmSync": false,
     "github.copilot.enable": {
         "*": true,
@@ -129,10 +130,10 @@
         {
             "default": true,
             "name": "JavaSE-11",
-            "path": "/usr/local/lib/jvm/java/openjdk-11"
+            "path": "/usr/local/lib/jvm/java/openjdk-19"
         }
     ],
-    "java.jdt.ls.java.home": "/usr/local/lib/jvm/java/openjdk-11",
+    "java.jdt.ls.java.home": "/usr/local/lib/jvm/java/openjdk-19",
     "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "json.schemas": [],
@@ -150,7 +151,7 @@
         "MD024": false,
         "MD033": false
     },
-    "metals.javaHome": "/usr/local/lib/jvm/java/openjdk-11",
+    "metals.javaHome": "/usr/local/lib/jvm/java/openjdk-19",
     "mypy.runUsingActiveInterpreter": true,
     "notebook.cellToolbarLocation": {
         "default": "right",
@@ -175,6 +176,7 @@
     "python.testing.pytestEnabled": true,
     "redhat.telemetry.enabled": false,
     "rest-client.enableTelemetry": false,
+    "ruff.organizeImports": false,
     "search.exclude": {
         "**/bower_components": true,
         "**/node_modules": true,
@@ -184,10 +186,11 @@
     "search.showLineNumbers": true,
     "search.smartCase": true,
     "search.useGlobalIgnoreFiles": true,
+    "security.workspace.trust.untrustedFiles": "open",
     "shellcheck.customArgs": [
         "-x"
     ],
-    "sonarlint.ls.javaHome": "/usr/local/lib/jvm/java/openjdk-11",
+    "sonarlint.ls.javaHome": "/usr/local/lib/jvm/java/openjdk-19",
     "sqltools.format": {
         "reservedWordCase": "upper"
     },
@@ -197,6 +200,7 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.fontSize": 12,
+    "terminal.integrated.inheritEnv": false,
     "terminal.integrated.profiles.osx": {
         "bash": {
             "args": [
@@ -245,7 +249,8 @@
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.showIcons": true,
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+        "*.ipynb": "jupyter-notebook",
+        "git-rebase-todo": "gitlens.rebase"
     },
     "workbench.fontAliasing": "auto",
     "workbench.iconTheme": "material-icon-theme",

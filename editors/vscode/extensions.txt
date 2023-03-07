@@ -3,7 +3,7 @@ amazonwebservices.aws-toolkit-vscode
 be5invis.toml
 Catppuccin.catppuccin-vsc
 chaliy.handlebars-preview
-cssho.vscode-svgviewer
+charliermarsh.ruff
 DavidAnson.vscode-markdownlint
 DiogoNolasco.pyinit
 DotJoshJohnson.xml
@@ -24,10 +24,10 @@ hashicorp.terraform
 humao.rest-client
 James-Yu.latex-workshop
 jebbs.plantuml
-matangover.mypy
 mermade.openapi-lint
 ms-azuretools.vscode-docker
 ms-kubernetes-tools.vscode-kubernetes-tools
+ms-python.isort
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
@@ -37,6 +37,9 @@ ms-toolsai.vscode-jupyter-cell-tags
 ms-toolsai.vscode-jupyter-slideshow
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
+ms-vscode.cpptools
+ms-vscode.live-server
+ms-vscode.makefile-tools
 ms-vscode.remote-explorer
 ms-vscode.remote-repositories
 ms-vsliveshare.vsliveshare
@@ -47,7 +50,8 @@ PKief.material-icon-theme
 pnp.polacode
 quicktype.quicktype
 redhat.vscode-yaml
-ritwickdey.LiveServer
+ryanluker.vscode-coverage-gutters
+SonarSource.sonarlint-vscode
 tamasfe.even-better-toml
 timonwong.shellcheck
 wholroyd.jinja

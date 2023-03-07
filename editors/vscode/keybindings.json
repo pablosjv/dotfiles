@@ -16,5 +16,9 @@
         "key": "shift+enter",
         "command": "-jupyter.execSelectionInteractive",
         "when": "editorTextFocus && jupyter.featureenabled && jupyter.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "coverage-gutters.displayCoverage"
     }
 ]
