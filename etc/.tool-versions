@@ -1,5 +1,5 @@
 golang 1.19.4
-java openjdk-11
+java openjdk-19
 scala 3.2.1
 sbt 1.8.0
 python 3.10.9 system
