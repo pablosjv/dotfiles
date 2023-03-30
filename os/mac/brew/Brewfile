@@ -9,6 +9,8 @@ tap "mongodb/brew"
 tap "robscott/tap"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
 # Shell extension to jump to frequently used directories
 brew "autojump"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -41,6 +43,14 @@ brew "gitui"
 brew "glances"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Framework for layout and rendering of i18n text
+brew "pango"
+# Library to render SVG files using Cairo
+brew "librsvg"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Kubernetes package manager
@@ -51,10 +61,14 @@ brew "htop"
 brew "hugo"
 # Command-line benchmarking tool
 brew "hyperfine"
+# Platform built on V8 to build network applications
+brew "node"
 # High precision scientific calculator with support for physical units
 brew "insect"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "k9s"
 # Kubernetes command-line interface
 brew "kubernetes-cli", link: false
 # Tool that can switch between kubectl contexts easily and create aliases
@@ -67,14 +81,26 @@ brew "make"
 brew "neofetch"
 # Port scanning utility for large networks
 brew "nmap"
+# Optimized BLAS library
+brew "openblas"
+# Development kit for the Java programming language
+brew "openjdk@11"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
 # Password generator
 brew "pwgen"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# Safe, concurrent, practical language
+brew "rust"
 # Build applications with serverless architectures
 brew "serverless"
 # Static analysis and lint tool, for (ba)sh scripts

@@ -58,6 +58,7 @@
     ~/.config/bat/config: tools/bat/config
     ~/.config/gitui/theme.ron: tools/gitui/theme.ron
     ~/.config/btop: tools/btop
+    ~/.config/k9s: tools/k9s
 
     /usr/local/lib/jvm/java: ~/.asdf/installs/java
 
