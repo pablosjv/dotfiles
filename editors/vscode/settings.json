@@ -86,8 +86,8 @@
     "git.confirmSync": false,
     "github.copilot.enable": {
         "*": true,
-        "markdown": true,
-        "plaintext": true,
+        "markdown": false,
+        "plaintext": false,
         "yaml": false
     },
     "gitlens.codeLens.authors.enabled": false,
@@ -189,6 +189,12 @@
     "security.workspace.trust.untrustedFiles": "open",
     "shellcheck.customArgs": [
         "-x"
+    ],
+    "sonarlint.connectedMode.connections.sonarcloud": [
+        {
+            "connectionId": "clarity-ai",
+            "organizationKey": "clarity-ai"
+        }
     ],
     "sonarlint.ls.javaHome": "/usr/local/lib/jvm/java/openjdk-19",
     "sqltools.format": {

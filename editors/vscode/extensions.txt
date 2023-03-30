@@ -7,6 +7,7 @@ charliermarsh.ruff
 DavidAnson.vscode-markdownlint
 DiogoNolasco.pyinit
 DotJoshJohnson.xml
+drrouman.git-coauthors
 eamodio.gitlens
 EditorConfig.EditorConfig
 exiasr.hadolint
@@ -24,6 +25,7 @@ hashicorp.terraform
 humao.rest-client
 James-Yu.latex-workshop
 jebbs.plantuml
+joyceerhl.vscode-dask
 mermade.openapi-lint
 ms-azuretools.vscode-docker
 ms-kubernetes-tools.vscode-kubernetes-tools
