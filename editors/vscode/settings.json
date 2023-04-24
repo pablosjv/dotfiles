@@ -12,6 +12,7 @@
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
     },
     "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.semanticHighlighting.enabled": false
     },
     "[sql]": {
@@ -23,6 +24,51 @@
     "autoDocstring.docstringFormat": "google",
     "aws.telemetry": false,
     "breadcrumbs.enabled": true,
+    "cSpell.enableFiletypes": [
+        "!git-commit",
+        "!json",
+        "!markdown",
+        "!yaml",
+        "!yml"
+    ],
+    "cSpell.userWords": [
+        "airflowignore",
+        "astype",
+        "autolog",
+        "cloudpickle",
+        "CODEOWNERS",
+        "Dask",
+        "dataframe",
+        "dataframes",
+        "datapoint",
+        "datascience",
+        "directscope",
+        "direnv",
+        "Dtype",
+        "dtypes",
+        "entrypoints",
+        "getenv",
+        "iloc",
+        "isin",
+        "isna",
+        "loguru",
+        "mgmt",
+        "mlflow",
+        "mlruns",
+        "outter",
+        "Pandera",
+        "Pipenv",
+        "Pipfile",
+        "pyarrow",
+        "pydantic",
+        "pyproject",
+        "quantile",
+        "scikit",
+        "sklearn",
+        "sonarcloud",
+        "timespec",
+        "Traceback"
+    ],
     "editor.acceptSuggestionOnEnter": "on",
     "editor.cursorBlinking": "phase",
     "editor.fontFamily": "MesloLGLDZ Nerd Font Mono",
@@ -287,7 +333,8 @@
         "!Sub sequence",
         "!ImportValue sequence",
         "!Select sequence",
-        "!Split sequence"
+        "!Split sequence",
+        "!reference sequence"
     ],
     "yaml.format.singleQuote": true
 }
