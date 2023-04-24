@@ -70,7 +70,7 @@ brew "jq"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
 # Kubernetes command-line interface
-brew "kubernetes-cli", link: false
+brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
 # Clone of ls with colorful output, file type icons, and more
@@ -85,8 +85,6 @@ brew "nmap"
 brew "openblas"
 # Development kit for the Java programming language
 brew "openjdk@11"
-# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
-brew "openvpn"
 # CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
 # Protocol buffers (Google's data interchange format)
@@ -143,8 +141,6 @@ brew "robscott/tap/kube-capacity"
 cask "1password"
 # Cross platform SQL editor and database management app
 cask "beekeeper-studio"
-# Databases & SQL IDE
-cask "datagrip"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerized applications and microservices
@@ -167,6 +163,8 @@ cask "kitty"
 cask "logitech-options"
 # App to write, plan, collaborate, and get organized
 cask "notion"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Collaboration platform for API development
 cask "postman"
 # Archive manager for data compression and backups
