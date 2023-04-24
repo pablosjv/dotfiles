@@ -10,6 +10,12 @@ docker-clean() {
     docker system prune -f --filter until=120h
 }
 
+docker-image-arch() {
+    # Get the architecture of a docker image
+    DOCKER_IMAGE=$1
+    docker inspect "${DOCKER_IMAGE}" | jq ".[0].Architecture"
+}
+
 dit() {
     local image="${1:-alpine}"
     local cmd="${2:-sh}"
