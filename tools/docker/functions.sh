@@ -6,6 +6,8 @@ docker-prune() {
 }
 
 docker-clean() {
+    docker image prune -f
+    docker builder prune -af
     # Clean docker trash generated more than five days ago
     docker system prune -f --filter until=120h
 }
@@ -23,7 +25,7 @@ dit() {
         -v "${PWD}":/project \
         --env-file=.env \
         --workdir /project \
-       "${image}" "${cmd}"
+        "${image}" "${cmd}"
 }
 
 dit-aws() {
