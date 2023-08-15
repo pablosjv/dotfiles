@@ -2,6 +2,9 @@
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
+    "[dotenv]": {
+        "editor.formatOnSave": false
+    },
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
@@ -22,6 +25,9 @@
         "editor.defaultFormatter": "be5invis.toml"
     },
     "autoDocstring.docstringFormat": "google",
+    "aws.codeWhisperer.importRecommendation": false,
+    "aws.codeWhisperer.includeSuggestionsWithCodeReferences": false,
+    "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
     "aws.telemetry": false,
     "breadcrumbs.enabled": true,
     "cSpell.enableFiletypes": [
@@ -31,39 +37,52 @@
         "!yaml",
         "!yml"
     ],
+    "cSpell.enabled": true,
+    "cSpell.spellCheckOnlyWorkspaceFiles": true,
     "cSpell.userWords": [
         "airflowignore",
         "astype",
         "autolog",
+        "autouse",
         "cloudpickle",
         "CODEOWNERS",
+        "dagrun",
         "Dask",
         "dataframe",
         "dataframes",
         "datapoint",
+        "datapoints",
         "datascience",
         "directscope",
         "direnv",
+        "dropna",
         "Dtype",
         "dtypes",
         "entrypoints",
+        "etls",
+        "fillna",
         "getenv",
         "iloc",
         "isin",
         "isna",
+        "joblib",
         "loguru",
+        "matplotlib",
         "mgmt",
         "mlflow",
         "mlruns",
+        "nunique",
         "outter",
         "Pandera",
         "Pipenv",
         "Pipfile",
         "pyarrow",
         "pydantic",
+        "pyplot",
         "pyproject",
         "quantile",
         "scikit",
+        "shap",
         "sklearn",
         "sonarcloud",
         "timespec",
@@ -74,6 +93,7 @@
     "editor.fontFamily": "MesloLGLDZ Nerd Font Mono",
     "editor.fontLigatures": false,
     "editor.fontSize": 12,
+    "editor.formatOnSave": false,
     "editor.formatOnType": true,
     "editor.inlineSuggest.enabled": true,
     "editor.minimap.enabled": false,
@@ -134,6 +154,7 @@
         "*": true,
         "markdown": false,
         "plaintext": false,
+        "scminput": false,
         "yaml": false
     },
     "gitlens.codeLens.authors.enabled": false,
@@ -302,6 +323,7 @@
     "workbench.editor.showIcons": true,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook",
+        "*.pdf": "latex-workshop-pdf-hook",
         "git-rebase-todo": "gitlens.rebase"
     },
     "workbench.fontAliasing": "auto",
