@@ -68,5 +68,6 @@ tamasfe.even-better-toml
 timonwong.shellcheck
 wholroyd.jinja
 wmaurer.change-case
+yzane.markdown-pdf
 yzhang.markdown-all-in-one
 zhuangtongfa.material-theme
