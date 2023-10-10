@@ -13,7 +13,7 @@ fpr = fetch-pr
 lt = log --tags --decorate --simplify-by-decoration --oneline
 ignore = !sh -c \"wget --no-check-certificate -q https://www.gitignore.io/api/$1 -O .gitignore\"
 # Git log the current branch to master
-lb = log --format=format:\"- %s\" master..
+lb = log --format=format:\"- %s\" --no-merges --first-parent master..HEAD
 gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
 
 [color]
