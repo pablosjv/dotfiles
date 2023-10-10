@@ -15,6 +15,7 @@ asdf plugin-add gradle
 asdf plugin-add nodejs
 asdf plugin-add yarn
 asdf plugin-add awscli
+asdf plugin-add sops
 # Dasel tool https://github.com/TomWright/dasel
 asdf plugin add dasel
 
