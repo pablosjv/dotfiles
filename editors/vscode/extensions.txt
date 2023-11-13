@@ -1,7 +1,9 @@
 42Crunch.vscode-openapi
+alexcvzz.vscode-sqlite
 amazonwebservices.aws-toolkit-vscode
 be5invis.toml
 bierner.markdown-mermaid
+bruno-api-client.bruno
 Catppuccin.catppuccin-vsc
 chaliy.handlebars-preview
 charliermarsh.ruff
@@ -17,6 +19,7 @@ foxundermoon.shell-format
 franneck94.vscode-python-config
 franneck94.vscode-python-dev-extension-pack
 GitHub.copilot
+GitHub.copilot-chat
 GitHub.github-vscode-theme
 GitHub.remotehub
 GitLab.gitlab-workflow
@@ -25,6 +28,7 @@ Gruntfuggly.todo-tree
 hashicorp.terraform
 humao.rest-client
 James-Yu.latex-workshop
+janisdd.vscode-edit-csv
 jasonnutter.vscode-codeowners
 jebbs.plantuml
 joyceerhl.vscode-dask
@@ -32,7 +36,6 @@ mermade.openapi-lint
 ms-azuretools.vscode-docker
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.black-formatter
-ms-python.isort
 ms-python.mypy-type-checker
 ms-python.python
 ms-python.vscode-pylance
@@ -51,8 +54,10 @@ ms-vscode.makefile-tools
 ms-vscode.remote-explorer
 ms-vscode.remote-repositories
 ms-vscode.remote-server
+ms-vscode.wordcount
 ms-vsliveshare.vsliveshare
 mtxr.sqltools
+mtxr.sqltools-driver-sqlite
 njpwerner.autodocstring
 njqdev.vscode-python-typehint
 phoihos.csv-to-md-table

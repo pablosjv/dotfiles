@@ -12,11 +12,15 @@
         "editor.wordWrap": "on"
     },
     "[markdown]": {
-        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+        "editor.tabSize": 3
     },
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.semanticHighlighting.enabled": false
+    },
+    "[snowflake-sql]": {
+        "editor.defaultFormatter": "mtxr.sqltools"
     },
     "[sql]": {
         "editor.defaultFormatter": "mtxr.sqltools"
@@ -32,12 +36,12 @@
     "breadcrumbs.enabled": true,
     "cSpell.enableFiletypes": [
         "!git-commit",
-        "!json",
-        "!markdown",
-        "!yaml",
-        "!yml"
+        "codeowners",
+        "dockerfile",
+        "markdown_latex_combined"
     ],
     "cSpell.enabled": true,
+    "cSpell.language": "en,en-US",
     "cSpell.spellCheckOnlyWorkspaceFiles": true,
     "cSpell.userWords": [
         "airflowignore",
@@ -94,7 +98,6 @@
     "editor.fontLigatures": false,
     "editor.fontSize": 12,
     "editor.formatOnSave": false,
-    "editor.formatOnType": true,
     "editor.inlineSuggest.enabled": true,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
@@ -213,6 +216,7 @@
     "latex-workshop.docker.enabled": true,
     "latex-workshop.intellisense.package.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
+    "markdown.extension.list.indentationSize": "inherit",
     "markdownlint.config": {
         "MD007": false,
         "MD024": false,
@@ -232,18 +236,14 @@
     "plantuml.render": "PlantUMLServer",
     "python.analysis.completeFunctionParens": true,
     "python.analysis.logLevel": "Warning",
-    "python.formatting.provider": "black",
     "python.languageServer": "Pylance",
     "python.linting.flake8Args": [
         "--ignore=W503"
     ],
-    "python.linting.flake8Enabled": true,
-    "python.linting.pylintEnabled": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "python.testing.pytestEnabled": true,
     "redhat.telemetry.enabled": false,
     "rest-client.enableTelemetry": false,
-    "ruff.organizeImports": false,
     "search.exclude": {
         "**/bower_components": true,
         "**/node_modules": true,

@@ -1,6 +1,5 @@
 virtualenv
-black
-flake8
 ipython
 mypy
 pipenv
+ruff

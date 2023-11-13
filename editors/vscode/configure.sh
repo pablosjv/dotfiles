@@ -1,12 +1,6 @@
 #!/usr/bin/env sh
 
-if command -v code >/dev/null; then
-    if [ "$(uname -s)" = "Darwin" ]; then
-        VSCODE_HOME="$HOME/Library/Application Support/Code"
-    else
-        VSCODE_HOME="$HOME/.config/Code"
-    fi
-    mkdir -p "$VSCODE_HOME/User"
+install_vscode_extensions() {
     EXTENSIONS_FILE="$DOTFILES/editors/vscode/extensions.txt"
     echo "  › Installing extensions from $EXTENSIONS_FILE"
     tput setaf 2
@@ -19,4 +13,15 @@ if command -v code >/dev/null; then
     printf " ] \n"
     tput sgr0
     echo "  › Extensions installed"
+}
+
+if command -v code >/dev/null; then
+    if [ "$(uname -s)" = "Darwin" ]; then
+        VSCODE_HOME="$HOME/Library/Application Support/Code"
+    else
+        VSCODE_HOME="$HOME/.config/Code"
+    fi
+    mkdir -p "$VSCODE_HOME/User"
+    # NOTE: extensions are installed with homebrew now
+    # install_vscode_extensions
 fi
