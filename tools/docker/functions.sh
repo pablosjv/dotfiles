@@ -18,15 +18,25 @@ docker-image-arch() {
     docker inspect "${DOCKER_IMAGE}" | jq ".[0].Architecture"
 }
 
-dit() {
+dit(){
+    local image="${1:-alpine}"
+    local cmd="${2:-sh}"
+    docker run -it --rm \
+        --entrypoint="${cmd}" \
+        "${image}"
+}
+
+dit-project() {
     local image="${1:-alpine}"
     local cmd="${2:-sh}"
     docker run -it --rm \
         -v "${PWD}":/project \
         --env-file=.env \
         --workdir /project \
+        --entrypoint="${cmd}" \
         "${image}" "${cmd}"
 }
+
 
 dit-aws() {
     local image="${1:-alpine}"
@@ -36,7 +46,8 @@ dit-aws() {
         -v "${HOME}/.aws/credentials":/root/.aws/credentials:ro \
         -v "${HOME}/.aws/config":/root/.aws/config:ro \
         --workdir /project \
-        "${image}" "${cmd}"
+        --entrypoint="${cmd}" \
+        "${image}"
 }
 
 docker-watch() {
