@@ -67,11 +67,13 @@
       glob: true
       path: editors/vscode/*.json
       relink: true
+      force: true
       if: '[ `uname` = Darwin ]'
     ~/Library/Application Support/Code/User/snippets:
       create: true
       path: editors/vscode/snippets
       relink: true
+      force: true
       if: '[ `uname` = Darwin ]'
 
     ~/.config/Code/User/:
