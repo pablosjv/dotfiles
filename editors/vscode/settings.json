@@ -151,7 +151,9 @@
         "**/.bloop": true,
         "**/.metals": true
     },
+    "git.allowForcePush": true,
     "git.autofetch": true,
+    "git.confirmForcePush": false,
     "git.confirmSync": false,
     "github.copilot.enable": {
         "*": true,
@@ -229,6 +231,7 @@
         "jupyter-notebook": "left"
     },
     "notebook.lineNumbers": "on",
+    "notebook.output.scrolling": true,
     "notebook.output.textLineLimit": 500,
     "oneDarkPro.bold": true,
     "oneDarkPro.editorTheme": "One Dark Pro Flat",
@@ -263,6 +266,7 @@
             "organizationKey": "clarity-ai"
         }
     ],
+    "sonarlint.focusOnNewCode": true,
     "sonarlint.ls.javaHome": "/usr/local/lib/jvm/java/openjdk-19",
     "sqltools.format": {
         "reservedWordCase": "upper"
