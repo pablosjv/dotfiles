@@ -53,3 +53,9 @@ dit-aws() {
 docker-watch() {
     watch 'docker ps --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}"'
 }
+
+docker-rmi-all() {
+    # Remove all docker images for a given repository
+    docker_repo=$1
+    docker images --filter="reference=${docker_repo}" --format="{{.Repository}}:{{.Tag}}" | xargs docker rmi
+}
