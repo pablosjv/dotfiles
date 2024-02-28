@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-alias doco='docker compose'
+alias doco='docker-compose'
