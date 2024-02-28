@@ -18,7 +18,8 @@ zmodule input
 zmodule termtitle
 # Utility aliases and functions. Adds colour to ls, grep and less.
 zmodule utility
-
+# Sets up asdf, with auto install and optimized usage of the direnv plugin.
+zmodule asdf
 # zim module for kubectl.
 zmodule joke/zim-kubectl
 
@@ -37,6 +38,10 @@ zmodule romkatv/powerlevel10k --use degit
 zmodule zsh-users/zsh-completions --fpath src
 # Extra completions
 zmodule $DOTFILES/shell/zsh/completions --fpath .
+# Homebrew installed completions
+if [[ -d /opt/homebrew/share/zsh ]] && [[ $(uname) == Darwin ]] ; then
+    zmodule /opt/homebrew/share/zsh --fpath site-functions
+fi
 # Enables and configures smart and extensive tab completion.
 # completion must be sourced after all modules that add completion definitions.
 zmodule completion

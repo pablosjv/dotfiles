@@ -16,6 +16,8 @@ asdf plugin-add nodejs
 asdf plugin-add yarn
 asdf plugin-add awscli
 asdf plugin-add sops
+# Pluging for faster env resolution https://github.com/asdf-community/asdf-direnv
+asdf plugin-add direnv
 # Dasel tool https://github.com/TomWright/dasel
 asdf plugin add dasel
 
