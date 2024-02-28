@@ -51,6 +51,8 @@ brew "ctop"
 brew "direnv"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
+# Bash, Zsh and Fish completion for Docker
+brew "docker-completion"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Find files with SQL-like queries
@@ -103,6 +105,8 @@ brew "insect"
 brew "jq"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
+# Network authentication protocol
+brew "krb5"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases
@@ -175,8 +179,6 @@ cask "google-chrome"
 cask "google-cloud-sdk"
 # Client for the Google Drive storage service
 cask "google-drive"
-# Testing client for REST, GraphQL, and HTTP APIs
-cask "httpie"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # GPU-based terminal emulator
