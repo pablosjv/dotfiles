@@ -8,6 +8,9 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
+    "[json]": {
+        "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
+    },
     "[latex]": {
         "editor.wordWrap": "on"
     },
@@ -92,6 +95,8 @@
         "timespec",
         "Traceback"
     ],
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.renderSideBySide": false,
     "editor.acceptSuggestionOnEnter": "on",
     "editor.cursorBlinking": "phase",
     "editor.fontFamily": "MesloLGLDZ Nerd Font Mono",
@@ -238,12 +243,12 @@
     "oneDarkPro.italic": false,
     "plantuml.render": "PlantUMLServer",
     "python.analysis.completeFunctionParens": true,
+    "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.logLevel": "Warning",
     "python.languageServer": "Pylance",
     "python.linting.flake8Args": [
         "--ignore=W503"
     ],
-    "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "python.testing.pytestEnabled": true,
     "redhat.telemetry.enabled": false,
     "rest-client.enableTelemetry": false,
@@ -318,6 +323,9 @@
     ],
     "todo-tree.highlights.enabled": false,
     "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "disabled"
+    },
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.newWindowDimensions": "maximized",
     "window.restoreWindows": "one",
