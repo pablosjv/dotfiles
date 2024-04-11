@@ -1,6 +1,6 @@
-# Pablo's dotfiles ![GitHub last commit](https://img.shields.io/github/last-commit/pablosjv/pablosanjose.com?style=flat-square)
+# Pablo's dotfiles ![GitHub last commit](https://img.shields.io/github/last-commit/pablosjv/dodfiles?style=flat-square)
 
-> Config files for ZSH, Python, Editors, Terminals and more. Powered by dotbot.
+> Config files for ZSH, Python, Editors, Terminals, and more. Powered by dotbot.
 
 ## Installation
 
