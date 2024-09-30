@@ -11,6 +11,9 @@
     "[json]": {
         "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
     },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
     "[latex]": {
         "editor.wordWrap": "on"
     },
@@ -78,6 +81,7 @@
         "mgmt",
         "mlflow",
         "mlruns",
+        "ndarray",
         "nunique",
         "outter",
         "Pandera",
@@ -160,6 +164,10 @@
     "git.autofetch": true,
     "git.confirmForcePush": false,
     "git.confirmSync": false,
+    "git.ignoreRebaseWarning": true,
+    "git.replaceTagsWhenPull": true,
+    "git.suggestSmartCommit": false,
+    "github.copilot.editor.enableAutoCompletions": true,
     "github.copilot.enable": {
         "*": true,
         "markdown": false,
@@ -236,6 +244,7 @@
         "jupyter-notebook": "left"
     },
     "notebook.lineNumbers": "on",
+    "notebook.output.minimalErrorRendering": true,
     "notebook.output.scrolling": true,
     "notebook.output.textLineLimit": 500,
     "oneDarkPro.bold": true,
@@ -252,6 +261,8 @@
     "python.testing.pytestEnabled": true,
     "redhat.telemetry.enabled": false,
     "rest-client.enableTelemetry": false,
+    "scm.experimental.showHistoryGraph": true,
+    "scm.workingSets.enabled": true,
     "search.exclude": {
         "**/bower_components": true,
         "**/node_modules": true,
@@ -265,6 +276,7 @@
     "shellcheck.customArgs": [
         "-x"
     ],
+    "snowflake.connectionsConfigFile": "/Users/pablosanjose/.snowflake/connections.toml",
     "sonarlint.connectedMode.connections.sonarcloud": [
         {
             "connectionId": "clarity-ai",
@@ -330,6 +342,7 @@
     "window.newWindowDimensions": "maximized",
     "window.restoreWindows": "one",
     "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "workbench.activityBar.location": "top",
     "workbench.colorTheme": "Catppuccin Macchiato",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.showIcons": true,
