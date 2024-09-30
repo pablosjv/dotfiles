@@ -10,6 +10,8 @@ alias klbaddr="kubectl get svc -ojsonpath='{.status.loadBalancer.ingress[0].host
 
 alias kdebug='kubectl run -i -t debug --rm --image=alpine:latest --restart=Never'
 alias knrunning='kubectl get pods --field-selector=status.phase!=Running'
-alias kfails='kubectl get po -owide --all-namespaces | grep "0/" | tee /dev/tty | wc -l'
+alias kfails='kubectl get pods --field-selector="status.phase!=Succeeded,status.phase!=Running" -o custom-columns="POD:metadata.name,PHASE:status.phase,STATE:status.containerStatuses[*].state.waiting.reason"'
 alias kimg="kubectl get deployment --output=jsonpath='{.spec.template.spec.containers[*].image}'"
-alias kvs="kubectl view-secret"
+alias kvs="k get secret -o jsonpath-as-json='{.data}'"
+alias kpp="kubectl get pod -o jsonpath='{.spec.containers[*].ports}'"
+alias ksp="kubectl get service -o jsonpath='{.spec.ports[*].ports}'"
