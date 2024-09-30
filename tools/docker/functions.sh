@@ -34,7 +34,7 @@ dit-project() {
         --env-file=.env \
         --workdir /project \
         --entrypoint="${cmd}" \
-        "${image}" "${cmd}"
+        "${image}"
 }
 
 
