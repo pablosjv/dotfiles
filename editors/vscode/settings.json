@@ -255,6 +255,9 @@
     "python.analysis.completeFunctionParens": true,
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.logLevel": "Warning",
+    "python.experiments.optInto": [
+        "pythonTestAdapter"
+    ],
     "python.languageServer": "Pylance",
     "python.linting.flake8Args": [
         "--ignore=W503"

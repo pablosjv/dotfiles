@@ -8,16 +8,24 @@ tap "mongodb/brew"
 tap "ngrok/ngrok"
 tap "robscott/tap"
 tap "ynqa/tap"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
 # New file format for still image compression
 brew "jpeg-xl"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Library for command-line editing
+brew "readline"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
+# Command-line interface for SQLite
+brew "sqlite"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
 # Shell extension to jump to frequently used directories
@@ -110,6 +118,8 @@ brew "krb5"
 brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
+# LLVM's OpenMP runtime library
+brew "libomp"
 # Postgres C API library
 brew "libpq", link: true
 # Next-gen compiler infrastructure
@@ -162,6 +172,8 @@ brew "watch"
 brew "wget"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# General-purpose lossless data-compression library
+brew "zlib"
 # A command-line tool to kill processes listening on a specific port
 brew "jkfran/killport/killport"
 # kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster
@@ -293,6 +305,7 @@ vscode "phoihos.csv-to-md-table"
 vscode "pkief.material-icon-theme"
 vscode "pnp.polacode"
 vscode "pomber.git-file-history"
+vscode "pomdtr.excalidraw-editor"
 vscode "postman.postman-for-vscode"
 vscode "quicktype.quicktype"
 vscode "redhat.vscode-yaml"
