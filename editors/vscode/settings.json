@@ -239,6 +239,7 @@
         "MD033": false
     },
     "metals.javaHome": "/usr/local/lib/jvm/java/openjdk-19",
+    "mypy-type-checker.importStrategy": "fromEnvironment",
     "mypy.runUsingActiveInterpreter": true,
     "notebook.cellToolbarLocation": {
         "default": "right",
@@ -294,6 +295,7 @@
     },
     "sqltools.highlightQuery": false,
     "sqltools.showStatusbar": false,
+    "sqltools.useNodeRuntime": true,
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.defaultProfile.osx": "zsh",

@@ -24,8 +24,6 @@ brew "readline"
 brew "asdf"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
-# Command-line interface for SQLite
-brew "sqlite"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
 # Shell extension to jump to frequently used directories
@@ -211,6 +209,8 @@ cask "iterm2"
 cask "kitty"
 # Software for Logitech devices
 cask "logitech-options"
+# Create mock APIs in seconds
+cask "mockoon"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # App to write, plan, collaborate, and get organised
@@ -308,6 +308,7 @@ vscode "pomber.git-file-history"
 vscode "pomdtr.excalidraw-editor"
 vscode "postman.postman-for-vscode"
 vscode "quicktype.quicktype"
+vscode "randomfractalsinc.duckdb-sql-tools"
 vscode "redhat.vscode-yaml"
 vscode "snowflake.snowflake-vsc"
 vscode "sonarsource.sonarlint-vscode"
