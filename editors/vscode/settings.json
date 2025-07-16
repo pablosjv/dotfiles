@@ -99,9 +99,11 @@
         "timespec",
         "Traceback"
     ],
+    "chat.agent.enabled": true,
     "diffEditor.experimental.showMoves": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": false,
+    "docker.extension.enableComposeLanguageServer": false,
     "editor.acceptSuggestionOnEnter": "on",
     "editor.cursorBlinking": "phase",
     "editor.fontFamily": "MesloLGLDZ Nerd Font Mono",
@@ -174,8 +176,10 @@
         "markdown": false,
         "plaintext": false,
         "scminput": false,
-        "yaml": false
+        "yaml": true
     },
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gemini-2.5-pro",
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
     "gitlens.codeLens.scopes": [
@@ -241,10 +245,12 @@
     "metals.javaHome": "/usr/local/lib/jvm/java/openjdk-19",
     "mypy-type-checker.importStrategy": "fromEnvironment",
     "mypy.runUsingActiveInterpreter": true,
+    "notebook.cellExecutionTimeVerbosity": "verbose",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
+    "notebook.inlineValues": true,
     "notebook.lineNumbers": "on",
     "notebook.output.minimalErrorRendering": true,
     "notebook.output.scrolling": true,
@@ -290,6 +296,7 @@
     ],
     "sonarlint.focusOnNewCode": true,
     "sonarlint.ls.javaHome": "/usr/local/lib/jvm/java/openjdk-19",
+    "sqltools.connections": [],
     "sqltools.format": {
         "reservedWordCase": "upper"
     },
@@ -325,6 +332,7 @@
             "path": "zsh"
         }
     },
+    "testing.coverageToolbarEnabled": true,
     "todo-tree.filtering.excludeGlobs": [
         "**/_build/**",
         "**/htmlcov/**"

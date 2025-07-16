@@ -3,7 +3,7 @@ java openjdk-19
 python 3.12.4
 poetry 2.0.1
 dasel 2.0.2
-nodejs 19.2.0
+nodejs 22.13.1
 yarn 1.22.19
 awscli 2.9.6
 direnv 2.35.0

@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
-# shellcheck source=/usr/local/opt/asdf/libexec/asdf.sh
-. "$(brew --prefix asdf)/libexec/asdf.sh"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # Automatically sets JAVA_HOME
-. ~/.asdf/plugins/java/set-java-home.zsh
+# . ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/java/set-java-home.zsh

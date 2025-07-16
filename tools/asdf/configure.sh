@@ -1,8 +1,5 @@
 #!/usr/bin/env sh
 
-# Fix permissions error
-chmod +x "$(brew --prefix asdf)/asdf.sh"
-
 # Add used plugins
 asdf plugin add python
 asdf plugin add poetry
