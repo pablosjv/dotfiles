@@ -2,9 +2,6 @@
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
-    "[dotenv]": {
-        "editor.formatOnSave": false
-    },
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
@@ -35,17 +32,7 @@
         "editor.defaultFormatter": "be5invis.toml"
     },
     "autoDocstring.docstringFormat": "google",
-    "aws.codeWhisperer.importRecommendation": false,
-    "aws.codeWhisperer.includeSuggestionsWithCodeReferences": false,
-    "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
-    "aws.telemetry": false,
     "breadcrumbs.enabled": true,
-    "cSpell.enableFiletypes": [
-        "!git-commit",
-        "codeowners",
-        "dockerfile",
-        "markdown_latex_combined"
-    ],
     "cSpell.enabled": true,
     "cSpell.language": "en,en-US",
     "cSpell.spellCheckOnlyWorkspaceFiles": true,
@@ -170,7 +157,6 @@
     "git.ignoreRebaseWarning": true,
     "git.replaceTagsWhenPull": true,
     "git.suggestSmartCommit": false,
-    "github.copilot.editor.enableAutoCompletions": true,
     "github.copilot.enable": {
         "*": true,
         "markdown": false,
@@ -206,24 +192,8 @@
     "go.formatTool": "goimports",
     "go.testTimeout": "3m",
     "go.toolsManagement.autoUpdate": true,
-    "go.useCodeSnippetsOnFunctionSuggest": true,
     "go.useLanguageServer": true,
     "html.format.wrapLineLength": 0,
-    "isort.args": [
-        "-w",
-        "120",
-        "--profile",
-        "black"
-    ],
-    "java.completion.enabled": true,
-    "java.configuration.runtimes": [
-        {
-            "default": true,
-            "name": "JavaSE-11",
-            "path": "/usr/local/lib/jvm/java/openjdk-19"
-        }
-    ],
-    "java.jdt.ls.java.home": "/usr/local/lib/jvm/java/openjdk-19",
     "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "json.schemas": [],
@@ -242,9 +212,7 @@
         "MD024": false,
         "MD033": false
     },
-    "metals.javaHome": "/usr/local/lib/jvm/java/openjdk-19",
     "mypy-type-checker.importStrategy": "fromEnvironment",
-    "mypy.runUsingActiveInterpreter": true,
     "notebook.cellExecutionTimeVerbosity": "verbose",
     "notebook.cellToolbarLocation": {
         "default": "right",
@@ -255,10 +223,6 @@
     "notebook.output.minimalErrorRendering": true,
     "notebook.output.scrolling": true,
     "notebook.output.textLineLimit": 500,
-    "oneDarkPro.bold": true,
-    "oneDarkPro.editorTheme": "One Dark Pro Flat",
-    "oneDarkPro.italic": false,
-    "plantuml.render": "PlantUMLServer",
     "python.analysis.completeFunctionParens": true,
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.logLevel": "Warning",
@@ -266,13 +230,9 @@
         "pythonTestAdapter"
     ],
     "python.languageServer": "Pylance",
-    "python.linting.flake8Args": [
-        "--ignore=W503"
-    ],
     "python.testing.pytestEnabled": true,
     "redhat.telemetry.enabled": false,
     "rest-client.enableTelemetry": false,
-    "scm.experimental.showHistoryGraph": true,
     "scm.workingSets.enabled": true,
     "search.exclude": {
         "**/bower_components": true,
@@ -288,12 +248,6 @@
         "-x"
     ],
     "snowflake.connectionsConfigFile": "/Users/pablosanjose/.snowflake/connections.toml",
-    "sonarlint.connectedMode.connections.sonarcloud": [
-        {
-            "connectionId": "clarity-ai",
-            "organizationKey": "clarity-ai"
-        }
-    ],
     "sonarlint.focusOnNewCode": true,
     "sonarlint.ls.javaHome": "/usr/local/lib/jvm/java/openjdk-19",
     "sqltools.connections": [],
@@ -301,58 +255,45 @@
         "reservedWordCase": "upper"
     },
     "sqltools.highlightQuery": false,
-    "sqltools.showStatusbar": false,
     "sqltools.useNodeRuntime": true,
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.inheritEnv": false,
-    "terminal.integrated.profiles.osx": {
-        "bash": {
-            "args": [
-                "-l"
-            ],
-            "icon": "terminal-bash",
-            "path": "bash"
-        },
-        "fish": {
-            "args": [
-                "-l"
-            ],
-            "path": "fish"
-        },
-        "pwsh": null,
-        "tmux": null,
-        "zsh": {
-            "args": [
-                "-l",
-                "-i"
-            ],
-            "path": "zsh"
-        }
-    },
+    // "terminal.integrated.profiles.osx": {
+    //     "bash": {
+    //         "args": [
+    //             "-l"
+    //         ],
+    //         "icon": "terminal-bash",
+    //         "path": "bash"
+    //     },
+    //     "fish": {
+    //         "args": [
+    //             "-l"
+    //         ],
+    //         "path": "fish"
+    //     },
+    //     "pwsh": null,
+    //     "tmux": null,
+    //     "zsh": {
+    //         "args": [
+    //             "-l",
+    //             "-i"
+    //         ],
+    //         "path": "zsh"
+    //     }
+    // },
     "testing.coverageToolbarEnabled": true,
     "todo-tree.filtering.excludeGlobs": [
         "**/_build/**",
         "**/htmlcov/**"
     ],
     "todo-tree.general.statusBar": "total",
-    "todo-tree.general.tags": [
-        "BUG",
-        "HACK",
-        "FIXME",
-        "TODO",
-        "XXX",
-        "[ ]",
-        "[x]"
-    ],
-    "todo-tree.highlights.enabled": false,
-    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
     "vs-kubernetes": {
         "vs-kubernetes.crd-code-completion": "disabled"
     },
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.newWindowDimensions": "maximized",
     "window.restoreWindows": "one",
     "window.title": "${activeEditorMedium}${separator}${rootName}",
@@ -397,5 +338,6 @@
         "!Split sequence",
         "!reference sequence"
     ],
-    "yaml.format.singleQuote": true
+    "yaml.format.singleQuote": true,
+    "todo-tree.filtering.ignoreGitSubmodules": true
 }

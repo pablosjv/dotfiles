@@ -1,51 +1,20 @@
-tap "homebrew/bundle"
-tap "homebrew/cask-drivers"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/services"
 tap "jkfran/killport"
 tap "mongodb/brew"
 tap "ngrok/ngrok"
 tap "robscott/tap"
 tap "ynqa/tap"
-# General-purpose data compression with high compression ratio
-brew "xz"
-# Image format providing lossless and lossy compression for web images
-brew "webp"
-# New file format for still image compression
-brew "jpeg-xl"
-# Codec library for encoding and decoding AV1 video streams
-brew "aom"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
-# Library for command-line editing
-brew "readline"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
 # Shell extension to jump to frequently used directories
 brew "autojump"
-# Bourne-Again SHell, a UNIX command interpreter
-brew "bash"
-# C library implementing the SSH2 protocol
-brew "libssh2"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Core application library for C
-brew "glib"
-# OpenType text shaping engine
-brew "harfbuzz"
-# Development kit for the Java programming language
-brew "openjdk"
 # Remove large files or passwords from Git history like git-filter-branch
 brew "bfg"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
-# Utility that creates projects from templates
-brew "cookiecutter"
 # Top-like interface for container metrics
 brew "ctop"
 # Load/unload environment variables based on $PWD
@@ -64,48 +33,24 @@ brew "fd"
 brew "fselect"
 # GNU compiler collection
 brew "gcc"
-# Library for encoding and decoding .avif files
-brew "libavif"
-# Graphics library to dynamically manipulate images
-brew "gd"
-# Toolkit for image loading and pixel buffer manipulation
-brew "gdk-pixbuf"
-# Framework for layout and rendering of i18n text
-brew "pango"
-# Interpreter for PostScript and PDF
-brew "ghostscript"
 # Git extension for versioning large files
 brew "git-lfs"
 # Blazing fast terminal-ui for git written in rust
 brew "gitui"
-# Alternative to top/htop
-brew "glances"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Image manipulation
-brew "netpbm"
-# GNU triangulated surface library
-brew "gts"
-# Library to render SVG files using Cairo
-brew "librsvg"
-# Graph visualization software from AT&T and Bell Labs
-brew "graphviz"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Kubernetes package manager
 brew "helm"
 # Improved top (interactive process viewer)
 brew "htop"
-# Configurable static site generator
-brew "hugo"
 # Command-line benchmarking tool
 brew "hyperfine"
-# Platform built on V8 to build network applications
-brew "node"
 # High precision scientific calculator with support for physical units
 brew "insect"
 # Lightweight and flexible command-line JSON processor
@@ -118,12 +63,8 @@ brew "krb5"
 brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
-# LLVM's OpenMP runtime library
-brew "libomp"
 # Postgres C API library
 brew "libpq", link: true
-# Next-gen compiler infrastructure
-brew "llvm"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Utility for directing compilation
@@ -132,26 +73,12 @@ brew "make"
 brew "neofetch"
 # Port scanning utility for large networks
 brew "nmap"
-# Optimized BLAS library
-brew "openblas"
-# Development kit for the Java programming language
-brew "openjdk@11"
 # CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
-# PDF rendering library (based on the xpdf-3.0 code base)
-brew "poppler"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
-# Safe, concurrent, practical language
-brew "rust"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
-# Build applications with serverless architectures
-brew "serverless"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Autoformat shell script source code
@@ -164,8 +91,6 @@ brew "telnet"
 brew "the_silver_searcher"
 # Programmatically correct mistyped console commands
 brew "thefuck"
-# Terminal multiplexer
-brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Command-line interface for Vercel
@@ -176,12 +101,8 @@ brew "watch"
 brew "wget"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
-# General-purpose lossless data-compression library
-brew "zlib"
 # A command-line tool to kill processes listening on a specific port
 brew "jkfran/killport/killport"
-# kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster
-brew "robscott/tap/kube-capacity"
 # JSON navigator and interactive filter leveraging jq
 brew "ynqa/tap/jnv"
 # Password manager that keeps all passwords secure behind one password
@@ -190,12 +111,10 @@ cask "1password"
 cask "bruno"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
-# Universal database tool and SQL client
-cask "dbeaver-community"
+# Write, edit, and chat about your code with AI
+cask "cursor"
 # Utilities designed to make common development tasks easier
 cask "devtoys"
-# Voice and text chat software
-cask "discord"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 cask "font-meslo-lg-nerd-font"
@@ -211,10 +130,6 @@ cask "google-drive"
 cask "hiddenbar"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# GPU-based terminal emulator
-cask "kitty"
-# Software for Logitech devices
-cask "logitech-options"
 # Create mock APIs in seconds
 cask "mockoon"
 # Htop on steroids
@@ -227,14 +142,8 @@ cask "notion"
 cask "orbstack"
 # Collaboration platform for API development
 cask "postman"
-# Archive manager for data compression and backups
-cask "rar"
 # Control your tools with a few keystrokes
 cask "raycast"
-# StrongDM client
-cask "sdm"
-# Plugin for AWS CLI to start and end sessions that connect to managed instances
-cask "session-manager-plugin"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
@@ -249,7 +158,6 @@ cask "visual-studio-code"
 cask "whatsapp"
 vscode "42crunch.vscode-openapi"
 vscode "alexcvzz.vscode-sqlite"
-vscode "amazonwebservices.aws-toolkit-vscode"
 vscode "be5invis.toml"
 vscode "bierner.markdown-mermaid"
 vscode "bruno-api-client.bruno"
@@ -264,7 +172,6 @@ vscode "eamodio.gitlens"
 vscode "editorconfig.editorconfig"
 vscode "emeryberger.scalene"
 vscode "exiasr.hadolint"
-vscode "flixs.vs-code-http-server-and-html-preview"
 vscode "foxundermoon.shell-format"
 vscode "franneck94.vscode-python-config"
 vscode "franneck94.vscode-python-dev-extension-pack"
