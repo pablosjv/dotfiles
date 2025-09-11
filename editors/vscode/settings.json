@@ -261,35 +261,12 @@
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.inheritEnv": false,
-    // "terminal.integrated.profiles.osx": {
-    //     "bash": {
-    //         "args": [
-    //             "-l"
-    //         ],
-    //         "icon": "terminal-bash",
-    //         "path": "bash"
-    //     },
-    //     "fish": {
-    //         "args": [
-    //             "-l"
-    //         ],
-    //         "path": "fish"
-    //     },
-    //     "pwsh": null,
-    //     "tmux": null,
-    //     "zsh": {
-    //         "args": [
-    //             "-l",
-    //             "-i"
-    //         ],
-    //         "path": "zsh"
-    //     }
-    // },
     "testing.coverageToolbarEnabled": true,
     "todo-tree.filtering.excludeGlobs": [
         "**/_build/**",
         "**/htmlcov/**"
     ],
+    "todo-tree.filtering.ignoreGitSubmodules": true,
     "todo-tree.general.statusBar": "total",
     "vs-kubernetes": {
         "vs-kubernetes.crd-code-completion": "disabled"
@@ -338,6 +315,5 @@
         "!Split sequence",
         "!reference sequence"
     ],
-    "yaml.format.singleQuote": true,
-    "todo-tree.filtering.ignoreGitSubmodules": true
+    "yaml.format.singleQuote": true
 }
