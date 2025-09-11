@@ -12,6 +12,8 @@
       recursive: true
 
 - create:
+    - ~/projects/github.com
+    - ~/projects/gitlab.com
     - ~/.vim/undo-history
     - ~/.nvm
     - ~/.gem/ruby/
