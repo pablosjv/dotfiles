@@ -100,11 +100,14 @@
       description: Running installers
       stdin: true
       stdout: true
+      stderr: true
     - command: ./scripts/configure
       description: Running configurators
       stdin: true
       stdout: true
+      stderr: true
     - command: git config --global dotfiles.lastupdate "$(date +%Y-%m-%d-%H:%M)"
       description: Register last update
       stdin: true
       stdout: true
+      stderr: true
