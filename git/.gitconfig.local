@@ -51,12 +51,10 @@ whitespace = nowarn
 autocorrect = 1
 
 [merge]
-tool = diffmerge
+	tool = vscode
 
-[mergetool "diffmerge"]
-cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-keepBackup = false
-trustExitCode = true
+[mergetool "vscode"]
+	cmd = "code --wait "
 
 [diff]
 tool = diffmerge
