@@ -21,7 +21,7 @@ Then, run these steps:
 ```console
 git clone --recurse-submodules https://github.com/pablosjv/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./scripts/apply
+./scripts/bootstrap
 ```
 
 From that moment the `dot` command will be available in your path, which simplify the dotfiles operation
