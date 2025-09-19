@@ -11,8 +11,6 @@ commend = commit --amend --no-edit
 fpr = fetch-pr
 # Git log tags
 lt = log --tags --decorate --simplify-by-decoration --oneline
-# Git log the current branch to master
-lb = log --format=format:\"- %s\" --no-merges --first-parent master..HEAD
 # Generate gitignore
 ignore = !sh -c \"wget --no-check-certificate -q https://www.gitignore.io/api/$1 -O .gitignore\"
 # Delete branch not present in origin
