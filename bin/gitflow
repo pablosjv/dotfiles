@@ -1,0 +1,228 @@
+#!/usr/bin/env zsh
+
+# GitFlow Script - Standalone script for common gitflow operations
+# This script provides a command-line interface for gitflow operations
+
+# Source common tools
+# shellcheck source=scripts/tools
+. "$DOTFILES/git/_helpers.sh"
+
+# Show usage information
+usage() {
+    cat <<EOF
+🚀 GitFlow - Git Workflow Management Tool 🚀
+======================================
+
+Usage: $(basename "$0") <command> [options]
+
+Commands:
+  release start <semver>     - Create a release branch
+  release finish <semver>    - Finish release (merge, tag, push)
+  release push <semver>      - Push release (merge, tag, push)
+  status                     - Show current gitflow status
+  help                       - Show this help
+
+Examples:
+  gitflow release start 1.2.3
+  gitflow status
+  gitflow release finish 1.2.3
+  gitflow status
+  gitflow release push 1.2.3
+
+EOF
+}
+
+main() {
+    check_git_repo
+
+    case "$1" in
+    "release")
+        case "$2" in
+        "start")
+            start_release "$3"
+            ;;
+        "finish")
+            finish_release "$3"
+            ;;
+        "push")
+            push_release "$3"
+            ;;
+        *)
+            usage
+            fail "Invalid release command: $2"
+            exit 1
+            ;;
+        esac
+        ;;
+    "status")
+        status
+        ;;
+    "help" | "--help" | "-h")
+        usage
+        ;;
+    "")
+        usage
+        ;;
+    *)
+        fail "Unknown command: $1"
+        usage
+        exit 1
+        ;;
+    esac
+}
+
+status() {
+    if ! check_git_repo; then
+        fail "Not in a git repository"
+    fi
+    local current_branch
+    current_branch=$(git branch --show-current)
+    local branch_type=""
+    case "$current_branch" in
+    feature/* | feat/*)
+        branch_type="feature"
+        ;;
+    release/*)
+        branch_type="release"
+        ;;
+    hotfix/* | fix/*)
+        branch_type="hotfix"
+        ;;
+    develop)
+        branch_type="develop"
+        ;;
+    master | main)
+        branch_type="master"
+        ;;
+    *)
+        branch_type="other"
+        ;;
+    esac
+
+    info "Current branch: $current_branch ($branch_type)"
+    info "Branch status:"
+    git status -sb
+    if [ "$branch_type" = "feature" ]; then
+        info "Recent commits:"
+        git log --oneline --first-parent develop..HEAD
+    elif [ "$branch_type" = "develop" ]; then
+        info "Commits since last release:"
+        git log --oneline --first-parent master..HEAD
+    fi
+    git fetch --tags
+    info "Latest release: $(git tag --sort=-version:refname | head -1)"
+}
+
+start_release() {
+    local version="$1"
+    if [ -z "$version" ]; then
+        fail "Version is required. Usage: gitflow start release <semver>"
+    fi
+    validate_semver "$version"
+
+    info "Pulling latest changes from master and develop..."
+    git fetch origin master:master
+    git fetch origin develop:develop
+
+    local release_branch="release/$version"
+    if branch_exists "$release_branch"; then
+        fail "Release branch '$release_branch' already exists"
+    fi
+    if [ "$(git branch --show-current)" != "develop" ]; then
+        warning "Not on develop branch, switching to develop..."
+        if ! git checkout develop; then
+            fail "Failed to checkout develop branch"
+        fi
+    fi
+    info "Changes since last release:"
+    git log --oneline --first-parent master..HEAD
+
+    info "Creating release branch '$release_branch'..."
+    if ! git checkout -b "$release_branch"; then fail "Failed to create release branch"; fi
+
+    success "Release branch '$release_branch' created successfully"
+    info "You can now make your release changes and commit them"
+    info "When ready, use 'gitflow finish release $version' to complete the release"
+}
+
+finish_release() {
+    local version="$1"
+
+    if [ -z "$version" ]; then
+        fail "Version is required. Usage: gitflow finish release <semver>"
+    fi
+    check_git_repo
+    validate_semver "$version"
+
+    local release_branch="release/$version"
+    if [ "$(git branch --show-current)" != "$release_branch" ]; then
+        fail "Must be on release branch '$release_branch'. Switch to the release branch first: git checkout $release_branch"
+    fi
+
+    if ! git diff-index --quiet HEAD --; then
+        fail "You have uncommitted changes. Please commit or stash them first."
+    fi
+
+    if ! branch_exists "develop"; then fail "Develop branch does not exist"; fi
+    if ! branch_exists "master"; then fail "Master branch does not exist"; fi
+
+    info "Finishing release $version..."
+
+    info "Switching to develop branch..."
+    if ! git checkout develop; then fail "Failed to checkout develop branch"; fi
+    success "Switched to develop branch"
+
+    info "Merging release branch into develop..."
+    if ! git merge --no-ff "$release_branch" -m "Merge branch 'release/$version' into develop"; then
+        fail "Failed to merge release branch into develop"
+    fi
+    success "Release branch merged into develop"
+
+    info "Switching to master branch..."
+    if ! git checkout master; then fail "Failed to checkout master branch"; fi
+    success "Switched to master branch"
+
+    info "Merging release branch into master..."
+    if ! git merge --no-ff "$release_branch" -m "Merge branch 'release/$version'"; then
+        fail "Failed to merge release branch into master"
+    fi
+    success "Release branch merged into master"
+
+    info "Creating tag $version..."
+    if ! git tag -a "$version" -m "Release version $version"; then
+        fail "Failed to create tag $version"
+    fi
+    success "Tag $version created"
+    success "Release $version performed successfully!"
+    info "Changes have been merged to develop and master."
+    success "Tag $version has been created."
+    success "Release branch has been deleted"
+    info "Review the operations and then push the changes to remote with 'gitflow push release $version'"
+}
+
+push_release() {
+    local version="$1"
+    if [ -z "$version" ]; then
+        fail "Version is required. Usage: gitflow push release <semver>"
+    fi
+    check_git_repo
+    validate_semver "$version"
+
+    local release_branch="release/$version"
+    info "Pushing changes to remote..."
+    if ! git push origin develop master; then fail "Failed to push branches to remote"; fi
+    success "Branches pushed to remote"
+
+    info "Pushing tags to remote..."
+    if ! git push origin "$version"; then fail "Failed to push tag to remote"; fi
+    success "Tag $version pushed to remote"
+
+    info "Deleting local release branch..."
+    if ! git branch -d "$release_branch"; then
+        warning "Failed to delete local release branch (it may have been already deleted)"
+    else
+        success "Local release branch deleted"
+    fi
+}
+
+main "$@"

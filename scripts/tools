@@ -2,24 +2,43 @@
 #
 # common functions to use in scripts
 
+# Color constants
+RED='\033[0;31m'
+GREEN='\033[00;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[00;34m'
+RESET='\033[0m'
+
 info() {
     # shellcheck disable=SC2059
-    printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+    printf "\r[ ${BLUE}..${RESET} ] $1\n"
 }
 
 user() {
     # shellcheck disable=SC2059
-    printf "\r  [ \033[0;33m??\033[0m ] $1\n"
+    printf "\r[ ${YELLOW}??${RESET} ] $1\n"
 }
 
 success() {
     # shellcheck disable=SC2059
-    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+    printf "\r\033[2K[ ${GREEN}OK${RESET} ] $1\n"
+}
+
+warning() {
+    # shellcheck disable=SC2059
+    printf "\r[ ${YELLOW}!!${RESET} ] $1\n"
 }
 
 fail() {
     # shellcheck disable=SC2059
-    printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+    printf "\r\033[2K[${RED}FAIL${RESET}] $1\n"
     echo ''
     exit
+}
+
+validate_semver() {
+    version=$1
+    if ! echo "$version" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9\-]+)?(\+[a-zA-Z0-9\-]+)?$'; then
+        fail "Invalid semantic version format: $version. Expected format: X.Y.Z[-prerelease][+build] (e.g., 1.0.0, 1.0.0-beta.1, 1.0.0+20230101)" >&2
+    fi
 }
