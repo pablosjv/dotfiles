@@ -9,6 +9,7 @@ DOTFILES_ROOT=$(pwd -P)
 info running instalation of command line tools
 xcode-select --install || user "Error running the install: probably because it is already installed"
 
+sudo xcodebuild -license accept || true
 
 # === Install Xcode 16.2 with credentials ===
 info "> Checking Xcode 16.2..."
