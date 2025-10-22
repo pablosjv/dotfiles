@@ -113,6 +113,8 @@ brew "xcodesorg/made/xcodes"
 brew "ynqa/tap/jnv"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
+# Command-line tools for building and debugging Android apps
+cask "android-commandlinetools"
 # Tools for building Android applications
 cask "android-studio"
 # Open source IDE for exploring and testing APIs
@@ -160,6 +162,8 @@ cask "telegram"
 cask "todoist-app"
 # Open-source code editor
 cask "visual-studio-code"
+# VPN client
+cask "vyprvpn"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 vscode "42crunch.vscode-openapi"
