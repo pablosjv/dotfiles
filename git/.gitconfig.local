@@ -1,20 +1,40 @@
 [alias]
-co = checkout
 count = shortlog -sn
-g = grep --break --heading --line-number
-gi = grep --break --heading --line-number -i
-changed = show --pretty=\"format:\" --name-only
-fm = fetch-merge
-pr = open-pr
+# Short status
+st = status --short --branch
+# Show changed files in the last commit
+changed = show --pretty=format: --name-only
+# Push with force with lease
 please = push --force-with-lease
+# Commit amend
 commend = commit --amend --no-edit
-fpr = fetch-pr
 # Git log tags
 lt = log --tags --decorate --simplify-by-decoration --oneline
-# Generate gitignore
-ignore = !sh -c \"wget --no-check-certificate -q https://www.gitignore.io/api/$1 -O .gitignore\"
-# Delete branch not present in origin
+# Generate gitignore - source: https://docs.gitignore.io/install/command-line
+ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+# List of commits from BASE..HEAD (default BASE=develop)
+lb = "!f(){ git log --pretty=format:'- %s' --no-merges --first-parent \"${1:-develop}..HEAD\"; }; f"
+# Count commits from BASE..HEAD (default BASE=develop)
+lbc = "!f(){ git rev-list --count --no-merges --first-parent \"${1:-develop}..HEAD\"; }; f"
+# Check status of local branches
+check = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' refs/heads
+# Delete branch not present in origin - Kudos to @jfisbein
 gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
+# show branches that would be deleted (ask before nuking!)
+gone-check = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\"'
+# undo last N commits, keep local changes
+undo = "!f(){ git reset --soft HEAD~\"${1:-1}\"; }; f"
+##### A set of git alias in memory of @xgouchet #####
+# undo last commit, keep local changes
+uncommit = reset --soft HEAD^
+# undo last commit, drop local changes
+rollback = reset --hard HEAD^
+# Quick Fix for CI
+quickfix = !bash -c 'git add . && git commend && git please'
+# What's the Focus ?!
+wtf = "!git st; echo '\nThe last 3 commits were :'; git log --oneline -3"
+# Life's too short to write commit messages
+yolo = "!git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\""
 
 [color]
 diff = auto
