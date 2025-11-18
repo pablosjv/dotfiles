@@ -39,6 +39,8 @@ brew "git-flow"
 brew "git-lfs"
 # Blazing fast terminal-ui for git written in rust
 brew "gitui"
+# Open-source GitLab command-line tool
+brew "glab"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
