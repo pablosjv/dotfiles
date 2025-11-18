@@ -1,0 +1,32 @@
+#compdef dotfiles
+
+_dotfiles() {
+    local -a commands brew_commands
+
+    # If completing after 'brew' subcommand, show brew wrapper commands
+    if [[ ${words[2]} == brew ]] && ((CURRENT >= 3)); then
+        brew_commands=(
+            'cleanup:cleanup homebrew'
+            'bump:bump homebrew packages'
+            'repair:repair homebrew'
+        )
+        _describe 'brew command' brew_commands
+        return
+    fi
+
+    # Main dotfiles commands
+    commands=(
+        'help:show help text'
+        'apply:install the latest version for the configuration and packages'
+        'update:reflect the configuration changes in the repository'
+        'edit:open dotfiles in editor'
+        'date:get latest update date'
+        'install:run just the installers'
+        'configure:run just the configurators'
+        'brew:interact with homebrew with extended commands'
+    )
+
+    _describe 'dotfiles command' commands
+}
+
+_dotfiles "$@"

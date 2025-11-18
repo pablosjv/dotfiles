@@ -1,0 +1,74 @@
+#compdef brew
+
+# Custom brew wrapper completion
+# Handles custom commands and delegates to brew completion for others
+
+_brew() {
+    local -a commands
+    local brew_completion_file
+    local is_custom_cmd=0
+
+    # Custom commands for the brew wrapper
+    commands=(
+        'cleanup:cleanup homebrew'
+        'bump:bump homebrew packages'
+        'repair:repair homebrew'
+    )
+
+    # Check if we're completing a custom command
+    if ((CURRENT >= 2)) && [[ -n "${words[2]}" ]]; then
+        case ${words[2]} in
+        cleanup | bump | repair)
+            is_custom_cmd=1
+            ;;
+        esac
+    fi
+
+    # Handle custom commands
+    if ((is_custom_cmd)); then
+        case ${words[2]} in
+        bump)
+            if ((CURRENT == 3)); then
+                _arguments '--greedy[force update casks]'
+            fi
+            ;;
+        cleanup | repair)
+            # These commands don't take additional arguments
+            ;;
+        esac
+        return
+    fi
+
+    # For non-custom commands, delegate to brew's completion
+    # Find brew completion file
+    if [[ -f /opt/homebrew/completions/zsh/_brew ]]; then
+        brew_completion_file=/opt/homebrew/completions/zsh/_brew
+    elif [[ -f /usr/local/completions/zsh/_brew ]]; then
+        brew_completion_file=/usr/local/completions/zsh/_brew
+    fi
+
+    if [[ -n "$brew_completion_file" ]] && [[ -r "$brew_completion_file" ]]; then
+        # Save our function and temporarily rename it
+        functions[_brew_wrapper]=$functions[_brew]
+        unfunction _brew 2>/dev/null || true
+
+        # Source brew's completion (this will define _brew)
+        source "$brew_completion_file" 2>/dev/null || true
+
+        # Call brew's completion function
+        if (($ + functions[_brew])); then
+            _brew "$@"
+        fi
+
+        # Restore our wrapper function
+        functions[_brew]=$functions[_brew_wrapper]
+        unfunction _brew_wrapper 2>/dev/null || true
+    else
+        # If brew completion not found, just show custom commands
+        if ((CURRENT == 2)); then
+            _describe 'brew command' commands
+        fi
+    fi
+}
+
+_brew "$@"
