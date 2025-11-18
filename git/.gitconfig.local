@@ -30,7 +30,7 @@ uncommit = reset --soft HEAD^
 # undo last commit, drop local changes
 rollback = reset --hard HEAD^
 # Quick Fix for CI
-quickfix = !bash -c 'git add . && git commend && git please'
+quickfix = !bash -c 'git commend && git please'
 # What's the Focus ?!
 wtf = "!git st; echo '\nThe last 3 commits were :'; git log --oneline -3"
 # Life's too short to write commit messages
