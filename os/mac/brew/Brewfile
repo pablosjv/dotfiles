@@ -123,6 +123,8 @@ cask "bruno"
 cask "chatgpt"
 # Free and open-source web browser
 cask "chromium"
+# AI code review CLI
+cask "coderabbit"
 # Write, edit, and chat about your code with AI
 cask "cursor"
 # Utilities designed to make common development tasks easier

@@ -3,6 +3,12 @@
 # dot
 #
 # brew wrapper
+#
+# Note: All brew commands use 'command brew' instead of just 'brew' to bypass
+# any aliases or functions that might be defined. This is critical since this
+# script is a wrapper that may be aliased as 'brew' itself, and using 'command'
+# ensures we always call the actual Homebrew executable, preventing infinite
+# recursion.
 
 log-info() {
     # shellcheck disable=SC2059
@@ -12,26 +18,27 @@ log-info() {
 brew-bump() {
     log-info "Bumping homebrew... $1"
     command brew update
-    brew outdated | xargs brew fetch
-    brew bundle install --verbose --global
+    command brew outdated | xargs command brew fetch
+    command brew bundle install --verbose --global
     command brew upgrade
     log-info "Upgrade casks (you can pass --greedy to force update)..."
-    command brew upgrade --cask "$1"
-    brew cleanup
+    # shellcheck disable=SC2086
+    command brew upgrade --cask ${1}
+    command brew cleanup
 }
 
 brew-cleanup() {
     log-info "Cleanup homebrew..."
-    (cd "$(brew --repo)" && git prune && git gc)
+    (cd "$(command brew --repo)" && git prune && git gc)
     command brew cleanup
-    brew bundle cleanup --global --force --zap
-    rm -rf "$(brew --cache)"
+    command brew bundle cleanup --global --force --zap
+    rm -rf "$(command brew --cache)"
 }
 
 brew-repair() {
     log-info "Try to repair homebrew..."
-    (cd "$(brew --repo)" && git fetch && git reset --hard origin/master)
-    brew update
+    (cd "$(command brew --repo)" && git fetch && git reset --hard origin/master)
+    command brew update
 }
 
 case "$1" in
