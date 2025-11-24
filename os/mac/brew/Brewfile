@@ -57,6 +57,8 @@ brew "htop"
 brew "hyperfine"
 # High precision scientific calculator with support for physical units
 brew "insect"
+# Install and debug iPhone apps from the command-line
+brew "ios-deploy"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Kubernetes CLI To Manage Your Clusters In Style!
