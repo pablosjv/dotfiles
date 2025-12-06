@@ -32,7 +32,7 @@ rollback = reset --hard HEAD^
 # Quick Fix for CI
 quickfix = !bash -c 'git commend && git please'
 # What's the Focus ?!
-wtf = "!git st; echo '\nThe last 3 commits were :'; git log --oneline -3"
+wtf = "!git st; echo 'The last 3 commits were :'; git log --oneline -3"
 # Life's too short to write commit messages
 yolo = "!git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\""
 
