@@ -25,6 +25,7 @@
     - ~/.config/iterm2
     - ~/.config/gitui
     - ~/.config/bat
+    - ~/.config/ghostty
     - ~/.kube
     - ~/.kube/configs
     - ~/.local/bin/
@@ -56,7 +57,7 @@
 
     ~/.config/direnv/lib: tools/direnv/lib
     ~/.config/pip/pip.conf: langs/python/pip.conf
-    ~/.config/kitty/kitty.conf: tools/kitty/kitty.conf
+    ~/.config/ghostty/config: tools/ghostty/config
     ~/.config/lsd/config.yaml: tools/lsd/config.yaml
     ~/.config/bat/config: tools/bat/config
     ~/.config/gitui/theme.ron: tools/gitui/theme.ron

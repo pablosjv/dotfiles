@@ -1,0 +1,74 @@
+# This is the configuration file for Ghostty.
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+
+# Good icons: xray, glass, retro
+macos-icon = retro
+theme = Catppuccin Mocha
+
+shell-integration-features = no-cursor
+
+background-opacity = 0.80
+background-blur-radius = 20
+
+font-size=12
+font-family = MesloLGL Nerd Font Mono
+
+window-decoration = auto
+window-padding-balance = true
+window-padding-x = 30
+window-padding-y = 30
+
+scrollback-limit = 10000
+confirm-close-surface = false
+quit-after-last-window-closed = true
+copy-on-select = true
+right-click-action = context-menu
+
+keybind = alt+left=text:\x1bb
+keybind = alt+right=text:\x1bf
+keybind = alt+backspace=text:\x17
+keybind = alt+delete=text:\x1bd
+
+keybind = shift+up=adjust_selection:up
+keybind = shift+left=adjust_selection:left
+keybind = shift+page_up=adjust_selection:page_up
+keybind = shift+end=adjust_selection:end
+keybind = shift+right=adjust_selection:right
+keybind = shift+page_down=adjust_selection:page_down
+keybind = shift+down=adjust_selection:down
+keybind = shift+home=adjust_selection:home
