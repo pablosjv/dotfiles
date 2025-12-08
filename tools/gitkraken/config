@@ -1,0 +1,386 @@
+{
+  "lastUpgradeScriptRun": "v11.6.0",
+  "appId": "0ed36d62b43d45dfd19ec008b4f46657a5ef7e8d",
+  "appLocale": "en-US",
+  "appDateFormat": "DD/MM/YYYY",
+  "appDateTimeFormat": "hh:mm @ DD/MM/YYYY",
+  "appDateWordFormat": null,
+  "appDateVerboseFormat": null,
+  "userMilestones": {
+    "installId": "4c8c2dc5-b49b-47cd-9da3-90c0c6b6b1fd",
+    "installDate": 1757418225755,
+    "firstAppOpen": true,
+    "firstLoginRegister": true,
+    "firstProfileCreated": true,
+    "completedNewUserOnboarding": true,
+    "firstRepoOpened": true,
+    "startATrial": true,
+    "introTutorialWelcomeStepCompleted": true,
+    "makeABranch": true,
+    "introTutorialShownAiCommitSummary": true,
+    "firstTimeCommitSelected": true,
+    "aiCommitSummary": true,
+    "createACommit": true,
+    "mergeABranch": true,
+    "connectIntegration": true,
+    "pushSomeCode": true,
+    "acknowledgedTipAiMergeConflictResolution": true,
+    "acknowledgedTipAiComposeCommits": true,
+    "usedWorktrees": true
+  },
+  "sslWhitelist": [],
+  "webConfig": {
+    "lastUpdatedAt": "2025-12-08T13:16:04.831Z",
+    "config": {
+      "callouts": [],
+      "promos": [
+        {
+          "key": "CYBERWEEK25",
+          "code": "CYBERWEEK25",
+          "startsOn": "2025-11-23T23:59:00.000Z",
+          "expiresOn": "2025-12-06T09:59:00.000Z",
+          "content": {
+            "promoBadgeMarkdown": "**Cyber Week Sale!**\n\nSave 50% on GitKraken Pro.",
+            "proPromoLabelSmall": "SAVE 50% for a limited time!",
+            "toolbarLinkLabelOverride": "Save 50% on Pro"
+          }
+        }
+      ]
+    },
+    "dismissedCallouts": {}
+  },
+  "lastReleaseNotesDisplayed": "11.6.0",
+  "ui": {
+    "shouldShowStartupPromoModal": false
+  },
+  "aliases": {
+    "repo": {},
+    "tabs": {}
+  },
+  "registration": {
+    "email": "psanjose@joko.com",
+    "name": "",
+    "status": "activated",
+    "loginType": "gitlab",
+    "date": "2025-09-09T11:44:04.152Z",
+    "EULA": {
+      "status": "agree_verified",
+      "version": "8.3.1"
+    }
+  },
+  "userId": "a95b7511-7332-4427-aa36-3039ff131158",
+  "licensedFeatures": [
+    "teamsLicense",
+    "gitgui:teamsLicense",
+    "gitlens:teamsLicense",
+    "bundle:teamsLicense",
+    "gitkraken_v1:teamsLicense",
+    "suite:teamsLicense"
+  ],
+  "orgSettingsByOrgId": {
+    "5d8863d1e52abc000ffc27af": {
+      "aiSettings": {
+        "enabled": true,
+        "createdAt": "2024-02-09T07:14:52.234732Z",
+        "updatedAt": "2024-02-09T07:14:52.234732Z"
+      },
+      "draftsSettings": {
+        "enabled": true,
+        "createdAt": "2024-01-19T08:41:47.332465Z",
+        "updatedAt": "2024-01-19T08:41:47.332465Z"
+      },
+      "ssoSettings": {
+        "enabled": false,
+        "enforced": false,
+        "provision": false,
+        "createdAt": "2024-02-09T07:14:52.234732Z",
+        "updatedAt": "2024-02-09T07:14:52.234732Z"
+      },
+      "memberInvitesRequireApproval": true,
+      "conflictDetectionEnabled": true,
+      "insightsEnabled": false,
+      "aiEnabled": true,
+      "enforceAiProviders": false,
+      "aiProviders": {},
+      "ssoEnabled": false,
+      "ssoEnforced": false,
+      "ssoProvision": false,
+      "createdAt": "2024-02-09T07:14:52.234732Z",
+      "updatedAt": "2024-02-09T07:14:52.234732Z"
+    }
+  },
+  "fuzzyFinderMetadata": {
+    "itemMetadata": {
+      "OPEN_REPO": {
+        "openRepo-/Users/pablosanjose/.gitkraken/tutorial/Intro": {
+          "id": "openRepo-/Users/pablosanjose/.gitkraken/tutorial/Intro",
+          "timestamps": [
+            1757418263087
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/pablosanjose/.dotfiles": {
+          "id": "openRepo-/Users/pablosanjose/.dotfiles",
+          "timestamps": [
+            1757418585345
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/user-mobile-app/": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/user-mobile-app/",
+          "timestamps": [
+            1757423060467,
+            1759420309146
+          ],
+          "total": 2
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/user-appsync-api/": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/user-appsync-api/",
+          "timestamps": [
+            1757423154973
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/chrome-extension/": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/chrome-extension/",
+          "timestamps": [
+            1757423228994
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/affiliate-platform-service": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/affiliate-platform-service",
+          "timestamps": [
+            1758722719605
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/migration-scripts": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/migration-scripts",
+          "timestamps": [
+            1759329218101
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/user-appsync-api": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/user-appsync-api",
+          "timestamps": [
+            1760460809137
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/db-model": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/db-model",
+          "timestamps": [
+            1760969350885,
+            1760969496424,
+            1764056926552
+          ],
+          "total": 3
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/chrome-extension": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/chrome-extension",
+          "timestamps": [
+            1761645613416
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/db-admin": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/db-admin",
+          "timestamps": [
+            1762508732227,
+            1764056923986
+          ],
+          "total": 2
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/test-utils": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/test-utils",
+          "timestamps": [
+            1764061206552
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/admin-website": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/admin-website",
+          "timestamps": [
+            1764333582186
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/user-web-app": {
+          "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/user-web-app",
+          "timestamps": [
+            1765193211738
+          ],
+          "total": 1
+        }
+      }
+    }
+  },
+  "tutorial": {
+    "isLifecycleAlreadyTriggeredByTutorialKey": {
+      "INTRO_TUTORIAL": {
+        "TUTORIAL_OPENED": true,
+        "TUTORIAL_STARTED": true,
+        "TUTORIAL_COMPLETED": true,
+        "TUTORIAL_CLOSED": true
+      }
+    }
+  },
+  "windowSettings": {
+    "x": -2,
+    "y": -980,
+    "width": 1512,
+    "height": 944,
+    "fullScreen": false,
+    "maximized": true
+  },
+  "userFeatures": [
+    {
+      "name": "activityStatus",
+      "value": true
+    },
+    {
+      "name": "changePriceEnabled",
+      "value": true
+    },
+    {
+      "name": "cli",
+      "value": true
+    },
+    {
+      "name": "experimentalAiCommmitMsg",
+      "value": true
+    },
+    {
+      "name": "experimentalGitBinarySpawnServer961",
+      "value": true
+    },
+    {
+      "name": "gitBash",
+      "value": true
+    },
+    {
+      "name": "gitkraken",
+      "value": true
+    },
+    {
+      "name": "gkApi",
+      "value": true
+    },
+    {
+      "name": "gkdAIComposeCommitsNudge_11_5_0",
+      "value": true
+    },
+    {
+      "name": "gkdAIFeedback_11_2_0",
+      "value": true
+    },
+    {
+      "name": "gkdAIMergeConflictResolutionNudge_11_3_0",
+      "value": true
+    },
+    {
+      "name": "gkdCommitComposeWipButtonBottom_11_3_0",
+      "value": true
+    },
+    {
+      "name": "gkdConflictPreventionFeedback_11_1_0",
+      "value": true
+    },
+    {
+      "name": "gkdevAllowInviteMessages",
+      "value": true
+    },
+    {
+      "name": "gkDevReferralSystem",
+      "value": true
+    },
+    {
+      "name": "gkdOnboardingTutorial_10_5_0",
+      "value": true
+    },
+    {
+      "name": "gkDotDevAIAutomations",
+      "value": true
+    },
+    {
+      "name": "gkDotDevAutoConnectTargetProvider",
+      "value": true
+    },
+    {
+      "name": "gkDotDevDefaultCouponCode",
+      "value": "50OFFPRO26"
+    },
+    {
+      "name": "gkDotDevGuestCheckout",
+      "value": true
+    },
+    {
+      "name": "gkDotDevInsightsMultiDashboards",
+      "value": true
+    },
+    {
+      "name": "gkDotDevInsightsVisxGraphs",
+      "value": true
+    },
+    {
+      "name": "gkDotDevUpdateProfilePicture",
+      "value": true
+    },
+    {
+      "name": "gkdReferralProgram_11_0_0",
+      "value": true
+    },
+    {
+      "name": "gkdTrialStartModalPromoMessage_11_1_0",
+      "value": true
+    },
+    {
+      "name": "gkdUpgradeLicenseFlowVariant_11_5_0",
+      "value": "pricingPage"
+    },
+    {
+      "name": "goldenTicketSpecial",
+      "value": true
+    },
+    {
+      "name": "onboardingGuide",
+      "value": true
+    },
+    {
+      "name": "privateRepoModalTest_10_5_0",
+      "value": true
+    },
+    {
+      "name": "registeredForGST",
+      "value": true
+    },
+    {
+      "name": "terminalInsideRepoTab",
+      "value": true
+    },
+    {
+      "name": "unregisteredTrials",
+      "value": true
+    },
+    {
+      "name": "useNewTrialStartModalTest_10_8_0",
+      "value": true
+    },
+    {
+      "name": "velocityInClient_9_0_0",
+      "value": true
+    },
+    {
+      "name": "workspacesPRComplexity",
+      "value": true
+    }
+  ],
+  "commits": {
+    "maxCommitsInGraph": 2000
+  },
+  "profileGuid": "69fed1b00a624ab2a7c1b0b635d29c13",
+  "keepGitConfigInSyncWithProfile": false,
+  "forcePushSkipSecondWarning": true
+}

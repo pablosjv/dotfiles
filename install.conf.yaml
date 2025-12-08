@@ -63,6 +63,8 @@
     ~/.config/gitui/theme.ron: tools/gitui/theme.ron
     ~/.config/btop: tools/btop
     ~/.config/k9s: tools/k9s
+    ~/.gitkraken/config: tools/gitkraken/config
+    ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc
 
     /usr/local/lib/jvm/java: ~/.asdf/installs/java
 
@@ -72,25 +74,25 @@
       path: editors/vscode/*.json
       relink: true
       force: true
-      if: '[ `uname` = Darwin ]'
+      if: "[ `uname` = Darwin ]"
     ~/Library/Application Support/Code/User/snippets:
       create: true
       path: editors/vscode/snippets
       relink: true
       force: true
-      if: '[ `uname` = Darwin ]'
+      if: "[ `uname` = Darwin ]"
 
     ~/.config/Code/User/:
       create: true
       glob: true
       path: editors/vscode/*.json
       relink: true
-      if: '[ `uname` != Darwin ]'
+      if: "[ `uname` != Darwin ]"
     ~/.config/Code/User/snippets:
       create: true
       path: editors/vscode/snippets
       relink: true
-      if: '[ `uname` != Darwin ]'
+      if: "[ `uname` != Darwin ]"
 
 - shell:
     - command: git submodule update --init --recursive
