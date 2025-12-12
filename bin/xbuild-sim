@@ -1,0 +1,307 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+show_help() {
+    cat <<EOF
+Usage: xbuild-sim -s SCHEME -b BUNDLE_ID [OPTIONS]
+
+Build and launch an iOS app on the simulator
+
+Required:
+  -s, --scheme SCHEME          Xcode scheme name (required)
+  -b, --bundle-id BUNDLE_ID    App bundle identifier (required)
+
+Options:
+  -d, --device DEVICE          Simulator device name (default: iPhone 16 Pro)
+  -c, --configuration CONFIG   Build configuration (default: Debug)
+  -h, --help                   Show this help message
+
+Environment Variables:
+  XBUILD_SCHEME            Set scheme name
+  XBUILD_BUNDLE_ID         Set bundle identifier
+  XBUILD_SIMULATOR_NAME    Set simulator name
+  XBUILD_CONFIGURATION     Set build configuration
+
+Examples:
+  xbuild-sim -s MyApp -b com.example.myapp
+  xbuild-sim -s MyApp -b com.example.myapp --device 'iPhone 15 Pro'
+  xbuild-sim -s MyApp -b com.example.myapp --configuration Release
+
+  # Using environment variables
+  export XBUILD_SCHEME=MyApp
+  export XBUILD_BUNDLE_ID=com.example.myapp
+  xbuild-sim
+EOF
+}
+
+readonly RED='\033[0;31m'
+readonly GREEN='\033[0;32m'
+readonly YELLOW='\033[1;33m'
+readonly BLUE='\033[0;34m'
+readonly NC='\033[0m'
+
+# Defaults (only for generic settings)
+readonly DEFAULT_SIMULATOR_NAME="iPhone 16 Pro"
+readonly DEFAULT_CONFIGURATION="Debug"
+
+# Use environment variables if set
+SCHEME="${XBUILD_SCHEME:-}"
+BUNDLE_ID="${XBUILD_BUNDLE_ID:-}"
+SIMULATOR_NAME="${XBUILD_SIMULATOR_NAME:-$DEFAULT_SIMULATOR_NAME}"
+CONFIGURATION="${XBUILD_CONFIGURATION:-$DEFAULT_CONFIGURATION}"
+
+main() {
+    parse_arguments "$@"
+
+    export LANG=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
+
+    readonly WORKSPACE_ROOT="$PWD"
+    readonly IOS_DIR="${WORKSPACE_ROOT}/ios"
+
+    # Change to iOS directory
+    if [[ ! -d "$IOS_DIR" ]]; then
+        log_error "iOS directory not found: ${IOS_DIR}"
+        log_error "Please run this script from the root of your React Native project"
+        exit 1
+    fi
+
+    cd "${IOS_DIR}"
+
+    show_configuration
+    ensure_simulator_running
+
+    build_app
+    log_success "Built app!"
+    local app_path
+    app_path=$(find_built_app)
+    log_success "App found: ${app_path}"
+    install_app "$app_path"
+    launch_app
+    log_header "✓ All done!"
+    echo "" >&2
+    echo "The app is now running on the simulator." >&2
+    echo "Make sure your React Native dev server is running on port 8081." >&2
+    echo "" >&2
+}
+
+parse_arguments() {
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+        -s | --scheme)
+            SCHEME="$2"
+            shift 2
+            ;;
+        -b | --bundle-id)
+            BUNDLE_ID="$2"
+            shift 2
+            ;;
+        -d | --device)
+            SIMULATOR_NAME="$2"
+            shift 2
+            ;;
+        -c | --configuration)
+            CONFIGURATION="$2"
+            shift 2
+            ;;
+        -h | --help)
+            show_help
+            exit 0
+            ;;
+        *)
+            log_error "Unknown option: $1"
+            echo "" >&2
+            show_help >&2
+            exit 1
+            ;;
+        esac
+    done
+
+    if [[ -z "$SCHEME" ]]; then
+        log_error "Scheme is required!"
+        echo "" >&2
+        echo "Please provide a scheme using:" >&2
+        echo "  - Command line: xbuild-sim -s YourScheme" >&2
+        echo "  - Environment: export XBUILD_SCHEME=YourScheme" >&2
+        exit 1
+    fi
+
+    if [[ -z "$BUNDLE_ID" ]]; then
+        log_error "Bundle ID is required!"
+        echo "" >&2
+        echo "Please provide a bundle ID using:" >&2
+        echo "  - Command line: xbuild-sim -b com.example.app" >&2
+        echo "  - Environment: export XBUILD_BUNDLE_ID=com.example.app" >&2
+        exit 1
+    fi
+}
+
+show_configuration() {
+    log_header "iOS Rebuild and Launch Script"
+    echo "" >&2
+    log_info "Configuration:"
+    echo "  Workspace:     ${WORKSPACE_ROOT}" >&2
+    echo "  Scheme:        ${SCHEME}" >&2
+    echo "  Bundle ID:     ${BUNDLE_ID}" >&2
+    echo "  Simulator:     ${SIMULATOR_NAME}" >&2
+    echo "  Configuration: ${CONFIGURATION}" >&2
+    echo "" >&2
+}
+
+ensure_simulator_running() {
+    log_warning "Checking simulator status..."
+
+    if is_simulator_booted; then
+        log_success "Simulator already booted"
+    else
+        boot_simulator "$SIMULATOR_NAME"
+    fi
+}
+
+build_app() {
+    local build_target
+    build_target=$(find_build_target "$IOS_DIR")
+
+    log_warning "Building app for x86_64 architecture (Rosetta)..."
+
+    if command -v xcpretty &>/dev/null; then
+        xcodebuild -workspace ${build_target} \
+            -scheme "${SCHEME}" \
+            -configuration "${CONFIGURATION}" \
+            -destination "platform=iOS Simulator,name=${SIMULATOR_NAME}" \
+            ARCHS=x86_64 \
+            ONLY_ACTIVE_ARCH=NO \
+            build | xcpretty
+    else
+        log_warning "xcpretty not found, using default build output..."
+        xcodebuild -workspace ${build_target} \
+            -scheme "${SCHEME}" \
+            -configuration "${CONFIGURATION}" \
+            -destination "platform=iOS Simulator,name=${SIMULATOR_NAME}" \
+            ARCHS=x86_64 \
+            ONLY_ACTIVE_ARCH=NO \
+            build
+    fi
+
+    log_success "Build succeeded"
+}
+
+install_app() {
+    local app_path="$1"
+
+    log_warning "Installing app on simulator..."
+
+    xcrun simctl install booted "$app_path"
+    log_success "App installed"
+}
+
+launch_app() {
+    log_warning "Launching app..."
+
+    xcrun simctl terminate booted "${BUNDLE_ID}" 2>/dev/null || true
+    xcrun simctl launch booted "${BUNDLE_ID}"
+
+    log_success "App launched successfully!"
+}
+
+is_simulator_booted() {
+    xcrun simctl list devices | grep -q "(Booted)"
+}
+
+boot_simulator() {
+    local simulator_name="$1"
+
+    log_warning "No simulator is booted. Booting ${simulator_name}..."
+
+    local simulator_id
+    simulator_id=$(get_simulator_id "$simulator_name")
+
+    if [[ -z "$simulator_id" ]]; then
+        log_error "Simulator '${simulator_name}' not found!"
+        echo ""
+        echo "Available simulators:"
+        xcrun simctl list devices available | grep "iPhone"
+        exit 1
+    fi
+
+    xcrun simctl boot "$simulator_id"
+    open -a Simulator
+    log_success "Simulator booted"
+    sleep 2
+}
+
+find_build_target() {
+    log_warning "Locating Xcode workspace/project..."
+
+    local ios_dir="$1"
+
+    local workspace_file
+    workspace_file=$(find "$ios_dir" -maxdepth 1 -name "*.xcworkspace" | head -1)
+
+    if [[ -z "$workspace_file" ]]; then
+        log_error "No .xcworkspace or .xcodeproj found in ${ios_dir}"
+        exit 1
+    fi
+
+    echo "${workspace_file}"
+}
+
+find_built_app() {
+    log_warning "Locating built app..."
+
+    local app_path
+    app_path=$(find ~/Library/Developer/Xcode/DerivedData/*/Build/Products/${CONFIGURATION}-iphonesimulator \
+        -name "${SCHEME}.app" \
+        -type d \
+        2>/dev/null | head -1)
+
+    if [[ -z "$app_path" ]]; then
+        log_error "Could not find built app: ${SCHEME}.app"
+        log_warning "Searching in DerivedData..."
+        find ~/Library/Developer/Xcode/DerivedData/*/Build/Products/${CONFIGURATION}-iphonesimulator \
+            -name "*.app" \
+            -type d \
+            2>/dev/null || true
+        exit 1
+    fi
+
+    echo "$app_path"
+}
+
+get_simulator_id() {
+    local simulator_name="$1"
+    xcrun simctl list devices |
+        grep "${simulator_name}" |
+        head -1 |
+        grep -oE '\([0-9A-F-]+\)' |
+        tr -d '()'
+}
+
+# ============================================================================
+# Logging Functions
+# ============================================================================
+
+log_info() {
+    echo -e "${BLUE}$*${NC}" >&2
+}
+
+log_success() {
+    echo -e "${GREEN}✓ $*${NC}" >&2
+}
+
+log_warning() {
+    echo -e "${YELLOW}→ $*${NC}" >&2
+}
+
+log_error() {
+    echo -e "${RED}✗ $*${NC}" >&2
+}
+
+log_header() {
+    echo -e "${GREEN}========================================${NC}" >&2
+    echo -e "${GREEN}$*${NC}" >&2
+    echo -e "${GREEN}========================================${NC}" >&2
+}
+
+main "$@"
