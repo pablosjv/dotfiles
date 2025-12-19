@@ -45,8 +45,8 @@ shell-integration-features = no-cursor
 background-opacity = 0.80
 background-blur-radius = 20
 
-font-size=12
-font-family = MesloLGL Nerd Font Mono
+font-size=14
+font-family = MesloLGMDZ Nerd Font Mono
 
 window-decoration = auto
 window-padding-balance = true
