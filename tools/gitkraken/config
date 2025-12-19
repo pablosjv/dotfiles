@@ -30,7 +30,7 @@
   },
   "sslWhitelist": [],
   "webConfig": {
-    "lastUpdatedAt": "2025-12-08T13:16:04.831Z",
+    "lastUpdatedAt": "2025-12-18T10:55:53.900Z",
     "config": {
       "callouts": [],
       "promos": [
@@ -49,7 +49,7 @@
     },
     "dismissedCallouts": {}
   },
-  "lastReleaseNotesDisplayed": "11.6.0",
+  "lastReleaseNotesDisplayed": "11.7.0",
   "ui": {
     "shouldShowStartupPromoModal": false
   },
@@ -174,9 +174,10 @@
           "timestamps": [
             1760969350885,
             1760969496424,
-            1764056926552
+            1764056926552,
+            1766139089139
           ],
-          "total": 3
+          "total": 4
         },
         "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/chrome-extension": {
           "id": "openRepo-/Users/pablosanjose/projects/joko.gitlab.com/chrome-extension",
@@ -228,9 +229,9 @@
     }
   },
   "windowSettings": {
-    "x": -2,
-    "y": -980,
-    "width": 1512,
+    "x": 0,
+    "y": 38,
+    "width": 950,
     "height": 944,
     "fullScreen": false,
     "maximized": true
@@ -314,6 +315,10 @@
     },
     {
       "name": "gkDotDevGuestCheckout",
+      "value": true
+    },
+    {
+      "name": "gkDotDevInsightsBitbucket",
       "value": true
     },
     {
