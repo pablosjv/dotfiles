@@ -90,18 +90,34 @@ parse_arguments() {
     while [[ $# -gt 0 ]]; do
         case $1 in
         -s | --scheme)
+            if [[ $# -lt 2 ]]; then
+                log_error "Missing argument for $1"
+                exit 1
+            fi
             SCHEME="$2"
             shift 2
             ;;
         -b | --bundle-id)
+            if [[ $# -lt 2 ]]; then
+                log_error "Missing argument for $1"
+                exit 1
+            fi
             BUNDLE_ID="$2"
             shift 2
             ;;
         -d | --device)
+            if [[ $# -lt 2 ]]; then
+                log_error "Missing argument for $1"
+                exit 1
+            fi
             SIMULATOR_NAME="$2"
             shift 2
             ;;
         -c | --configuration)
+            if [[ $# -lt 2 ]]; then
+                log_error "Missing argument for $1"
+                exit 1
+            fi
             CONFIGURATION="$2"
             shift 2
             ;;
@@ -166,7 +182,7 @@ build_app() {
     log_warning "Building app for x86_64 architecture (Rosetta)..."
 
     if command -v xcpretty &>/dev/null; then
-        xcodebuild -workspace ${build_target} \
+        xcodebuild -workspace "${build_target}" \
             -scheme "${SCHEME}" \
             -configuration "${CONFIGURATION}" \
             -destination "platform=iOS Simulator,name=${SIMULATOR_NAME}" \
@@ -175,7 +191,7 @@ build_app() {
             build | xcpretty
     else
         log_warning "xcpretty not found, using default build output..."
-        xcodebuild -workspace ${build_target} \
+        xcodebuild -workspace "${build_target}" \
             -scheme "${SCHEME}" \
             -configuration "${CONFIGURATION}" \
             -destination "platform=iOS Simulator,name=${SIMULATOR_NAME}" \
