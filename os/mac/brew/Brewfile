@@ -33,6 +33,8 @@ brew "fd"
 brew "fselect"
 # GNU compiler collection
 brew "gcc"
+# GitHub command-line tool
+brew "gh"
 # Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
 # Git extension for versioning large files
@@ -45,7 +47,7 @@ brew "glab"
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# GNU Pretty Good Privacy (PGP) package
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
