@@ -7,8 +7,6 @@
 __MACOSX/
 .AppleDouble
 .LSOverride
-Icon[
-]
 
 # Thumbnails
 ._*
@@ -226,3 +224,20 @@ http-client.private.env.json
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+
+###############################################################################
+################################### Custom ####################################
+###############################################################################
+# NOTE: This are manually added based on my personal preferences.
+
+# Temporary files
+.tmp/
+tmp/
+
+# cursor plans
+.cursor/plans/
+
+# Dependency directories (just in case it is not ignored by the project gitignore)
+node_modules/
+.venv/
