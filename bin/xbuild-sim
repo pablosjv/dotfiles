@@ -15,6 +15,7 @@ Required:
 Options:
   -d, --device DEVICE          Simulator device name (default: iPhone 16 Pro)
   -c, --configuration CONFIG   Build configuration (default: Debug)
+  -e, --error-report-dir DIR   Directory for HTML error report (default: current directory)
   -h, --help                   Show this help message
 
 Environment Variables:
@@ -22,11 +23,13 @@ Environment Variables:
   XBUILD_BUNDLE_ID         Set bundle identifier
   XBUILD_SIMULATOR_NAME    Set simulator name
   XBUILD_CONFIGURATION     Set build configuration
+  XBUILD_ERROR_REPORT_DIR  Set directory for HTML error reports
 
 Examples:
   xbuild-sim -s MyApp -b com.example.myapp
   xbuild-sim -s MyApp -b com.example.myapp --device 'iPhone 15 Pro'
   xbuild-sim -s MyApp -b com.example.myapp --configuration Release
+  xbuild-sim -s MyApp -b com.example.myapp --error-report-dir ./reports
 
   # Using environment variables
   export XBUILD_SCHEME=MyApp
@@ -50,6 +53,7 @@ SCHEME="${XBUILD_SCHEME:-}"
 BUNDLE_ID="${XBUILD_BUNDLE_ID:-}"
 SIMULATOR_NAME="${XBUILD_SIMULATOR_NAME:-$DEFAULT_SIMULATOR_NAME}"
 CONFIGURATION="${XBUILD_CONFIGURATION:-$DEFAULT_CONFIGURATION}"
+ERROR_REPORT_DIR="${XBUILD_ERROR_REPORT_DIR:-$PWD}"
 
 main() {
     parse_arguments "$@"
@@ -121,6 +125,14 @@ parse_arguments() {
             CONFIGURATION="$2"
             shift 2
             ;;
+        -e | --error-report-dir)
+            if [[ $# -lt 2 ]]; then
+                log_error "Missing argument for $1"
+                exit 1
+            fi
+            ERROR_REPORT_DIR="$2"
+            shift 2
+            ;;
         -h | --help)
             show_help
             exit 0
@@ -157,11 +169,12 @@ show_configuration() {
     log_header "iOS Rebuild and Launch Script"
     echo "" >&2
     log_info "Configuration:"
-    echo "  Workspace:     ${WORKSPACE_ROOT}" >&2
-    echo "  Scheme:        ${SCHEME}" >&2
-    echo "  Bundle ID:     ${BUNDLE_ID}" >&2
-    echo "  Simulator:     ${SIMULATOR_NAME}" >&2
-    echo "  Configuration: ${CONFIGURATION}" >&2
+    echo "  Workspace:        ${WORKSPACE_ROOT}" >&2
+    echo "  Scheme:           ${SCHEME}" >&2
+    echo "  Bundle ID:        ${BUNDLE_ID}" >&2
+    echo "  Simulator:        ${SIMULATOR_NAME}" >&2
+    echo "  Configuration:    ${CONFIGURATION}" >&2
+    echo "  Error Report Dir: ${ERROR_REPORT_DIR}" >&2
     echo "" >&2
 }
 
@@ -181,26 +194,62 @@ build_app() {
 
     log_warning "Building app for x86_64 architecture (Rosetta)..."
 
+    local build_status=0
+    local raw_log_file
+    raw_log_file=$(mktemp)
+
     if command -v xcpretty &>/dev/null; then
+        set +e
         xcodebuild -workspace "${build_target}" \
             -scheme "${SCHEME}" \
             -configuration "${CONFIGURATION}" \
             -destination "platform=iOS Simulator,name=${SIMULATOR_NAME}" \
             ARCHS=x86_64 \
             ONLY_ACTIVE_ARCH=NO \
-            build | xcpretty
+            build 2>&1 | tee "$raw_log_file" | xcpretty
+        build_status=${PIPESTATUS[0]}
+        set -e
     else
         log_warning "xcpretty not found, using default build output..."
+        set +e
         xcodebuild -workspace "${build_target}" \
             -scheme "${SCHEME}" \
             -configuration "${CONFIGURATION}" \
             -destination "platform=iOS Simulator,name=${SIMULATOR_NAME}" \
             ARCHS=x86_64 \
             ONLY_ACTIVE_ARCH=NO \
-            build
+            build 2>&1 | tee "$raw_log_file"
+        build_status=${PIPESTATUS[0]}
+        set -e
     fi
 
+    if [[ $build_status -ne 0 ]]; then
+        log_error "Build failed!"
+        generate_error_report "$raw_log_file"
+        rm -f "$raw_log_file"
+        exit 1
+    fi
+
+    rm -f "$raw_log_file"
     log_success "Build succeeded"
+}
+
+generate_error_report() {
+    local raw_log_file="$1"
+
+    if ! command -v xcpretty &>/dev/null; then
+        log_warning "xcpretty not installed, cannot generate HTML error report"
+        return
+    fi
+
+    local timestamp
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    local report_filename="build-error-${SCHEME}-${timestamp}.html"
+    local report_path="${ERROR_REPORT_DIR}/${report_filename}"
+
+    log_warning "Generating HTML error report..."
+    cat "$raw_log_file" | xcpretty --report html --output "$report_path"
+    log_info "HTML error report saved to: ${report_path}"
 }
 
 install_app() {
