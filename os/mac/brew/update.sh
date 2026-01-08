@@ -8,3 +8,7 @@ brew bundle dump \
     --describe \
     --no-restart \
     --global
+
+echo "› Cleaning up bundle"
+brew bundle cleanup --global --force
+echo "› Done"

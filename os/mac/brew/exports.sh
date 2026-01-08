@@ -9,3 +9,6 @@ export HOMEBREW_NO_ENV_HINTS=1
 
 # Disable Homebrew's auto-update
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# Install badge
+export HOMEBREW_INSTALL_BADGE="☕️🐸"
