@@ -11,6 +11,10 @@ DOTFILES_ROOT=$(pwd -P)
 info "Updating dotfiles. The las version will be dumped in the repo"
 cd "$DOTFILES_ROOT"
 
+info "Updating submodules"
+git submodule update --remote --merge
+success "Submodules updated"
+
 info "Find the updaters and run them iteratively"
 for updater in "${DOTFILES_ROOT}"/**/update.sh; do
     info "Run ${updater}..."
