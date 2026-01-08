@@ -56,7 +56,8 @@
 
     ~/.vimrc: editors/vim/.vimrc
 
-    ~/.config/direnv/lib: tools/direnv/lib
+    # ~/.config/direnv/lib: tools/direnv/lib
+    ~/.config/direnv/config.toml: tools/direnv/config.toml
     ~/.config/pip/pip.conf: langs/python/pip.conf
     ~/.config/ghostty/config: tools/ghostty/config
     ~/.config/lsd/config.yaml: tools/lsd/config.yaml
@@ -64,7 +65,7 @@
     ~/.config/gitui/theme.ron: tools/gitui/theme.ron
     ~/.config/btop: tools/btop
     ~/.config/k9s: tools/k9s
-~/.config/mise/config.toml: tools/mise/config.toml
+    ~/.config/mise/config.toml: tools/mise/config.toml
     ~/.config/mise/mise.lock: tools/mise/mise.lock
     ~/.gitkraken/config: tools/gitkraken/config
     ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc

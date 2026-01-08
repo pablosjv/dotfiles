@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-# source_up
+source_up_if_exists

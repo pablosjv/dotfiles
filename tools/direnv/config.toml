@@ -1,0 +1,20 @@
+# Docs: https://direnv.net/man/direnv.toml.1.html
+[global]
+# Always load with `set -euo pipefail` mode
+strict_env = true
+# Always load .env files by default
+load_dotenv = true
+# Hide environment variable changes in the shell
+hide_env_diff = true
+# stdin for direnv disabled
+# disable_stdin = true
+# Sets the log format for direnv outputs. Set to “-” to disable normal logging.
+# log_format = "-"
+# A Regexp that can be used to filter out some of the logs.
+# log_filter = ""
+
+[whitelist]
+# Whitelist projects directory
+prefix = [
+  "~/projects",
+]
