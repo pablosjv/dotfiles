@@ -3,8 +3,6 @@ tap "mongodb/brew"
 tap "ngrok/ngrok"
 tap "robscott/tap"
 tap "ynqa/tap"
-# Extendable version manager with support for Ruby, Node.js, Erlang & more
-brew "asdf"
 # Shell extension to jump to frequently used directories
 brew "autojump"
 # Official Amazon AWS command-line interface
@@ -17,6 +15,8 @@ brew "bfg"
 brew "btop"
 # Top-like interface for container metrics
 brew "ctop"
+# JSON, YAML, TOML, XML, and CSV query and modification tool
+brew "dasel"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Utility to configure multi-display resolutions and arrangements
@@ -79,6 +79,8 @@ brew "libyaml"
 brew "lsd"
 # Utility for directing compilation
 brew "make"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Fast, highly customisable system info script
 brew "neofetch"
 # Port scanning utility for large networks

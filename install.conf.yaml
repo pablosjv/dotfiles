@@ -26,6 +26,7 @@
     - ~/.config/gitui
     - ~/.config/bat
     - ~/.config/ghostty
+    - ~/.config/mise
     - ~/.kube
     - ~/.kube/configs
     - ~/.local/bin/
@@ -63,10 +64,10 @@
     ~/.config/gitui/theme.ron: tools/gitui/theme.ron
     ~/.config/btop: tools/btop
     ~/.config/k9s: tools/k9s
+~/.config/mise/config.toml: tools/mise/config.toml
+    ~/.config/mise/mise.lock: tools/mise/mise.lock
     ~/.gitkraken/config: tools/gitkraken/config
     ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc
-
-    /usr/local/lib/jvm/java: ~/.asdf/installs/java
 
     ~/Library/Application Support/Code/User/:
       create: true

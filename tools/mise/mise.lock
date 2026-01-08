@@ -1,0 +1,52 @@
+[[tools.go]]
+version = "1.25.5"
+backend = "core:go"
+"platforms.linux-arm64" = { checksum = "sha256:b00b694903d126c588c378e72d3545549935d3982635ba3f7a964c9fa23fe3b9", url = "https://dl.google.com/go/go1.25.5.linux-arm64.tar.gz"}
+"platforms.linux-x64" = { checksum = "sha256:9e9b755d63b36acf30c12a9a3fc379243714c1c6d3dd72861da637f336ebb35b", url = "https://dl.google.com/go/go1.25.5.linux-amd64.tar.gz"}
+"platforms.macos-arm64" = { checksum = "sha256:bed8ebe824e3d3b27e8471d1307f803fc6ab8e1d0eb7a4ae196979bd9b801dd3", url = "https://dl.google.com/go/go1.25.5.darwin-arm64.tar.gz"}
+"platforms.macos-x64" = { checksum = "sha256:b69d51bce599e5381a94ce15263ae644ec84667a5ce23d58dc2e63e2c12a9f56", url = "https://dl.google.com/go/go1.25.5.darwin-amd64.tar.gz"}
+"platforms.windows-x64" = { checksum = "sha256:ae756cce1cb80c819b4fe01b0353807178f532211b47f72d7fa77949de054ebb", url = "https://dl.google.com/go/go1.25.5.windows-amd64.zip"}
+
+[[tools.java]]
+version = "25.0.1"
+backend = "core:java"
+"platforms.macos-arm64" = { checksum = "sha256:9175d602f3be2ffa241eb01d24ba4541e29a4dfa2095d4bdc1c9eb4bf4d56705", url = "https://download.java.net/java/GA/jdk25.0.1/2fbf10d8c78e40bd87641c434705079d/8/GPL/openjdk-25.0.1_macos-aarch64_bin.tar.gz"}
+
+[[tools.node]]
+version = "25.2.1"
+backend = "core:node"
+"platforms.linux-arm64" = { checksum = "sha256:905238a17be9ae62c16e596019268d8ca9f0fc3142602a1f860dc4a7c1ddbf82", url = "https://nodejs.org/dist/v25.2.1/node-v25.2.1-linux-arm64.tar.gz"}
+"platforms.linux-x64" = { checksum = "sha256:2094ecdc844ea11e9777cac42672b0d89cd63d27204193a587dc5a2d276bb940", url = "https://nodejs.org/dist/v25.2.1/node-v25.2.1-linux-x64.tar.gz"}
+"platforms.macos-arm64" = { checksum = "sha256:be87e21bd235a451fad02c89e5bf7cb17e206e4cd89dd5664f20d19e7dfde6f9", url = "https://nodejs.org/dist/v25.2.1/node-v25.2.1-darwin-arm64.tar.gz"}
+"platforms.macos-x64" = { checksum = "sha256:c266da5a9075a56e1aa02460ce8df96fca9e796c388abe94a8df4949945df6b6", url = "https://nodejs.org/dist/v25.2.1/node-v25.2.1-darwin-x64.tar.gz"}
+"platforms.windows-x64" = { checksum = "sha256:f97ba75ead7720652f3925d9cf8661e083a28c6b98ea77acc83903d77a9dd688", url = "https://nodejs.org/dist/v25.2.1/node-v25.2.1-win-x64.zip"}
+
+[[tools.poetry]]
+version = "2.2.1"
+backend = "asdf:mise-plugins/mise-poetry"
+
+[[tools.python]]
+version = "3.14.2"
+backend = "core:python"
+
+[[tools.ruby]]
+version = "4.0.0"
+backend = "core:ruby"
+"platforms.linux-arm64" = { checksum = "sha256:2e8389c8c072cb658c93a1372732d9eac84082c88b065750db1e52a5ac630271", url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.0.tar.gz"}
+"platforms.linux-x64" = { checksum = "sha256:2e8389c8c072cb658c93a1372732d9eac84082c88b065750db1e52a5ac630271", url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.0.tar.gz"}
+"platforms.macos-arm64" = { checksum = "sha256:2e8389c8c072cb658c93a1372732d9eac84082c88b065750db1e52a5ac630271", url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.0.tar.gz"}
+"platforms.macos-x64" = { checksum = "sha256:2e8389c8c072cb658c93a1372732d9eac84082c88b065750db1e52a5ac630271", url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.0.tar.gz"}
+"platforms.windows-x64" = { checksum = "sha256:2e8389c8c072cb658c93a1372732d9eac84082c88b065750db1e52a5ac630271", url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.0.tar.gz"}
+
+[[tools.uv]]
+version = "0.9.21"
+backend = "aqua:astral-sh/uv"
+"platforms.linux-arm64" = { checksum = "sha256:03a49fb609888032dbc3be9fd114b50fc9bce8b73b3df319746ae08d1fbdea83", url = "https://github.com/astral-sh/uv/releases/download/0.9.21/uv-aarch64-unknown-linux-musl.tar.gz"}
+"platforms.linux-x64" = { checksum = "sha256:7abc29b3a06a99fb23564400fe884f5798a1786dc2ca05b6e0f70c53de748ab2", url = "https://github.com/astral-sh/uv/releases/download/0.9.21/uv-x86_64-unknown-linux-musl.tar.gz"}
+"platforms.macos-arm64" = { checksum = "sha256:473977236ef8ac5937c80de08a3599cb6ed6021d0e015e10f88076767877a153", url = "https://github.com/astral-sh/uv/releases/download/0.9.21/uv-aarch64-apple-darwin.tar.gz"}
+"platforms.macos-x64" = { checksum = "sha256:26390da48bd55e21ab62451a80ad240ef6df10d4c48ec199cbb34c18b4288983", url = "https://github.com/astral-sh/uv/releases/download/0.9.21/uv-x86_64-apple-darwin.tar.gz"}
+"platforms.windows-x64" = { checksum = "sha256:d27952e73183ef8f6ee8c2a50cf8b3f2e08e01b6a9279a00a85cb261ea8d8337", url = "https://github.com/astral-sh/uv/releases/download/0.9.21/uv-x86_64-pc-windows-msvc.zip"}
+
+[[tools.yarn]]
+version = "4.12.0"
+backend = "vfox:mise-plugins/vfox-yarn"

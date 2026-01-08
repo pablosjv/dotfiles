@@ -2,9 +2,7 @@ golang 1.25.1
 java openjdk-19
 python 3.10.10
 poetry 2.0.1
-dasel 2.0.2
 nodejs 22.19.0
 yarn 1.22.19
-direnv 2.35.0
 uv 0.5.26
 ruby 3.2.2

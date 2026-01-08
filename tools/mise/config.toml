@@ -1,0 +1,15 @@
+[tools]
+go = "latest"
+java = "latest"
+node = "25"
+poetry = "latest"
+python = "latest"
+ruby = "latest"
+uv = "latest"
+yarn = "latest"
+
+[settings]
+color_theme = "catppuccin"
+experimental = true
+idiomatic_version_file_enable_tools = ["python", "node", "java"]
+lockfile = true
