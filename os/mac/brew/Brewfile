@@ -135,6 +135,10 @@ cask "bruno"
 cask "chatgpt"
 # Free and open-source web browser
 cask "chromium"
+# Anthropic's official Claude AI desktop app
+cask "claude"
+# Terminal-based AI coding assistant
+cask "claude-code"
 # AI code review CLI
 cask "coderabbit"
 # Write, edit, and chat about your code with AI
