@@ -23,7 +23,7 @@ search_mode = "fuzzy"
 filter_mode = "global"
 
 # Filter mode to use when invoking from a shell up-key binding
-filter_mode_shell_up_key_binding = "host"
+filter_mode_shell_up_key_binding = "directory"
 
 # Style of the search UI (auto, full, compact)
 style = "auto"
