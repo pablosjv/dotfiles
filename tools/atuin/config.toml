@@ -1,0 +1,97 @@
+# Atuin configuration
+# Full reference: https://docs.atuin.sh/configuration/config/
+
+# Where to store the SQLite database
+# db_path = "~/.local/share/atuin/history.db"
+
+# Where to store encryption key (for sync)
+# key_path = "~/.local/share/atuin/key"
+
+# Where to store session token (for sync)
+# session_path = "~/.local/share/atuin/session"
+
+## Sync settings ##
+# auto_sync = true
+# sync_frequency = "10m"
+# sync_address = "https://api.atuin.sh"
+
+## Search settings ##
+# Which search mode to use (prefix, fulltext, fuzzy, skim)
+search_mode = "fuzzy"
+
+# Which filter mode to use (global, host, session, directory, workspace)
+filter_mode = "global"
+
+# Filter mode to use when invoking from a shell up-key binding
+filter_mode_shell_up_key_binding = "host"
+
+# Style of the search UI (auto, full, compact)
+style = "auto"
+
+# Enable inline search (shows results below the command line)
+inline_height = 20
+
+# Show preview of the selected command
+show_preview = true
+
+# Maximum preview height
+max_preview_height = 4
+
+# Show help indicator
+show_help = true
+
+# Show tabs for filter modes
+show_tabs = true
+
+# Invert the UI for direction
+invert = false
+
+# Enable vim keybindings (we prefer emacs per your config)
+vim_mode = false
+
+# What to do when pressing enter on a command (execute or return)
+enter_accept = false
+
+## History settings ##
+# What to store in history
+# all: all commands
+# some: all except common commands (ls, cd, etc.)
+# none: nothing
+history_filter = []
+
+# Secret filter patterns (regex patterns for commands to never record)
+secrets_filter = true
+
+# Ignore commands starting with a space
+ignore_leading_space = true
+
+## Display settings ##
+# Datetime format for history list
+# Uses chrono format: https://docs.rs/chrono/latest/chrono/format/strftime/index.html
+history_format = "{time} {duration}\t{command}"
+
+# Duration format (human, us, ms, s)
+duration_format = "human"
+
+# Timezone (local or UTC)
+timezone = "local"
+
+# Number of context lines to show
+num_context = 0
+
+## Keybindings ##
+# Override default keybindings
+# ctrl_n_shortcuts = true
+
+## Stats settings ##
+# Number of top commands to show
+stats_days = 14
+
+## Daemon settings ##
+# Run atuin daemon for improved performance
+# daemon_enabled = true
+# daemon_socket_path = "~/.local/share/atuin/atuin.sock"
+
+## Theme / Colors ##
+# Uses your terminal's colors by default (works well with Catppuccin Mocha)
+# theme = "default"

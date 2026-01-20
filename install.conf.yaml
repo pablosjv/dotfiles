@@ -27,6 +27,7 @@
     - ~/.config/bat
     - ~/.config/ghostty
     - ~/.config/mise
+    - ~/.config/atuin
     - ~/.config/procs
     - ~/.kube
     - ~/.kube/configs
@@ -68,6 +69,7 @@
     ~/.config/k9s: tools/k9s
     ~/.config/mise/config.toml: tools/mise/config.toml
     ~/.config/mise/mise.lock: tools/mise/mise.lock
+    ~/.config/atuin/config.toml: tools/atuin/config.toml
     ~/.config/procs/config.toml: tools/procs/config.toml
     ~/.gitkraken/config: tools/gitkraken/config
     ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc

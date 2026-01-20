@@ -3,6 +3,8 @@ tap "mongodb/brew"
 tap "ngrok/ngrok"
 tap "robscott/tap"
 tap "ynqa/tap"
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin"
 # Shell extension to jump to frequently used directories
 brew "autojump"
 # Official Amazon AWS command-line interface
