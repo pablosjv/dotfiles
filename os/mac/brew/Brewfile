@@ -45,10 +45,6 @@ brew "git-lfs"
 brew "gitui"
 # Open-source GitLab command-line tool
 brew "glab"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Smarter Dockerfile linter to validate best practices
