@@ -1,0 +1,155 @@
+# procs configuration - Catppuccin Mocha inspired
+# https://github.com/dalance/procs
+#
+# Valid colors (standard ANSI):
+#   Black #000000, Red #800000, Green #008000, Yellow #808000
+#   Blue #000080, Magenta #800080, Cyan #008080, White #c0c0c0
+#   BrightBlack #808080, BrightRed #ff0000, BrightGreen #00ff00, BrightYellow #ffff00
+#   BrightBlue #0000ff, BrightMagenta #ff00ff, BrightCyan #00ffff, BrightWhite #ffffff
+
+[[columns]]
+align = "Right" 
+kind = "Pid" 
+nonnumeric_search = false 
+numeric_search = true 
+style = "BrightMagenta" # #ff00ff
+
+[[columns]]
+align = "Left" 
+kind = "User" 
+nonnumeric_search = true 
+numeric_search = false 
+style = "BrightGreen" # #00ff00
+
+[[columns]]
+align = "Left" 
+kind = "Separator" 
+nonnumeric_search = false 
+numeric_search = false 
+style = "BrightBlack" # #808080
+
+[[columns]]
+align = "Center"
+kind = "State"
+nonnumeric_search = false
+numeric_search = false
+style = "ByState"
+
+[[columns]]
+align = "Right"
+kind = "UsageCpu"
+nonnumeric_search = false
+numeric_search = false
+style = "ByPercentage"
+
+[[columns]]
+align = "Right"
+kind = "UsageMem"
+nonnumeric_search = false
+numeric_search = false
+style = "ByPercentage"
+
+[[columns]]
+align = "Right"
+kind = "VmRss"
+nonnumeric_search = false
+numeric_search = false
+style = "ByUnit"
+
+[[columns]]
+align = "Right" 
+kind = "CpuTime" 
+nonnumeric_search = false 
+numeric_search = false 
+style = "BrightCyan" # #00ffff
+
+[[columns]]
+align = "Left" 
+kind = "Separator" 
+nonnumeric_search = false 
+numeric_search = false 
+style = "BrightBlack" # #808080
+
+[[columns]]
+align = "Left" 
+kind = "TreeSlot" 
+nonnumeric_search = false 
+numeric_search = false 
+style = "BrightBlack" # #808080
+
+[[columns]]
+align = "Left" 
+kind = "Command" 
+nonnumeric_search = true 
+numeric_search = false 
+style = "BrightBlue" # #0000ff
+
+[style]
+header = "BrightBlue" # #0000ff
+tree = "BrightBlack" # #808080
+unit = "BrightBlack" # #808080
+
+[style.by_percentage]
+color_000 = "BrightCyan" # #00ffff - low usage
+color_025 = "BrightGreen" # #00ff00
+color_050 = "BrightYellow" # #ffff00
+color_075 = "Yellow" # #808000
+color_100 = "BrightRed" # #ff0000 - high usage
+
+[style.by_state]
+color_d = "BrightRed" # #ff0000 - uninterruptible sleep (D)
+color_k = "Yellow" # #808000 - wake kill (K)
+color_p = "Yellow" # #808000 - parked (P)
+color_r = "BrightGreen" # #00ff00 - running (R)
+color_s = "BrightCyan" # #00ffff - sleeping (S)
+color_t = "BrightYellow" # #ffff00 - stopped (T)
+color_w = "Yellow" # #808000 - waking (W)
+color_x = "BrightRed" # #ff0000 - dead (X)
+color_z = "BrightMagenta" # #ff00ff - zombie (Z)
+
+[style.by_unit]
+color_g = "BrightYellow" # #ffff00 - GB
+color_k = "BrightCyan" # #00ffff - KB
+color_m = "BrightGreen" # #00ff00 - MB
+color_p = "BrightRed" # #ff0000 - PB
+color_t = "Yellow" # #808000 - TB
+color_x = "BrightCyan" # #00ffff - bytes
+
+[search]
+case = "Smart"
+logic = "And"
+nonnumeric_search = "Partial"
+numeric_search = "Exact"
+
+[display]
+abbr_sid = true
+ascending = "▲"
+color_mode = "Auto"
+cut_to_pager = false
+cut_to_pipe = false
+cut_to_terminal = true
+descending = "▼"
+separator = "│"
+show_children_in_tree = true
+show_footer = false
+show_header = true
+show_kthreads = false
+show_parent_in_tree = true
+show_self = false
+show_self_parents = false
+show_thread = false
+show_thread_in_tree = true
+theme = "Auto"
+tree_symbols = ["│", "─", "┬", "├", "└"]
+
+[sort]
+column = 5
+order = "Descending"
+
+[docker]
+path = "unix:///var/run/docker.sock"
+
+[pager]
+detect_width = false
+mode = "Auto"
+use_builtin = false

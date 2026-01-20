@@ -87,6 +87,8 @@ brew "neofetch"
 brew "nmap"
 # CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
+# Modern replacement for ps written in Rust
+brew "procs"
 # Identify anything: emails, IP addresses, and more
 brew "pywhat"
 # Perl-powered file rename script with many helpful built-ins
