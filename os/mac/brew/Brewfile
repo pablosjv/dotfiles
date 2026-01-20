@@ -1,3 +1,4 @@
+tap "gittower/tap"
 tap "jkfran/killport"
 tap "mongodb/brew"
 tap "ngrok/ngrok"
