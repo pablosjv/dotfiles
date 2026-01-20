@@ -35,8 +35,6 @@ brew "fselect"
 brew "gcc"
 # GitHub command-line tool
 brew "gh"
-# Extensions to follow Vincent Driessen's branching model
-brew "git-flow"
 # Git extension for versioning large files
 brew "git-lfs"
 # Blazing fast terminal-ui for git written in rust
@@ -115,6 +113,8 @@ brew "watch"
 brew "wget"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Next-generation Git Flow tool
+brew "gittower/tap/git-flow-next"
 # A command-line tool to kill processes listening on a specific port
 brew "jkfran/killport/killport"
 # Install and switch between multiple versions of Xcode
