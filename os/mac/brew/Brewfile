@@ -35,6 +35,8 @@ brew "fselect"
 brew "gcc"
 # GitHub command-line tool
 brew "gh"
+# Highest-quality GIF encoder based on pngquant
+brew "gifski"
 # Git extension for versioning large files
 brew "git-lfs"
 # Blazing fast terminal-ui for git written in rust
