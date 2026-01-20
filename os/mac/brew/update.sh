@@ -9,6 +9,7 @@ brew bundle dump \
     --no-restart \
     --global
 
-echo "› Cleaning up bundle"
-brew bundle cleanup --global --force
+echo "› Cleaning up"
+brew bundle cleanup --global --force --zap
+brew cleanup --prune=all
 echo "› Done"

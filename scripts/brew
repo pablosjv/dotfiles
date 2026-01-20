@@ -30,8 +30,8 @@ brew-bump() {
 brew-cleanup() {
     log-info "Cleanup homebrew..."
     (cd "$(command brew --repo)" && git prune && git gc)
-    command brew cleanup
     command brew bundle cleanup --global --force --zap
+    command brew cleanup --prune=all
     rm -rf "$(command brew --cache)"
 }
 
