@@ -69,10 +69,10 @@ whitespace = nowarn
 autocorrect = 1
 
 [merge]
-	tool = vscode
+tool = cursor
 
-[mergetool "vscode"]
-	cmd = "code --wait "
+[mergetool "cursor"]
+cmd = "cursor --wait "
 
 [diff]
 tool = diffmerge
