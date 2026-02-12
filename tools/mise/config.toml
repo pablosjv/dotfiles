@@ -1,5 +1,5 @@
 [tools]
-go = "latest"
+go = "1.25.4"
 java = "latest"
 node = "25"
 poetry = "latest"
@@ -13,3 +13,7 @@ color_theme = "catppuccin"
 experimental = true
 idiomatic_version_file_enable_tools = ["python", "node", "java"]
 lockfile = true
+# Go
+go_set_gobin = true
+go_set_gopath = true
+go_set_goroot = true

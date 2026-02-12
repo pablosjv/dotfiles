@@ -26,7 +26,6 @@
     - ~/.config/gitui
     - ~/.config/bat
     - ~/.config/ghostty
-    - ~/.config/mise
     - ~/.config/atuin
     - ~/.config/procs
     - ~/.kube
@@ -67,8 +66,7 @@
     ~/.config/gitui/theme.ron: tools/gitui/theme.ron
     ~/.config/btop: tools/btop
     ~/.config/k9s: tools/k9s
-    ~/.config/mise/config.toml: tools/mise/config.toml
-    ~/.config/mise/mise.lock: tools/mise/mise.lock
+    ~/.config/mise: tools/mise
     ~/.config/atuin/config.toml: tools/atuin/config.toml
     ~/.config/procs/config.toml: tools/procs/config.toml
     ~/.gitkraken/config: tools/gitkraken/config
