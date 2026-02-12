@@ -36,7 +36,7 @@ configure)
     "${DOTFILES}/scripts/configure"
     ;;
 edit)
-    code "${DOTFILES}"
+    cursor "${DOTFILES}"
     ;;
 date)
     last_date=$(git config --global dotfiles.lastupdate)

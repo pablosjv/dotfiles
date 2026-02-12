@@ -8,4 +8,4 @@ export ZSH_EXTRA_COMPLETIONS="$DOTFILES/shell/zsh/completions"
 
 # editors
 export EDITOR='vim'
-export VEDITOR='code'
+export VEDITOR='cursor'
