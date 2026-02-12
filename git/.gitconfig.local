@@ -93,3 +93,7 @@ fetchJobs = 4
 
 [log]
 showSignature = false
+
+[rebase]
+autoSquash = true
+updateRefs = true
