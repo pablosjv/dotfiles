@@ -92,6 +92,8 @@ brew "neofetch"
 brew "nmap"
 # CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
+# Fast, disk space efficient package manager
+brew "pnpm"
 # Modern replacement for ps written in Rust
 brew "procs"
 # Identify anything: emails, IP addresses, and more
