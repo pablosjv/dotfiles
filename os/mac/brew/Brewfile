@@ -14,6 +14,8 @@ brew "awscli"
 brew "bat"
 # Remove large files or passwords from Git history like git-filter-branch
 brew "bfg"
+# Open source, extensible AI agent that goes beyond code suggestions
+brew "block-goose-cli"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
 # Top-like interface for container metrics
@@ -36,6 +38,10 @@ brew "fd"
 brew "fselect"
 # GNU compiler collection
 brew "gcc"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Highest-quality GIF encoder based on pngquant
@@ -161,12 +167,16 @@ cask "google-chrome"
 cask "google-drive"
 # Utility to hide menu bar items
 cask "hiddenbar"
+# App to manage software development and track bugs
+cask "linear-linear"
 # Create mock APIs in seconds
 cask "mockoon"
 # Htop on steroids
 cask "neohtop"
 # App to write, plan, collaborate, and get organised
 cask "notion"
+# Email client integrated with Notion workspace
+cask "notion-mail"
 # Get up and running with large language models locally
 cask "ollama-app"
 # Replacement for Docker Desktop
@@ -189,6 +199,10 @@ cask "visual-studio-code"
 cask "vyprvpn"
 # Native desktop client for WhatsApp
 cask "whatsapp"
+# Voice-to-text dictation with AI-powered auto-editing
+cask "wispr-flow"
+# Multiplayer code editor
+cask "zed"
 vscode "42crunch.vscode-openapi"
 vscode "alexcvzz.vscode-sqlite"
 vscode "be5invis.toml"
