@@ -9,3 +9,7 @@ else
     # echo "Non-interactive session"
     eval "$(mise activate zsh --shims)" # this sets up non-interactive sessions
 fi
+
+# NOTE: workaround for mise to be compatible with direnv `use node` directive
+export NODE_VERSIONS="${MISE_DATA_DIR:-$HOME/.local/share/mise}/installs/node"
+export NODE_VERSION_PREFIX=""
