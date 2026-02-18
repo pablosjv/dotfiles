@@ -8,6 +8,8 @@ changed = show --pretty=format: --name-only
 please = push --force-with-lease
 # Commit amend
 commend = commit --amend --no-edit
+# Commit fixup
+fixup = commit --fixup
 # Git log tags
 lt = log --tags --decorate --simplify-by-decoration --oneline
 # Generate gitignore - source: https://docs.gitignore.io/install/command-line
