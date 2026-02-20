@@ -12,27 +12,27 @@
       recursive: true
 
 - create:
-    - ~/projects/github.com
-    - ~/projects/gitlab.com
-    - ~/.vim/undo-history
-    - ~/.nvm
-    - ~/.gem/ruby/
+    - /usr/local/lib/gnubin
+    - /usr/local/lib/jvm
     - ~/.config
-    - ~/.config/pip
+    - ~/.config/atuin
+    - ~/.config/bat
     - ~/.config/direnv
+    - ~/.config/ghostty
+    - ~/.config/gitui
+    - ~/.config/iterm2
     - ~/.config/kitty
     - ~/.config/lsd
-    - ~/.config/iterm2
-    - ~/.config/gitui
-    - ~/.config/bat
-    - ~/.config/ghostty
-    - ~/.config/atuin
+    - ~/.config/pip
     - ~/.config/procs
+    - ~/.gem/ruby/
     - ~/.kube
     - ~/.kube/configs
     - ~/.local/bin/
-    - /usr/local/lib/jvm
-    - /usr/local/lib/gnubin
+    - ~/.nvm
+    - ~/.vim/undo-history
+    - ~/projects/github.com
+    - ~/projects/gitlab.com
 
 - link:
     ~/:
@@ -45,10 +45,10 @@
 
     ~/.local/bin/dotbot: dotbot/bin/dotbot
 
-    ~/.zshrc: shell/zsh/.zshrc
-    ~/.zshenv: shell/zsh/.zshenv
     ~/.p10k.zsh: shell/zsh/themes/p10k.zsh
     ~/.zimrc: shell/zsh/.zim/.zimrc
+    ~/.zshenv: shell/zsh/.zshenv
+    ~/.zshrc: shell/zsh/.zshrc
 
     ~/.gitignore: git/.gitignore
     ~/.gitconfig.local: git/.gitconfig.local
@@ -58,16 +58,16 @@
     ~/.vimrc: editors/vim/.vimrc
 
     # ~/.config/direnv/lib: tools/direnv/lib
-    ~/.config/direnv/config.toml: tools/direnv/config.toml
-    ~/.config/pip/pip.conf: langs/python/pip.conf
-    ~/.config/ghostty/config: tools/ghostty/config
-    ~/.config/lsd/config.yaml: tools/lsd/config.yaml
-    ~/.config/bat/config: tools/bat/config
-    ~/.config/gitui/theme.ron: tools/gitui/theme.ron
-    ~/.config/btop: tools/btop
-    ~/.config/k9s: tools/k9s
-    ~/.config/mise: tools/mise
     ~/.config/atuin/config.toml: tools/atuin/config.toml
+    ~/.config/bat/config: tools/bat/config
+    ~/.config/btop: tools/btop
+    ~/.config/direnv/config.toml: tools/direnv/config.toml
+    ~/.config/ghostty/config: tools/ghostty/config
+    ~/.config/gitui/theme.ron: tools/gitui/theme.ron
+    ~/.config/k9s: tools/k9s
+    ~/.config/lsd/config.yaml: tools/lsd/config.yaml
+    ~/.config/mise: tools/mise
+    ~/.config/pip/pip.conf: langs/python/pip.conf
     ~/.config/procs/config.toml: tools/procs/config.toml
     ~/.gitkraken/config: tools/gitkraken/config
     ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc
