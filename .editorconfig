@@ -14,3 +14,7 @@ indent_size = 2
 [Makefile]
 indent_style = tab
 indent_size = 4
+
+# Ignore the p10k.zsh file when calling shfmt.
+[*p10k*.zsh]
+ignore = true

@@ -25,6 +25,7 @@
     - ~/.config/lsd
     - ~/.config/pip
     - ~/.config/procs
+    - ~/.config/shell
     - ~/.gem/ruby/
     - ~/.kube
     - ~/.kube/configs
@@ -45,6 +46,7 @@
 
     ~/.local/bin/dotbot: dotbot/bin/dotbot
 
+    ~/.config/shell/p10k.mise.zsh: shell/zsh/themes/p10k.mise.zsh
     ~/.p10k.zsh: shell/zsh/themes/p10k.zsh
     ~/.zimrc: shell/zsh/.zim/.zimrc
     ~/.zshenv: shell/zsh/.zshenv
