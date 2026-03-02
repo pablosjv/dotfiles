@@ -1,9 +1,3 @@
-tap "gittower/tap"
-tap "jkfran/killport"
-tap "mongodb/brew"
-tap "ngrok/ngrok"
-tap "robscott/tap"
-tap "ynqa/tap"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
 # Shell extension to jump to frequently used directories
@@ -12,8 +6,6 @@ brew "autojump"
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Remove large files or passwords from Git history like git-filter-branch
-brew "bfg"
 # Open source, extensible AI agent that goes beyond code suggestions
 brew "block-goose-cli"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
@@ -38,14 +30,14 @@ brew "fd"
 brew "fselect"
 # GNU compiler collection
 brew "gcc"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
 # Interact with Google Gemini AI models from the command-line
 brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
+# Modern implementation of the Git-flow branching model
+brew "git-flow-next"
 # Git extension for versioning large files
 brew "git-lfs"
 # Blazing fast terminal-ui for git written in rust
@@ -66,20 +58,16 @@ brew "hyperfine"
 brew "insect"
 # Install and debug iPhone apps from the command-line
 brew "ios-deploy"
+# Interactive JSON filter using jq
+brew "jnv"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
-# Network authentication protocol
-brew "krb5"
-# Kubernetes command-line interface
-brew "kubernetes-cli"
+# Command-line tool to kill processes listening on a specific port
+brew "killport"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
-# Postgres C API library
-brew "libpq", link: true
-# YAML Parser
-brew "libyaml"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Utility for directing compilation
@@ -124,16 +112,10 @@ brew "vercel-cli"
 brew "watch"
 # Internet file retriever
 brew "wget"
+# Best command-line tool to install and switch between multiple versions of Xcode
+brew "xcodes"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
-# Next-generation Git Flow tool
-brew "gittower/tap/git-flow-next"
-# A command-line tool to kill processes listening on a specific port
-brew "jkfran/killport/killport"
-# Install and switch between multiple versions of Xcode
-brew "xcodesorg/made/xcodes"
-# JSON navigator and interactive filter leveraging jq
-brew "ynqa/tap/jnv"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line tools for building and debugging Android apps
@@ -215,6 +197,7 @@ vscode "bruno-api-client.bruno"
 vscode "catppuccin.catppuccin-vsc"
 vscode "charliermarsh.ruff"
 vscode "davidanson.vscode-markdownlint"
+vscode "dbaeumer.vscode-eslint"
 vscode "diogonolasco.pyinit"
 vscode "docker.docker"
 vscode "dotjoshjohnson.xml"
@@ -222,6 +205,7 @@ vscode "drrouman.git-coauthors"
 vscode "eamodio.gitlens"
 vscode "editorconfig.editorconfig"
 vscode "emeryberger.scalene"
+vscode "esbenp.prettier-vscode"
 vscode "exiasr.hadolint"
 vscode "foxundermoon.shell-format"
 vscode "franneck94.vscode-python-config"
@@ -284,7 +268,17 @@ vscode "tamasfe.even-better-toml"
 vscode "techer.open-in-browser"
 vscode "teticio.python-envy"
 vscode "timonwong.shellcheck"
+vscode "vitest.explorer"
 vscode "wholroyd.jinja"
 vscode "wmaurer.change-case"
 vscode "yzane.markdown-pdf"
 vscode "yzhang.markdown-all-in-one"
+go "github.com/go-delve/delve/cmd/dlv"
+go "gitlab.com/gitlab-org/cli/cmd/glab"
+go "cmd/go"
+go "cmd/gofmt"
+go "golang.org/x/tools/cmd/goimports"
+go "github.com/haya14busa/goplay/cmd/goplay"
+go "golang.org/x/tools/gopls"
+go "github.com/cweill/gotests/gotests"
+go "github.com/josharian/impl"

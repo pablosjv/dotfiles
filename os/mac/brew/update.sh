@@ -1,7 +1,12 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 [ "$(uname -s)" != "Darwin" ] && exit 0
-echo "› Update Brewfile"
+
+DOTFILES_ROOT=$(pwd -P)
+# shellcheck disable=SC1091
+. "$DOTFILES_ROOT/scripts/tools"
+
+info "Update Brewfile"
 brew bundle dump \
     --verbose \
     --force \
@@ -9,7 +14,10 @@ brew bundle dump \
     --no-restart \
     --global
 
-echo "› Cleaning up"
+info "Filtering Brewfile"
+"$DOTFILES_ROOT/scripts/brew" bundle-clean
+
+info "Cleaning up"
 brew bundle cleanup --global --force --zap
 brew cleanup --prune=all
-echo "› Done"
+success "Done"

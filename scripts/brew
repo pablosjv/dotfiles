@@ -41,6 +41,42 @@ brew-repair() {
     command brew update
 }
 
+brew-bundle-clean() {
+    local brewfile="${HOMEBREW_BUNDLE_FILE_GLOBAL:-$HOME/.Brewfile}"
+    local real_brewfile
+    local explicit_list
+
+    if [ -L "$brewfile" ]; then
+        local target
+        target=$(readlink "$brewfile")
+        case "$target" in
+        /*) real_brewfile="$target" ;;
+        *) real_brewfile="$(cd "$(dirname "$brewfile")" && cd "$(dirname "$target")" && pwd)/$(basename "$target")" ;;
+        esac
+    else
+        real_brewfile="$brewfile"
+    fi
+
+    log-info "Filtering Brewfile to top-level formulae only (brew leaves --installed-on-request)"
+    explicit_list=$(mktemp)
+    command brew leaves --installed-on-request 2>/dev/null | sort -u >"$explicit_list"
+    awk '
+        NR==FNR { explicit[$1]=1; next }
+        /^#/ { comment=comment $0 "\n"; next }
+        /^brew "/ {
+            name=$0
+            sub(/^brew "/, "", name)
+            sub(/".*$/, "", name)
+            if (name in explicit) { printf "%s%s", comment, $0 "\n" }
+            comment=""
+            next
+        }
+        { printf "%s%s", comment, $0 "\n"; comment=""; next }
+        END { if (comment != "") printf "%s", comment }
+    ' "$explicit_list" "$brewfile" >"${real_brewfile}.tmp" && mv "${real_brewfile}.tmp" "$real_brewfile"
+    rm -f "$explicit_list"
+}
+
 case "$1" in
 cleanup)
     brew-cleanup
@@ -50,6 +86,9 @@ bump)
     ;;
 repair)
     brew-repair
+    ;;
+bundle-clean)
+    brew-bundle-clean
     ;;
 *)
     command brew "$@"
