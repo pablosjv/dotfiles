@@ -1,0 +1,13 @@
+version: "0.2"
+language: "en,en-gb,en-us,es-es,fr"
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries:
+  - aws
+  - python
+  - golang
+  - data-science
+  - cpp-compound-words
+words: []
+ignoreWords: []
+import: []
