@@ -9,7 +9,7 @@ please = push --force-with-lease
 # Commit amend
 commend = commit --amend --no-edit
 # Commit fixup
-fixup = commit --fixup
+fixup = "!f(){ git commit --fixup \"$1\" && GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash \"$1\"^; }; f"
 # Git log tags
 lt = log --tags --decorate --simplify-by-decoration --oneline
 # Generate gitignore - source: https://docs.gitignore.io/install/command-line
