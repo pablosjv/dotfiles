@@ -245,5 +245,6 @@ node_modules/
 # Dotenv files
 .env
 .env.*
+!.env.*dist
 !.env.example
 !.env.example.*
