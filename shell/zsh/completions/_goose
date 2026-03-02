@@ -20,10 +20,10 @@ _goose() {
 '-V[Print version]' \
 '--version[Print version]' \
 ":: :_goose_commands" \
-"*::: :->goose-cli" \
+"*::: :->goose" \
 && ret=0
     case $state in
-    (goose-cli)
+    (goose)
         words=($line[1] "${words[@]}")
         (( CURRENT += 1 ))
         curcontext="${curcontext%:*:*}:goose-command-$line[1]:"
@@ -699,6 +699,170 @@ esac
     ;;
 esac
 ;;
+(gateway)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_goose__gateway_commands" \
+"*::: :->gateway" \
+&& ret=0
+
+    case $state in
+    (gateway)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:goose-gateway-command-$line[1]:"
+        case $line[1] in
+            (status)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(start)
+_arguments "${_arguments_options[@]}" : \
+'--bot-token=[Bot token for the gateway platform]:BOT_TOKEN:_default' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+':gateway_type -- Gateway type (e.g., '\''telegram'\''):_default' \
+&& ret=0
+;;
+(stop)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':gateway_type -- Gateway type to stop (e.g., '\''telegram'\''):_default' \
+&& ret=0
+;;
+(pair)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':gateway_type -- Gateway type to generate pairing code for:_default' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_goose__gateway__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:goose-gateway-help-command-$line[1]:"
+        case $line[1] in
+            (status)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(start)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(stop)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(pair)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
+(gw)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_goose__gateway_commands" \
+"*::: :->gateway" \
+&& ret=0
+
+    case $state in
+    (gateway)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:goose-gateway-command-$line[1]:"
+        case $line[1] in
+            (status)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(start)
+_arguments "${_arguments_options[@]}" : \
+'--bot-token=[Bot token for the gateway platform]:BOT_TOKEN:_default' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+':gateway_type -- Gateway type (e.g., '\''telegram'\''):_default' \
+&& ret=0
+;;
+(stop)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':gateway_type -- Gateway type to stop (e.g., '\''telegram'\''):_default' \
+&& ret=0
+;;
+(pair)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':gateway_type -- Gateway type to generate pairing code for:_default' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_goose__gateway__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:goose-gateway-help-command-$line[1]:"
+        case $line[1] in
+            (status)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(start)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(stop)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(pair)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
 (update)
 _arguments "${_arguments_options[@]}" : \
 '-c[Update to canary version]' \
@@ -708,116 +872,6 @@ _arguments "${_arguments_options[@]}" : \
 '-h[Print help (see more with '\''--help'\'')]' \
 '--help[Print help (see more with '\''--help'\'')]' \
 && ret=0
-;;
-(bench)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-":: :_goose__bench_commands" \
-"*::: :->bench" \
-&& ret=0
-
-    case $state in
-    (bench)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:goose-bench-command-$line[1]:"
-        case $line[1] in
-            (init-config)
-_arguments "${_arguments_options[@]}" : \
-'-n+[filename with extension for generated config]:NAME:_default' \
-'--name=[filename with extension for generated config]:NAME:_default' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(run)
-_arguments "${_arguments_options[@]}" : \
-'-c+[A config file generated by the config-init command]:CONFIG:_files' \
-'--config=[A config file generated by the config-init command]:CONFIG:_files' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(selectors)
-_arguments "${_arguments_options[@]}" : \
-'-c+[A config file generated by the config-init command]:CONFIG:_files' \
-'--config=[A config file generated by the config-init command]:CONFIG:_files' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(eval-model)
-_arguments "${_arguments_options[@]}" : \
-'-c+[A serialized config file for the model only.]:CONFIG:_default' \
-'--config=[A serialized config file for the model only.]:CONFIG:_default' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(exec-eval)
-_arguments "${_arguments_options[@]}" : \
-'-c+[A serialized config file for the eval only.]:CONFIG:_default' \
-'--config=[A serialized config file for the eval only.]:CONFIG:_default' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(generate-leaderboard)
-_arguments "${_arguments_options[@]}" : \
-'-b+[Path to the benchmark directory containing model evaluation results]:BENCHMARK_DIR:_files' \
-'--benchmark-dir=[Path to the benchmark directory containing model evaluation results]:BENCHMARK_DIR:_files' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(help)
-_arguments "${_arguments_options[@]}" : \
-":: :_goose__bench__help_commands" \
-"*::: :->help" \
-&& ret=0
-
-    case $state in
-    (help)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:goose-bench-help-command-$line[1]:"
-        case $line[1] in
-            (init-config)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(run)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(selectors)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(eval-model)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(exec-eval)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(generate-leaderboard)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(help)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-        esac
-    ;;
-esac
-;;
-        esac
-    ;;
-esac
 ;;
 (web)
 _arguments "${_arguments_options[@]}" : \
@@ -915,12 +969,185 @@ esac
     ;;
 esac
 ;;
+(local-models)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_goose__local-models_commands" \
+"*::: :->local-models" \
+&& ret=0
+
+    case $state in
+    (local-models)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:goose-local-models-command-$line[1]:"
+        case $line[1] in
+            (search)
+_arguments "${_arguments_options[@]}" : \
+'-l+[Maximum number of results]:LIMIT:_default' \
+'--limit=[Maximum number of results]:LIMIT:_default' \
+'-h[Print help]' \
+'--help[Print help]' \
+':query -- Search query:_default' \
+&& ret=0
+;;
+(download)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':spec -- Model spec in user/repo\:quantization format:_default' \
+&& ret=0
+;;
+(list)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(delete)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':id -- Model ID to delete:_default' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_goose__local-models__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:goose-local-models-help-command-$line[1]:"
+        case $line[1] in
+            (search)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(download)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(delete)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
+(lm)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_goose__local-models_commands" \
+"*::: :->local-models" \
+&& ret=0
+
+    case $state in
+    (local-models)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:goose-local-models-command-$line[1]:"
+        case $line[1] in
+            (search)
+_arguments "${_arguments_options[@]}" : \
+'-l+[Maximum number of results]:LIMIT:_default' \
+'--limit=[Maximum number of results]:LIMIT:_default' \
+'-h[Print help]' \
+'--help[Print help]' \
+':query -- Search query:_default' \
+&& ret=0
+;;
+(download)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':spec -- Model spec in user/repo\:quantization format:_default' \
+&& ret=0
+;;
+(list)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(delete)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':id -- Model ID to delete:_default' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_goose__local-models__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:goose-local-models-help-command-$line[1]:"
+        case $line[1] in
+            (search)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(download)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(delete)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
 (completion)
 _arguments "${_arguments_options[@]}" : \
 '--bin-name=[Provide a custom binary name]:BIN_NAME:_default' \
 '-h[Print help]' \
 '--help[Print help]' \
 ':shell:(bash elvish fish powershell zsh)' \
+&& ret=0
+;;
+(validate-extensions)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':file -- Path to the bundled-extensions.json file:_files' \
 && ret=0
 ;;
 (help)
@@ -1075,49 +1302,41 @@ _arguments "${_arguments_options[@]}" : \
     ;;
 esac
 ;;
-(update)
+(gateway)
 _arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(bench)
-_arguments "${_arguments_options[@]}" : \
-":: :_goose__help__bench_commands" \
-"*::: :->bench" \
+":: :_goose__help__gateway_commands" \
+"*::: :->gateway" \
 && ret=0
 
     case $state in
-    (bench)
+    (gateway)
         words=($line[1] "${words[@]}")
         (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:goose-help-bench-command-$line[1]:"
+        curcontext="${curcontext%:*:*}:goose-help-gateway-command-$line[1]:"
         case $line[1] in
-            (init-config)
+            (status)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
-(run)
+(start)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
-(selectors)
+(stop)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
-(eval-model)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(exec-eval)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(generate-leaderboard)
+(pair)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
         esac
     ;;
 esac
+;;
+(update)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
 ;;
 (web)
 _arguments "${_arguments_options[@]}" : \
@@ -1155,7 +1374,43 @@ _arguments "${_arguments_options[@]}" : \
     ;;
 esac
 ;;
+(local-models)
+_arguments "${_arguments_options[@]}" : \
+":: :_goose__help__local-models_commands" \
+"*::: :->local-models" \
+&& ret=0
+
+    case $state in
+    (local-models)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:goose-help-local-models-command-$line[1]:"
+        case $line[1] in
+            (search)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(download)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(delete)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
 (completion)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(validate-extensions)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -1189,11 +1444,15 @@ _goose_commands() {
 'recipe:Recipe utilities for validation and deeplinking' \
 'schedule:Manage scheduled jobs' \
 'sched:Manage scheduled jobs' \
+'gateway:Manage gateways for external platform integrations' \
+'gw:Manage gateways for external platform integrations' \
 'update:Update the goose CLI version' \
-'bench:Evaluate system configuration across a range of practical tasks' \
 'web:Experimental\: Start a web server with a chat interface' \
 'term:Terminal-integrated goose session' \
+'local-models:Manage local inference models' \
+'lm:Manage local inference models' \
 'completion:Generate the autocompletion script for the specified shell' \
+'validate-extensions:Validate a bundled-extensions.json file' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'goose commands' commands "$@"
@@ -1202,97 +1461,6 @@ _goose_commands() {
 _goose__acp_commands() {
     local commands; commands=()
     _describe -t commands 'goose acp commands' commands "$@"
-}
-(( $+functions[_goose__bench_commands] )) ||
-_goose__bench_commands() {
-    local commands; commands=(
-'init-config:Create a new starter-config' \
-'run:Run all benchmarks from a config' \
-'selectors:List all available selectors' \
-'eval-model:Run an eval of model' \
-'exec-eval:run a single eval' \
-'generate-leaderboard:Generate a leaderboard CSV from benchmark results' \
-'help:Print this message or the help of the given subcommand(s)' \
-    )
-    _describe -t commands 'goose bench commands' commands "$@"
-}
-(( $+functions[_goose__bench__eval-model_commands] )) ||
-_goose__bench__eval-model_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench eval-model commands' commands "$@"
-}
-(( $+functions[_goose__bench__exec-eval_commands] )) ||
-_goose__bench__exec-eval_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench exec-eval commands' commands "$@"
-}
-(( $+functions[_goose__bench__generate-leaderboard_commands] )) ||
-_goose__bench__generate-leaderboard_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench generate-leaderboard commands' commands "$@"
-}
-(( $+functions[_goose__bench__help_commands] )) ||
-_goose__bench__help_commands() {
-    local commands; commands=(
-'init-config:Create a new starter-config' \
-'run:Run all benchmarks from a config' \
-'selectors:List all available selectors' \
-'eval-model:Run an eval of model' \
-'exec-eval:run a single eval' \
-'generate-leaderboard:Generate a leaderboard CSV from benchmark results' \
-'help:Print this message or the help of the given subcommand(s)' \
-    )
-    _describe -t commands 'goose bench help commands' commands "$@"
-}
-(( $+functions[_goose__bench__help__eval-model_commands] )) ||
-_goose__bench__help__eval-model_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench help eval-model commands' commands "$@"
-}
-(( $+functions[_goose__bench__help__exec-eval_commands] )) ||
-_goose__bench__help__exec-eval_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench help exec-eval commands' commands "$@"
-}
-(( $+functions[_goose__bench__help__generate-leaderboard_commands] )) ||
-_goose__bench__help__generate-leaderboard_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench help generate-leaderboard commands' commands "$@"
-}
-(( $+functions[_goose__bench__help__help_commands] )) ||
-_goose__bench__help__help_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench help help commands' commands "$@"
-}
-(( $+functions[_goose__bench__help__init-config_commands] )) ||
-_goose__bench__help__init-config_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench help init-config commands' commands "$@"
-}
-(( $+functions[_goose__bench__help__run_commands] )) ||
-_goose__bench__help__run_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench help run commands' commands "$@"
-}
-(( $+functions[_goose__bench__help__selectors_commands] )) ||
-_goose__bench__help__selectors_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench help selectors commands' commands "$@"
-}
-(( $+functions[_goose__bench__init-config_commands] )) ||
-_goose__bench__init-config_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench init-config commands' commands "$@"
-}
-(( $+functions[_goose__bench__run_commands] )) ||
-_goose__bench__run_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench run commands' commands "$@"
-}
-(( $+functions[_goose__bench__selectors_commands] )) ||
-_goose__bench__selectors_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose bench selectors commands' commands "$@"
 }
 (( $+functions[_goose__completion_commands] )) ||
 _goose__completion_commands() {
@@ -1303,6 +1471,73 @@ _goose__completion_commands() {
 _goose__configure_commands() {
     local commands; commands=()
     _describe -t commands 'goose configure commands' commands "$@"
+}
+(( $+functions[_goose__gateway_commands] )) ||
+_goose__gateway_commands() {
+    local commands; commands=(
+'status:Show gateway status' \
+'start:Start a gateway' \
+'stop:Stop a running gateway' \
+'pair:Generate a pairing code for a gateway' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'goose gateway commands' commands "$@"
+}
+(( $+functions[_goose__gateway__help_commands] )) ||
+_goose__gateway__help_commands() {
+    local commands; commands=(
+'status:Show gateway status' \
+'start:Start a gateway' \
+'stop:Stop a running gateway' \
+'pair:Generate a pairing code for a gateway' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'goose gateway help commands' commands "$@"
+}
+(( $+functions[_goose__gateway__help__help_commands] )) ||
+_goose__gateway__help__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose gateway help help commands' commands "$@"
+}
+(( $+functions[_goose__gateway__help__pair_commands] )) ||
+_goose__gateway__help__pair_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose gateway help pair commands' commands "$@"
+}
+(( $+functions[_goose__gateway__help__start_commands] )) ||
+_goose__gateway__help__start_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose gateway help start commands' commands "$@"
+}
+(( $+functions[_goose__gateway__help__status_commands] )) ||
+_goose__gateway__help__status_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose gateway help status commands' commands "$@"
+}
+(( $+functions[_goose__gateway__help__stop_commands] )) ||
+_goose__gateway__help__stop_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose gateway help stop commands' commands "$@"
+}
+(( $+functions[_goose__gateway__pair_commands] )) ||
+_goose__gateway__pair_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose gateway pair commands' commands "$@"
+}
+(( $+functions[_goose__gateway__start_commands] )) ||
+_goose__gateway__start_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose gateway start commands' commands "$@"
+}
+(( $+functions[_goose__gateway__status_commands] )) ||
+_goose__gateway__status_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose gateway status commands' commands "$@"
+}
+(( $+functions[_goose__gateway__stop_commands] )) ||
+_goose__gateway__stop_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose gateway stop commands' commands "$@"
 }
 (( $+functions[_goose__help_commands] )) ||
 _goose__help_commands() {
@@ -1317,11 +1552,13 @@ _goose__help_commands() {
 'run:Execute commands from an instruction file or stdin' \
 'recipe:Recipe utilities for validation and deeplinking' \
 'schedule:Manage scheduled jobs' \
+'gateway:Manage gateways for external platform integrations' \
 'update:Update the goose CLI version' \
-'bench:Evaluate system configuration across a range of practical tasks' \
 'web:Experimental\: Start a web server with a chat interface' \
 'term:Terminal-integrated goose session' \
+'local-models:Manage local inference models' \
 'completion:Generate the autocompletion script for the specified shell' \
+'validate-extensions:Validate a bundled-extensions.json file' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'goose help commands' commands "$@"
@@ -1330,48 +1567,6 @@ _goose__help_commands() {
 _goose__help__acp_commands() {
     local commands; commands=()
     _describe -t commands 'goose help acp commands' commands "$@"
-}
-(( $+functions[_goose__help__bench_commands] )) ||
-_goose__help__bench_commands() {
-    local commands; commands=(
-'init-config:Create a new starter-config' \
-'run:Run all benchmarks from a config' \
-'selectors:List all available selectors' \
-'eval-model:Run an eval of model' \
-'exec-eval:run a single eval' \
-'generate-leaderboard:Generate a leaderboard CSV from benchmark results' \
-    )
-    _describe -t commands 'goose help bench commands' commands "$@"
-}
-(( $+functions[_goose__help__bench__eval-model_commands] )) ||
-_goose__help__bench__eval-model_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose help bench eval-model commands' commands "$@"
-}
-(( $+functions[_goose__help__bench__exec-eval_commands] )) ||
-_goose__help__bench__exec-eval_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose help bench exec-eval commands' commands "$@"
-}
-(( $+functions[_goose__help__bench__generate-leaderboard_commands] )) ||
-_goose__help__bench__generate-leaderboard_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose help bench generate-leaderboard commands' commands "$@"
-}
-(( $+functions[_goose__help__bench__init-config_commands] )) ||
-_goose__help__bench__init-config_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose help bench init-config commands' commands "$@"
-}
-(( $+functions[_goose__help__bench__run_commands] )) ||
-_goose__help__bench__run_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose help bench run commands' commands "$@"
-}
-(( $+functions[_goose__help__bench__selectors_commands] )) ||
-_goose__help__bench__selectors_commands() {
-    local commands; commands=()
-    _describe -t commands 'goose help bench selectors commands' commands "$@"
 }
 (( $+functions[_goose__help__completion_commands] )) ||
 _goose__help__completion_commands() {
@@ -1383,6 +1578,36 @@ _goose__help__configure_commands() {
     local commands; commands=()
     _describe -t commands 'goose help configure commands' commands "$@"
 }
+(( $+functions[_goose__help__gateway_commands] )) ||
+_goose__help__gateway_commands() {
+    local commands; commands=(
+'status:Show gateway status' \
+'start:Start a gateway' \
+'stop:Stop a running gateway' \
+'pair:Generate a pairing code for a gateway' \
+    )
+    _describe -t commands 'goose help gateway commands' commands "$@"
+}
+(( $+functions[_goose__help__gateway__pair_commands] )) ||
+_goose__help__gateway__pair_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose help gateway pair commands' commands "$@"
+}
+(( $+functions[_goose__help__gateway__start_commands] )) ||
+_goose__help__gateway__start_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose help gateway start commands' commands "$@"
+}
+(( $+functions[_goose__help__gateway__status_commands] )) ||
+_goose__help__gateway__status_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose help gateway status commands' commands "$@"
+}
+(( $+functions[_goose__help__gateway__stop_commands] )) ||
+_goose__help__gateway__stop_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose help gateway stop commands' commands "$@"
+}
 (( $+functions[_goose__help__help_commands] )) ||
 _goose__help__help_commands() {
     local commands; commands=()
@@ -1392,6 +1617,36 @@ _goose__help__help_commands() {
 _goose__help__info_commands() {
     local commands; commands=()
     _describe -t commands 'goose help info commands' commands "$@"
+}
+(( $+functions[_goose__help__local-models_commands] )) ||
+_goose__help__local-models_commands() {
+    local commands; commands=(
+'search:Search HuggingFace for GGUF models' \
+'download:Download a GGUF model (e.g. bartowski/Llama-3.2-1B-Instruct-GGUF\:Q4_K_M)' \
+'list:List downloaded local models' \
+'delete:Delete a downloaded local model' \
+    )
+    _describe -t commands 'goose help local-models commands' commands "$@"
+}
+(( $+functions[_goose__help__local-models__delete_commands] )) ||
+_goose__help__local-models__delete_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose help local-models delete commands' commands "$@"
+}
+(( $+functions[_goose__help__local-models__download_commands] )) ||
+_goose__help__local-models__download_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose help local-models download commands' commands "$@"
+}
+(( $+functions[_goose__help__local-models__list_commands] )) ||
+_goose__help__local-models__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose help local-models list commands' commands "$@"
+}
+(( $+functions[_goose__help__local-models__search_commands] )) ||
+_goose__help__local-models__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose help local-models search commands' commands "$@"
 }
 (( $+functions[_goose__help__mcp_commands] )) ||
 _goose__help__mcp_commands() {
@@ -1562,6 +1817,11 @@ _goose__help__update_commands() {
     local commands; commands=()
     _describe -t commands 'goose help update commands' commands "$@"
 }
+(( $+functions[_goose__help__validate-extensions_commands] )) ||
+_goose__help__validate-extensions_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose help validate-extensions commands' commands "$@"
+}
 (( $+functions[_goose__help__web_commands] )) ||
 _goose__help__web_commands() {
     local commands; commands=()
@@ -1571,6 +1831,73 @@ _goose__help__web_commands() {
 _goose__info_commands() {
     local commands; commands=()
     _describe -t commands 'goose info commands' commands "$@"
+}
+(( $+functions[_goose__local-models_commands] )) ||
+_goose__local-models_commands() {
+    local commands; commands=(
+'search:Search HuggingFace for GGUF models' \
+'download:Download a GGUF model (e.g. bartowski/Llama-3.2-1B-Instruct-GGUF\:Q4_K_M)' \
+'list:List downloaded local models' \
+'delete:Delete a downloaded local model' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'goose local-models commands' commands "$@"
+}
+(( $+functions[_goose__local-models__delete_commands] )) ||
+_goose__local-models__delete_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose local-models delete commands' commands "$@"
+}
+(( $+functions[_goose__local-models__download_commands] )) ||
+_goose__local-models__download_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose local-models download commands' commands "$@"
+}
+(( $+functions[_goose__local-models__help_commands] )) ||
+_goose__local-models__help_commands() {
+    local commands; commands=(
+'search:Search HuggingFace for GGUF models' \
+'download:Download a GGUF model (e.g. bartowski/Llama-3.2-1B-Instruct-GGUF\:Q4_K_M)' \
+'list:List downloaded local models' \
+'delete:Delete a downloaded local model' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'goose local-models help commands' commands "$@"
+}
+(( $+functions[_goose__local-models__help__delete_commands] )) ||
+_goose__local-models__help__delete_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose local-models help delete commands' commands "$@"
+}
+(( $+functions[_goose__local-models__help__download_commands] )) ||
+_goose__local-models__help__download_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose local-models help download commands' commands "$@"
+}
+(( $+functions[_goose__local-models__help__help_commands] )) ||
+_goose__local-models__help__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose local-models help help commands' commands "$@"
+}
+(( $+functions[_goose__local-models__help__list_commands] )) ||
+_goose__local-models__help__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose local-models help list commands' commands "$@"
+}
+(( $+functions[_goose__local-models__help__search_commands] )) ||
+_goose__local-models__help__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose local-models help search commands' commands "$@"
+}
+(( $+functions[_goose__local-models__list_commands] )) ||
+_goose__local-models__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose local-models list commands' commands "$@"
+}
+(( $+functions[_goose__local-models__search_commands] )) ||
+_goose__local-models__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose local-models search commands' commands "$@"
 }
 (( $+functions[_goose__mcp_commands] )) ||
 _goose__mcp_commands() {
@@ -1912,6 +2239,11 @@ _goose__term__run_commands() {
 _goose__update_commands() {
     local commands; commands=()
     _describe -t commands 'goose update commands' commands "$@"
+}
+(( $+functions[_goose__validate-extensions_commands] )) ||
+_goose__validate-extensions_commands() {
+    local commands; commands=()
+    _describe -t commands 'goose validate-extensions commands' commands "$@"
 }
 (( $+functions[_goose__web_commands] )) ||
 _goose__web_commands() {
