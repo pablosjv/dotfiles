@@ -192,7 +192,7 @@ build_app() {
     local build_target
     build_target=$(find_build_target "$IOS_DIR")
 
-    log_warning "Building app for x86_64 architecture (Rosetta)..."
+    log_warning "Building app ${build_target}..."
 
     local build_status=0
     local raw_log_file
@@ -204,8 +204,6 @@ build_app() {
             -scheme "${SCHEME}" \
             -configuration "${CONFIGURATION}" \
             -destination "platform=iOS Simulator,name=${SIMULATOR_NAME}" \
-            ARCHS=x86_64 \
-            ONLY_ACTIVE_ARCH=NO \
             build 2>&1 | tee "$raw_log_file" | xcpretty
         build_status=${PIPESTATUS[0]}
         set -e
@@ -216,8 +214,6 @@ build_app() {
             -scheme "${SCHEME}" \
             -configuration "${CONFIGURATION}" \
             -destination "platform=iOS Simulator,name=${SIMULATOR_NAME}" \
-            ARCHS=x86_64 \
-            ONLY_ACTIVE_ARCH=NO \
             build 2>&1 | tee "$raw_log_file"
         build_status=${PIPESTATUS[0]}
         set -e
