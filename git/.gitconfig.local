@@ -28,6 +28,8 @@ gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:
 is-gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\"'
 # undo last N commits, keep local changes
 undo = "!f(){ git reset --soft HEAD~\"${1:-1}\"; }; f"
+# pull a branch without checking out
+load = ! git fetch origin $1:$1
 ##### A set of git alias in memory of @xgouchet #####
 # undo last commit, keep local changes
 uncommit = reset --soft HEAD^
