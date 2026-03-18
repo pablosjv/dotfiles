@@ -60,7 +60,7 @@
 
     ~/.vimrc: editors/vim/.vimrc
 
-    # ~/.config/direnv/lib: tools/direnv/lib
+    ~/.config/direnv/lib: tools/direnv/lib
     ~/.config/atuin/config.toml: tools/atuin/config.toml
     ~/.config/bat/config: tools/bat/config
     ~/.config/btop: tools/btop
