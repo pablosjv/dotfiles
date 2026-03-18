@@ -122,6 +122,8 @@ source "$DOTFILES/shell/init.sh"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Load a custom p10k mise plugin
 [[ -f ~/.config/shell/p10k.mise.zsh ]] && source ~/.config/shell/p10k.mise.zsh
+# Load a custom p10k git-town plugin (pending command indicator)
+[[ -f ~/.config/shell/p10k.git-town.zsh ]] && source ~/.config/shell/p10k.git-town.zsh
 
 # Uncomment for profiling
 # zprof

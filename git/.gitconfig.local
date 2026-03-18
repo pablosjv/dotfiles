@@ -99,3 +99,11 @@ showSignature = false
 [rebase]
 autoSquash = true
 updateRefs = true
+
+[pull]
+rebase = true
+
+[git-town]
+push-new-branches = true
+sync-feature-strategy = rebase
+ship-strategy = squash-merge

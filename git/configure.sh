@@ -3,9 +3,8 @@
 set -e
 
 DOTFILES_ROOT=$(pwd -P)
-# shellcheck source=tools
+# shellcheck source=../scripts/tools
 . "$DOTFILES_ROOT/scripts/tools"
-
 
 info 'Setup gitconfig'
 if [ -z "$(git config --global --get user.email)" ]; then
@@ -42,18 +41,18 @@ info 'Set conditional gitconfigs for projects'
 
 PROJECTS_DIR=~/projects
 for dir in "$PROJECTS_DIR"/*/; do
-  [ -d "$dir" ] || continue
-  touch "$dir/.gitconfig"
-  # Expand tilde and strip trailing slash for gitdir pattern
-  abs_dir=$(realpath "$dir")
-  # Check if entry already exists in ~/.gitconfig
-  if ! git config --global --get-all includeIf.gitdir:"$abs_dir/"'.path' | grep -qx "$abs_dir/.gitconfig"; then
-    info "Adding conditional include for $abs_dir/"
-    git config --global --add "includeIf.gitdir:$abs_dir"'.path' "$abs_dir/.gitconfig"
-    success "Added config for $dir"
-  else
-    success "Include for $abs_dir already exists, skipping"
-  fi
+    [ -d "$dir" ] || continue
+    touch "$dir/.gitconfig"
+    # Expand tilde and strip trailing slash for gitdir pattern
+    abs_dir=$(realpath "$dir")
+    # Check if entry already exists in ~/.gitconfig
+    if ! git config --global --get-all includeIf.gitdir:"$abs_dir/"'.path' | grep -qx "$abs_dir/.gitconfig"; then
+        info "Adding conditional include for $abs_dir/"
+        git config --global --add includeIf.gitdir:"$abs_dir/"'.path' "$abs_dir/.gitconfig"
+        success "Added config for $dir"
+    else
+        success "Include for $abs_dir already exists, skipping"
+    fi
 done
 
 # Don't ask ssh password all the time
@@ -61,4 +60,14 @@ if [ "$(uname -s)" = "Darwin" ]; then
     git config --global credential.helper osxkeychain
 else
     git config --global credential.helper cache
+fi
+
+# Install git-town completions with a patch so `git town <TAB>` also works
+if command -v git-town >/dev/null 2>&1; then
+    info "Installing git-town completions"
+    COMP_FILE="$ZSH_EXTRA_COMPLETIONS/_git-town"
+    git town completions zsh >"$COMP_FILE"
+    success "git-town completions installed"
+else
+    info "git-town command not found. Skipping completion installation."
 fi

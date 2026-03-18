@@ -40,6 +40,8 @@ brew "gifski"
 brew "git-flow-next"
 # Git extension for versioning large files
 brew "git-lfs"
+# High-level command-line interface for Git
+brew "git-town"
 # Blazing fast terminal-ui for git written in rust
 brew "gitui"
 # Open-source GitLab command-line tool
