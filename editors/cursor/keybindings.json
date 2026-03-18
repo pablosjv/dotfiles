@@ -20,10 +20,5 @@
     {
         "key": "ctrl+shift+c",
         "command": "coverage-gutters.displayCoverage"
-    },
-    {
-        "key": "alt+cmd+s",
-        "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
-        "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext"
     }
 ]

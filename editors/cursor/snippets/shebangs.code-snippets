@@ -1,0 +1,14 @@
+{
+    "shebang bash": {
+        "prefix": "shebang,bash",
+        "body": [
+            "#!/usr/bin/env bash"
+        ]
+    },
+    "shebang sh": {
+        "prefix": "shebang,sh",
+        "body": [
+            "#!/usr/bin/env sh"
+        ]
+    },
+}
