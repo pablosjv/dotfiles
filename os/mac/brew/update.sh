@@ -3,7 +3,7 @@
 [ "$(uname -s)" != "Darwin" ] && exit 0
 
 DOTFILES_ROOT=$(pwd -P)
-# shellcheck disable=SC1091
+# shellcheck source=../../../scripts/tools
 . "$DOTFILES_ROOT/scripts/tools"
 
 info "Update Brewfile"

@@ -18,6 +18,6 @@ success "Submodules updated"
 info "Find the updaters and run them iteratively"
 for updater in "${DOTFILES_ROOT}"/**/update.sh; do
     info "Run ${updater}..."
-    sh -c "$updater"
+    LOG_DEPTH=$((${LOG_DEPTH:-0} + 1)) sh -c "$updater"
     success "${updater}"
 done

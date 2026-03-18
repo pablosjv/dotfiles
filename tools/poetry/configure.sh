@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
+DOTFILES_ROOT=$(pwd -P)
+# shellcheck source=../../scripts/tools
+. "$DOTFILES_ROOT/scripts/tools"
+
 # Install Completions
 if command -v poetry >/dev/null 2>&1; then
     poetry completions zsh >"$ZSH_EXTRA_COMPLETIONS/_poetry"
-    echo "poetry completion installed."
+    success "poetry completion installed."
 else
-    echo "poetry command not found. Skipping completion installation."
+    fail "poetry command not found. Skipping completion installation."
 fi

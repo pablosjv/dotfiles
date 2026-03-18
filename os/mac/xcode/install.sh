@@ -3,7 +3,7 @@
 set -e
 
 DOTFILES_ROOT=$(pwd -P)
-# shellcheck source=tools
+# shellcheck source=../../../scripts/tools
 . "$DOTFILES_ROOT/scripts/tools"
 
 info running instalation of command line tools
