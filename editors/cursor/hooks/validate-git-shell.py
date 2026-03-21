@@ -19,8 +19,8 @@ class BeforeShellExecutionInput:
     """
 
     command: str
-    cwd: str | None
-    sandbox: bool | None
+    cwd: str | None = None
+    sandbox: bool | None = None
 
     @property
     def command_cleaned(self) -> str | None:
@@ -110,31 +110,23 @@ def run(stdin_text: str) -> PolicyResult:
     (allow). Otherwise shell command policy is applied.
 
     Examples:
-        >>> run("not json").exit_code
-        0
-        >>> run("{}").output["permission"]
-        'allow'
-        >>> run('{"command": "echo ok"}').output["permission"]
-        'allow'
-        >>> r = run('{"command": "git push --force"}')
-        >>> r.exit_code
-        2
-        >>> r.output["permission"]
+        >>> run("not json")
+        PolicyResult(output={'permission': 'allow'}, exit_code=0)
+        >>> run("{}")
+        PolicyResult(output={'permission': 'allow'}, exit_code=0)
+        >>> run('{"command": "echo ok"}')
+        PolicyResult(output={'permission': 'allow'}, exit_code=0)
+        >>> result = run('{"command": "git push --force"}')
+        >>> result.output['permission']
         'deny'
-        >>> r.output["user_message"]
-        'Blocked: git push policy.'
-        >>> r = run('{"command": "git commit --trailer Key: value"}')
-        >>> r.exit_code
+        >>> result.exit_code
         2
-        >>> r.output["user_message"]
-        'Blocked: git trailer policy.'
+        >>> result = run('{"command": "git commit --trailer Key: value"}')
+        >>> result.output['permission']
+        'deny'
+        >>> result.exit_code
+        2
 
-    Run tests with the stdlib (no extra packages), from the directory that
-    contains this script::
-
-        python3 validate-git-shell --doctest
-
-    Exit status is 0 if all examples pass, 1 otherwise.
     """
     hookInput = parse_stdin_payload(stdin_text)
     if hookInput is None:
@@ -147,12 +139,13 @@ def run(stdin_text: str) -> PolicyResult:
 
 def parse_stdin_payload(stdin_text: Any) -> BeforeShellExecutionInput | None:
     try:
-        data = json.loads(stdin_text)
+        data: dict[str, Any] = json.loads(stdin_text)
+        hookInput = BeforeShellExecutionInput(**data)
     except json.JSONDecodeError:
         return None
-    if not isinstance(data, dict):
+    except TypeError:
         return None
-    return BeforeShellExecutionInput(**data)
+    return hookInput
 
 
 def evaluate_command(command: str) -> PolicyResult:
@@ -187,6 +180,24 @@ def deny_output(policy: PolicyKind, agent_message: str) -> DenyOutput:
 
 
 def git_trailer_violation(segment: str) -> str | None:
+    """Return a denial message if ``segment`` violates trailer rules, else None.
+
+    Examples:
+        >>> git_trailer_violation("echo hello") is None
+        True
+        >>> git_trailer_violation("git status") is None
+        True
+        >>> git_trailer_violation('git commit --trailer "Key: value"') is not None
+        True
+        >>> git_trailer_violation(
+        ...     'git commit -m "x" -m "Co-authored-by: a <a@b.co>"'
+        ... ) is not None
+        True
+        >>> git_trailer_violation(
+        ...     'git commit -m "x" -m "Made-with: Cursor"'
+        ... ) is not None
+        True
+    """
     for pattern, message in TRAILER_RULES:
         if pattern.search(segment):
             return message
@@ -194,6 +205,34 @@ def git_trailer_violation(segment: str) -> str | None:
 
 
 def git_push_violation(segment: str) -> str | None:
+    """Return a denial message if ``segment`` is a destructive ``git push``, else None.
+
+    Only the argument tail after ``git ... push`` is checked, so ``git clean -f``
+    alone does not match push rules.
+
+    Examples:
+        >>> git_push_violation("git status") is None
+        True
+        >>> git_push_violation("git push origin main") is None
+        True
+        >>> git_push_violation("git push --force") is not None
+        True
+        >>> "force" in (git_push_violation("git push --force") or "").lower()
+        True
+        >>> git_push_violation("git push --force-with-lease") is None
+        True
+        >>> git_push_violation("git clean -f") is None
+        True
+        >>> git_push_violation("git -C /repo push --mirror") is not None
+        True
+        >>> "mirror" in (git_push_violation("git push --mirror") or "").lower()
+        True
+        >>> git_push_violation("git push origin +refs/heads/main") is not None
+        True
+        >>> msg = git_push_violation("git clean -f && git push --force")
+        >>> msg is not None and "force" in msg.lower()
+        True
+    """
     push_pattern = re.compile(
         r"\bgit(?:\s+\S+)*\s+push\b(.*)$", re.IGNORECASE | re.DOTALL
     )

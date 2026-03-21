@@ -12,7 +12,7 @@ wheels = [
 ]
 
 [[package]]
-name = "dotfiles-local"
+name = "dotfiles"
 version = "0.1.0"
 source = { virtual = "." }
 
