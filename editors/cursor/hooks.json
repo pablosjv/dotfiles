@@ -1,0 +1,12 @@
+{
+    "version": 1,
+    "hooks": {
+        "beforeShellExecution": [
+            {
+                "command": "./hooks/validate-git-shell.py",
+                "matcher": "git",
+                "timeout": 10
+            }
+        ]
+    }
+}

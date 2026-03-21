@@ -1,5 +1,4 @@
 virtualenv
 ipython
-mypy
-pipenv
 ruff
+pytest

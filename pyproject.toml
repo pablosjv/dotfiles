@@ -1,0 +1,23 @@
+[project]
+dependencies = []
+name = "dotfiles"
+requires-python = ">=3.11"
+version = "0.1.0"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = [
+  "-q",
+  "--doctest-modules",
+  "--ignore=dotbot", # exclude dotbot submodule
+  "--ignore=tools/kitty/kitty-themes", # exclude kitty themes submodule
+  "--ignore=os/mac/iterm/themes/catppuccin", # exclude catppuccin iterm themes submodule
+]
+python_files = ["*.py"]
+pythonpath = ["."]
+testpaths = ["."]
+
+[tool.uv]
+default-groups = ["dev"]

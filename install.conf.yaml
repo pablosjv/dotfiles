@@ -29,6 +29,7 @@
     - ~/.gem/ruby/
     - ~/.kube
     - ~/.kube/configs
+    - ~/.cursor
     - ~/.local/bin/
     - ~/.nvm
     - ~/.vim/undo-history
@@ -74,6 +75,9 @@
     ~/.config/procs/config.toml: tools/procs/config.toml
     ~/.gitkraken/config: tools/gitkraken/config
     ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc
+
+    ~/.cursor/hooks.json: editors/cursor/hooks.json
+    ~/.cursor/hooks: editors/cursor/hooks
 
     ~/Library/Application Support/Code/User/:
       create: true
