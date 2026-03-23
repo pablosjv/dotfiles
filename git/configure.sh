@@ -65,7 +65,7 @@ fi
 # Install git-town completions with a patch so `git town <TAB>` also works
 if command -v git-town >/dev/null 2>&1; then
     info "Installing git-town completions"
-    COMP_FILE="$ZSH_EXTRA_COMPLETIONS/_git-town"
+    COMP_FILE="$ZSH_GENERATED_COMPLETIONS/_git-town"
     git town completions zsh >"$COMP_FILE"
     success "git-town completions installed"
 else

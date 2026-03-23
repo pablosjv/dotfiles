@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
+DOTFILES_ROOT=$(pwd -P)
+# shellcheck source=../../scripts/tools
+. "$DOTFILES_ROOT/scripts/tools"
+
 # Install Completions
 if command -v procs >/dev/null 2>&1; then
-    procs --gen-completion-out zsh >"$ZSH_EXTRA_COMPLETIONS/_procs"
+    info "Installing procs completions"
+    procs --gen-completion-out zsh >"$ZSH_GENERATED_COMPLETIONS/_procs"
+    success "procs completions installed."
 else
-    echo "procs command not found. Skipping completion installation."
+    warning "procs command not found. Skipping completion installation."
 fi

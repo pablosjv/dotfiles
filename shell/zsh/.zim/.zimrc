@@ -36,10 +36,12 @@ zmodule duration-info
 zmodule romkatv/powerlevel10k --use degit
 # Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions --fpath src
-# Extra completions
+# Custom completions
 zmodule $DOTFILES/shell/zsh/completions --fpath .
+# Generated tool completions
+zmodule $DOTFILES/shell/zsh/completions/generated --fpath .
 # Homebrew installed completions
-if [[ -d /opt/homebrew/share/zsh ]] && [[ $(uname) == Darwin ]] ; then
+if [[ -d /opt/homebrew/share/zsh ]] && [[ $(uname) == Darwin ]]; then
     zmodule /opt/homebrew/share/zsh --fpath site-functions
 fi
 # Enables and configures smart and extensive tab completion.

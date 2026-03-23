@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
+DOTFILES_ROOT=$(pwd -P)
+# shellcheck source=../../scripts/tools
+. "$DOTFILES_ROOT/scripts/tools"
+
 # Install Completions
 if command -v pnpm >/dev/null 2>&1; then
-    pnpm completion zsh >"$ZSH_EXTRA_COMPLETIONS/_pnpm"
+    info "Installing pnpm completions"
+    pnpm completion zsh >"$ZSH_GENERATED_COMPLETIONS/_pnpm"
+    success "pnpm completions installed."
 else
-    echo "pnpm command not found. Skipping completion installation."
+    warning "pnpm command not found. Skipping completion installation."
 fi

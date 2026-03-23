@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
+DOTFILES_ROOT=$(pwd -P)
+# shellcheck source=../../scripts/tools
+. "$DOTFILES_ROOT/scripts/tools"
+
 # Install Atuin Completions
 if command -v atuin >/dev/null 2>&1; then
-    atuin gen-completions --shell zsh >"$ZSH_EXTRA_COMPLETIONS/_atuin"
+    info "Installing Atuin completions"
+    atuin gen-completions --shell zsh >"$ZSH_GENERATED_COMPLETIONS/_atuin"
+    success "Atuin completions installed."
 else
-    echo "atuin command not found. Skipping completion installation."
+    warning "atuin command not found. Skipping completion installation."
 fi

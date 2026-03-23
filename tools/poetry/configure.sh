@@ -6,7 +6,7 @@ DOTFILES_ROOT=$(pwd -P)
 
 # Install Completions
 if command -v poetry >/dev/null 2>&1; then
-    poetry completions zsh >"$ZSH_EXTRA_COMPLETIONS/_poetry"
+    poetry completions zsh >"$ZSH_GENERATED_COMPLETIONS/_poetry"
     success "poetry completion installed."
 else
     fail "poetry command not found. Skipping completion installation."
