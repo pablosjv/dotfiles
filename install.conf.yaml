@@ -73,7 +73,6 @@
     ~/.config/mise: tools/mise
     ~/.config/pip/pip.conf: langs/python/pip.conf
     ~/.config/procs/config.toml: tools/procs/config.toml
-    ~/.gitkraken/config: tools/gitkraken/config
     ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc
 
     ~/.cursor/hooks.json: editors/cursor/hooks.json
