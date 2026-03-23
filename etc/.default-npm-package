@@ -1,5 +1,6 @@
 react-native-cli
 serverless@3
 typescript
+typescript-language-server
 @google/gemini-cli
 cspell
