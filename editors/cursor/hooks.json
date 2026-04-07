@@ -11,7 +11,8 @@
             {
                 "command": "./hooks/validate-git-shell.py",
                 "matcher": "git",
-                "timeout": 10
+                "timeout": 10,
+                "failClosed": true
             }
         ]
     }

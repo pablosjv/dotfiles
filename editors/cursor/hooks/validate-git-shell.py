@@ -6,21 +6,32 @@ from __future__ import annotations
 import json
 import re
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Literal, TypedDict
 
 
 @dataclass(frozen=True, slots=True)
 class BeforeShellExecutionInput:
-    """Subset of stdin JSON
+    """beforeShellExecution hook stdin payload.
 
-    Cursor may send additional keys.
-    See https://cursor.com/docs/hooks for more information.
+    Hook-specific fields are listed first; Cursor also injects a set of base
+    fields into every hook call (see https://cursor.com/docs/hooks#common-schema).
     """
 
+    # Hook-specific fields
     command: str
     cwd: str | None = None
     sandbox: bool | None = None
+
+    # Cursor base fields (present on every hook call)
+    conversation_id: str | None = None
+    generation_id: str | None = None
+    model: str | None = None
+    hook_event_name: str | None = None
+    cursor_version: str | None = None
+    workspace_roots: list[str] = field(default_factory=list)
+    user_email: str | None = None
+    transcript_path: str | None = None
 
     @property
     def command_cleaned(self) -> str | None:
