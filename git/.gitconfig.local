@@ -1,3 +1,7 @@
+[user]
+name = Pablo San Jose
+email = 7535405+pablosjv@users.noreply.github.com
+
 [alias]
 # List all aliases with their comment directly above
 aliases = "!f(){ path=$(git config --list --show-origin 2>/dev/null | grep 'alias\\.' | head -1 | sed 's/^file://' | cut -f1); [ -n \"$path\" ] && awk '/^\\[alias\\]/{a=1;next} a && /^\\[/{a=0} a' \"$path\"; }; f"
