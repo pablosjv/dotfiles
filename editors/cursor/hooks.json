@@ -1,6 +1,12 @@
 {
     "version": 1,
     "hooks": {
+        "preToolUse": [
+            {
+                "command": "./hooks/rtk-rewrite.sh",
+                "matcher": "Shell"
+            }
+        ],
         "beforeShellExecution": [
             {
                 "command": "./hooks/validate-git-shell.py",
