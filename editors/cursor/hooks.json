@@ -3,13 +3,15 @@
     "hooks": {
         "preToolUse": [
             {
-                "command": "./hooks/rtk-rewrite.sh",
-                "matcher": "Shell"
+                "command": "./hooks/strip_git_commit_trailers.py",
+                "matcher": "Shell",
+                "timeout": 10,
+                "failClosed": true
             }
         ],
         "beforeShellExecution": [
             {
-                "command": "./hooks/validate-git-shell.py",
+                "command": "./hooks/validate_git_shell.py",
                 "matcher": "git",
                 "timeout": 10,
                 "failClosed": true

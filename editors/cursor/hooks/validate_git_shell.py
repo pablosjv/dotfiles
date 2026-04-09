@@ -6,89 +6,16 @@ from __future__ import annotations
 import json
 import re
 import sys
-from dataclasses import dataclass, field, fields
-from typing import Literal, NamedTuple, TypedDict
+from typing import Literal, NamedTuple
 
-
-@dataclass(frozen=True, slots=True)
-class BeforeShellExecutionInput:
-    """beforeShellExecution hook stdin payload.
-
-    Hook-specific fields are listed first; Cursor also injects a set of base
-    fields into every hook call (see https://cursor.com/docs/hooks#common-schema).
-    """
-
-    command: str
-    # Not required fields for this hook
-    cwd: str | None = None
-    model: str | None = None
-    hook_event_name: str | None = None
-    cursor_version: str | None = None
-    conversation_id: str | None = None
-    generation_id: str | None = None
-    user_email: str | None = None
-    transcript_path: str | None = None
-    sandbox: bool = False
-    workspace_roots: list[str] = field(default_factory=list)
-
-    @classmethod
-    def loads(cls, raw_json: str) -> BeforeShellExecutionInput:
-        """Parse JSON *stdin_text* into a :class:`BeforeShellExecutionInput`.
-
-        Unknown fields are silently dropped so that new Cursor base fields never
-        cause a ``TypeError`` that would make the hook fail open.
-
-        Examples:
-            >>> BeforeShellExecutionInput.loads('not json')
-            Traceback (most recent call last):
-            ...
-            ValueError: Invalid JSON: not json
-            >>> BeforeShellExecutionInput.loads('[]')
-            Traceback (most recent call last):
-            ...
-            ValueError: Invalid JSON: []
-            >>> BeforeShellExecutionInput.loads('{"command": "echo hi"}').command
-            'echo hi'
-            >>> BeforeShellExecutionInput.loads('{"command": "echo hi", "unknown_field": 1}').command
-            'echo hi'
-        """
-        try:
-            data = json.loads(raw_json)
-        except (json.JSONDecodeError, TypeError):
-            raise ValueError(f"Invalid JSON: {raw_json}")
-        if not isinstance(data, dict):
-            raise ValueError(f"Invalid JSON: {raw_json}")
-        valid_fields = {f.name for f in fields(cls)}
-        filtered_data = {k: v for k, v in data.items() if k in valid_fields}
-        return cls(**filtered_data)
-
-    @property
-    def command_cleaned(self) -> str | None:
-        command = self.command.strip()
-        if not command:
-            return None
-        return command
-
-
-@dataclass(frozen=True, slots=True)
-class BeforeShellExecutionOutput:
-    """Outcome of evaluating one shell command string.
-
-    See https://cursor.com/docs/hooks#common-schema for the output schema for each hook type.
-    """
-
-    output: AllowOutput | DenyOutput
-    exit_code: Literal[0, 2]
-
-
-class AllowOutput(TypedDict):
-    permission: Literal["allow"]
-
-
-class DenyOutput(TypedDict):
-    permission: Literal["deny"]
-    user_message: str
-    agent_message: str
+from hook_lib.commands import ParsedCommand
+from hook_lib.git import TRAILER_RULES, PUSH_TAIL_RULES
+from hook_lib.io import (
+    BeforeShellExecutionInput,
+    BeforeShellExecutionOutput,
+    AllowOutput,
+    DenyOutput,
+)
 
 
 PolicyKind = Literal["trailer", "push"]
@@ -108,38 +35,6 @@ class PolicyBreach(NamedTuple):
 
 PolicyResult = PolicyPass | PolicyBreach
 
-
-RegexRule = tuple[re.Pattern[str], str]
-
-PUSH_TAIL_RULES: tuple[RegexRule, ...] = (
-    (re.compile(r"(^|\s)--force(\s|$)"), 'git push must not use "--force".'),
-    (re.compile(r"(^|\s)-f(\s|$)"), 'git push must not use "-f" (force).'),
-    (re.compile(r"(^|\s)--mirror(\s|$)"), 'git push must not use "--mirror".'),
-    (re.compile(r"(^|\s)--delete(\s|$)"), 'git push must not use "--delete".'),
-    (re.compile(r"\s\+[^\s]+"), "git push must not use a + refspec (force update)."),
-)
-
-
-TRAILER_RULES: tuple[RegexRule, ...] = (
-    (
-        re.compile(r"(?<![\w-])--trailer(?![\w-])"),
-        (
-            "Git commands must not use --trailer or other git trailer mechanisms. "
-            "Use a plain commit message without trailer footers."
-        ),
-    ),
-    (
-        re.compile(
-            r"(?is)"
-            r"(?=.*\bcommit\b)"
-            r"(?=.*(?:Co-authored-by|Signed-off-by|Reviewed-by|Acked-by|Helped-by|Reported-by|Made-with)\s*:)"
-        ),
-        (
-            "Git commit commands must not include git trailer lines (e.g. Co-authored-by, "
-            "Signed-off-by, Made-with) in the message."
-        ),
-    ),
-)
 
 USER_DENY_BY_POLICY: dict[PolicyKind, str] = {
     "trailer": "Blocked: git trailer policy.",
@@ -255,7 +150,7 @@ def run(stdin_text: str) -> BeforeShellExecutionOutput:
 
 
 def evaluate_command(command: str) -> BeforeShellExecutionOutput:
-    for segment in split_command_segments(command):
+    for segment in ParsedCommand.parse(command).segments:
         if violation := check_git_violations(segment):
             return BeforeShellExecutionOutput(
                 output=get_deny_output(violation=violation),
@@ -264,11 +159,6 @@ def evaluate_command(command: str) -> BeforeShellExecutionOutput:
     return BeforeShellExecutionOutput(
         output=AllowOutput(permission="allow"), exit_code=0
     )
-
-
-def split_command_segments(command: str) -> list[str]:
-    segment_split = re.compile(r"\s*(?:&&|\|\||;)\s*")
-    return [s.strip() for s in segment_split.split(command) if s.strip()]
 
 
 def check_git_violations(segment: str) -> PolicyBreach | None:
