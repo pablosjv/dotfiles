@@ -105,6 +105,16 @@ def rewrite_command(command: str) -> str:
 
     >>> rewrite_command('git commit -m "add cursor support" -m "Made-with: Cursor"')
     "git commit -m 'add cursor support'"
+
+    Preserve command substitution in ``-m`` values, do not single-quote it.
+
+    >>> cmd = '''git commit --trailer "Made-with: Cursor" -m "$(cat <<'EOF'
+    ... body
+    ... EOF
+    ... )"'''
+    >>> out = rewrite_command(cmd)
+    >>> out
+    'git commit --trailer "Made-with: Cursor" -m "$(cat <<\'EOF\'\nbody\nEOF\n)"'
     """
     cmd = ParsedCommand.parse(command)
     new_cmd = cmd.map_segments(rewrite_shell_segment)
@@ -124,7 +134,33 @@ def rewrite_shell_segment(segment: str) -> str:
     new_argv = rewrite_one_argv_segment(argv)
     if new_argv == argv:
         return segment
-    return shlex.join(new_argv)
+    return shell_join_preserving_substitutions(new_argv)
+
+
+def shell_join_preserving_substitutions(argv: list[str]) -> str:
+    """Join argv while preserving command substitution semantics.
+
+    ``shlex.join`` single-quotes args containing ``$(``, which prevents shell
+    command substitution from being evaluated. Prefer double quotes for those
+    args while still shell-escaping literal double quotes and backslashes.
+
+    >>> shell_join_preserving_substitutions(["git", "commit", "-m", "fix bug"])
+    "git commit -m 'fix bug'"
+    >>> out = shell_join_preserving_substitutions(["git", "commit", "-m", "$(cat <<'EOF'\\nbody\\nEOF\\n)"])
+    >>> out.startswith('git commit -m "$(cat <<')
+    True
+    >>> out
+    'git commit -m "$(cat <<\'EOF\'\nbody\nEOF\n)"'
+    """
+    return " ".join(quote_shell_arg(arg) for arg in argv)
+
+
+def quote_shell_arg(arg: str) -> str:
+    """Quote one shell arg, preserving ``$()`` expansions when present."""
+    if "$(" in arg:
+        escaped = arg.replace("\\", "\\\\").replace('"', '\\"')
+        return f'"{escaped}"'
+    return shlex.quote(arg)
 
 
 def rewrite_one_argv_segment(argv: list[str]) -> list[str]:
