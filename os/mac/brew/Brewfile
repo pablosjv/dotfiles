@@ -134,10 +134,16 @@ cask "bruno"
 cask "chatgpt"
 # Free and open-source web browser
 cask "chromium"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Write, edit, and chat about your code with AI
 cask "cursor"
+# Command-line agent for Cursor
+cask "cursor-cli"
 # Utilities designed to make common development tasks easier
 cask "devtoys"
 cask "font-meslo-lg-nerd-font"

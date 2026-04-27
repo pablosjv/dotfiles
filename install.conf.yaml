@@ -75,19 +75,26 @@
     ~/.config/procs/config.toml: tools/procs/config.toml
     ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc
 
-    ~/.cursor/hooks.json: editors/cursor/hooks.json
-    ~/.cursor/hooks: editors/cursor/hooks
+    ~/.cursor/hooks.json:
+      path: editors/cursor/hooks.json
+      relink: true
+      force: true
+    ~/.cursor/hooks:
+      path: editors/cursor/hooks
+      create: true
+      relink: true
+      force: true
 
     ~/Library/Application Support/Code/User/:
+      path: editors/vscode/*.json
       create: true
       glob: true
-      path: editors/vscode/*.json
       relink: true
       force: true
       if: "[ `uname` = Darwin ]"
     ~/Library/Application Support/Code/User/snippets:
-      create: true
       path: editors/vscode/snippets
+      create: true
       relink: true
       force: true
       if: "[ `uname` = Darwin ]"
@@ -103,6 +110,17 @@
       path: editors/vscode/snippets
       relink: true
       if: "[ `uname` != Darwin ]"
+
+    ~/.config/zed/settings.json:
+      path: editors/zed/settings.json
+      create: true
+      relink: true
+      force: true
+    ~/.config/zed/tasks.json:
+      path: editors/zed/tasks.json
+      create: true
+      relink: true
+      force: true
 
 - shell:
     - command: git submodule update --init --recursive

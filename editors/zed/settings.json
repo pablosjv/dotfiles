@@ -1,0 +1,151 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+    "lsp": {
+        "vtsls": {
+            "settings": {
+                "typescript": {
+                    "updateImportsOnFileMove": {
+                        "enabled": "always",
+                    },
+                },
+                "javascript": {
+                    "updateImportsOnFileMove": {
+                        "enabled": "always",
+                    },
+                },
+            },
+            "enable_lsp_tasks": true,
+        },
+    },
+    "diff_view_style": "unified",
+    "auto_install_extensions": {
+        "catppuccin": true,
+        "catppuccin-icons": true,
+        "html": true,
+        "toml": true,
+    },
+    "cli_default_open_behavior": "existing_window",
+    "agent_servers": {
+        "gemini": {
+            "type": "registry",
+        },
+        "cursor": {
+            "type": "registry",
+        },
+        "codex-acp": {
+            "type": "registry",
+        },
+        "claude-acp": {
+            "type": "registry",
+        },
+    },
+    "project_panel": {
+        "dock": "left",
+        "entry_spacing": "standard",
+        "indent_guides": {
+            "show": "always",
+        },
+        "indent_size": 10,
+        "hide_root": false,
+        "git_status": true,
+    },
+    "outline_panel": {
+        "button": false,
+        "dock": "left",
+    },
+    "collaboration_panel": {
+        "dock": "left",
+    },
+    "agent": {
+        "sidebar_side": "right",
+        "dock": "right",
+        "favorite_models": [],
+        "model_parameters": [],
+    },
+    "git_panel": {
+        "show_count_badge": true,
+        "file_icons": true,
+        "tree_view": true,
+        "sort_by_path": false,
+        "status_style": "label_color",
+        "dock": "left",
+    },
+    "title_bar": {
+        "show_branch_status_icon": true,
+    },
+    "icon_theme": "Catppuccin Mocha",
+    "session": {
+        "trust_all_worktrees": true,
+    },
+    "status_bar": {},
+    "terminal": {
+        "toolbar": {
+            "breadcrumbs": false,
+        },
+        "font_size": 12.0,
+        "blinking": "on",
+        "font_family": "MesloLGLDZ Nerd Font Mono",
+        "detect_venv": {
+            "on": {
+                "directories": [".env", "env", ".venv", "venv"],
+                "activate_script": "default",
+            },
+        },
+    },
+    "toolbar": {},
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false,
+    },
+    "tabs": {
+        "file_icons": true,
+    },
+    "use_smartcase_search": true,
+    "minimap": {
+        "show": "never",
+    },
+    "cursor_blink": true,
+    "autosave": "on_focus_change",
+    "buffer_font_family": "MesloLGLDZ Nerd Font Mono",
+    "file_types": {
+        "terraform": ["*.hcl"],
+        "json": ["*.jsonl"],
+        "gotemplate": ["*.tmpl"],
+        "yaml": ["*.yml"],
+        "jinja": ["*.j2"],
+        "toml": [".coveragerc"],
+        "sql": ["*.hql"],
+    },
+    "inlay_hints": {},
+    "show_whitespaces": "boundary",
+    "show_edit_predictions": true,
+    "ensure_final_newline_on_save": true,
+    "remove_trailing_whitespace_on_save": true,
+    "format_on_save": "on",
+    "hard_tabs": false,
+    "git": {
+        "inline_blame": {
+            "show_commit_summary": true,
+            "enabled": true,
+        },
+    },
+    "wrap_guides": [80, 120],
+    "tab_size": 4,
+    "base_keymap": "VSCode",
+    "ui_font_size": 14,
+    "buffer_font_size": 12,
+    "agent_ui_font_size": 14,
+    "agent_buffer_font_size": 12,
+    "theme": {
+        "mode": "system",
+        "light": "One Light",
+        "dark": "Catppuccin Mocha",
+    },
+}
