@@ -66,6 +66,8 @@ brew "ios-deploy"
 brew "jnv"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Handy way to save and run project-specific commands
+brew "just"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
 # Command-line tool to kill processes listening on a specific port
@@ -138,6 +140,8 @@ cask "chromium"
 cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code"
+# AI code review CLI
+cask "coderabbit"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
 # Write, edit, and chat about your code with AI
@@ -153,6 +157,8 @@ cask "ghostty"
 cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
+# Native desktop AI assistant from Google
+cask "google-gemini"
 # Utility to hide menu bar items
 cask "hiddenbar"
 # Create mock APIs in seconds
