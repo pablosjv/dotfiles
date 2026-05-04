@@ -133,6 +133,13 @@
       relink: true
       if: "[ `uname` != Darwin ]"
 
+    ~/Library/Application Support/rtk/config.toml:
+      path: tools/rtk/config.toml
+      create: true
+      relink: true
+      force: true
+      if: "[ `uname` = Darwin ]"
+
     ~/.config/zed/settings.json:
       path: editors/zed/settings.json
       create: true
