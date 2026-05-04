@@ -84,6 +84,19 @@
       create: true
       relink: true
       force: true
+    ~/.cursor/permissions.json:
+      path: editors/cursor/permissions.json
+      relink: true
+      force: true
+    ~/.cursor/cli-config.json:
+      path: editors/cursor/cli-config.json
+      relink: true
+      force: true
+    ~/.cursor/rules:
+      path: editors/cursor/rules
+      create: true
+      relink: true
+      force: true
 
     ~/Library/Application Support/Code/User/:
       path: editors/vscode/*.json
