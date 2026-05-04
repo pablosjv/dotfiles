@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "restore_on_startup": "launchpad",
     "lsp": {
         "vtsls": {
             "settings": {
@@ -37,6 +38,14 @@
             "type": "registry",
         },
         "cursor": {
+            "favorite_config_option_values": {
+                "model": [
+                    "composer-2[fast=true]",
+                    "claude-sonnet-4-6[thinking=true,context=200k,effort=medium]",
+                    "claude-opus-4-6[thinking=true,context=200k,effort=high,fast=false]",
+                    "gemini-3.1-pro[]"
+                ]
+            },
             "type": "registry",
         },
         "codex-acp": {
@@ -68,6 +77,43 @@
         "dock": "right",
         "favorite_models": [],
         "model_parameters": [],
+        "tool_permissions": {
+            "default": "confirm",
+            "tools": {
+                "edit_file": {
+                    "default": "allow",
+                    "always_deny": [
+                        { "pattern": "\\.env$" },
+                        { "pattern": "\\.pem$" },
+                        { "pattern": "id_(rsa|ed25519)$" },
+                    ],
+                },
+                "delete_path": { "default": "confirm" },
+                "search_web": { "default": "allow" },
+                "fetch": {
+                    "default": "confirm",
+                    "always_allow": [
+                        { "pattern": "^https?://(www\\.)?github\\.com" },
+                        { "pattern": "^https?://(www\\.)?npmjs\\.com" },
+                    ],
+                },
+                "terminal": {
+                    "default": "confirm",
+                    "always_allow": [
+                        { "pattern": "^(pnpm|npm|yarn|bun|vitest)\\b" },
+                        { "pattern": "^(pip|poetry|pytest)\\b" },
+                        { "pattern": "^python3?\\s+-m\\s+json\\.tool\\b" },
+                        { "pattern": "^mise\\b" },
+                        { "pattern": "^(make|ls|cat|grep|find|ripgrep|rg|echo|mkdir|touch)\\b" },
+                        { "pattern": "^(gh|glab)\\b" },
+                        { "pattern": "^aws\\b" },
+                        { "pattern": "^git\\b" },
+                        { "pattern": "^rtk\\b" },
+                    ],
+                    "always_confirm": [{ "pattern": "git\\s+push.*\\b(-f|--force|--force-with-lease)\\b" }],
+                },
+            },
+        },
     },
     "git_panel": {
         "show_count_badge": true,
