@@ -1,14 +1,6 @@
 {
     "version": 1,
     "hooks": {
-        "preToolUse": [
-            {
-                "command": "./hooks/strip_git_commit_trailers.py",
-                "matcher": "Shell",
-                "timeout": 10,
-                "failClosed": true
-            }
-        ],
         "beforeShellExecution": [
             {
                 "command": "./hooks/validate_git_shell.py",
