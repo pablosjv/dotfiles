@@ -29,6 +29,7 @@
     - ~/.gem/ruby/
     - ~/.kube
     - ~/.kube/configs
+    - ~/.claude
     - ~/.cursor
     - ~/.local/bin/
     - ~/.nvm
@@ -75,6 +76,14 @@
     ~/.config/procs/config.toml: tools/procs/config.toml
     ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc
 
+    ~/.claude/settings.json:
+      path: tools/claude/settings.json
+      relink: true
+      force: true
+    ~/.claude/CLAUDE.md:
+      path: tools/claude/CLAUDE.md
+      relink: true
+      force: true
     ~/.cursor/hooks.json:
       path: editors/cursor/hooks.json
       relink: true

@@ -1,0 +1,68 @@
+{
+    "hooks": {
+        "PreToolUse": [
+            {
+                "matcher": "Bash",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "rtk hook claude"
+                    }
+                ]
+            }
+        ]
+    },
+    "enabledPlugins": {
+        "coderabbit@claude-plugins-official": true,
+        "figma@claude-plugins-official": true,
+        "gopls-lsp@claude-plugins-official": true,
+        "linear@claude-plugins-official": true,
+        "notion@claude-plugins-official": true,
+        "slack@claude-plugins-official": true,
+        "superpowers@claude-plugins-official": true,
+        "typescript-lsp@claude-plugins-official": true,
+        "daily-infra-monitoring@joko-dev-utils": true,
+        "joko-skills@joko-dev-utils": true
+    },
+    "permissions": {
+        "allow": [
+            "Edit(*)",
+            "WebSearch(*)",
+            "Bash(pnpm *)",
+            "Bash(npm *)",
+            "Bash(yarn *)",
+            "Bash(bun *)",
+            "Bash(vitest *)",
+            "Bash(python -m json.tool *)",
+            "Bash(python3 -m json.tool *)",
+            "Bash(pip *)",
+            "Bash(poetry *)",
+            "Bash(pytest *)",
+            "Bash(mise *)",
+            "Bash(make *)",
+            "Bash(ls *)",
+            "Bash(ls)",
+            "Bash(cat *)",
+            "Bash(grep *)",
+            "Bash(find *)",
+            "Bash(rg *)",
+            "Bash(echo *)",
+            "Bash(mkdir *)",
+            "Bash(touch *)",
+            "Bash(gh *)",
+            "Bash(glab *)",
+            "Bash(aws *)",
+            "Bash(git *)",
+            "Bash(rtk *)"
+        ],
+        "deny": ["Edit(**/.env)", "Edit(**/*.pem)", "Edit(**/id_rsa)", "Edit(**/id_ed25519)"],
+        "ask": [
+            "Bash(* git commit *)",
+            "Bash(* git push * -f)",
+            "Bash(* git push * --force)",
+            "Bash(* git push * --force-with-lease)"
+        ]
+    },
+    "effortLevel": "low",
+    "theme": "dark-ansi"
+}
