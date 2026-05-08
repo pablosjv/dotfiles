@@ -85,6 +85,10 @@
     ~/.claude/settings.json: harnesses/claude/settings.json
     ~/.claude/CLAUDE.md: harnesses/claude/CLAUDE.md
 
+    # Codex
+    ~/.codex/config.toml: harnesses/codex/config.toml
+    ~/.codex/rules/default.rules: harnesses/codex/rules/default.rules
+
     # Cursor: CLI
     ~/.config/cursor: ~/.cursor
     ~/.cursor/:

@@ -1,0 +1,12 @@
+personality = "pragmatic"
+model = "gpt-5.3-codex"
+model_reasoning_effort = "medium"
+
+# Closest Codex equivalent to Claude/Cursor guarded permissions:
+# - Only trusted commands run without asking
+# - Commands run in workspace sandbox by default
+approval_policy = "untrusted"
+sandbox_mode = "workspace-write"
+
+[projects."/Users/pablosanjose/.dotfiles"]
+trust_level = "trusted"

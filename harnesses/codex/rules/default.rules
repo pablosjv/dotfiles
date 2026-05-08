@@ -1,0 +1,1 @@
+prefix_rule(pattern=["rtk", "pnpm", "--filter"], decision="allow")
