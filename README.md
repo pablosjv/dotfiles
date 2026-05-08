@@ -1,30 +1,39 @@
 # Pablo's dotfiles ![GitHub last commit](https://img.shields.io/github/last-commit/pablosjv/dotfiles?style=flat-square)
 
-> Config files for ZSH, Python, Editors, Terminals, and more. Powered by dotbot.
+Configurations for shell, editors, languages, tools, and OS preferences. Installation is orchestrated with Dotbot.
 
-## Installation
+## Quick Start
 
-### Dependencies
+### Prerequisites
 
-First, make sure you have all those things installed:
+- `git`
+- `curl`
+- `tar`
+- `zsh`
 
-- `git`: to clone the repo
-- `curl`: to download some stuff
-- `tar`: to extract downloaded stuff
-- `zsh`: to actually run the dotfiles
-- `sudo`: some configs may need that
+### Fresh install
 
-### Install
+Clone the repository with submodules in the home directory:
 
-Then, run these steps:
-
-```console
+```bash
 git clone --recurse-submodules https://github.com/pablosjv/dotfiles.git ~/.dotfiles
+```
+
+Change to the dotfiles directory:
+
+```bash
 cd ~/.dotfiles
+```
+
+Run the bootstrap script:
+
+```bash
 ./scripts/bootstrap
 ```
 
-From that moment the `dot` command will be available in your path, which simplify the dotfiles operation
+## Usage
+
+After bootstrap, commands in `bin/` are linked into `~/.local/bin`. The main CLI is:
 
 ```console
 ❯ dotfiles help
@@ -43,24 +52,29 @@ Commands:
     brew       interact with homebrew with extended commands
 ```
 
-The `dotfiles apply` is a wrapper for dotbot, so you can provide command line arguments to the tool, for example:
+### CLI Autocompletion
 
-```console
-dotfiles apply --only link
-```
+Zsh completion for `dotfiles` is provided by [`shell/zsh/completions/_dotfiles`](/Users/pablosanjose/.dotfiles/shell/zsh/completions/_dotfiles). The completion path is loaded through Zim module setup in `.zimrc`.
 
-### macOS defaults
+## Development
 
-You use it by running:
+### Makefile
 
-```console
-$DOTFILES/os/mac/set-defaults.sh
-```
+A Makefile is provided for convenience on some of the development commands to format and test.
 
-And logging out and in again/restart.
+- `make fmt`: Format shell + Python.
+- `make lint`: Lint Python.
+- `make test`: Run pytest.
+- `make check`: Run `fmt + lint + test`.
 
-## Further help
+### Python
 
-- [Personalize your configs](/docs/PERSONALIZATION.md)
-- [Understand how it works](/docs/PHILOSOPHY.md)
-- [License](/LICENSE.md)
+Some scripts are written in Python. Although they use Python standard libraries, a pyproject.toml is used to manage dev dependencies for testing and formatting.
+
+## Documentation
+
+- [Architecture](docs/ARCHITECTURE.md)
+- [Topic Authoring](docs/TOPIC-AUTHORING.md)
+- [Customization](docs/CUSTOMIZATION.md)
+- [Troubleshooting](docs/TROUBLESHOOTING.md)
+- [License](LICENSE.md)
