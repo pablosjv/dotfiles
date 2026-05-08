@@ -18,7 +18,7 @@ docker-image-arch() {
     docker inspect "${DOCKER_IMAGE}" | jq ".[0].Architecture"
 }
 
-dit(){
+dit() {
     local image="${1:-alpine}"
     local cmd="${2:-sh}"
     docker run -it --rm \
@@ -36,7 +36,6 @@ dit-project() {
         --entrypoint="${cmd}" \
         "${image}"
 }
-
 
 dit-aws() {
     local image="${1:-alpine}"
