@@ -6,6 +6,9 @@
     "editor": {
         "vimMode": false
     },
+    "network": {
+        "useHttp1ForAgent": false
+    },
     "permissions": {
         "allow": [
             "Read(**)",
@@ -14,7 +17,6 @@
             "WebFetch(*.github.com)",
             "WebFetch(npmjs.com)",
             "WebFetch(*.npmjs.com)",
-            "WebSearch(*)",
             "WebSearch(*)",
             "Mcp(figma:*)",
             "Mcp(plugin_figma_figma:*)",
@@ -99,6 +101,10 @@
             "Write(**/id_ed25519)",
             "Write(**/id_rsa)"
         ]
+    },
+    "privacyCache": {
+        "ghostMode": true,
+        "privacyMode": 2
     },
     "version": 1
 }
