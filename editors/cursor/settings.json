@@ -22,7 +22,6 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features",
         "editor.formatOnSave": false
-        // "editor.defaultFormatter": "j-brooke.fracturedjsonvsc",
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features",
@@ -56,6 +55,8 @@
     "claudeCode.preferredLocation": "panel",
     "cSpell.enabled": true,
     "cSpell.spellCheckOnlyWorkspaceFiles": true,
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "cursor.composer.usageSummaryDisplay": "always",
     "diffEditor.experimental.showMoves": true,
     "diffEditor.hideUnchangedRegions.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
@@ -96,6 +97,8 @@
     "extensions.ignoreRecommendations": true,
     "files.associations": {
         ".coveragerc": "toml",
+        ".env.*": "dotenv",
+        ".gitconfig.*": "properties",
         "*.hcl": "terraform",
         "*.hql": "sql",
         "*.j2": "jinja",
@@ -126,16 +129,26 @@
     "git.replaceTagsWhenPull": true,
     "git.suggestSmartCommit": false,
     "git.terminalAuthentication": false,
+    "githubPullRequests.notifications": "pullRequests",
+    "githubPullRequests.pullBranch": "never",
+    "githubPullRequests.queries": [
+        {
+            "label": "Review Requests",
+            "query": "repo:${owner}/${repository} is:open review-requested:${user}"
+        },
+        {
+            "label": "My PRs",
+            "query": "repo:${owner}/${repository} is:open author:${user}"
+        }
+    ],
     "gitlab.duoAgentPlatform.enabled": false,
     "gitlab.duoChat.enabled": false,
     "gitlab.duoCodeSuggestions.enabled": false,
-    "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
-    "gitlens.ai.model": "gitkraken",
-    "gitlens.ai.vscode.model": "copilot:gemini-2.5-pro",
     "gitlens.codeLens.scopes": [
         "document",
         "containers"
     ],
+    "gitlens.gitkraken.mcp.autoEnabled": false,
     "gitlens.graph.dateStyle": "absolute",
     "gitlens.graph.highlightRowsOnRefHover": false,
     "gitlens.graph.minimap.enabled": false,
@@ -150,15 +163,16 @@
     "gitlens.hovers.annotations.over": "annotation",
     "gitlens.hovers.currentLine.changes": false,
     "gitlens.hovers.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
     "gitlens.hovers.enabled": false,
     "gitlens.views.commitDetails.files.layout": "tree",
+    "gitlens.views.formats.commits.tooltip": "", // This disable the over of the commits in the graph
     "gitlens.views.launchpad.files.layout": "tree",
     "gitlens.views.repositories.showBranches": false,
     "gitlens.views.repositories.showCommits": false,
     "gitlens.views.repositories.showContributors": false,
     "gitlens.views.repositories.showRemotes": false,
     "gitlens.views.repositories.showTags": false,
-    "gitlens.views.formats.commits.tooltip": "", // This disable the over of the commits in the graph
     "go.buildFlags": [
         "-v"
     ],
@@ -301,5 +315,5 @@
         "git-rebase-todo": "default"
     },
     "workbench.fontAliasing": "auto",
-    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.iconTheme": "catppuccin-mocha"
 }

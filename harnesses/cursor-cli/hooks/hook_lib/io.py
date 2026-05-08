@@ -6,11 +6,7 @@ See https://cursor.com/docs/hooks#common-schema
 import json
 from dataclasses import dataclass, field, fields
 from typing import TypeVar, Any, Self
-import json
-import shlex
-import sys
-from dataclasses import dataclass, field
-from typing import Any, Literal, TypedDict
+from typing import Literal, TypedDict
 
 _T = TypeVar("_T")
 
@@ -41,7 +37,7 @@ def parse_hook_json(raw_json: str, cls: type[_T]) -> _T:
     """
     try:
         data = json.loads(raw_json)
-    except (json.JSONDecodeError, TypeError):
+    except json.JSONDecodeError, TypeError:
         raise ValueError(f"Invalid JSON: {raw_json}")
     if not isinstance(data, dict):
         raise ValueError(f"Invalid JSON: {raw_json}")

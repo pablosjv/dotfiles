@@ -85,28 +85,31 @@
       path: tools/claude/CLAUDE.md
       relink: true
       force: true
-    ~/.cursor/hooks.json:
-      path: editors/cursor/hooks.json
+
+    ~/.cursor/:
+      path: harnesses/cursor-cli/*.json
+      glob: true
       relink: true
       force: true
     ~/.cursor/hooks:
-      path: editors/cursor/hooks
+      path: harnesses/cursor-cli/hooks
       create: true
       relink: true
       force: true
-    ~/.cursor/permissions.json:
-      path: editors/cursor/permissions.json
+
+    ~/Library/Application Support/Cursor/User/:
+      path: editors/cursor/*.json
+      create: true
+      glob: true
       relink: true
       force: true
-    ~/.cursor/cli-config.json:
-      path: editors/cursor/cli-config.json
-      relink: true
-      force: true
-    ~/.cursor/rules:
-      path: editors/cursor/rules
+      if: "[ `uname` = Darwin ]"
+    ~/Library/Application Support/Cursor/User/snippets:
+      path: editors/cursor/snippets
       create: true
       relink: true
       force: true
+      if: "[ `uname` = Darwin ]"
 
     ~/Library/Application Support/Code/User/:
       path: editors/vscode/*.json
@@ -121,18 +124,6 @@
       relink: true
       force: true
       if: "[ `uname` = Darwin ]"
-
-    ~/.config/Code/User/:
-      create: true
-      glob: true
-      path: editors/vscode/*.json
-      relink: true
-      if: "[ `uname` != Darwin ]"
-    ~/.config/Code/User/snippets:
-      create: true
-      path: editors/vscode/snippets
-      relink: true
-      if: "[ `uname` != Darwin ]"
 
     ~/.config/lazygit/config.yml:
       path: tools/lazygit/config.yml
