@@ -89,6 +89,9 @@
     ~/.codex/config.toml: harnesses/codex/config.toml
     ~/.codex/rules/default.rules: harnesses/codex/rules/default.rules
 
+    # Gemini CLI
+    ~/.gemini/settings.json: harnesses/gemini/settings.json
+
     # Cursor: CLI
     ~/.config/cursor: ~/.cursor
     ~/.cursor/:

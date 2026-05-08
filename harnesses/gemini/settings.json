@@ -1,0 +1,31 @@
+{
+    "general": {
+        "defaultApprovalMode": "default",
+        "preferredEditor": "cursor"
+    },
+    "hooks": {
+        "BeforeTool": [
+            {
+                "hooks": [
+                    {
+                        "command": "/Users/pablosanjose/.gemini/hooks/rtk-hook-gemini.sh",
+                        "type": "command"
+                    }
+                ],
+                "matcher": "run_shell_command"
+            }
+        ]
+    },
+    "security": {
+        "auth": {
+            "selectedType": "oauth-personal"
+        },
+        "disableAlwaysAllow": true,
+        "disableYoloMode": true,
+        "enablePermanentToolApproval": true
+    },
+    "tools": {
+        "sandboxAllowedPaths": [],
+        "sandboxNetworkAccess": false
+    }
+}
