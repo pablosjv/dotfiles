@@ -1,6 +1,7 @@
 - defaults:
     link:
       relink: true
+      create: true
     clean:
       force: true
 
@@ -11,27 +12,21 @@
     ~/.config:
       recursive: true
 
+- shell:
+    - command: git submodule update --init --recursive
+      description: Installing submodules
+    - command: chmod +x ./scripts/*
+      description: Making ./scripts executable
+    - command: chmod +x ./bin/*
+      description: Making ./bin executable
+
 - create:
     - /usr/local/lib/gnubin
     - /usr/local/lib/jvm
     - ~/.config
-    - ~/.config/atuin
-    - ~/.config/bat
-    - ~/.config/direnv
-    - ~/.config/ghostty
-    - ~/.config/gitui
-    - ~/.config/iterm2
-    - ~/.config/kitty
-    - ~/.config/lazygit
-    - ~/.config/lsd
-    - ~/.config/pip
-    - ~/.config/procs
-    - ~/.config/shell
     - ~/.gem/ruby/
     - ~/.kube
     - ~/.kube/configs
-    - ~/.claude
-    - ~/.cursor
     - ~/.local/bin/
     - ~/.nvm
     - ~/.vim/undo-history
@@ -39,30 +34,36 @@
     - ~/projects/gitlab.com
 
 - link:
+    # Dotfiles symlink to the home directory directly
     ~/:
-      glob: true
       path: etc/.*
-
-    ~/.local/bin/:
       glob: true
-      path: bin/*
 
+    # Local bin symlink for dotfiles executables
+    ~/.local/bin/:
+      path: bin/*
+      glob: true
     ~/.local/bin/dotbot: dotbot/bin/dotbot
 
-    ~/.config/shell/p10k.mise.zsh: shell/zsh/themes/p10k.mise.zsh
-    ~/.config/shell/p10k.git-town.zsh: shell/zsh/themes/p10k.git-town.zsh
-    ~/.p10k.zsh: shell/zsh/themes/p10k.zsh
+    # Shell config
     ~/.zimrc: shell/zsh/.zim/.zimrc
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
+    ~/.p10k.zsh: shell/zsh/themes/p10k.zsh
+    ~/.config/shell/p10k.mise.zsh: shell/zsh/themes/p10k.mise.zsh
+    ~/.config/shell/p10k.git-town.zsh: shell/zsh/themes/p10k.git-town.zsh
 
+    # Git config
     ~/.gitignore: git/.gitignore
     ~/.gitconfig.local: git/.gitconfig.local
 
+    # Homebrew
     ~/.Brewfile: os/mac/brew/Brewfile
 
+    # Vim config
     ~/.vimrc: editors/vim/.vimrc
 
+    # Tools that are configured through .config
     ~/.config/direnv/lib: tools/direnv/lib
     ~/.config/atuin/config.toml: tools/atuin/config.toml
     ~/.config/bat/config: tools/bat/config
@@ -75,87 +76,60 @@
     ~/.config/mise: tools/mise
     ~/.config/pip/pip.conf: langs/python/pip.conf
     ~/.config/procs/config.toml: tools/procs/config.toml
+    ~/.config/lazygit/config.yml: tools/lazygit/config.yml
+
+    # GitKraken
     ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc
 
-    ~/.claude/settings.json:
-      path: harnesses/claude/settings.json
-      relink: true
-      force: true
-    ~/.claude/CLAUDE.md:
-      path: harnesses/claude/CLAUDE.md
-      relink: true
-      force: true
+    # Claude Code
+    ~/.claude/settings.json: harnesses/claude/settings.json
+    ~/.claude/CLAUDE.md: harnesses/claude/CLAUDE.md
 
+    # Cursor: CLI
+    ~/.config/cursor: ~/.cursor
     ~/.cursor/:
       path: harnesses/cursor-cli/*.json
       glob: true
-      relink: true
       force: true
-    ~/.cursor/hooks:
-      path: harnesses/cursor-cli/hooks
-      create: true
-      relink: true
-      force: true
+    ~/.cursor/hooks: harnesses/cursor-cli/hooks
 
+    # Cursor: Editor
     ~/Library/Application Support/Cursor/User/:
       path: editors/cursor/*.json
-      create: true
       glob: true
-      relink: true
       force: true
       if: "[ `uname` = Darwin ]"
     ~/Library/Application Support/Cursor/User/snippets:
       path: editors/cursor/snippets
-      create: true
-      relink: true
       force: true
       if: "[ `uname` = Darwin ]"
 
+    # VSCode
     ~/Library/Application Support/Code/User/:
       path: editors/vscode/*.json
-      create: true
       glob: true
-      relink: true
       force: true
       if: "[ `uname` = Darwin ]"
     ~/Library/Application Support/Code/User/snippets:
       path: editors/vscode/snippets
-      create: true
-      relink: true
       force: true
       if: "[ `uname` = Darwin ]"
 
-    ~/.config/lazygit/config.yml:
-      path: tools/lazygit/config.yml
-      create: true
-      relink: true
-      force: true
-
+    # rtk config in MacOS
     ~/Library/Application Support/rtk/config.toml:
       path: tools/rtk/config.toml
-      create: true
-      relink: true
       force: true
       if: "[ `uname` = Darwin ]"
 
+    # Zed
     ~/.config/zed/settings.json:
       path: editors/zed/settings.json
-      create: true
-      relink: true
       force: true
     ~/.config/zed/tasks.json:
       path: editors/zed/tasks.json
-      create: true
-      relink: true
       force: true
 
 - shell:
-    - command: git submodule update --init --recursive
-      description: Installing submodules
-    - command: chmod +x ./scripts/*
-      description: Making ./scripts executable
-    - command: chmod +x ./bin/*
-      description: Making ./bin executable
     - command: ./scripts/install
       description: Running installers
       stdin: true
