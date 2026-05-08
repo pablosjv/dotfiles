@@ -1,117 +1,166 @@
 [user]
-name = Pablo San Jose
-email = 7535405+pablosjv@users.noreply.github.com
+    name = Pablo San Jose
+    email = 7535405+pablosjv@users.noreply.github.com
 
 [alias]
-# List all aliases with their comment directly above
-aliases = "!f(){ path=$(git config --list --show-origin 2>/dev/null | grep 'alias\\.' | head -1 | sed 's/^file://' | cut -f1); [ -n \"$path\" ] && awk '/^\\[alias\\]/{a=1;next} a && /^\\[/{a=0} a' \"$path\"; }; f"
-count = shortlog -sn
-# Short status
-st = status --short --branch
-# Show changed files in the last commit
-changed = show --pretty=format: --name-only
-# Push with force with lease
-please = push --force-with-lease
-# Commit amend
-commend = commit --amend --no-edit
-# Commit fixup with autosquash
-fixup = "!f(){ git commit --fixup \"$1\" && GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash \"$1\"^; }; f"
-# Git log tags
-lt = log --tags --decorate --simplify-by-decoration --oneline
-# Generate gitignore - source: https://docs.gitignore.io/install/command-line
-ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
-# List of commits from BASE..HEAD (default BASE=main)
-lb = "!f(){ git log --pretty=format:'- %s' --no-merges --first-parent \"${1:-main}..HEAD\"; }; f"
-# Count commits from BASE..HEAD (default BASE=main)
-lbc = "!f(){ git rev-list --count --no-merges --first-parent \"${1:-main}..HEAD\"; }; f"
-# Check status of local branches
-check = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' refs/heads
-# Delete branch not present in origin - Kudos to @jfisbein
-gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
-# show branches that would be deleted (ask before nuking!)
-is-gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\"'
-# undo last N commits, keep local changes
-undo = "!f(){ git reset --soft HEAD~\"${1:-1}\"; }; f"
-# pull a branch without checking out
-load = ! git fetch origin $1:$1
-##### A set of git alias in memory of @xgouchet #####
-# undo last commit, keep local changes
-uncommit = reset --soft HEAD^
-# undo last commit, drop local changes
-rollback = reset --hard HEAD^
-# Quick Fix for CI
-quickfix = !bash -c 'git commend && git please'
-# What's the Focus ?!
-wtf = "!git st; echo 'The last 3 commits were :'; git log --oneline -3"
-# Life's too short to write commit messages
-yolo = "!git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\""
+    # List all aliases with their comment directly above
+    aliases = "!f(){ path=$(git config --list --show-origin 2>/dev/null | grep 'alias\\.' | head -1 | sed 's/^file://' | cut -f1); [ -n \"$path\" ] && awk '/^\\[alias\\]/{a=1;next} a && /^\\[/{a=0} a' \"$path\"; }; f"
+    count = shortlog -sn
+    # Short status
+    st = status --short --branch
+    # Show changed files in the last commit
+    changed = show --pretty=format: --name-only
+    # Push with force with lease
+    please = push --force-with-lease
+    # Commit amend
+    commend = commit --amend --no-edit
+    # Commit fixup with autosquash
+    fixup = "!f(){ git commit --fixup \"$1\" && GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash \"$1\"^; }; f"
+    # Git log tags
+    lt = log --tags --decorate --simplify-by-decoration --oneline
+    # Generate gitignore - source: https://docs.gitignore.io/install/command-line
+    ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+    # List of commits from BASE..HEAD (default BASE=main)
+    lb = "!f(){ git log --pretty=format:'- %s' --no-merges --first-parent \"${1:-main}..HEAD\"; }; f"
+    # Count commits from BASE..HEAD (default BASE=main)
+    lbc = "!f(){ git rev-list --count --no-merges --first-parent \"${1:-main}..HEAD\"; }; f"
+    # Check status of local branches
+    check = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' refs/heads
+    # Delete branch not present in origin - Kudos to @jfisbein
+    gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
+    # show branches that would be deleted (ask before nuking!)
+    is-gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\"'
+    # undo last N commits, keep local changes
+    undo = "!f(){ git reset --soft HEAD~\"${1:-1}\"; }; f"
+    # pull a branch without checking out
+    load = ! git fetch origin $1:$1
+    ##### A set of git alias in memory of @xgouchet #####
+    # undo last commit, keep local changes
+    uncommit = reset --soft HEAD^
+    # undo last commit, drop local changes
+    rollback = reset --hard HEAD^
+    # Quick Fix for CI
+    quickfix = !bash -c 'git commend && git please'
+    # What's the Focus ?!
+    wtf = "!git st; echo 'The last 3 commits were :'; git log --oneline -3"
+    # Life's too short to write commit messages
+    yolo = "!git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\""
 
 [color]
-diff = auto
-status = auto
-branch = auto
-ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
 
 [core]
-excludesfile = ~/.gitignore
-editor = cursor --wait
-compression = -1
-autocrlf = input
-whitespace = trailing-space,space-before-tab
-precomposeunicode = true
+    excludesfile = ~/.gitignore
+    editor = zed --wait
+    pager = delta
+    compression = -1
+    autocrlf = input
+    whitespace = trailing-space,space-before-tab
+    precomposeunicode = true
 
 [commit]
-gpgSign = false
+    gpgSign = false
 
 [tag]
-forceSignAnnotated = false
+    forceSignAnnotated = false
 
 [filter "lfs"]
-smudge = git-lfs smudge -- %f
-process = git-lfs filter-process
-required = true
-clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
 
 [apply]
-whitespace = nowarn
+    whitespace = nowarn
 
 [help]
-autocorrect = 1
+    autocorrect = 1
 
 [merge]
-tool = cursor
+    tool = zed
 
-[mergetool "cursor"]
-cmd = "cursor --wait "
+[mergetool "zed"]
+    cmd = "zed --wait "
 
 [diff]
-tool = diffmerge
+    tool = diffmerge
+
+[interactive]
+    diffFilter = delta --color-only
 
 [difftool]
-prompt = false
+    prompt = false
 
 [grep]
-extendRegexp = true
-lineNumber = true
+    extendRegexp = true
+    lineNumber = true
 
 [push]
-default = simple
-autoSetupRemote = true
+    default = simple
+    autoSetupRemote = true
 
 [submodule]
-fetchJobs = 4
+    fetchJobs = 4
 
 [log]
-showSignature = false
+    showSignature = false
 
 [rebase]
-autoSquash = true
-updateRefs = true
+    autoSquash = true
+    updateRefs = true
 
 [pull]
-rebase = true
+    rebase = true
 
 [git-town]
-push-new-branches = true
-sync-feature-strategy = rebase
-ship-strategy = squash-merge
+    push-new-branches = true
+    sync-feature-strategy = rebase
+    ship-strategy = squash-merge
+
+[delta]
+    navigate = true
+    line-numbers = true
+    hyperlinks = true
+    keep-plus-minus-markers = true
+    syntax-theme = base16
+    features = catppuccin-mocha
+
+[delta "catppuccin-mocha"]
+    blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a"
+    commit-decoration-style = "#6c7086" bold box ul
+    dark = true
+    file-decoration-style = "#6c7086"
+    file-style = "#cdd6f4"
+    hunk-header-decoration-style = "#6c7086" box ul
+    hunk-header-file-style = bold
+    hunk-header-line-number-style = bold "#a6adc8"
+    hunk-header-style = file line-number syntax
+    line-numbers-left-style = "#6c7086"
+    line-numbers-minus-style = bold "#f38ba8"
+    line-numbers-plus-style = bold "#a6e3a1"
+    line-numbers-right-style = "#6c7086"
+    line-numbers-zero-style = "#6c7086"
+    # 35% red 65% base
+    minus-emph-style = bold syntax "#694559"
+    # 20% red 80% base
+    minus-style = syntax "#493447"
+    # 35% green 65% base
+    plus-emph-style = bold syntax "#4e6356"
+    # 20% green 80% base
+    plus-style = syntax "#394545"
+    map-styles = \
+    bold purple => syntax "#5b4e74", \
+    bold blue => syntax "#445375", \
+    bold cyan => syntax "#446170", \
+    bold yellow => syntax "#6b635b"
+    # Should match the name of the bat theme
+    syntax-theme = Catppuccin Mocha
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    file-style = blue
+    file-decoration-style = none
+    hunk-header-decoration-style = blue box
