@@ -17,14 +17,54 @@ git:
     - git log --graph --branches --color=always --abbrev-commit --decorate --date=relative --pretty=medium
 
 customCommands:
+  - key: "S"
+    context: "global"
+    description: "Git Town Sync Stack"
+    command: "git town sync --stack --push"
+    output: log
+    loadingText: "Syncing"
+  - key: "a"
+    context: "localBranches"
+    description: "Git Town Append"
+    prompts:
+      - type: "input"
+        title: "Enter name of new child branch. Branches off of '{{.CheckedOutBranch.Name}}'"
+        key: "BranchName"
+    command: "git town append {{.Form.BranchName}}"
+    output: log
+    loadingText: "Appending"
+  - key: "h"
+    context: "localBranches"
+    description: "Git Town Hack (creates a new branch)"
+    prompts:
+      - type: "input"
+        title: "Enter name of new branch. Branches off of 'Main'"
+        key: "BranchName"
+    command: "git town hack {{.Form.BranchName}}"
+    output: log
+    loadingText: "Hacking"
+  - key: "p"
+    context: "localBranches"
+    description: "Git Town Propose (creates a pull request)"
+    command: "git town propose"
+    output: log
+    loadingText: "Creating pull request"
+  - key: "D"
+    context: "localBranches"
+    description: "Git Town Delete (deletes the current feature branch and syncs)"
+    command: "git town delete"
+    prompts:
+      - type: "confirm"
+        title: "Delete current feature branch"
+        body: "Are you sure you want to delete the current feature branch?"
+    output: log
+    loadingText: "Deleting Feature Branch"
   - key: "G"
-    command: "gh repo view -w"
-    context: "global"
-    description: "Open repo in GitHub"
-  - key: "H"
-    command: "gh pr view -w"
-    context: "global"
-    description: "Open PR in GitHub"
+    context: "files"
+    description: "Git Town GO aka:continue (continue after resolving merge conflicts)"
+    command: "git town continue"
+    output: log
+    loadingText: "Continuing"
 
 gui:
   nerdFontsVersion: "3"
