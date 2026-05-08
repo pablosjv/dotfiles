@@ -53,7 +53,11 @@
             "Bash(glab *)",
             "Bash(aws *)",
             "Bash(git *)",
-            "Bash(rtk *)"
+            "Bash(rtk *)",
+            "mcp__plugin_figma_figma__*",
+            "mcp__plugin_notion_notion__*",
+            "mcp__plugin_slack_slack__*",
+            "mcp__plugin_linear_linear__*"
         ],
         "deny": ["Edit(**/.env)", "Edit(**/*.pem)", "Edit(**/id_rsa)", "Edit(**/id_ed25519)"],
         "ask": [
