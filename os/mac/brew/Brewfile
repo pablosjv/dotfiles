@@ -6,6 +6,8 @@ brew "autojump"
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Toolchain of the web
+brew "biome"
 # Open source, extensible AI agent that goes beyond code suggestions
 brew "block-goose-cli"
 # Resource monitor. C++ version and continuation of bashtop and bpytop

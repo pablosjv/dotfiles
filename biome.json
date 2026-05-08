@@ -1,0 +1,37 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.4.14/schema.json",
+    "assist": {
+        "actions": {
+            "source": {
+                "useSortedKeys": "on"
+            }
+        },
+        "enabled": true
+    },
+    "files": {
+        "includes": ["./**/*.json", "!**/.venv", "!**/node_modules", "!dotbot/", "!**/.mypy_cache"]
+    },
+    "formatter": {
+        "attributePosition": "auto",
+        "enabled": true,
+        "formatWithErrors": false,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 120
+    },
+    "json": {
+        "formatter": {
+            "trailingCommas": "none"
+        },
+        "parser": {
+            "allowComments": true,
+            "allowTrailingCommas": true
+        }
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true
+        }
+    }
+}

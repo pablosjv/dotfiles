@@ -76,10 +76,7 @@
     "editor.inlineSuggest.enabled": true,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
-    "editor.rulers": [
-        80,
-        120
-    ],
+    "editor.rulers": [80, 120],
     "editor.smoothScrolling": true,
     "editor.snippetSuggestions": "top",
     "editor.suggest.preview": true,
@@ -144,20 +141,12 @@
     "gitlab.duoAgentPlatform.enabled": false,
     "gitlab.duoChat.enabled": false,
     "gitlab.duoCodeSuggestions.enabled": false,
-    "gitlens.codeLens.scopes": [
-        "document",
-        "containers"
-    ],
+    "gitlens.codeLens.scopes": ["document", "containers"],
     "gitlens.gitkraken.mcp.autoEnabled": false,
     "gitlens.graph.dateStyle": "absolute",
     "gitlens.graph.highlightRowsOnRefHover": false,
     "gitlens.graph.minimap.enabled": false,
-    "gitlens.graph.scrollMarkers.additionalTypes": [
-        "localBranches",
-        "stashes",
-        "remoteBranches",
-        "pullRequests"
-    ],
+    "gitlens.graph.scrollMarkers.additionalTypes": ["localBranches", "stashes", "remoteBranches", "pullRequests"],
     "gitlens.graph.showDetailsView": false,
     "gitlens.hovers.annotations.enabled": false,
     "gitlens.hovers.annotations.over": "annotation",
@@ -173,9 +162,7 @@
     "gitlens.views.repositories.showContributors": false,
     "gitlens.views.repositories.showRemotes": false,
     "gitlens.views.repositories.showTags": false,
-    "go.buildFlags": [
-        "-v"
-    ],
+    "go.buildFlags": ["-v"],
     "go.coverageDecorator": {
         "type": "gutter"
     },
@@ -191,10 +178,7 @@
     "json.schemaDownload.enable": true,
     "jupyter.askForKernelRestart": false,
     "jupyter.disableJupyterAutoStart": true,
-    "jupyter.widgetScriptSources": [
-        "jsdelivr.com",
-        "unpkg.com"
-    ],
+    "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
     "markdown.extension.list.indentationSize": "inherit",
     "markdownlint.config": {
         "MD007": false,
@@ -273,9 +257,7 @@
     "search.smartCase": true,
     "search.useGlobalIgnoreFiles": true,
     "security.workspace.trust.untrustedFiles": "open",
-    "shellcheck.customArgs": [
-        "-x"
-    ],
+    "shellcheck.customArgs": ["-x"],
     "shfmt.formatIgnored": false,
     "snowflake.connectionsConfigFile": "/Users/pablosanjose/.snowflake/connections.toml",
     "sonarlint.focusOnNewCode": true,
@@ -292,10 +274,7 @@
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.inheritEnv": false,
     "testing.coverageToolbarEnabled": true,
-    "todo-tree.filtering.excludeGlobs": [
-        "**/_build/**",
-        "**/htmlcov/**"
-    ],
+    "todo-tree.filtering.excludeGlobs": ["**/_build/**", "**/htmlcov/**"],
     "todo-tree.filtering.ignoreGitSubmodules": true,
     "todo-tree.general.statusBar": "total",
     "typescript.updateImportsOnFileMove.enabled": "always",

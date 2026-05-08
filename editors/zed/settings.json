@@ -7,35 +7,56 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-    "restore_on_startup": "launchpad",
-    "lsp": {
-        "vtsls": {
-            "settings": {
-                "typescript": {
-                    "updateImportsOnFileMove": {
-                        "enabled": "always",
-                    },
+    "agent": {
+        "dock": "right",
+        "favorite_models": [],
+        "model_parameters": [],
+        "sidebar_side": "right",
+        "tool_permissions": {
+            "default": "confirm",
+            "tools": {
+                "delete_path": { "default": "confirm" },
+                "edit_file": {
+                    "always_deny": [
+                        { "pattern": "\\.env$" },
+                        { "pattern": "\\.pem$" },
+                        { "pattern": "id_(rsa|ed25519)$" }
+                    ],
+                    "default": "allow"
                 },
-                "javascript": {
-                    "updateImportsOnFileMove": {
-                        "enabled": "always",
-                    },
+                "fetch": {
+                    "always_allow": [
+                        { "pattern": "^https?://(www\\.)?github\\.com" },
+                        { "pattern": "^https?://(www\\.)?npmjs\\.com" }
+                    ],
+                    "default": "confirm"
                 },
-            },
-            "enable_lsp_tasks": true,
-        },
+                "search_web": { "default": "allow" },
+                "terminal": {
+                    "always_allow": [
+                        { "pattern": "^(pnpm|npm|yarn|bun|vitest)\\b" },
+                        { "pattern": "^(pip|poetry|pytest)\\b" },
+                        { "pattern": "^python3?\\s+-m\\s+json\\.tool\\b" },
+                        { "pattern": "^mise\\b" },
+                        { "pattern": "^(make|ls|cat|grep|find|ripgrep|rg|echo|mkdir|touch)\\b" },
+                        { "pattern": "^(gh|glab)\\b" },
+                        { "pattern": "^aws\\b" },
+                        { "pattern": "^git\\b" },
+                        { "pattern": "^rtk\\b" }
+                    ],
+                    "always_confirm": [{ "pattern": "git\\s+push.*\\b(-f|--force|--force-with-lease)\\b" }],
+                    "default": "confirm"
+                }
+            }
+        }
     },
-    "diff_view_style": "unified",
-    "auto_install_extensions": {
-        "catppuccin": true,
-        "catppuccin-icons": true,
-        "html": true,
-        "toml": true,
-    },
-    "cli_default_open_behavior": "existing_window",
+    "agent_buffer_font_size": 12,
     "agent_servers": {
-        "gemini": {
-            "type": "registry",
+        "claude-acp": {
+            "type": "registry"
+        },
+        "codex-acp": {
+            "type": "registry"
         },
         "cursor": {
             "favorite_config_option_values": {
@@ -46,152 +67,135 @@
                     "gemini-3.1-pro[]"
                 ]
             },
-            "type": "registry",
+            "type": "registry"
         },
-        "codex-acp": {
-            "type": "registry",
-        },
-        "claude-acp": {
-            "type": "registry",
-        },
+        "gemini": {
+            "type": "registry"
+        }
+    },
+    "agent_ui_font_size": 14,
+    "auto_install_extensions": {
+        "catppuccin": true,
+        "catppuccin-icons": true,
+        "html": true,
+        "toml": true
+    },
+    "autosave": "on_focus_change",
+    "base_keymap": "VSCode",
+    "buffer_font_family": "MesloLGLDZ Nerd Font Mono",
+    "buffer_font_size": 12,
+    "cli_default_open_behavior": "existing_window",
+    "code_actions_on_format": {
+        "source.action.useSortedKeys.biome": true,
+        "source.fixAll.biome": true
+    },
+    "collaboration_panel": {
+        "dock": "left"
+    },
+    "cursor_blink": true,
+    "diff_view_style": "unified",
+    "ensure_final_newline_on_save": true,
+    "file_types": {
+        "gotemplate": ["*.tmpl"],
+        "jinja": ["*.j2"],
+        "json": ["*.jsonl"],
+        "sql": ["*.hql"],
+        "terraform": ["*.hcl"],
+        "toml": [".coveragerc"],
+        "yaml": ["*.yml"]
+    },
+    "format_on_save": "on",
+    "git": {
+        "inline_blame": {
+            "enabled": true,
+            "show_commit_summary": true
+        }
+    },
+    "git_panel": {
+        "dock": "left",
+        "file_icons": true,
+        "show_count_badge": true,
+        "sort_by_path": false,
+        "status_style": "label_color",
+        "tree_view": true
+    },
+    "hard_tabs": false,
+    "icon_theme": "Catppuccin Mocha",
+    "inlay_hints": {},
+    "lsp": {
+        "vtsls": {
+            "enable_lsp_tasks": true,
+            "settings": {
+                "javascript": {
+                    "updateImportsOnFileMove": {
+                        "enabled": "always"
+                    }
+                },
+                "typescript": {
+                    "updateImportsOnFileMove": {
+                        "enabled": "always"
+                    }
+                }
+            }
+        }
+    },
+    "minimap": {
+        "show": "never"
+    },
+    "outline_panel": {
+        "button": false,
+        "dock": "left"
     },
     "project_panel": {
         "dock": "left",
         "entry_spacing": "standard",
-        "indent_guides": {
-            "show": "always",
-        },
-        "indent_size": 10,
-        "hide_root": false,
         "git_status": true,
-    },
-    "outline_panel": {
-        "button": false,
-        "dock": "left",
-    },
-    "collaboration_panel": {
-        "dock": "left",
-    },
-    "agent": {
-        "sidebar_side": "right",
-        "dock": "right",
-        "favorite_models": [],
-        "model_parameters": [],
-        "tool_permissions": {
-            "default": "confirm",
-            "tools": {
-                "edit_file": {
-                    "default": "allow",
-                    "always_deny": [
-                        { "pattern": "\\.env$" },
-                        { "pattern": "\\.pem$" },
-                        { "pattern": "id_(rsa|ed25519)$" },
-                    ],
-                },
-                "delete_path": { "default": "confirm" },
-                "search_web": { "default": "allow" },
-                "fetch": {
-                    "default": "confirm",
-                    "always_allow": [
-                        { "pattern": "^https?://(www\\.)?github\\.com" },
-                        { "pattern": "^https?://(www\\.)?npmjs\\.com" },
-                    ],
-                },
-                "terminal": {
-                    "default": "confirm",
-                    "always_allow": [
-                        { "pattern": "^(pnpm|npm|yarn|bun|vitest)\\b" },
-                        { "pattern": "^(pip|poetry|pytest)\\b" },
-                        { "pattern": "^python3?\\s+-m\\s+json\\.tool\\b" },
-                        { "pattern": "^mise\\b" },
-                        { "pattern": "^(make|ls|cat|grep|find|ripgrep|rg|echo|mkdir|touch)\\b" },
-                        { "pattern": "^(gh|glab)\\b" },
-                        { "pattern": "^aws\\b" },
-                        { "pattern": "^git\\b" },
-                        { "pattern": "^rtk\\b" },
-                    ],
-                    "always_confirm": [{ "pattern": "git\\s+push.*\\b(-f|--force|--force-with-lease)\\b" }],
-                },
-            },
+        "hide_root": false,
+        "indent_guides": {
+            "show": "always"
         },
+        "indent_size": 10
     },
-    "git_panel": {
-        "show_count_badge": true,
-        "file_icons": true,
-        "tree_view": true,
-        "sort_by_path": false,
-        "status_style": "label_color",
-        "dock": "left",
-    },
-    "title_bar": {
-        "show_branch_status_icon": true,
-    },
-    "icon_theme": "Catppuccin Mocha",
+    "remove_trailing_whitespace_on_save": true,
+    "restore_on_startup": "launchpad",
     "session": {
-        "trust_all_worktrees": true,
+        "trust_all_worktrees": true
     },
+    "show_edit_predictions": true,
+    "show_whitespaces": "boundary",
     "status_bar": {},
-    "terminal": {
-        "toolbar": {
-            "breadcrumbs": false,
-        },
-        "font_size": 12.0,
-        "blinking": "on",
-        "font_family": "MesloLGLDZ Nerd Font Mono",
-        "detect_venv": {
-            "on": {
-                "directories": [".env", "env", ".venv", "venv"],
-                "activate_script": "default",
-            },
-        },
+    "tab_size": 4,
+    "tabs": {
+        "file_icons": true
     },
-    "toolbar": {},
     "telemetry": {
         "diagnostics": false,
-        "metrics": false,
+        "metrics": false
     },
-    "tabs": {
-        "file_icons": true,
-    },
-    "use_smartcase_search": true,
-    "minimap": {
-        "show": "never",
-    },
-    "cursor_blink": true,
-    "autosave": "on_focus_change",
-    "buffer_font_family": "MesloLGLDZ Nerd Font Mono",
-    "file_types": {
-        "terraform": ["*.hcl"],
-        "json": ["*.jsonl"],
-        "gotemplate": ["*.tmpl"],
-        "yaml": ["*.yml"],
-        "jinja": ["*.j2"],
-        "toml": [".coveragerc"],
-        "sql": ["*.hql"],
-    },
-    "inlay_hints": {},
-    "show_whitespaces": "boundary",
-    "show_edit_predictions": true,
-    "ensure_final_newline_on_save": true,
-    "remove_trailing_whitespace_on_save": true,
-    "format_on_save": "on",
-    "hard_tabs": false,
-    "git": {
-        "inline_blame": {
-            "show_commit_summary": true,
-            "enabled": true,
+    "terminal": {
+        "blinking": "on",
+        "detect_venv": {
+            "on": {
+                "activate_script": "default",
+                "directories": [".env", "env", ".venv", "venv"]
+            }
         },
+        "font_family": "MesloLGLDZ Nerd Font Mono",
+        "font_size": 12.0,
+        "toolbar": {
+            "breadcrumbs": false
+        }
     },
-    "wrap_guides": [80, 120],
-    "tab_size": 4,
-    "base_keymap": "VSCode",
-    "ui_font_size": 14,
-    "buffer_font_size": 12,
-    "agent_ui_font_size": 14,
-    "agent_buffer_font_size": 12,
     "theme": {
-        "mode": "system",
-        "light": "One Light",
         "dark": "Catppuccin Mocha",
+        "light": "One Light",
+        "mode": "system"
     },
+    "title_bar": {
+        "show_branch_status_icon": true
+    },
+    "toolbar": {},
+    "ui_font_size": 14,
+    "use_smartcase_search": true,
+    "wrap_guides": [80, 120]
 }

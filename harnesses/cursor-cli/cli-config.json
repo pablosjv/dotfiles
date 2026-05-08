@@ -1,11 +1,10 @@
 {
-    "version": 1,
-    "editor": {
-        "vimMode": false
-    },
     "attribution": {
         "attributeCommitsToAgent": false,
         "attributePRsToAgent": false
+    },
+    "editor": {
+        "vimMode": false
     },
     "permissions": {
         "allow": [
@@ -100,5 +99,6 @@
             "Write(**/id_ed25519)",
             "Write(**/id_rsa)"
         ]
-    }
+    },
+    "version": 1
 }

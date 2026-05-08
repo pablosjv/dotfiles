@@ -1,29 +1,29 @@
 [
     {
-        "key": "alt+tab",
-        "command": "workbench.action.terminal.focusNext"
+        "command": "workbench.action.terminal.focusNext",
+        "key": "alt+tab"
     },
     {
-        "key": "shift+alt+tab",
-        "command": "workbench.action.terminal.focusPrevious"
+        "command": "workbench.action.terminal.focusPrevious",
+        "key": "shift+alt+tab"
     },
     {
-        "key": "ctrl+shift+enter",
         "command": "jupyter.execSelectionInteractive",
+        "key": "ctrl+shift+enter",
         "when": "editorTextFocus && jupyter.featureenabled && jupyter.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
     },
     {
-        "key": "shift+enter",
         "command": "-jupyter.execSelectionInteractive",
+        "key": "shift+enter",
         "when": "editorTextFocus && jupyter.featureenabled && jupyter.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
     },
     {
-        "key": "ctrl+shift+c",
-        "command": "coverage-gutters.displayCoverage"
+        "command": "coverage-gutters.displayCoverage",
+        "key": "ctrl+shift+c"
     },
     {
-        "key": "alt+cmd+s",
         "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+        "key": "alt+cmd+s",
         "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext"
     }
 ]

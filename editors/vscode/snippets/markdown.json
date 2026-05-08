@@ -1,10 +1,6 @@
 {
     "Code snipped": {
-        "prefix": "code",
-        "body": [
-            "```$1",
-            "$2",
-            "```"
-        ]
+        "body": ["```$1", "$2", "```"],
+        "prefix": "code"
     }
 }

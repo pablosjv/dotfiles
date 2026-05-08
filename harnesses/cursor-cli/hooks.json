@@ -1,13 +1,13 @@
 {
-    "version": 1,
     "hooks": {
         "beforeShellExecution": [
             {
                 "command": "./hooks/validate_git_shell.py",
+                "failClosed": true,
                 "matcher": "git",
-                "timeout": 10,
-                "failClosed": true
+                "timeout": 10
             }
         ]
-    }
+    },
+    "version": 1
 }

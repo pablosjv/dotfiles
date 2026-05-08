@@ -7,7 +7,7 @@ help: ## show help message
 ##@ Formatting
 
 .PHONY: fmt
-fmt: fmt-sh fmt-py ## format all files (shell, python)
+fmt: fmt-sh fmt-py fmt-json ## format all files (shell, python, json)
 
 .PHONY: fmt-sh
 fmt-sh: ## format shell scripts
@@ -18,6 +18,10 @@ fmt-sh: ## format shell scripts
 .PHONY: fmt-py
 fmt-py: ## format python files
 	@uv run ruff format .
+
+.PHONY: fmt-json
+fmt-json: ## format and sort json files
+	@biome check --write
 
 ##@ Linting
 

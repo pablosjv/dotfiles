@@ -1,34 +1,30 @@
 [
     {
-        "label": "Pytest: Current File",
+        "allow_concurrent_runs": false,
         "command": "pytest $ZED_FILE",
-        "description": "Runs pytest on the active file",
-        "use_new_terminal": false,
-        "allow_concurrent_runs": false,
-        "reveal": "always"
+        "label": "Pytest: Current File",
+        "reveal": "always",
+        "use_new_terminal": false
     },
     {
-        "label": "Pytest: Project",
+        "allow_concurrent_runs": false,
         "command": "pytest",
-        "description": "Runs pytest on the entire project",
-        "use_new_terminal": false,
-        "allow_concurrent_runs": false,
-        "reveal": "always"
+        "label": "Pytest: Project",
+        "reveal": "always",
+        "use_new_terminal": false
     },
     {
-        "label": "Vitest: Current File",
+        "allow_concurrent_runs": false,
         "command": "npx vitest run $ZED_FILE",
-        "description": "Runs vitest on the active file",
-        "use_new_terminal": false,
-        "allow_concurrent_runs": false,
-        "reveal": "always"
+        "label": "Vitest: Current File",
+        "reveal": "always",
+        "use_new_terminal": false
     },
     {
-        "label": "Vitest: Project",
-        "command": "npx vitest run",
-        "description": "Runs vitest on the entire project",
-        "use_new_terminal": false,
         "allow_concurrent_runs": false,
-        "reveal": "always"
+        "command": "npx vitest run",
+        "label": "Vitest: Project",
+        "reveal": "always",
+        "use_new_terminal": false
     }
 ]

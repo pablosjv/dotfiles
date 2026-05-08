@@ -75,10 +75,7 @@
     "editor.inlineSuggest.enabled": true,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
-    "editor.rulers": [
-        80,
-        120
-    ],
+    "editor.rulers": [80, 120],
     "editor.smoothScrolling": true,
     "editor.snippetSuggestions": "top",
     "editor.suggest.preview": true,
@@ -132,19 +129,11 @@
     "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
     "gitlens.ai.model": "gitkraken",
     "gitlens.ai.vscode.model": "copilot:gemini-2.5-pro",
-    "gitlens.codeLens.scopes": [
-        "document",
-        "containers"
-    ],
+    "gitlens.codeLens.scopes": ["document", "containers"],
     "gitlens.graph.dateStyle": "absolute",
     "gitlens.graph.highlightRowsOnRefHover": false,
     "gitlens.graph.minimap.enabled": false,
-    "gitlens.graph.scrollMarkers.additionalTypes": [
-        "localBranches",
-        "stashes",
-        "remoteBranches",
-        "pullRequests"
-    ],
+    "gitlens.graph.scrollMarkers.additionalTypes": ["localBranches", "stashes", "remoteBranches", "pullRequests"],
     "gitlens.graph.showDetailsView": false,
     "gitlens.hovers.annotations.enabled": false,
     "gitlens.hovers.annotations.over": "annotation",
@@ -152,16 +141,14 @@
     "gitlens.hovers.currentLine.enabled": false,
     "gitlens.hovers.enabled": false,
     "gitlens.views.commitDetails.files.layout": "tree",
+    "gitlens.views.formats.commits.tooltip": "", // This disable the over of the commits in the graph
     "gitlens.views.launchpad.files.layout": "tree",
     "gitlens.views.repositories.showBranches": false,
     "gitlens.views.repositories.showCommits": false,
     "gitlens.views.repositories.showContributors": false,
     "gitlens.views.repositories.showRemotes": false,
     "gitlens.views.repositories.showTags": false,
-    "gitlens.views.formats.commits.tooltip": "", // This disable the over of the commits in the graph
-    "go.buildFlags": [
-        "-v"
-    ],
+    "go.buildFlags": ["-v"],
     "go.coverageDecorator": {
         "type": "gutter"
     },
@@ -177,10 +164,7 @@
     "json.schemaDownload.enable": true,
     "jupyter.askForKernelRestart": false,
     "jupyter.disableJupyterAutoStart": true,
-    "jupyter.widgetScriptSources": [
-        "jsdelivr.com",
-        "unpkg.com"
-    ],
+    "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
     "markdown.extension.list.indentationSize": "inherit",
     "markdownlint.config": {
         "MD007": false,
@@ -259,9 +243,7 @@
     "search.smartCase": true,
     "search.useGlobalIgnoreFiles": true,
     "security.workspace.trust.untrustedFiles": "open",
-    "shellcheck.customArgs": [
-        "-x"
-    ],
+    "shellcheck.customArgs": ["-x"],
     "shfmt.formatIgnored": false,
     "snowflake.connectionsConfigFile": "/Users/pablosanjose/.snowflake/connections.toml",
     "sonarlint.focusOnNewCode": true,
@@ -278,10 +260,7 @@
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.inheritEnv": false,
     "testing.coverageToolbarEnabled": true,
-    "todo-tree.filtering.excludeGlobs": [
-        "**/_build/**",
-        "**/htmlcov/**"
-    ],
+    "todo-tree.filtering.excludeGlobs": ["**/_build/**", "**/htmlcov/**"],
     "todo-tree.filtering.ignoreGitSubmodules": true,
     "todo-tree.general.statusBar": "total",
     "typescript.updateImportsOnFileMove.enabled": "always",
@@ -301,5 +280,5 @@
         "git-rebase-todo": "default"
     },
     "workbench.fontAliasing": "auto",
-    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.iconTheme": "catppuccin-mocha"
 }
