@@ -38,6 +38,8 @@ brew "gemini-cli"
 brew "gh"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Modern implementation of the Git-flow branching model
 brew "git-flow-next"
 # Git extension for versioning large files
@@ -74,6 +76,8 @@ brew "k9s"
 brew "killport"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Utility for directing compilation

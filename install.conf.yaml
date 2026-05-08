@@ -22,6 +22,7 @@
     - ~/.config/gitui
     - ~/.config/iterm2
     - ~/.config/kitty
+    - ~/.config/lazygit
     - ~/.config/lsd
     - ~/.config/pip
     - ~/.config/procs
@@ -132,6 +133,12 @@
       path: editors/vscode/snippets
       relink: true
       if: "[ `uname` != Darwin ]"
+
+    ~/.config/lazygit/config.yml:
+      path: tools/lazygit/config.yml
+      create: true
+      relink: true
+      force: true
 
     ~/Library/Application Support/rtk/config.toml:
       path: tools/rtk/config.toml

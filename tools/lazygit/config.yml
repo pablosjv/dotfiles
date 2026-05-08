@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+notARepository: "quit"
+
+os:
+  editPreset: zed
+
+git:
+  parseEmoji: true
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  log:
+    order: "topo-order"
+    showGraph: "always"
+    showWholeGraph: false
+  allBranchesLogCmds:
+    - git log --graph --branches --color=always --abbrev-commit --decorate --date=relative --pretty=medium
+
+customCommands:
+  - key: "G"
+    command: "gh repo view -w"
+    context: "global"
+    description: "Open repo in GitHub"
+  - key: "H"
+    command: "gh pr view -w"
+    context: "global"
+    description: "Open PR in GitHub"
+
+gui:
+  nerdFontsVersion: "3"
+  showIcons: true
+  showFileTree: true
+  showNumstatInFilesView: true
+  showCommandLog: false
+  filterMode: fuzzy
+  # https://github.com/catppuccin/lazygit/blob/main/themes/mocha/sky.yml
+  theme:
+    activeBorderColor:
+      - "#89dceb"
+      - bold
+    inactiveBorderColor:
+      - "#a6adc8"
+    searchingActiveBorderColor:
+      - "#f9e2af"
+    optionsTextColor:
+      - "#89b4fa"
+    selectedLineBgColor:
+      - "#313244"
+    inactiveViewSelectedLineBgColor:
+      - "#6c7086"
+    cherryPickedCommitFgColor:
+      - "#89dceb"
+    cherryPickedCommitBgColor:
+      - "#45475a"
+    markedBaseCommitFgColor:
+      - "#89b4fa"
+    markedBaseCommitBgColor:
+      - "#f9e2af"
+    unstagedChangesColor:
+      - "#f38ba8"
+    defaultFgColor:
+      - "#cdd6f4"
+  authorColors:
+    "*": "#b4befe"
