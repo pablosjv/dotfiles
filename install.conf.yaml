@@ -78,11 +78,11 @@
     ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc
 
     ~/.claude/settings.json:
-      path: tools/claude/settings.json
+      path: harnesses/claude/settings.json
       relink: true
       force: true
     ~/.claude/CLAUDE.md:
-      path: tools/claude/CLAUDE.md
+      path: harnesses/claude/CLAUDE.md
       relink: true
       force: true
 
