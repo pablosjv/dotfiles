@@ -1,1 +1,180 @@
-prefix_rule(pattern=["rtk", "pnpm", "--filter"], decision="allow")
+COMMON_TOOLS = [
+    "aws",
+    "basename",
+    "bun",
+    "cat",
+    "cut",
+    "date",
+    "diff",
+    "dirname",
+    "echo",
+    "file",
+    "find",
+    "gh",
+    "glab",
+    "grep",
+    "head",
+    "jq",
+    "ls",
+    "make",
+    "mkdir",
+    "mise",
+    "npm",
+    "pip",
+    "pnpm",
+    "poetry",
+    "pytest",
+    "readlink",
+    "realpath",
+    "rg",
+    "sort",
+    "stat",
+    "tail",
+    "touch",
+    "tr",
+    "uname",
+    "uniq",
+    "vitest",
+    "wc",
+    "which",
+    "yarn",
+]
+
+GIT_SAFE_SUBCOMMANDS = [
+    "add",
+    "blame",
+    "cat-file",
+    "diff",
+    "fetch",
+    "grep",
+    "log",
+    "ls-files",
+    "ls-remote",
+    "ls-tree",
+    "merge-base",
+    "rev-list",
+    "rev-parse",
+    "show",
+    "status",
+    "symbolic-ref",
+]
+
+# Allow common single-command tooling.
+prefix_rule(
+    pattern=[COMMON_TOOLS],
+    decision="allow",
+    justification="Allow common local development/read-only tooling.",
+)
+
+# Allow common tooling when executed through RTK.
+prefix_rule(
+    pattern=["rtk", COMMON_TOOLS],
+    decision="allow",
+    justification="Allow common tooling through RTK wrapper.",
+)
+
+# Allow common git read/safe-write operations.
+prefix_rule(
+    pattern=["git", GIT_SAFE_SUBCOMMANDS],
+    decision="allow",
+    justification="Allow common git inspection and non-destructive operations.",
+)
+
+# Allow same git operations through RTK wrapper.
+prefix_rule(
+    pattern=["rtk", "git", GIT_SAFE_SUBCOMMANDS],
+    decision="allow",
+    justification="Allow common git operations through RTK wrapper.",
+)
+
+# Allow safe multi-token git commands.
+prefix_rule(
+    pattern=["git", "config", ["--get", "--list"]],
+    decision="allow",
+)
+prefix_rule(
+    pattern=["rtk", "git", "config", ["--get", "--list"]],
+    decision="allow",
+)
+prefix_rule(
+    pattern=["git", "remote", ["-v", "get-url", "show"]],
+    decision="allow",
+)
+prefix_rule(
+    pattern=["rtk", "git", "remote", ["-v", "get-url", "show"]],
+    decision="allow",
+)
+prefix_rule(
+    pattern=["git", "worktree", "list"],
+    decision="allow",
+)
+prefix_rule(
+    pattern=["rtk", "git", "worktree", "list"],
+    decision="allow",
+)
+
+# Keep json.tool formatting convenience.
+prefix_rule(
+    pattern=[["python", "python3"], "-m", "json.tool"],
+    decision="allow",
+)
+prefix_rule(
+    pattern=["rtk", ["python", "python3"], "-m", "json.tool"],
+    decision="allow",
+)
+
+# Allow policy validation; this checks rules and does not execute the target command.
+prefix_rule(
+    pattern=["codex", "execpolicy", "check"],
+    decision="allow",
+)
+prefix_rule(
+    pattern=["rtk", "codex", "execpolicy", "check"],
+    decision="allow",
+)
+
+# Allow common sed read form without blanket-allowing sed -i edits.
+prefix_rule(
+    pattern=["sed", "-n"],
+    decision="allow",
+    justification="Allow line-range file reads with sed.",
+)
+prefix_rule(
+    pattern=["rtk", "sed", "-n"],
+    decision="allow",
+    justification="Allow line-range file reads with sed through RTK wrapper.",
+)
+
+# Require explicit approval for commits.
+prefix_rule(
+    pattern=["git", "commit"],
+    decision="prompt",
+    justification="Committing changes should stay explicit.",
+)
+prefix_rule(
+    pattern=["rtk", "git", "commit"],
+    decision="prompt",
+    justification="Committing changes should stay explicit.",
+)
+
+# Deny force push variants by default.
+prefix_rule(
+    pattern=["git", "push", "--force"],
+    decision="forbidden",
+    justification="Use --force-with-lease only when strictly necessary and approved.",
+)
+prefix_rule(
+    pattern=["rtk", "git", "push", "--force"],
+    decision="forbidden",
+    justification="Use --force-with-lease only when strictly necessary and approved.",
+)
+prefix_rule(
+    pattern=["git", "push", "--force-with-lease"],
+    decision="prompt",
+    justification="Force-with-lease requires explicit approval.",
+)
+prefix_rule(
+    pattern=["rtk", "git", "push", "--force-with-lease"],
+    decision="prompt",
+    justification="Force-with-lease requires explicit approval.",
+)
