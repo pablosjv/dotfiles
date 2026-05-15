@@ -17,61 +17,85 @@ git:
     - git log --graph --branches --color=always --abbrev-commit --decorate --date=relative --pretty=medium
 
 customCommands:
-  - key: "S"
-    context: "global"
-    description: "Git Town Sync Stack"
-    command: "git town sync --stack --push"
-    output: log
-    loadingText: "Syncing"
-  - key: "a"
-    context: "localBranches"
-    description: "Git Town Append"
+  - key: T
+    context: global
+    description: Git Town Menu
     prompts:
-      - type: "input"
-        title: "Enter name of new child branch. Branches off of '{{.CheckedOutBranch.Name}}'"
-        key: "BranchName"
-    command: "git town append {{.Form.BranchName}}"
+      - type: menu
+        title: Git Town
+        key: Action
+        options:
+          - name: Branches
+            description: Show branch hierarchy
+            value: branch
+          - name: Sync Stack
+            description: Sync current stack & push
+            value: sync --push
+          - name: Sync All
+            description: Sync all branches & push
+            value: sync --all --push
+          - name: Append
+            description: New child branch off current
+            value: append
+          - name: Hack
+            description: New feature branch off main
+            value: hack
+          - name: Propose
+            description: Create a pull request
+            value: propose --non-interactive
+          - name: Continue
+            description: Continue after conflict
+            value: continue
+          - name: Undo
+            description: Undo last Git Town command
+            value: undo
+          - name: Delete
+            description: Delete current branch
+            value: delete
+      - type: input
+        title: "Enter branch name:"
+        key: BranchName
+        condition: '{{ or (eq .Form.Action "hack") (eq .Form.Action "append") }}'
+    command: "git town {{.Form.Action}} {{.Form.BranchName}}"
     output: log
-    loadingText: "Appending"
-  - key: "h"
-    context: "localBranches"
-    description: "Git Town Hack (creates a new branch)"
+    loadingText: Git Town
+
+  - key: <c-s>
+    context: global
+    description: Git Town Sync
+    command: git town sync --stack --push
+    output: log
+    loadingText: Git Town Sync
+
+  - key: <c-b>
+    context: global
+    description: Git Town Branches
+    command: git town branch
+    output: popup
+    loadingText: Listing branches
+
+  - key: <c-p>
+    context: localBranches
+    description: Git Town Propose (Interactive)
+    command: git town propose
+    output: terminal
+
+  - key: H
+    context: localBranches
+    description: Git Town Hack
     prompts:
-      - type: "input"
-        title: "Enter name of new branch. Branches off of 'Main'"
-        key: "BranchName"
+      - type: input
+        title: "New feature branch name (off main):"
+        key: BranchName
     command: "git town hack {{.Form.BranchName}}"
-    output: log
-    loadingText: "Hacking"
-  - key: "p"
-    context: "localBranches"
-    description: "Git Town Propose (creates a pull request)"
-    command: "git town propose"
-    output: log
-    loadingText: "Creating pull request"
-  - key: "D"
-    context: "localBranches"
-    description: "Git Town Delete (deletes the current feature branch and syncs)"
-    command: "git town delete"
-    prompts:
-      - type: "confirm"
-        title: "Delete current feature branch"
-        body: "Are you sure you want to delete the current feature branch?"
-    output: log
-    loadingText: "Deleting Feature Branch"
-  - key: "G"
-    context: "files"
-    description: "Git Town GO aka:continue (continue after resolving merge conflicts)"
-    command: "git town continue"
-    output: log
-    loadingText: "Continuing"
+    output: popup
 
 gui:
   nerdFontsVersion: "3"
   showIcons: true
   showFileTree: true
   showNumstatInFilesView: true
-  showCommandLog: false
+  showCommandLog: true
   filterMode: fuzzy
   # https://github.com/catppuccin/lazygit/blob/main/themes/mocha/sky.yml
   theme:
