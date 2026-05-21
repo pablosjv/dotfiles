@@ -48,7 +48,7 @@
         "diffEditor.ignoreTrimWhitespace": false,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "accessibility.signalOptions.volume": 100,
+    "accessibility.signalOptions.volume": 0,
     "autoDocstring.docstringFormat": "google",
     "aws.telemetry": false,
     "breadcrumbs.enabled": true,
@@ -60,7 +60,7 @@
     "diffEditor.experimental.showMoves": true,
     "diffEditor.hideUnchangedRegions.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "diffEditor.renderSideBySide": true,
+    "diffEditor.renderSideBySide": false,
     "docker.extension.enableComposeLanguageServer": false,
     "editor.acceptSuggestionOnEnter": "on",
     "editor.accessibilitySupport": "on",
