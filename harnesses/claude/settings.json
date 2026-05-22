@@ -1,6 +1,7 @@
 {
     "effortLevel": "low",
     "enabledPlugins": {
+        "chrome-devtools-mcp@chrome-devtools-plugins": true,
         "coderabbit@claude-plugins-official": true,
         "daily-infra-monitoring@joko-dev-utils": true,
         "figma@claude-plugins-official": true,
@@ -58,7 +59,10 @@
             "mcp__plugin_figma_figma__*",
             "mcp__plugin_notion_notion__*",
             "mcp__plugin_slack_slack__*",
-            "mcp__plugin_linear_linear__*"
+            "mcp__plugin_linear_linear__*",
+            "mcp__plugin_chrome_devtools_mcp_chrome_devtools_plugins__*",
+            "mcp__chrome_devtools_mcp__*",
+            "mcp__chrome_devtools__*"
         ],
         "ask": [
             "Bash(* git commit *)",

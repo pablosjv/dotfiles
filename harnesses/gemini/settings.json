@@ -16,6 +16,14 @@
             }
         ]
     },
+    "mcp": {
+        "servers": {
+            "chrome-devtools": {
+                "args": ["-y", "chrome-devtools-mcp@latest"],
+                "command": "npx"
+            }
+        }
+    },
     "security": {
         "auth": {
             "selectedType": "oauth-personal"

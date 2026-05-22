@@ -7,7 +7,9 @@
         "slack:*",
         "plugin_slack_slack:*",
         "linear:*",
-        "plugin_linear_linear:*"
+        "plugin_linear_linear:*",
+        "chrome-devtools:*",
+        "plugin_chrome_devtools_mcp_chrome_devtools_plugins:*"
     ],
     "terminalAllowlist": [
         "aws",
