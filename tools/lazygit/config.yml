@@ -18,7 +18,8 @@ git:
 
 customCommands:
   - key: T
-    context: global
+    # NOTE: localBranches is set to overwrite the createTag keybinding
+    context: global, localBranches
     description: Git Town Menu
     prompts:
       - type: menu
