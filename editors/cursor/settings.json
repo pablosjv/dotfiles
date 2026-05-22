@@ -63,7 +63,7 @@
     "diffEditor.renderSideBySide": false,
     "docker.extension.enableComposeLanguageServer": false,
     "editor.acceptSuggestionOnEnter": "on",
-    "editor.accessibilitySupport": "on",
+    "editor.accessibilitySupport": "off",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
