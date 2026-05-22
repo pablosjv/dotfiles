@@ -14,3 +14,21 @@ skill_approval      = false
 
 [analytics]
 enabled = false
+
+[tui]
+theme = "catppuccin-mocha"
+status_line_use_colors = true
+terminal_title = [
+    "app-name",
+    "project-name",
+    "thread-title",
+    "activity",
+    "run-state",
+    "task-progress",
+]
+status_line = [
+    "model-with-reasoning",
+    "project-name",
+    "git-branch",
+    "pull-request-number",
+]
