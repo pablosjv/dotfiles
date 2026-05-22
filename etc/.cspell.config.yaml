@@ -1,5 +1,5 @@
 version: "0.2"
-language: "en,en-gb,en-us,es-es,fr"
+language: en,en-gb,en-us,es-es,fr
 ignorePaths: []
 dictionaryDefinitions: []
 dictionaries:
