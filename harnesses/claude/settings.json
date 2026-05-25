@@ -71,6 +71,7 @@
             "Bash(* git push * --force)",
             "Bash(* git push * --force-with-lease)"
         ],
+        "defaultMode": "auto",
         "deny": ["Edit(**/.env)", "Edit(**/*.pem)", "Edit(**/id_rsa)", "Edit(**/id_ed25519)"]
     },
     "theme": "dark-ansi"
