@@ -85,10 +85,6 @@
     "buffer_font_family": "MesloLGLDZ Nerd Font Mono",
     "buffer_font_size": 12,
     "cli_default_open_behavior": "existing_window",
-    "code_actions_on_format": {
-        "source.action.useSortedKeys.biome": true,
-        "source.fixAll.biome": true
-    },
     "collaboration_panel": {
         "dock": "left"
     },
@@ -105,6 +101,7 @@
         "yaml": ["*.yml"]
     },
     "format_on_save": "on",
+    "formatter": "language_server",
     "git": {
         "inline_blame": {
             "enabled": true,
@@ -122,6 +119,32 @@
     "hard_tabs": false,
     "icon_theme": "Catppuccin Mocha",
     "inlay_hints": {},
+    "languages": {
+        "JavaScript": {
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
+        },
+        "JSON": {
+            "code_actions_on_format": {
+                "source.action.useSortedKeys.biome": true,
+                "source.fixAll.biome": true
+            }
+        },
+        "Starlark": {
+            "language_servers": ["starpls", "!buck2-lsp", "!tilt"]
+        },
+        "TSX": {
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
+        },
+        "TypeScript": {
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
+        }
+    },
     "lsp": {
         "biome": {
             "settings": {
