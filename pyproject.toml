@@ -23,3 +23,7 @@ testpaths = ["."]
 
 [tool.uv]
 default-groups = ["dev"]
+
+[tool.ruff]
+# Exclude dotbot submodule
+exclude = ["dotbot"]
