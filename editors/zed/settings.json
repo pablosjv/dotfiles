@@ -123,6 +123,11 @@
     "icon_theme": "Catppuccin Mocha",
     "inlay_hints": {},
     "lsp": {
+        "biome": {
+            "settings": {
+                "require_config_file": true
+            }
+        },
         "vtsls": {
             "enable_lsp_tasks": true,
             "settings": {
