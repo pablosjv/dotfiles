@@ -15,36 +15,72 @@
         "tool_permissions": {
             "default": "confirm",
             "tools": {
-                "delete_path": { "default": "confirm" },
+                "delete_path": {
+                    "default": "confirm"
+                },
                 "edit_file": {
                     "always_deny": [
-                        { "pattern": "\\.env$" },
-                        { "pattern": "\\.pem$" },
-                        { "pattern": "id_(rsa|ed25519)$" }
+                        {
+                            "pattern": "\\.env$"
+                        },
+                        {
+                            "pattern": "\\.pem$"
+                        },
+                        {
+                            "pattern": "id_(rsa|ed25519)$"
+                        }
                     ],
                     "default": "allow"
                 },
                 "fetch": {
                     "always_allow": [
-                        { "pattern": "^https?://(www\\.)?github\\.com" },
-                        { "pattern": "^https?://(www\\.)?npmjs\\.com" }
+                        {
+                            "pattern": "^https?://(www\\.)?github\\.com"
+                        },
+                        {
+                            "pattern": "^https?://(www\\.)?npmjs\\.com"
+                        }
                     ],
                     "default": "confirm"
                 },
-                "search_web": { "default": "allow" },
+                "search_web": {
+                    "default": "allow"
+                },
                 "terminal": {
                     "always_allow": [
-                        { "pattern": "^(pnpm|npm|yarn|bun|vitest)\\b" },
-                        { "pattern": "^(pip|poetry|pytest)\\b" },
-                        { "pattern": "^python3?\\s+-m\\s+json\\.tool\\b" },
-                        { "pattern": "^mise\\b" },
-                        { "pattern": "^(make|ls|cat|grep|find|ripgrep|rg|echo|mkdir|touch)\\b" },
-                        { "pattern": "^(gh|glab)\\b" },
-                        { "pattern": "^aws\\b" },
-                        { "pattern": "^git\\b" },
-                        { "pattern": "^rtk\\b" }
+                        {
+                            "pattern": "^(pnpm|npm|yarn|bun|vitest)\\b"
+                        },
+                        {
+                            "pattern": "^(pip|poetry|pytest)\\b"
+                        },
+                        {
+                            "pattern": "^python3?\\s+-m\\s+json\\.tool\\b"
+                        },
+                        {
+                            "pattern": "^mise\\b"
+                        },
+                        {
+                            "pattern": "^(make|ls|cat|grep|find|ripgrep|rg|echo|mkdir|touch)\\b"
+                        },
+                        {
+                            "pattern": "^(gh|glab)\\b"
+                        },
+                        {
+                            "pattern": "^aws\\b"
+                        },
+                        {
+                            "pattern": "^git\\b"
+                        },
+                        {
+                            "pattern": "^rtk\\b"
+                        }
                     ],
-                    "always_confirm": [{ "pattern": "git\\s+push.*\\b(-f|--force|--force-with-lease)\\b" }],
+                    "always_confirm": [
+                        {
+                            "pattern": "git\\s+push.*\\b(-f|--force|--force-with-lease)\\b"
+                        }
+                    ],
                     "default": "confirm"
                 }
             }
