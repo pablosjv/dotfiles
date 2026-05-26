@@ -8,9 +8,10 @@ DOTFILES_ROOT=$(pwd -P)
 
 info "Update Brewfile"
 brew bundle dump \
-    --verbose \
     --force \
     --describe \
+    --install \
+    --no-go \
     --no-restart \
     --global
 

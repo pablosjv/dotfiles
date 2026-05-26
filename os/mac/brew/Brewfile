@@ -173,6 +173,8 @@ cask "hiddenbar"
 cask "mockoon"
 # Htop on steroids
 cask "neohtop"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Collaboration platform for API development
@@ -273,11 +275,3 @@ vscode "wholroyd.jinja"
 vscode "wmaurer.change-case"
 vscode "yzane.markdown-pdf"
 vscode "yzhang.markdown-all-in-one"
-go "github.com/go-delve/delve/cmd/dlv"
-go "cmd/go"
-go "cmd/gofmt"
-go "golang.org/x/tools/cmd/goimports"
-go "github.com/haya14busa/goplay/cmd/goplay"
-go "golang.org/x/tools/gopls"
-go "github.com/cweill/gotests/gotests"
-go "github.com/josharian/impl"
