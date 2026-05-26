@@ -19,4 +19,4 @@ export ZSH_GENERATED_COMPLETIONS="$DOTFILES/shell/zsh/completions/generated"
 
 # editors
 export EDITOR='vim'
-export VEDITOR='cursor'
+export VEDITOR='zed'
