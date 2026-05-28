@@ -28,6 +28,8 @@ brew "dnsmasq"
 brew "docker-completion"
 # Embeddable SQL OLAP Database Management System
 brew "duckdb"
+# More intuitive version of du in rust
+brew "dust"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Find files with SQL-like queries

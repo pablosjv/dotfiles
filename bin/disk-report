@@ -1,0 +1,274 @@
+#!/usr/bin/env bash
+# ─────────────────────────────────────────────────────────────────────────────
+#  disk-report — developer disk usage report
+#  Requires: dust  (brew install dust)
+# ─────────────────────────────────────────────────────────────────────────────
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+DOTFILES_ROOT="$(cd "$SCRIPT_DIR/.." && pwd -P)"
+
+if [[ ! -f "$DOTFILES_ROOT/scripts/tools" ]]; then
+    DOTFILES_ROOT="$HOME/.dotfiles"
+fi
+
+if [[ -f "$DOTFILES_ROOT/scripts/tools" ]]; then
+    # shellcheck source=../scripts/tools
+    # shellcheck disable=SC1091
+    . "$DOTFILES_ROOT/scripts/tools"
+fi
+
+DUST_FLAGS=(-z 10M -r)
+
+# Fallback helpers if tools not sourced
+if ! command -v info >/dev/null; then
+    info() { echo -e "  \033[0;34m..\033[0m $*"; }
+    success() { echo -e "  \033[0;32mOK\033[0m $*"; }
+    warning() { echo -e "  \033[0;33m!!\033[0m $*"; }
+    fail() {
+        echo -e "  \033[0;31mFAIL\033[0m $*"
+        exit 1
+    }
+fi
+
+section() {
+    echo
+    printf "\r[ \033[0;36m>>\033[0m ] \033[1;36m%s\033[0m\n" "$1"
+    echo -e "\033[2m────────────────────────────────────────────────────────────────\033[0m"
+}
+
+item() {
+    printf "  %-10s  %s\n" "$1" "$2"
+}
+
+main() {
+    local cmd="${1:-all}"
+
+    case "$cmd" in
+    help | -h | --help)
+        show_help
+        exit 0
+        ;;
+    esac
+
+    require_dust
+
+    case "$cmd" in
+    overview) section_overview ;;
+    projects) section_projects ;;
+    caches) section_caches ;;
+    xcode) section_xcode ;;
+    docker) section_docker ;;
+    apps) section_apps ;;
+    wins) show_quick_wins ;;
+    all | *) run_all ;;
+    esac
+}
+
+run_all() {
+    section_overview
+    section_projects
+    section_caches
+    section_xcode
+    section_docker
+    section_apps
+
+    echo
+    success "Done."
+    show_quick_wins
+}
+
+show_quick_wins() {
+    echo
+    echo -e "\033[1;33mQuick wins:\033[0m"
+    item "npm" "npm cache clean --force"
+    item "pnpm" "pnpm store prune"
+    item "uv" "uv cache clean"
+    item "pip" "pip cache purge"
+    item "gradle" "rm -rf ~/.gradle/caches"
+    item "brew" "brew cleanup --prune=all"
+    item "docker" "docker image prune -a"
+    item "xcode" "rm -rf ~/Library/Developer/Xcode/DerivedData"
+    item "sims" "xcrun simctl delete unavailable"
+    item "ollama" "ollama list  →  ollama rm <model>"
+    echo
+}
+
+section_overview() {
+    section "Disk overview"
+    df -h / | awk 'NR<=2{print "  "$0}'
+
+    section "Largest folders in $HOME (depth 1, >10MB)"
+    dust "${DUST_FLAGS[@]}" -d 1 -n 25 "$HOME"
+}
+
+section_projects() {
+    section "$HOME/projects — depth 3 (node_modules / .venv shown inline, >10MB)"
+    if [[ -d "$HOME/projects" ]]; then
+        dust "${DUST_FLAGS[@]}" -d 3 -n 30 "$HOME/projects"
+    else
+        info "$HOME/projects not found — edit this script to point at your projects root."
+    fi
+}
+
+section_caches() {
+    section "JS package manager caches"
+    local js_paths=()
+    for p in "$HOME/.npm" "$HOME/Library/pnpm" "$HOME/.pnpm-store" \
+        "$HOME/.yarn/cache" "$HOME/.bun"; do
+        [[ -d "$p" ]] && js_paths+=("$p")
+    done
+    if [[ ${#js_paths[@]} -gt 0 ]]; then
+        dust "${DUST_FLAGS[@]}" -d 0 "${js_paths[@]}"
+    else
+        info "No JS caches found."
+    fi
+
+    section "Python caches (pip / uv / poetry)"
+    local py_paths=()
+    for p in "$HOME/Library/Caches/pip" "$HOME/.cache/pip" \
+        "$HOME/.cache/uv" "$HOME/.cache/pypoetry" \
+        "$HOME/Library/Application Support/pypoetry"; do
+        [[ -d "$p" ]] && py_paths+=("$p")
+    done
+    if [[ ${#py_paths[@]} -gt 0 ]]; then
+        dust "${DUST_FLAGS[@]}" -d 1 -n 10 "${py_paths[@]}"
+    else
+        info "No Python caches found."
+    fi
+
+    section "AI / LLM model stores"
+    local ai_paths=()
+    for p in "$HOME/.ollama" "$HOME/.lmstudio" "$HOME/.cache/huggingface" \
+        "$HOME/.cache/lm-studio"; do
+        [[ -d "$p" ]] && ai_paths+=("$p")
+    done
+    if [[ ${#ai_paths[@]} -gt 0 ]]; then
+        dust "${DUST_FLAGS[@]}" -d 2 -n 15 "${ai_paths[@]}"
+    else
+        info "No AI model stores found."
+    fi
+
+    section "Build tool caches (Gradle / Maven / Go / Serverless)"
+    local build_paths=()
+    for p in "$HOME/.gradle" "$HOME/.m2" "$HOME/.ivy2" \
+        "$HOME/.cache/go-build" "$HOME/go/pkg/mod" \
+        "$HOME/.serverless" "$HOME/.expo"; do
+        [[ -d "$p" ]] && build_paths+=("$p")
+    done
+    if [[ ${#build_paths[@]} -gt 0 ]]; then
+        dust "${DUST_FLAGS[@]}" -d 1 -n 10 "${build_paths[@]}"
+    else
+        info "No build tool caches found."
+    fi
+
+    section "Runtime version managers (mise / asdf)"
+    local runtime_paths=()
+    for p in "$HOME/.local/share/mise" "$HOME/.asdf"; do
+        [[ -d "$p" ]] && runtime_paths+=("$p")
+    done
+    if [[ ${#runtime_paths[@]} -gt 0 ]]; then
+        dust "${DUST_FLAGS[@]}" -d 1 -n 10 "${runtime_paths[@]}"
+    else
+        info "No runtime version manager data found."
+    fi
+
+    section "Homebrew cache"
+    local brew_cache
+    brew_cache="$(brew --cache 2>/dev/null || echo "$HOME/Library/Caches/Homebrew")"
+    if [[ -d "$brew_cache" ]]; then
+        dust "${DUST_FLAGS[@]}" -d 1 -n 10 "$brew_cache"
+    else
+        info "Homebrew cache not found."
+    fi
+
+    section "macOS $HOME/Library/Caches (top 15, >10MB)"
+    dust "${DUST_FLAGS[@]}" -d 1 -n 15 "$HOME/Library/Caches"
+}
+
+section_xcode() {
+    section "Xcode & iOS simulator"
+    local xcode_paths=()
+    for p in "$HOME/Library/Developer/Xcode/DerivedData" \
+        "$HOME/Library/Developer/CoreSimulator/Devices" \
+        "$HOME/Library/Developer/Xcode/iOS DeviceSupport" \
+        "$HOME/Library/Developer/Xcode/watchOS DeviceSupport" \
+        "$HOME/Library/Developer/Xcode/macOS DeviceSupport"; do
+        [[ -d "$p" ]] && xcode_paths+=("$p")
+    done
+    if [[ ${#xcode_paths[@]} -gt 0 ]]; then
+        dust "${DUST_FLAGS[@]}" -d 1 -n 10 "${xcode_paths[@]}"
+        echo
+        info "To clean:  rm -rf ~/Library/Developer/Xcode/DerivedData"
+        info "           xcrun simctl delete unavailable"
+    else
+        success "No Xcode data found."
+    fi
+}
+
+section_docker() {
+    section "Docker / OrbStack"
+    if command -v docker &>/dev/null && docker info &>/dev/null 2>&1; then
+        docker system df 2>/dev/null | awk '{print "  "$0}'
+        echo
+        info "Reclaimable:  docker image prune -a"
+        info "Nuclear:      docker system prune -a --volumes"
+    else
+        info "Docker not running or not installed."
+    fi
+
+    for p in "$HOME/OrbStack" "$HOME/.docker"; do
+        if [[ -d "$p" ]]; then
+            echo
+            dust "${DUST_FLAGS[@]}" -d 2 -n 10 "$p"
+        fi
+    done
+}
+
+section_apps() {
+    section "Applications (top 25, >10MB)"
+    dust "${DUST_FLAGS[@]}" -d 1 -n 25 /Applications
+    if [[ -d "$HOME/Applications" ]] && [[ -n "$(ls -A "$HOME/Applications" 2>/dev/null)" ]]; then
+        echo
+        dust "${DUST_FLAGS[@]}" -d 1 -n 10 "$HOME/Applications"
+    fi
+}
+
+require_dust() {
+    if ! command -v dust &>/dev/null; then
+        warning "dust not found."
+        if command -v brew &>/dev/null; then
+            echo -n "  Install now with Homebrew? [y/N] "
+            read -r ans
+            if [[ "$ans" =~ ^[Yy]$ ]]; then
+                brew install dust
+            else
+                fail "Aborted. Run: brew install dust"
+            fi
+        else
+            fail "Homebrew not found. Install dust manually: https://github.com/bootandy/dust"
+        fi
+    fi
+}
+
+show_help() {
+    echo
+    echo -e "\033[1mdisk-report\033[0m — developer disk usage report"
+    echo
+    echo -e "  \033[0;36mUsage:\033[0m"
+    echo "    disk-report              full report (all sections)"
+    echo "    disk-report overview     home dir + disk usage"
+    echo "    disk-report projects     $HOME/projects tree"
+    echo "    disk-report caches       JS, Python, AI, build caches"
+    echo "    disk-report xcode        Xcode / iOS simulator data"
+    echo "    disk-report docker       Docker / OrbStack"
+    echo "    disk-report apps         /Applications sizes"
+    echo "    disk-report wins         show quick cleanup commands"
+    echo "    disk-report help         this message"
+    echo
+    echo -e "  \033[0;36mRequires:\033[0m dust  (brew install dust)"
+    echo
+}
+
+main "$@"
