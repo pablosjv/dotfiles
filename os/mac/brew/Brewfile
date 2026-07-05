@@ -159,6 +159,8 @@ cask "cursor-cli"
 # Utilities designed to make common development tasks easier
 cask "devtoys"
 cask "font-meslo-lg-nerd-font"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Git client focusing on productivity
@@ -195,6 +197,7 @@ cask "whatsapp"
 cask "zed"
 vscode "42crunch.vscode-openapi"
 vscode "alexcvzz.vscode-sqlite"
+vscode "anthropic.claude-code"
 vscode "be5invis.toml"
 vscode "bierner.markdown-mermaid"
 vscode "bruno-api-client.bruno"
