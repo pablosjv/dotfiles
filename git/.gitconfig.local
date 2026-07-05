@@ -16,14 +16,16 @@
     commend = commit --amend --no-edit
     # Commit fixup with autosquash
     fixup = "!f(){ git commit --fixup \"$1\" && GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash \"$1\"^; }; f"
-    # Git log tags
-    lt = log --tags --decorate --simplify-by-decoration --oneline
     # Generate gitignore - source: https://docs.gitignore.io/install/command-line
     ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+    # Git log tags
+    lt = log --tags --decorate --simplify-by-decoration --oneline
     # List of commits from BASE..HEAD (default BASE=main)
     lb = "!f(){ git log --pretty=format:'- %s' --no-merges --first-parent \"${1:-main}..HEAD\"; }; f"
     # Count commits from BASE..HEAD (default BASE=main)
     lbc = "!f(){ git rev-list --count --no-merges --first-parent \"${1:-main}..HEAD\"; }; f"
+    # Log a specific file
+    lf = "!f(){ git log --follow --decorate -- \"$1\"; }; f"
     # Check status of local branches
     check = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' refs/heads
     # Delete branch not present in origin - Kudos to @jfisbein
