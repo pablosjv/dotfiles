@@ -88,8 +88,6 @@ brew "lsd"
 brew "make"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
-# Fast, highly customisable system info script
-brew "neofetch"
 # Port scanning utility for large networks
 brew "nmap"
 # CLI for Postgres with auto-completion and syntax highlighting
